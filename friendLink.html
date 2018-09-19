@@ -1,0 +1,24 @@
+---
+layout: default
+title: 你想成为我的朋友吗？
+page-title: 这里是我的朋友们哟~
+home-title: 好吧，目前一个都还没有！你想成为第一个吗？请速度 Call 我！
+description:
+---
+
+{% include header.html %}
+{% include boot.html %}
+<main>
+    {% include title.html %}
+    <ul class="ex-list">
+        <li  class="fadeInUp animated">
+          {% for friend in site.friends %}
+            <span class="tag-name" >
+                <a href="{{ friend[1] }}">「&emsp;{{ friend[0] }}&emsp;」</a>
+            </span>
+                </br>
+          {% endfor %}
+        </li>
+    </ul>
+</main>
+{% include footer.html %}
