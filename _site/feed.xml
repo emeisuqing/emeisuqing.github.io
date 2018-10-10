@@ -1,3 +1,227 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-19T19:26:17+08:00</updated><id>http://localhost:4000/</id><title type="html">SuQing Blog</title><subtitle>由于GitHub的用户名SuQing已经被注册了，所以我的用户名成为了emeisuqing，即&quot;峨眉苏轻&quot;。</subtitle><author><name>true</name></author><entry><title type="html">Welcome to SuQing’s Blog!</title><link href="http://localhost:4000/2018/09/19/Test.html" rel="alternate" type="text/html" title="Welcome to SuQing's Blog!" /><published>2018-09-19T19:01:39+08:00</published><updated>2018-09-19T19:01:39+08:00</updated><id>http://localhost:4000/2018/09/19/Test</id><content type="html" xml:base="http://localhost:4000/2018/09/19/Test.html">&lt;p&gt;　　GitHob 真香！！！！！&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-10T17:43:02+08:00</updated><id>http://localhost:4000/</id><title type="html">SuQing’s Blog</title><subtitle>就是这里了，欢迎！</subtitle><author><name>true</name></author><entry><title type="html">使用 Jekyll 搭建个人博客</title><link href="http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.html" rel="alternate" type="text/html" title="使用 Jekyll 搭建个人博客" /><published>2018-09-20T20:21:31+08:00</published><updated>2018-09-20T20:21:31+08:00</updated><id>http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87:%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.html">&lt;blockquote&gt;
+  &lt;p&gt;前言&lt;/p&gt;
 
-&lt;p&gt;　　装个Jekyll装累死了，今天不玩了！&lt;/p&gt;</content><author><name>true</name></author><category term="testTag1" /><summary type="html">　　GitHob 真香！！！！！ 　　装个Jekyll装累死了，今天不玩了！</summary></entry></feed>
+  &lt;p&gt;　　我的系统是 OS X，所以本篇文章主要是针对 Mac，Linux 稍有不同，而 Windows 则不推荐使用 Jekyll，请勿照搬。我的博客
+&lt;a href=&quot;https://suqing.fun&quot;&gt;suqing.fun&lt;/a&gt;
+已经搭建好了，欢迎观光。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;homebrew&quot;&gt;Homebrew&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;简介 Homebrew&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　Homebrew 是 Mac OS 平台下的一款软件包管理工具。
+&lt;a href=&quot;https://brew.sh/index_zh-cn&quot;&gt;Homebrew 官网&lt;/a&gt;
+详细说明了 Homebrew 的用途以及如何安装使用。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;检查 Homebrew
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brew&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;git&quot;&gt;Git&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Git 是什么？
+    &lt;ul&gt;
+      &lt;li&gt;git 分布式版本控制工具&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;检查 git
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装 git
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brew&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ssh-key&quot;&gt;SSH Key&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;检查 ssh 是否已经存在
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shh&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;出现&lt;code class=&quot;highlighter-rouge&quot;&gt;No such file or directory&lt;/code&gt;的短语即表示没有。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;设置 GitHub 每次 commit 的时候会使用到的 username 和 email
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;yourname&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;youremail@qq.com&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;创建 ssh key
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keygen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rsa&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;youremail@qq.com&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 我并未探究此处的字符串意义 照办就好&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;　　接下来需要确认路径和密码。因为密码可以为空，所以我选择了连按回车3下。当然，你也可以根据提示，设置你自己的路径和密码。还有，如果你以前创建过 ssh key，会提示你是否需要 overwrite。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;查看 ssh 文件
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id_rsa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pub&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;复制&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;添加你的 SSH Key 到 GitHub
+    &lt;ul&gt;
+      &lt;li&gt;单击右上角你的头像&lt;/li&gt;
+      &lt;li&gt;单击&lt;code class=&quot;highlighter-rouge&quot;&gt;Settings&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;单击左侧&lt;code class=&quot;highlighter-rouge&quot;&gt;SSH and GPG keys&lt;/code&gt;标签&lt;/li&gt;
+      &lt;li&gt;单击右侧绿色按钮&lt;code class=&quot;highlighter-rouge&quot;&gt;New SSH key&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;在 Title 的输入框给你的 SSH Key 起一个名字，任意内容都可。&lt;/li&gt;
+      &lt;li&gt;在 Key 的输入框中粘贴刚刚复制的那段乱七八糟的文本。&lt;/li&gt;
+      &lt;li&gt;单击&lt;code class=&quot;highlighter-rouge&quot;&gt;Add SSH Key&lt;/code&gt;按钮&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;验证
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;　　可能会提示你不确定&lt;code class=&quot;highlighter-rouge&quot;&gt;github.com (192.30.253.113)&lt;/code&gt;的 host 是否可靠，键入&lt;code class=&quot;highlighter-rouge&quot;&gt;yes&lt;/code&gt;回车，然后 host 会被永久添加到你的电脑的白名单里面。出现&lt;code class=&quot;highlighter-rouge&quot;&gt;You've successfully authenticated, but GitHub does not provide shell access.&lt;/code&gt;即成功，可以进行下一步了。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;git-的使用&quot;&gt;Git 的使用&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Clone（克隆）你的 Repository（仓库）到本地
+    &lt;ul&gt;
+      &lt;li&gt;单击&lt;code class=&quot;highlighter-rouge&quot;&gt;Clone or download&lt;/code&gt;按钮&lt;/li&gt;
+      &lt;li&gt;单击&lt;code class=&quot;highlighter-rouge&quot;&gt;Use SSH&lt;/code&gt;蓝色文字&lt;/li&gt;
+      &lt;li&gt;复制文本&lt;/li&gt;
+      &lt;li&gt;在终端先&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;到指定的目录，然后使用下面的命令克隆
+        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yourname&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;repositoryname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这里就是刚刚复制的文本&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;其他命令（后面会用到）
+    &lt;ul&gt;
+      &lt;li&gt;先&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;到你的克隆下来的仓库目录
+        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Add files to your repository&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 表示提交所有文件（注意这里是有一个“.”的！）&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Commit code to your repository&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Commit&quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Push&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ruby&quot;&gt;Ruby&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ruby 是什么
+    &lt;ul&gt;
+      &lt;li&gt;Ruby 环境支持&lt;/li&gt;
+      &lt;li&gt;OS X 自带 Ruby&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;检查 Ruby
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装 Ruby
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brew&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 虽然 OS X 系统原本就有 Ruby，我还是建议安装一下，因为原本的 Ruby 可能版本太低。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rubygems&quot;&gt;RubyGems&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;RubyGems 是什么？
+RubyGems.org 是 Ruby 社区的 Gem 托管服务。
+让你能便捷、快速的发布、管理你的 Gem 以及安装它们。
+&lt;a href=&quot;https://rubygems.org&quot;&gt;RubyGems 官网&lt;/a&gt; 提供 API 查阅可用 Gem 的详细资料。
+&lt;a href=&quot;https://rubygems.org/pages/download&quot;&gt;RubyGems 官网安装指导&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;检查 gem 版本
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;更新 gem
+    &lt;ul&gt;
+      &lt;li&gt;因为&lt;code class=&quot;highlighter-rouge&quot;&gt;https://rubygems.org/&lt;/code&gt; 很可能出现404（你懂得），所以需要把地址换一下。&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://ruby.taobao.org&quot;&gt;RubyGems 镜像&lt;/a&gt; 有详细的教程，但是因域名备案问题，&lt;code class=&quot;highlighter-rouge&quot;&gt;.org&lt;/code&gt;域名无法继续提供 RubyGems 镜像服务，域名被&lt;code class=&quot;highlighter-rouge&quot;&gt;.com&lt;/code&gt;代替。
+        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sources&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//gems.ruby-china.com/&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sources&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//rubygems.org/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;更新 gem
+        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;最后显示&lt;code class=&quot;highlighter-rouge&quot;&gt;RubyGems system software updated&lt;/code&gt;，更新完成。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;检查 gem
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 显示的是我们自己安装的库&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 显示出来的应该是 OS X 系统原本自带的库&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 此处的2套库应该是互不影响的！&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Jekyll 是个什么东西？
+    &lt;ul&gt;
+      &lt;li&gt;可以先到&lt;a href=&quot;https://jekyllrb.com&quot;&gt; Jekyll 官网 &lt;/a&gt;了解一下，官网还提供了详细的文档。&lt;/li&gt;
+      &lt;li&gt;简单。这篇教程跟着我一步一步走下来应该不难吧……或许……&lt;/li&gt;
+      &lt;li&gt;静态。刚好 GitHub Pages 也只能做静态的页面，我主要是为了使用 Markdown 异常方便。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装 Jekyll
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;检查 Jekyll
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;现在终于可以借助 Jekyll 开始搭建你自己的博客了！你可以自己新建一个 Jekyll 博客，也可以使用别人制作好的 Jekyll 主题的博客。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://jekyllthemes.org&quot;&gt;JekyllThemes &lt;/a&gt;站点上展示了很多 Jekyll 主题的博客，如果初次接触可以从 GitHub 上下载。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;如果是使用的主题，那么先&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;到根目录，然后执行下面的命令。
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;接下来就可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt; 预览网页效果了！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;hexo&quot;&gt;Hexo&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hexo 和 Jekyll 类似，有兴趣的可以去看一看。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;结语&quot;&gt;结语&lt;/h2&gt;
+&lt;p&gt;　　谨以本文记录一下使用 GithubPages 配合 Jekyll 搭建博客的流程，如有后来者看到这篇文章并获得些许帮助，幸甚之至。&lt;/p&gt;
+
+&lt;p&gt;　　苏轻 2018年8月20日 20:27:50&lt;/p&gt;</content><author><name>true</name></author><category term="jekyll" /><summary type="html">前言 　　我的系统是 OS X，所以本篇文章主要是针对 Mac，Linux 稍有不同，而 Windows 则不推荐使用 Jekyll，请勿照搬。我的博客 suqing.fun 已经搭建好了，欢迎观光。</summary></entry><entry><title type="html">Welcome to SuQing’s Blog!</title><link href="http://localhost:4000/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF.html" rel="alternate" type="text/html" title="Welcome to SuQing's Blog!" /><published>2018-09-19T19:01:39+08:00</published><updated>2018-09-19T19:01:39+08:00</updated><id>http://localhost:4000/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF</id><content type="html" xml:base="http://localhost:4000/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF.html">&lt;p&gt;　　GitHob 真香！！！！！&lt;/p&gt;
+
+&lt;p&gt;　　装个Jekyll装累死了，今天不玩了！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;本文仅用于测试。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;yaml 头文件信息：&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;layout: post
+title:  &quot;post title&quot;
+subtitle: 'post subtitle'
+date:   2222-02-22 02:22:22
+tags: html js css
+description: ''
+color: 'rgb(154,133,255)' // 也可以使用'#123456'
+cover: '' // 图片地址
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>true</name></author><summary type="html">　　GitHob 真香！！！！！ 　　装个Jekyll装累死了，今天不玩了！ 本文仅用于测试。 yaml 头文件信息： layout: post title: &quot;post title&quot; subtitle: 'post subtitle' date: 2222-02-22 02:22:22 tags: html js css description: '' color: 'rgb(154,133,255)' // 也可以使用'#123456' cover: '' // 图片地址</summary></entry></feed>

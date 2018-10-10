@@ -1,0 +1,455 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="就是这里了，欢迎！" />
+<meta name="keywords" content="苏轻, 个人, 博客" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_default.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="/assets/fonts/sns/iconfont.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpeg" rel="shortcut icon" />
+<link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>使用 Jekyll 搭建个人博客</title>
+<!-- 百度统计 -->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- 谷歌分析 -->
+
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" #00CCFF ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:#00CCFF;">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">SuQing’s Blog</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">诗酒趁年华</a></li>
+              
+                <li><a href="/timeline" style="color: white;">只道是寻常</a></li>
+              
+                <li><a href="/about" style="color: white;">何必曾相识</a></li>
+              
+                <li><a href="/tags" style="color: white;">军书十二卷</a></li>
+              
+                <li><a href="/link" style="color: white;">曲误周郎顾</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>诗酒趁年华</li></a>
+        
+          <a href="/timeline"><li>只道是寻常</li></a>
+        
+          <a href="/about"><li>何必曾相识</li></a>
+        
+          <a href="/tags"><li>军书十二卷</li></a>
+        
+          <a href="/link"><li>曲误周郎顾</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">使用 Jekyll 搭建个人博客</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:#00CCFF;">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#00CCFF';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#00CCFF;"><sapn class="main">没有上一页咯</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">使用 Jekyll 搭建个人博客</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#00CCFF';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#00CCFF;"><sapn class="main">Welcome to SuQing's Blog!</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="javascript:;" class="leftchange" style="border-right: 1px solid #00CCFF;border-bottom: 2px solid #00CCFF;"><span><br>没有上一篇咯</span></a>
+    
+    
+      <a href="/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF.html" class="rightchange" style="border-left: 1px solid #00CCFF;border-bottom: 2px solid #00CCFF;"><span>下一篇<br><br>Welcome to SuQing's Blog!</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+
+  <!-- 文章内容 -->
+  <blockquote>
+  <p>前言</p>
+
+  <p>　　我的系统是 OS X，所以本篇文章主要是针对 Mac，Linux 稍有不同，而 Windows 则不推荐使用 Jekyll，请勿照搬。我的博客
+<a href="https://suqing.fun">suqing.fun</a>
+已经搭建好了，欢迎观光。</p>
+</blockquote>
+
+<h2 id="homebrew">Homebrew</h2>
+
+<ul>
+  <li>简介 Homebrew</li>
+</ul>
+
+<p>　　Homebrew 是 Mac OS 平台下的一款软件包管理工具。
+<a href="https://brew.sh/index_zh-cn">Homebrew 官网</a>
+详细说明了 Homebrew 的用途以及如何安装使用。</p>
+
+<ul>
+  <li>检查 Homebrew
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">brew</span> <span class="o">-</span><span class="n">v</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="git">Git</h2>
+
+<ul>
+  <li>Git 是什么？
+    <ul>
+      <li>git 分布式版本控制工具</li>
+    </ul>
+  </li>
+  <li>检查 git
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">git</span> <span class="o">-</span><span class="n">v</span>
+</code></pre></div>    </div>
+  </li>
+  <li>安装 git
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">brew</span> <span class="n">install</span> <span class="n">git</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="ssh-key">SSH Key</h2>
+
+<ul>
+  <li>检查 ssh 是否已经存在
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">cd</span> <span class="o">~/</span><span class="p">.</span><span class="n">shh</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>出现<code class="highlighter-rouge">No such file or directory</code>的短语即表示没有。</li>
+    </ul>
+  </li>
+  <li>设置 GitHub 每次 commit 的时候会使用到的 username 和 email
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="s">"yourname"</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span> <span class="s">"youremail@qq.com"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>创建 ssh key
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">C</span> <span class="s">"youremail@qq.com"</span> <span class="c1">// 我并未探究此处的字符串意义 照办就好</span>
+</code></pre></div>    </div>
+    <p>　　接下来需要确认路径和密码。因为密码可以为空，所以我选择了连按回车3下。当然，你也可以根据提示，设置你自己的路径和密码。还有，如果你以前创建过 ssh key，会提示你是否需要 overwrite。</p>
+  </li>
+  <li>查看 ssh 文件
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">cat</span> <span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span>
+</code></pre></div>    </div>
+    <p>复制</p>
+  </li>
+  <li>添加你的 SSH Key 到 GitHub
+    <ul>
+      <li>单击右上角你的头像</li>
+      <li>单击<code class="highlighter-rouge">Settings</code></li>
+      <li>单击左侧<code class="highlighter-rouge">SSH and GPG keys</code>标签</li>
+      <li>单击右侧绿色按钮<code class="highlighter-rouge">New SSH key</code></li>
+      <li>在 Title 的输入框给你的 SSH Key 起一个名字，任意内容都可。</li>
+      <li>在 Key 的输入框中粘贴刚刚复制的那段乱七八糟的文本。</li>
+      <li>单击<code class="highlighter-rouge">Add SSH Key</code>按钮</li>
+    </ul>
+  </li>
+  <li>验证
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div>    </div>
+    <p>　　可能会提示你不确定<code class="highlighter-rouge">github.com (192.30.253.113)</code>的 host 是否可靠，键入<code class="highlighter-rouge">yes</code>回车，然后 host 会被永久添加到你的电脑的白名单里面。出现<code class="highlighter-rouge">You've successfully authenticated, but GitHub does not provide shell access.</code>即成功，可以进行下一步了。</p>
+  </li>
+</ul>
+
+<h2 id="git-的使用">Git 的使用</h2>
+
+<ul>
+  <li>Clone（克隆）你的 Repository（仓库）到本地
+    <ul>
+      <li>单击<code class="highlighter-rouge">Clone or download</code>按钮</li>
+      <li>单击<code class="highlighter-rouge">Use SSH</code>蓝色文字</li>
+      <li>复制文本</li>
+      <li>在终端先<code class="highlighter-rouge">cd</code>到指定的目录，然后使用下面的命令克隆
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">:</span><span class="n">yourname</span><span class="o">/</span><span class="n">repositoryname</span><span class="p">.</span><span class="n">git</span> <span class="c1">// 这里就是刚刚复制的文本</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>其他命令（后面会用到）
+    <ul>
+      <li>先<code class="highlighter-rouge">cd</code>到你的克隆下来的仓库目录
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Add files to your repository</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">add</span> <span class="p">.</span> <span class="c1">// 表示提交所有文件（注意这里是有一个“.”的！）</span>
+<span class="c1">// Commit code to your repository</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">"Commit"</span>
+<span class="c1">// Push</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">push</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="ruby">Ruby</h2>
+
+<ul>
+  <li>Ruby 是什么
+    <ul>
+      <li>Ruby 环境支持</li>
+      <li>OS X 自带 Ruby</li>
+    </ul>
+  </li>
+  <li>检查 Ruby
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
+</code></pre></div>    </div>
+  </li>
+  <li>安装 Ruby
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">brew</span> <span class="n">install</span> <span class="n">ruby</span>
+<span class="c1">// 虽然 OS X 系统原本就有 Ruby，我还是建议安装一下，因为原本的 Ruby 可能版本太低。</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="rubygems">RubyGems</h2>
+<ul>
+  <li>RubyGems 是什么？
+RubyGems.org 是 Ruby 社区的 Gem 托管服务。
+让你能便捷、快速的发布、管理你的 Gem 以及安装它们。
+<a href="https://rubygems.org">RubyGems 官网</a> 提供 API 查阅可用 Gem 的详细资料。
+<a href="https://rubygems.org/pages/download">RubyGems 官网安装指导</a></li>
+  <li>检查 gem 版本
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">gem</span> <span class="o">-</span><span class="n">v</span>
+</code></pre></div>    </div>
+  </li>
+  <li>更新 gem
+    <ul>
+      <li>因为<code class="highlighter-rouge">https://rubygems.org/</code> 很可能出现404（你懂得），所以需要把地址换一下。</li>
+      <li><a href="https://ruby.taobao.org">RubyGems 镜像</a> 有详细的教程，但是因域名备案问题，<code class="highlighter-rouge">.org</code>域名无法继续提供 RubyGems 镜像服务，域名被<code class="highlighter-rouge">.com</code>代替。
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">--</span><span class="n">add</span> <span class="n">https</span><span class="o">:</span><span class="c1">//gems.ruby-china.com/</span>
+<span class="err">$</span> <span class="n">gem</span> <span class="n">sources</span> <span class="o">--</span><span class="n">remove</span> <span class="n">https</span><span class="o">:</span><span class="c1">//rubygems.org/</span>
+</code></pre></div>        </div>
+      </li>
+      <li>更新 gem
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">update</span> <span class="o">--</span><span class="n">system</span>
+</code></pre></div>        </div>
+      </li>
+      <li>最后显示<code class="highlighter-rouge">RubyGems system software updated</code>，更新完成。</li>
+    </ul>
+  </li>
+  <li>检查 gem
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">gem</span> <span class="n">list</span> <span class="o">--</span><span class="n">local</span> <span class="c1">// 显示的是我们自己安装的库</span>
+<span class="err">$</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">gem</span> <span class="n">list</span> <span class="o">--</span><span class="n">local</span> <span class="c1">// 显示出来的应该是 OS X 系统原本自带的库</span>
+<span class="c1">// 此处的2套库应该是互不影响的！</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="jekyll">Jekyll</h2>
+
+<ul>
+  <li>Jekyll 是个什么东西？
+    <ul>
+      <li>可以先到<a href="https://jekyllrb.com"> Jekyll 官网 </a>了解一下，官网还提供了详细的文档。</li>
+      <li>简单。这篇教程跟着我一步一步走下来应该不难吧……或许……</li>
+      <li>静态。刚好 GitHub Pages 也只能做静态的页面，我主要是为了使用 Markdown 异常方便。</li>
+    </ul>
+  </li>
+  <li>安装 Jekyll
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span>
+</code></pre></div>    </div>
+  </li>
+  <li>检查 Jekyll
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">jekyll</span> <span class="o">-</span><span class="n">v</span>
+</code></pre></div>    </div>
+  </li>
+  <li>现在终于可以借助 Jekyll 开始搭建你自己的博客了！你可以自己新建一个 Jekyll 博客，也可以使用别人制作好的 Jekyll 主题的博客。</li>
+  <li>
+    <p><a href="http://jekyllthemes.org">JekyllThemes </a>站点上展示了很多 Jekyll 主题的博客，如果初次接触可以从 GitHub 上下载。</p>
+  </li>
+  <li>如果是使用的主题，那么先<code class="highlighter-rouge">cd</code>到根目录，然后执行下面的命令。
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">bundle</span> <span class="n">exec</span> <span class="n">jekyll</span> <span class="n">serve</span>
+</code></pre></div>    </div>
+  </li>
+  <li>接下来就可以使用 <code class="highlighter-rouge">http://localhost:4000</code> 预览网页效果了！</li>
+</ul>
+
+<h2 id="hexo">Hexo</h2>
+
+<ul>
+  <li>Hexo 和 Jekyll 类似，有兴趣的可以去看一看。</li>
+</ul>
+
+<h2 id="结语">结语</h2>
+<p>　　谨以本文记录一下使用 GithubPages 配合 Jekyll 搭建博客的流程，如有后来者看到这篇文章并获得些许帮助，幸甚之至。</p>
+
+<p>　　苏轻 2018年8月20日 20:27:50</p>
+
+  <!-- 引入share模块 -->
+  
+  <div class="social-share-wrapper">
+    <div class="social-share"></div>
+  </div>
+
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'qzone'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>SuQing’s Blog ©
+  
+  
+  2018
+  <br>
+  Powered by <a href="https://www.jekyll.com.cn/">Jekyll</a> | <a href="https://github.com/">Github</a></span>
+</footer>
+
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
