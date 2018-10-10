@@ -1,28 +1,22 @@
 webtitle: 'SuQing’s Blog' # 首页标题
 
+title: 'SuQing’s Blog' # 页面 title 标签的显示内容
+description: '就是这里了，欢迎！' # 网站简介
+keywords: '苏轻, 个人博客, JavaScript， HTML' # 网站关键词
 
-
-# 页面 title 标签的显示内容
-title: 'SuQing’s Blog'
-# 网站简介
-description: '就是这里了，欢迎！'
-# 网站关键词
-keywords: '苏轻, 个人, 博客'
-# 网站域名
-url: 'suqing.fun'
+url: 'suqing.fun' # 网站域名
 
 
 # 是否开启博主信息卡片
 author: true
 name: 'SuQing'
 NickName: '阿轻'
-
 bio: 'QQ：874717373' # 个人简历
 
 # 是否开启博主关于信息
 about: true
 aboutyou: ''
-portraits: '/assets/suqing.jpg' # your portraits image file path
+portraits: '/assets/suqing.jpg'
 
 # 导航栏
 # nav 中文字符空格：&emsp;
@@ -108,10 +102,3 @@ google-ID: ''
 
 # 博客头信息备选颜色（该部分在站点中不充当站点变量，将其写在post的头信息中用来充当页面变量）
 color: rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)
-
-
-
-
-
-
-
