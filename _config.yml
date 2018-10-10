@@ -18,17 +18,60 @@ about: true
 aboutyou: ''
 portraits: '/assets/suqing.jpg'
 
-# 导航栏
-# nav 中文字符空格：&emsp;
-nav: # 最佳体验 六个标签 分别四字
+
+
+
+
+
+# - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
+nav: # 导航栏
   诗酒趁年华: '/'
   只道是寻常: '/timeline'
   何必曾相识: '/about'
   军书十二卷: '/tags'
   曲误周郎顾: '/link'
+# - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
+links: #链接
+  Github: 'https://github.com/'
+  V2EX: 'https://www.v2ex.com/'
+  
+  Google: 'https://google.com/'
+  Baidu: 'https://baidu.com/'
+  Bing: 'https://cn.bing.com/'
+
+  W3school: 'http://www.w3school.com.cn/'
+  sm.ms 免费图床: https://sm.ms/
+  Jekyll 官方中文文档: 'https://www.jekyll.com.cn/'
+  电影天堂: 'http://www.dytt8.net/'
+  美图秀秀在线工具: 'https://xiuxiu.web.meitu.com/'
+  
+  
+
+  Pro Git 简体中文版: 'http://iissnan.com/progit/'
+  NexT 使用文档: 'http://theme-next.iissnan.com/getting-started.html'
+# - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
+paginate: 5 # 分页
+paginatepath: ['page:num']
+footer: # 页脚
+  since: 2018
+# - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
+markdown: kramdown # Markdown
+kramdown:
+  input: GFM
+# - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
+highlighter: rouge # 代码高亮
+pygmentsTheme: 'default'
+# 代码高亮主题使用pygments主题，任选一个:
+# autumn\default\emacs\friendly\manni\murphy\pastie\perldoc\tango
+# - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 
 
-# SNS
+
+
+
+
+
+
 SNS: true
 SNS-icon: #['facebook', 'weibo', 'QQ', 'github', 'Dribbble', 'twitter', 'instagram', 'weixin']
   mail: 'mailto:874717373@qq.com'
@@ -47,25 +90,9 @@ SNS-icon: #['facebook', 'weibo', 'QQ', 'github', 'Dribbble', 'twitter', 'instagr
   #juejin: ''
   #twitch: ''
 
-# 分页
-paginate: 5
-paginatepath: ['page:num']
 
-# since
-footer:
-  since: 2018
 
-# Markdown
-markdown: kramdown
-kramdown:
-  input: GFM
 
-# 代码高亮使用 rouge
-highlighter: rouge
-# 代码高亮主题使用pygments主题:
-# autumn\default\emacs\friendly\manni\murphy\pastie\perldoc\tango
-# 任选一个你喜欢的主题名称填在下面的单引号中
-pygmentsTheme: 'default'
 
 
 

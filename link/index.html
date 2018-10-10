@@ -2,33 +2,24 @@
 layout: default
 title: 君将何处去
 page-title: 我也可以将你的链接！
-home-title: 添加在下面噢！
-description: 联系我吧——
+home-title: 添加在下面噢！联系我吧——
+description: 
 ---
 
 {% include header.html %}
 {% include boot.html %}
+
 <main>
     {% include title.html %}
     <ul class="ex-list">
         <li  class="fadeInUp animated">
 
-            <span class="tag-name" ><a href="https://github.com/">「&emsp;Github&emsp;」</a></span>
-
-            <span class="tag-name" ><a href="https://google.com">「&emsp;Google&emsp;」</a></span>
-
-            <span class="tag-name"><a href="https://baidu.com/">「&emsp;Baidu&emsp;」</a></span>
-
-            <span class="tag-name" ><a href="https://xiuxiu.web.meitu.com/">「&emsp;美图秀秀在线&emsp;」</a></span>
-
-            <span class="tag-name"><a href="https://sm.ms">「&emsp;图床 sm.ms&emsp;」</a></span>
-
-            <!-- <span class="tag-name"><a href="">「&emsp;&emsp;」</a></span> -->
-            
-
-
+            {% for link in site.links %}
+                <span class="tag-name"><a href="{{ link[1] }}">「&emsp;{{ link[0] }}&emsp;」</a></span>
+            {% endfor %}
 
         </li>
     </ul>
 </main>
+
 {% include footer.html %}
