@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-10T18:40:41+08:00</updated><id>http://localhost:4000/</id><title type="html">SuQing’s Blog</title><subtitle>就是这里了，欢迎！</subtitle><author><name>true</name></author><entry><title type="html">使用 Jekyll 搭建个人博客</title><link href="http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.html" rel="alternate" type="text/html" title="使用 Jekyll 搭建个人博客" /><published>2018-09-20T20:21:31+08:00</published><updated>2018-09-20T20:21:31+08:00</updated><id>http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87:%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-11T11:15:30+08:00</updated><id>http://localhost:4000/</id><title type="html">SuQing’s Blog</title><subtitle>就是这里了，欢迎！</subtitle><author><name>true</name></author><entry><title type="html">CSS 基础内容</title><link href="http://localhost:4000/2018/10/10/css%E5%9F%BA%E7%A1%80.html" rel="alternate" type="text/html" title="CSS 基础内容" /><published>2018-10-10T20:19:02+08:00</published><updated>2018-10-10T20:19:02+08:00</updated><id>http://localhost:4000/2018/10/10/css%E5%9F%BA%E7%A1%80</id><content type="html" xml:base="http://localhost:4000/2018/10/10/css%E5%9F%BA%E7%A1%80.html">&lt;h1 id=&quot;css-简介&quot;&gt;CSS 简介&lt;/h1&gt;
+
+&lt;p&gt;　　CSS 英文全称为 Cascading Style Sheets（层叠样式表）。样式通常存储在样式表中，用来定义如何显示 HTML 元素。样式使内容与表现分离，外部样式表通常存储在 CSS 文件中，极大提高了工作效率。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;多重样式将层叠为一个。层叠次序：当同一个 HTML 元素被不止一个样式定义时，会使用哪个样式？（优先级从高到低）
+    &lt;ul&gt;
+      &lt;li&gt;1、内联样式（在 HTML 元素内部）&lt;/li&gt;
+      &lt;li&gt;2、内部样式表（位于 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标签内部）&lt;/li&gt;
+      &lt;li&gt;3、外部样式表&lt;/li&gt;
+      &lt;li&gt;4、浏览器缺省设置&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CSS 与 CSS3 分别是什么？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　CSS 与 CSS3 相当于 CSS2.0 与 CSS3.0，是两个不同版本的 CSS。它们的语法相同，在 CSS 中常用的属性，在 CSS3 中也是常用到的。它们的目的也相同，都是为了让网页布局更加美观，效果更加丰富。CSS3 在 CSS 的基础上新增了一些 CSS 属性样式，目前主流浏览器均支持 CSS3 的新增属性样式。&lt;/p&gt;
+
+&lt;h1 id=&quot;css-基础语法&quot;&gt;CSS 基础语法&lt;/h1&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/* 下面代码的作用是将 h1 元素内的文字颜色定义为红色，字体大小设置为 14 像素。 */&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;/* 这里的 h1 称为选择器，下面大括号中的是 2 条声明。*/&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;/* 属性:值; */&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;14px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;/* color 和 font-size 是属性，red 和 14px 是值 */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;h6&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* 可以对选择器进行分组 */&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/* 根据 CSS，子元素从父元素继承属性。但是它并不总是按此方式工作，旧式浏览器无法理解继承的问题。 */&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Verdana&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CSS 对大小写不敏感，但是如果涉及到与 HTML 文档一起工作的话，class 和 id 名称对大小写是敏感的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;css-派生选择器&quot;&gt;CSS 派生选择器&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;派生选择器允许你根据文档的上下文关系来确定某个标签的样式。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;strong&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;italic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;参考资料：&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;https://www.thinkcss.com&quot;&gt;ThinkCSS - DIV CSS 布局制作教程与 CSS 资源网&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn/css/&quot;&gt;W3school - CSS 基础教程&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>true</name></author><category term="碍事的" /><summary type="html">CSS 简介</summary></entry><entry><title type="html">使用 Jekyll 搭建个人博客</title><link href="http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.html" rel="alternate" type="text/html" title="使用 Jekyll 搭建个人博客" /><published>2018-09-20T20:21:31+08:00</published><updated>2018-09-20T20:21:31+08:00</updated><id>http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87:%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.html">&lt;blockquote&gt;
   &lt;p&gt;前言&lt;/p&gt;
 
   &lt;p&gt;　　我的系统是 OS X，所以本篇文章主要是针对 Mac，Linux 稍有不同，而 Windows 则不推荐使用 Jekyll，请勿照搬。我的博客
