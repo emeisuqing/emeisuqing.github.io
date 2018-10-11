@@ -1,0 +1,18 @@
+body {
+	background-color: black; /* 背景颜色*/
+	color: white; /* 文本颜色 */
+	text-align: center; /* 文本对齐 */
+}
+
+table {
+	width: 80%;
+}
+
+
+td {
+	height: 36px;
+}
+
+
+
+
