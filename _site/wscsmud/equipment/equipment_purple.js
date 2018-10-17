@@ -7,10 +7,6 @@ function start() {
 
 // 分析数据 得到数组
 function analyseData(dataFile) {
-
-	
-
-
 	var data = new Array();
 
 	// 按照行分割数据
@@ -43,9 +39,9 @@ function creatTable(array) {
 				}
 			}
 
-			if (i%2==1 && i<12 && j!=0) {
-				td.style.color = "#FF00FF";
-			}
+			if (i%2==1 && i<12 && j!=0) td.style.color = "#A020F0"; // 紫色
+			if (i==0 || j==0) td.style.color = "#228B22"; // 绿色
+			
 			
 			td.appendChild(text);
 			tr.appendChild(td);

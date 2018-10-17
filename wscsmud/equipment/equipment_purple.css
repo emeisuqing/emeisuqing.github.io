@@ -5,7 +5,7 @@ body {
 }
 
 table {
-	width: 80%;
+	width: auto;
     background: black;
     margin: 10px auto; /* 与上边缘的距离 */
     border-collapse: collapse; /* 边框合并为一个单一的边框 */
@@ -14,7 +14,7 @@ table {
 th, td {
 	font-size: 10px;
 	font-family: sans-serif;
-	height: 25px; /* 行高 */
+	height: 36px; /* 行高 */
 	text-align: center; /* 文本居中 */
 	border:1px solid #ffffff; /* 边框实线 */
 }
