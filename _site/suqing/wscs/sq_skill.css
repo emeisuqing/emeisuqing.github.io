@@ -1,18 +1,24 @@
 body {
-	background-color: black; /* 背景颜色*/
+	/*background-color: black;*/ /* 背景颜色*/
 	color: white; /* 文本颜色 */
-	text-align: center; /* 文本对齐 */
+
+
+
 }
 
 table {
 	width: 80%;
+    background: black;
+    margin: 10px auto; /* 与上边缘的距离 */
+    border-collapse: collapse; /* 边框合并为一个单一的边框 */
 }
 
-
-td {
-	height: 36px;
+th, td {
+	font-size: 10px;
+	font-family: sans-serif;
+	height: 15px;
+	line-height: 25px;
+	text-align: center;
+	border:1px solid #ffffff; /* 边框实线 */
 }
-
-
-
 

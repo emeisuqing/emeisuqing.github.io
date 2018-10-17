@@ -2,8 +2,6 @@ body {
 	/*background-color: black;*/ /* 背景颜色*/
 	color: white; /* 文本颜色 */
 
-
-
 }
 
 table {
@@ -16,9 +14,7 @@ table {
 th, td {
 	font-size: 10px;
 	font-family: sans-serif;
-	height: 15px;
-	line-height: 25px;
-	text-align: center;
+	height: 25px; /* 行高 */
+	text-align: center; /* 文本居中 */
 	border:1px solid #ffffff; /* 边框实线 */
 }
-

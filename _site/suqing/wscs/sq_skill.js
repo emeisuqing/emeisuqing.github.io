@@ -34,22 +34,24 @@ function creatTable(array) {
 						tr.style.color = 'gray';
 						break;
 					case '5':
-						tr.style.color = 'green';
+						tr.style.color = '#3CB371'; //绿
 						break;
 					case '7.5':
-						tr.style.color = 'blue';
+						tr.style.color = '#00F5FF'; //蓝
 						break;
 					case '10':
-						tr.style.color = 'yellow';
+						tr.style.color = '#FFFF00'; //黄
 						break;
 					case '12.5':
-						tr.style.color = 'pulper';
+						tr.style.color = '#FF00FF'; //紫
 						break;
 					case '15':
-						tr.style.color = 'orange';
+						tr.style.color = '#EE7600'; //橙
 						break;
 				}
+				continue;
 			}
+			if (j==5) td.style.background = 'white';
 			td.appendChild(text);
 			tr.appendChild(td);
 		}

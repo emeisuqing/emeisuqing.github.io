@@ -1,12 +1,16 @@
 function start() {
 	$.ajax({
-		url: 'csv.csv',
+		url: 'equipment_purple',
 		dataType: 'text',
 	}).done(analyseData);
 }
 
 // 分析数据 得到数组
 function analyseData(dataFile) {
+
+	
+
+
 	var data = new Array();
 
 	// 按照行分割数据
@@ -23,35 +27,26 @@ function analyseData(dataFile) {
 // 创建表格 <table>
 function creatTable(array) {
 	var table = window.document.createElement("table");
+	var classText = ["武器", "衣服", "鞋子", "头饰", "护腕", "腰带"]; 
+
 	for (var i = 0; i < array.length; i++) {
 		var tr = document.createElement("tr"); // 行
 		for (var j = 0; j < array[i].length; j++) {
 			var td = document.createElement("td"); // 单元格
 			var text = document.createTextNode(array[i][j]); // 文本
-			if (j==1) {
-				switch (array[i][j]) {
-					case '0':
-						tr.style.color = 'gray';
-						break;
-					case '5':
-						tr.style.color = '#3CB371'; //绿
-						break;
-					case '7.5':
-						tr.style.color = '#00F5FF'; //蓝
-						break;
-					case '10':
-						tr.style.color = '#FFFF00'; //黄
-						break;
-					case '12.5':
-						tr.style.color = '#FF00FF'; //紫
-						break;
-					case '15':
-						tr.style.color = '#EE7600'; //橙
-						break;
+			if (array[i][j]=="") continue;
+
+			// 合并单元格
+			for (var t = 0; t < classText.length; t++) {
+				if (array[i][j]== classText[t]) {
+					td.setAttribute('rowspan', '2');
 				}
-				continue;
 			}
-			if (j==5) td.style.background = 'white';
+
+			if (i%2==1 && i<12 && j!=0) {
+				td.style.color = "#FF00FF";
+			}
+			
 			td.appendChild(text);
 			tr.appendChild(td);
 		}
