@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-17T13:58:43+08:00</updated><id>http://localhost:4000/</id><title type="html">SuQing’s Blog</title><subtitle>就是这里了，欢迎！</subtitle><author><name>true</name></author><entry><title type="html">CSS 基础内容</title><link href="http://localhost:4000/2018/10/10/css%E5%9F%BA%E7%A1%80.html" rel="alternate" type="text/html" title="CSS 基础内容" /><published>2018-10-10T20:19:02+08:00</published><updated>2018-10-10T20:19:02+08:00</updated><id>http://localhost:4000/2018/10/10/css%E5%9F%BA%E7%A1%80</id><content type="html" xml:base="http://localhost:4000/2018/10/10/css%E5%9F%BA%E7%A1%80.html">&lt;h1 id=&quot;css-简介&quot;&gt;CSS 简介&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-19T17:39:36+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SuQing’s Blog</title><subtitle>就是这里了，欢迎！</subtitle><author><name>true</name></author><entry><title type="html">CSS 基础内容</title><link href="http://localhost:4000/2018/10/10/css.html" rel="alternate" type="text/html" title="CSS 基础内容" /><published>2018-10-10T20:19:02+08:00</published><updated>2018-10-10T20:19:02+08:00</updated><id>http://localhost:4000/2018/10/10/css</id><content type="html" xml:base="http://localhost:4000/2018/10/10/css.html">&lt;h1 id=&quot;css-简介&quot;&gt;CSS 简介&lt;/h1&gt;
 
 &lt;p&gt;　　CSS 英文全称为 Cascading Style Sheets（层叠样式表）。样式通常存储在样式表中，用来定义如何显示 HTML 元素。样式使内容与表现分离，外部样式表通常存储在 CSS 文件中，极大提高了工作效率。&lt;/p&gt;
 
@@ -58,7 +58,7 @@
   &lt;p&gt;&lt;a href=&quot;https://www.thinkcss.com&quot;&gt;ThinkCSS - DIV CSS 布局制作教程与 CSS 资源网&lt;/a&gt;&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn/css/&quot;&gt;W3school - CSS 基础教程&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>true</name></author><category term="碍事的" /><summary type="html">CSS 简介</summary></entry><entry><title type="html">使用 Jekyll 搭建个人博客</title><link href="http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.html" rel="alternate" type="text/html" title="使用 Jekyll 搭建个人博客" /><published>2018-09-20T20:21:31+08:00</published><updated>2018-09-20T20:21:31+08:00</updated><id>http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87:%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/2018/09/20/%E7%AC%AC%E4%B8%80%E7%AF%87-%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B.html">&lt;blockquote&gt;
+&lt;/blockquote&gt;</content><author><name>true</name></author><summary type="html">CSS 简介</summary></entry><entry><title type="html">使用 Jekyll 搭建个人博客</title><link href="http://localhost:4000/2018/09/20/1.html" rel="alternate" type="text/html" title="使用 Jekyll 搭建个人博客" /><published>2018-09-20T20:21:31+08:00</published><updated>2018-09-20T20:21:31+08:00</updated><id>http://localhost:4000/2018/09/20/1</id><content type="html" xml:base="http://localhost:4000/2018/09/20/1.html">&lt;blockquote&gt;
   &lt;p&gt;前言&lt;/p&gt;
 
   &lt;p&gt;　　我的系统是 OS X，所以本篇文章主要是针对 Mac，Linux 稍有不同，而 Windows 则不推荐使用 Jekyll，请勿照搬。我的博客
@@ -77,8 +77,12 @@
 详细说明了 Homebrew 的用途以及如何安装使用。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;检查 Homebrew
+  &lt;li&gt;检查 Homebrew，若没有则需要安装
     &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;brew&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安装 Homebrew 提示&lt;code class=&quot;highlighter-rouge&quot;&gt;Permission denied&lt;/code&gt;的解决办法
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chown&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;whoami&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -92,7 +96,7 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;检查 git
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;安装 git
@@ -240,6 +244,9 @@ RubyGems.org 是 Ruby 社区的 Gem 托管服务。
   &lt;li&gt;安装 Jekyll
     &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;若提示&lt;code class=&quot;highlighter-rouge&quot;&gt;You don't have write permissions for the /usr/bin directory.&lt;/code&gt;，则使用下面这条命令&lt;/p&gt;
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;检查 Jekyll
     &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
@@ -265,7 +272,7 @@ RubyGems.org 是 Ruby 社区的 Gem 托管服务。
 &lt;h2 id=&quot;结语&quot;&gt;结语&lt;/h2&gt;
 &lt;p&gt;　　谨以本文记录一下使用 GithubPages 配合 Jekyll 搭建博客的流程，如有后来者看到这篇文章并获得些许帮助，幸甚之至。&lt;/p&gt;
 
-&lt;p&gt;　　苏轻 2018年8月20日 20:27:50&lt;/p&gt;</content><author><name>true</name></author><category term="jekyll" /><summary type="html">前言 　　我的系统是 OS X，所以本篇文章主要是针对 Mac，Linux 稍有不同，而 Windows 则不推荐使用 Jekyll，请勿照搬。我的博客 suqing.fun 已经搭建好了，欢迎观光。</summary></entry><entry><title type="html">Welcome to SuQing’s Blog!</title><link href="http://localhost:4000/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF.html" rel="alternate" type="text/html" title="Welcome to SuQing's Blog!" /><published>2018-09-19T19:01:39+08:00</published><updated>2018-09-19T19:01:39+08:00</updated><id>http://localhost:4000/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF</id><content type="html" xml:base="http://localhost:4000/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF.html">&lt;p&gt;　　GitHob 真香！！！！！&lt;/p&gt;
+&lt;p&gt;　　苏轻 2018年8月20日 20:27:50&lt;/p&gt;</content><author><name>true</name></author><category term="jekyll" /><summary type="html">前言 　　我的系统是 OS X，所以本篇文章主要是针对 Mac，Linux 稍有不同，而 Windows 则不推荐使用 Jekyll，请勿照搬。我的博客 suqing.fun 已经搭建好了，欢迎观光。</summary></entry><entry><title type="html">Welcome to SuQing’s Blog!</title><link href="http://localhost:4000/2018/09/19/0.html" rel="alternate" type="text/html" title="Welcome to SuQing's Blog!" /><published>2018-09-19T19:01:39+08:00</published><updated>2018-09-19T19:01:39+08:00</updated><id>http://localhost:4000/2018/09/19/0</id><content type="html" xml:base="http://localhost:4000/2018/09/19/0.html">&lt;p&gt;　　GitHob 真香！！！！！&lt;/p&gt;
 
 &lt;p&gt;　　装个Jekyll装累死了，今天不玩了！&lt;/p&gt;
 

@@ -112,7 +112,7 @@
   <!-- 页面宽度大于800px -->
   <div class="left-area">
     
-      <a href="/2018/10/10/css%E5%9F%BA%E7%A1%80.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#00CCFF';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <a href="/2018/10/10/css.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#00CCFF';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
       <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#00CCFF;"><sapn class="main">CSS 基础内容</sapn></span></div>
     
   </div>
@@ -124,7 +124,7 @@
   </div>
   <div class="right-area">
     
-      <a href="/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#00CCFF';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <a href="/2018/09/19/0.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#00CCFF';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
       <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#00CCFF;"><sapn class="main">Welcome to SuQing's Blog!</sapn></span></div>
     
   </div>
@@ -132,10 +132,10 @@
   <!-- 页面宽度小于800px -->
   <div class="post-changearea">
     
-      <a href="/2018/10/10/css%E5%9F%BA%E7%A1%80.html" class="leftchange" style="border-right: 1px solid #00CCFF;border-bottom: 2px solid #00CCFF;"><span>上一篇<br><br>CSS 基础内容</span></a>
+      <a href="/2018/10/10/css.html" class="leftchange" style="border-right: 1px solid #00CCFF;border-bottom: 2px solid #00CCFF;"><span>上一篇<br><br>CSS 基础内容</span></a>
     
     
-      <a href="/2018/09/19/%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF.html" class="rightchange" style="border-left: 1px solid #00CCFF;border-bottom: 2px solid #00CCFF;"><span>下一篇<br><br>Welcome to SuQing's Blog!</span></a>
+      <a href="/2018/09/19/0.html" class="rightchange" style="border-left: 1px solid #00CCFF;border-bottom: 2px solid #00CCFF;"><span>下一篇<br><br>Welcome to SuQing's Blog!</span></a>
     
   </div>
 </div>
@@ -165,8 +165,12 @@
 详细说明了 Homebrew 的用途以及如何安装使用。</p>
 
 <ul>
-  <li>检查 Homebrew
+  <li>检查 Homebrew，若没有则需要安装
     <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">brew</span> <span class="o">-</span><span class="n">v</span>
+</code></pre></div>    </div>
+  </li>
+  <li>安装 Homebrew 提示<code class="highlighter-rouge">Permission denied</code>的解决办法
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">sudo</span> <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="err">$</span><span class="p">(</span><span class="n">whoami</span><span class="p">)</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -180,7 +184,7 @@
     </ul>
   </li>
   <li>检查 git
-    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">git</span> <span class="o">-</span><span class="n">v</span>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">git</span> <span class="o">--</span><span class="n">version</span>
 </code></pre></div>    </div>
   </li>
   <li>安装 git
@@ -327,6 +331,9 @@ RubyGems.org 是 Ruby 社区的 Gem 托管服务。
   </li>
   <li>安装 Jekyll
     <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span>
+</code></pre></div>    </div>
+    <p>若提示<code class="highlighter-rouge">You don't have write permissions for the /usr/bin directory.</code>，则使用下面这条命令</p>
+    <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">sudo</span> <span class="n">gem</span> <span class="n">install</span> <span class="o">-</span><span class="n">n</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span> <span class="n">jekyll</span>
 </code></pre></div>    </div>
   </li>
   <li>检查 Jekyll
