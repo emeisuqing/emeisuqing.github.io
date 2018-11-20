@@ -1,12 +1,16 @@
 <footer id="bottom">
   <br>
-  <span>{{ site.title }} ©
-  {% assign current = "now" | date: "%Y" | plus: 0%}
-  {% unless site.footer.since and site.footer.since == current %}
-    {{ site.footer.since }}
-    -
-  {% endunless %}
-  {{ current }}
-  <br>
-  Powered by <a href="https://www.jekyll.com.cn/">Jekyll</a> | <a href="https://github.com/">Github</a></span>
+  <span>
+    {{ site.title }} Copyright ©
+    {% assign current = "now" | date: "%Y" | plus: 0%}
+
+    {% unless site.footer.since and site.footer.since == current %}
+        {{ site.footer.since }}
+        -
+    {% endunless %}
+
+    {{ current }}
+    
+      <br>Powered by Jekyll | Github
+  </span>
 </footer>

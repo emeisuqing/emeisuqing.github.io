@@ -2,7 +2,7 @@ webtitle: 'SuQing’s Blog' # 首页标题
 
 title: 'SuQing’s Blog' # 页面 title 标签的显示内容
 description: '就是这里了，欢迎！' # 网站简介
-keywords: '苏轻, 个人博客, JavaScript， HTML' # 网站关键词
+keywords: '苏轻, 个人博客, Java, JavaScript, HTML' # 网站关键词
 
 url: 'suqing.fun' # 网站域名
 
@@ -18,42 +18,21 @@ about: true
 aboutyou: ''
 portraits: '/assets/suqing.jpg'
 
-
-
-
-
-
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 nav: # 导航栏
   诗酒趁年华: '/'
   只道是寻常: '/timeline'
   何必曾相识: '/about'
   军书十二卷: '/tags'
-  曲误周郎顾: '/link'
+  SQ: '/link'
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 links: #链接
-  Github: 'https://github.com/'
-  V2EX: 'https://www.v2ex.com/'
-  
-  Google: 'https://google.com/'
-  Baidu: 'https://baidu.com/'
-  Bing: 'https://cn.bing.com/'
-
-  W3school: 'http://www.w3school.com.cn/'
-  sm.ms 免费图床: https://sm.ms/
-  Jekyll 官方中文文档: 'https://www.jekyll.com.cn/'
-  电影天堂: 'http://www.dytt8.net/'
-  美图秀秀在线工具: 'https://xiuxiu.web.meitu.com/'
-  
-  
-
-  Pro Git 简体中文版: 'http://iissnan.com/progit/'
-  NexT 使用文档: 'http://theme-next.iissnan.com/getting-started.html'
+  Test: '/suqing'
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 paginate: 5 # 分页
 paginatepath: ['page:num']
 footer: # 页脚
-  since: 2018
+  since: 2017
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 markdown: kramdown # Markdown
 kramdown:
