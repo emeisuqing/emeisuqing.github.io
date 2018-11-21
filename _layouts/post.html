@@ -29,13 +29,15 @@
       </div>
     {% endif %}
   {% endif %}
-
+  <!-- 苏轻自己加的文章署名 -->
+  <div align="right" style="color: gray;">
+    <small>{{ page.suqing }}</small>
+  </div>
   <!-- 文章内容 -->
   {{ page.content }}
   <!-- 引入share模块 -->
   {% include share.html %}
 </div>
-
 <!-- 底部锚点 -->
 <a id="htmldown" name="htmldown"></a>
 <!-- 引入评论模块 -->
