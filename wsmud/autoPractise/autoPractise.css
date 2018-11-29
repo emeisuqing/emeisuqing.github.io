@@ -1,0 +1,52 @@
+body {
+	color: white;
+	background-color: black;
+}
+
+.button {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    background: black;
+    color: gray;
+    text-align: center;
+    font-size: 14px;
+}
+
+#list {
+	margin: 10px auto;
+	text-align: center;
+}
+
+table {
+    width: 90%;
+    background: black;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+	height: 25px;
+	width: auto;
+	line-height: 25px;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+
+pre {
+	width: 90%;
+	margin: 10px auto;
+	border: 1px solid green;
+	word-wrap: break-word;
+}
+
+header {
+	text-align: center;
+}
+
+footer {
+	text-align: right;
+}
+
+small {
+	color: orange;
+}
