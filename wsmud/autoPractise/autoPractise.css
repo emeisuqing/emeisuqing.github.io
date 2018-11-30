@@ -52,3 +52,11 @@ footer {
 small {
 	color: orange;
 }
+
+#log {
+	color: cadetblue;
+	font-size: 10px;
+}
+.biglog {
+	color: skyblue;
+}

@@ -165,11 +165,9 @@ function clickLastButton() {
 		qianneng = qianneng + parseInt(tr.children[4].innerHTML);
 	}
 	codeString = codeString + "wakuang";
-	var pre = document.getElementById("code");
-	pre.innerHTML = codeString;
+	var div = document.getElementById("code");
+	div.innerHTML = codeString;
 	var ps = document.getElementById("ps");
 	ps.innerHTML = "感谢测试！将以上代码复制粘贴到游戏设置框内即可！<br>" + 
 	  "请确保你有 " + qianneng + " 的潜能！以防挂机。";
 }
-
-
