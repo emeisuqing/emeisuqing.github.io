@@ -32,11 +32,13 @@ th, td {
 	border: 1px solid #ccc;
 }
 
-pre {
+#code {
 	width: 90%;
 	margin: 10px auto;
-	border: 1px solid green;
-	word-wrap: break-word;
+	border: 1px solid white;
+	/*word-wrap: break-word;*/
+	line-height: 25px;
+	padding: 10px 10px 10px 10px;
 }
 
 header {
