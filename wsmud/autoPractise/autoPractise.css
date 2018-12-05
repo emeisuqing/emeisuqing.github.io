@@ -53,6 +53,10 @@ small {
 	color: orange;
 }
 
+#notice {
+	color: #f25355;
+}
+
 #log {
 	color: cadetblue;
 	font-size: 10px;

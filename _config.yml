@@ -1,33 +1,31 @@
-webtitle: 'SuQing’s Blog' # 首页标题
+webtitle: 'SuQing’s Page' # 首页标题
 
-title: 'SuQing’s Blog' # 页面 title 标签的显示内容
-description: '就是这里了，欢迎！' # 网站简介
-keywords: '苏轻, 个人博客, Java, JavaScript, HTML' # 网站关键词
-
+title: 'SuQing’s Page' # 页面 title 标签的显示内容
+description: '欢迎来到苏轻的个人领域！' # 网站简介
+keywords: '苏轻, 个人, 博客, 空间, Java, JavaScript, HTML' # 网站关键词
 url: 'suqing.fun' # 网站域名
 
 
+# 是否开启博主关于信息
+about: true
+aboutyou: ''
+portraits: '/assets/suqing.jpg' # 头像
 # 是否开启博主信息卡片
 author: true
 name: 'SuQing'
 NickName: '阿轻'
 bio: 'QQ：874717373' # 个人简历
 
-# 是否开启博主关于信息
-about: true
-aboutyou: ''
-portraits: '/assets/suqing.jpg'
-
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 nav: # 导航栏
   诗酒趁年华: '/'
-  只道是寻常: '/timeline'
-  何必曾相识: '/about'
-  军书十二卷: '/tags'
-  SQ: '/link'
+  时间线: '/timeline'
+  认识我: '/about'
+  标签页: '/tags'
+  友情链: '/link'
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
-links: #链接
-  Test: '/suqing'
+links: #友情链接
+  武神传说: '/wsmud'
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 paginate: 5 # 分页
 paginatepath: ['page:num']
@@ -39,19 +37,21 @@ kramdown:
   input: GFM
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 highlighter: rouge # 代码高亮
-pygmentsTheme: 'default'
-# 代码高亮主题使用pygments主题，任选一个:
+pygmentsTheme: 'perldoc'
+# 代码高亮主题使用pygments主题，以下任选一个:
 # autumn\default\emacs\friendly\manni\murphy\pastie\perldoc\tango
 # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - # - #
 
+# 头信息备选颜色
+color: rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)
+# 该部分在站点中不充当站点变量，将其写在post的头信息中用来充当页面变量
 
 
 
 
 
 
-
-SNS: true
+SNS: false
 SNS-icon: #['facebook', 'weibo', 'QQ', 'github', 'Dribbble', 'twitter', 'instagram', 'weixin']
   mail: 'mailto:874717373@qq.com'
   # 你的微信图片文件的地址
@@ -69,15 +69,7 @@ SNS-icon: #['facebook', 'weibo', 'QQ', 'github', 'Dribbble', 'twitter', 'instagr
   #juejin: ''
   #twitch: ''
 
-
-
-
-
-
-
 # 评论系统
-# 最佳体验 disqus livere Gitment 之间三选一
-
 # disqus 评论
 disqus: false
 disqus_url: '' # https://abc.disqus.com/embed.js
@@ -92,19 +84,5 @@ client_id: ''  # 注册 OAuth Application 后获得的 client_id
 client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
 
 # Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
-social-share: true
+social-share: false
 social-share-items: ['qq', 'qzone', 'wechat', 'weibo', 'facebook']
-
-
-
-
-# 网站流量追踪
-# 百度统计 在baidu-url里填写自己相关的url代码
-baidu: false
-baidu-url: ''
-# 谷歌分析 在google-ID里填写自己在谷歌分析获得的追踪ID
-google: true
-google-ID: 'UA-127351799-1'
-
-# 博客头信息备选颜色（该部分在站点中不充当站点变量，将其写在post的头信息中用来充当页面变量）
-color: rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)
