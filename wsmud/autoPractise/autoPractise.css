@@ -1,13 +1,20 @@
-body {
-	color: white;
-	background-color: black;
-}
+body { color: white; background-color: black; }
 
-.button {
+#title { text-align: center; }
+
+.skillButton {
     border: 1px solid gray;
     border-collapse: collapse;
     background: black;
     color: gray;
+    text-align: center;
+    font-size: 14px;
+}
+.skillButtonClicked {
+    border: 1px solid white;
+    border-collapse: collapse;
+    background: black;
+    color: white;
     text-align: center;
     font-size: 14px;
 }
@@ -32,35 +39,30 @@ th, td {
 	border: 1px solid #ccc;
 }
 
+.tr1 { color:white; }  /*白色*/
+.tr2 { color:#33CC33; }  /*绿色*/
+.tr3 { color:aqua; }  /*蓝色*/
+.tr4 { color:yellow; }  /*黄色*/
+.tr5 { color:#CC00FF; }  /*紫色*/
+.tr6 { color:orange; }  /*橙色*/
+
+
+
+
 #code {
 	width: 90%;
 	margin: 10px auto;
 	border: 1px solid white;
-	/*word-wrap: break-word;*/
 	line-height: 25px;
 	padding: 10px 10px 10px 10px;
 }
 
-header {
-	text-align: center;
-}
 
-footer {
-	text-align: right;
-}
 
-small {
-	color: orange;
-}
+#helpme { color: orange; }
 
-#notice {
-	color: #f25355;
-}
+#notice { color: #f25355; }
 
-#log {
-	color: cadetblue;
-	font-size: 10px;
-}
-.biglog {
-	color: skyblue;
-}
+#log { color: cadetblue; font-size: 10px; }
+
+.helperName { color: lightblue; }
