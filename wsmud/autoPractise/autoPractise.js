@@ -1,14 +1,28 @@
-var array_url = ["基础技能", "峨眉派技能", "逍遥派技能", "其他"];
+// 文件名称
+var array_url = ["基础技能",
+				 "华山派技能",
+				 "峨眉派技能",
+				 "逍遥派技能",
+				 "其他技能"];
 
+// 入口
 function start() {
 	for (var i = 0; i < array_url.length; i++) {
+		var skills = document.getElementById("skills");
+		var div = document.createElement("div");
+		var p = document.createElement("p");
+ 		div.appendChild(p);
+		skills.appendChild(div);
+
+		p.innerHTML = array_url[i];
+		div.id = array_url[i];
 		getDataFromURL(array_url[i]);
 	}
 	createPractiseCodeButton();
 	creatBackToVillaCodeButton();
 }
 
-
+// 处理读取到的文本 转化为 技能数据
 function getDataFromURL(data_url) {
 	$.ajax({
  		url: data_url,
@@ -25,25 +39,20 @@ function getDataFromURL(data_url) {
  	});
 }
 
+// 技能数据 生成可以点击的按钮
 function createSkillButton(dataArray, ID) {
-	var skills = document.getElementById("skills");
-	var div = document.createElement("div");
-	div.id = ID;
- 	var p = document.createElement("p");
- 	p.innerHTML = ID;
- 	div.appendChild(p);
- 	skills.appendChild(div);
+	var div = document.getElementById(ID);
 	for (var i = 0; i < dataArray.length; i++) {
 		var button = document.createElement("button");
 		button.type = "button";
 		button.innerHTML = dataArray[i][0]; // 技能名称
 		button.value = dataArray[i][1]; // 技能系数
 		button.id = dataArray[i][2]; // 技能代码
-		// 如果没有技能代码的话
+		// 如果没有技能代码的话 不可以点击
 		if (!dataArray[i][2]) {
-			button.className = "skillButtonClicked";
+			button.className = "skillButtonClicked"; // CSS
 			button.onclick = null;
-		} else {
+		} else { // 正常情况 可以点击
 			button.className = "skillButton"; // 配置CSS
 			button.onclick = clickSkillButton;
 		}
@@ -51,12 +60,14 @@ function createSkillButton(dataArray, ID) {
 		div.appendChild(button);
 	}
 }
-function clickSkillButton() {
+function clickSkillButton() { // 点击之后 转为 不可以点击
 	addPractiseSkill(this.innerHTML, this.value, this.id);
 	this.onclick = null;
 	this.className = "skillButtonClicked"; // 配置CSS 被点击后
 };
+// END
 
+// 表格的配置
 function addPractiseSkill(skillName, skillValue, skillCode) {
 	var table = document.getElementById("table"); // 表格
 	var tr = document.createElement("tr"); // 行
@@ -64,7 +75,7 @@ function addPractiseSkill(skillName, skillValue, skillCode) {
 	tr.id = skillCode + "tr";
 	for (var i = 0; i < 6; i++) tr.appendChild(set_TD(i, skillName, skillValue, skillCode));
 }
-
+// 单元格的配置
 function set_TD(index, skillName, skillValue, skillCode) {
 	var td = document.createElement("td");
 	td.id = skillCode + index;
@@ -85,7 +96,7 @@ function set_TD(index, skillName, skillValue, skillCode) {
 			var tr = document.getElementById(skillCode + "tr");
 			tr.className = "tr" + skillValue;
 			tr.value = skillValue;
-			updateData(skillCode);
+			updateData(skillCode); // 改变颜色
 		};
 		selectColor.selectedIndex = skillValue - 1;
 		tr.className = "tr" + skillValue;
@@ -98,7 +109,7 @@ function set_TD(index, skillName, skillValue, skillCode) {
 		td.innerHTML = 0;
 		td.contentEditable = "true";
 		td.style.background = "#333333";
-		td.oninput = function() {
+		td.oninput = function() { // 改变等级数据
 			updateData(this.id.substring(0, this.id.length - 6));
 		};
 	}
@@ -131,7 +142,6 @@ function updateData(skillCode) {
 	document.getElementById(skillCode + "4").innerHTML = result;
 }
 
-
 function createPractiseCodeButton() {
 	var button = document.createElement("button");
 	button.type = "button";
@@ -142,6 +152,7 @@ function createPractiseCodeButton() {
 	p.appendChild(button);
 }
 
+// 点击 生成练习代码
 function clickCreatePractiseCodeButton() {
 	var trArray = document.getElementById("table").children;
 	var codeString = "";
