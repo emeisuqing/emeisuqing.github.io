@@ -1,0 +1,38 @@
+table {
+	width: 80%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+	height: 25px;
+	width: auto;
+	line-height: 25px;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+/*
+.tr1{
+	color: green;
+}
+.tr2{
+	color: blue;
+}
+.tr3{
+	color: yellow;
+}
+.tr4{
+	color: purple;
+}
+.tr5{
+	color: orange;
+}
+
+.edit {
+	background: #cac9cd;
+	color: black;
+}
+
+#message1, #wudao2 {
+	color: red;
+}*/

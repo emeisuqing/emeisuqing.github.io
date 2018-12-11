@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>武道模拟器</title>
+	<script src="simulator.js"></script>
+	<style type="text/css">
+		table {
+			width: 80%;
+			margin: 10px auto;
+			border-collapse: collapse;
+		}
+		th, td {
+			height: 25px;
+			width: auto;
+			line-height: 25px;
+			text-align: center;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+
+<body style="background: black; color: white;">
+
+<p style="text-align: center;">武道模拟器</p>
+<table>
+	<tr><td>技能名称</td><td id="skillName">skillName</td></tr>
+	<tr><td>技能等级</td>
+		<td><select id="skillColorSelect"></select></td></tr>
+	<tr><td>技能类别</td>
+		<td><select id="classSelectOne"></select>
+			<select id="classSelectTwo"></select></td></tr>
+	<tr><td colspan="2">
+		<button id="addSkillButton">确认并添加技能</button></td></tr>
+	<tr><td colspan="2">
+		<div id="message1">Message</div></td></tr>
+</table>
+
+<table>
+	<tr><td><button>内功</button></td>
+		<td><button>轻功</button></td>
+		<td><button>拳法</button></td>
+		<td><button>招架</button></td>
+		<td><button>武器</button></td></tr>
+	<tr><td colspan="5">
+		<button>AdvanceOne</button>
+		<button>AdvanceTwo</button>
+		<button>AdvanceThree</button></td></tr>
+</table>
+
+
+
+
+
+
+<script>start()</script>
+</body>
+</html>
