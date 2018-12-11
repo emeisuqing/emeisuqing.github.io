@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>武道模拟器</title>
+	<meta name="viewport" content="widtd=device-widtd, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<script src="/source.js/jquery.js"></script>
+	<script src="advanceData.js"></script>
+	<script src="simulator.js"></script>
+	<link rel="stylesheet" type="text/css" href="simulator.css">
+
+</head>
+
+<body>
+
+<table>
+	<tr><td>技能名称</td><td id="skillname" class="edit" contentEditable="true"></td></tr>
+	<tr><td>技能颜色</td><td><select id="skillcolor"></select></td></tr>
+	<tr><td>技能分类（一）</td><td><select id="skillclass1"></select></td></tr>
+	<tr><td>技能分类（二）</td><td><select id="skillclass2"></select></td></tr>
+	<tr><td>添加技能</td><td><button id="addnewskill">确认并添加技能</button></td></tr>
+	<tr><td id="message1" colspan="2">欢迎使用</td></tr>
+</table>
+
+<table id="table">
+	<tr><td>技能名称</td><td>当前等级</td><td>技能类别</td><td>删</td></tr>
+</table>
+
+<table>
+	<tr id="wudao1"></tr>
+	<tr><td id="wudao2">武道进阶模拟器</td></tr>
+</table>
+
+<table id="message">
+</table>
+
+
+
+<script>start()</script>
+
+
+
+</body>
+</html>

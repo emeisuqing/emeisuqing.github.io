@@ -10,6 +10,24 @@ body { color: white; background-color: black; }
     text-align: center;
     font-size: 14px;
 }
+
+
+{
+    display: inline-block;
+    border: solid 1px gray;
+    color: gray;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25em;
+    min-width: 2.5em;
+    margin-right: 0.4em;
+    margin-left: 0.4em;
+    position: relative;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+
 .skillButtonClicked {
     border: 1px solid white;
     border-collapse: collapse;
