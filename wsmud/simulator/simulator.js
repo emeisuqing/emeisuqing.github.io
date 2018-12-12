@@ -62,10 +62,6 @@ const SKILLS = [new Skill("五虎断门刀", 1, 1000, [5, 0]), new Skill("秋风
 /* END */
 
 
-
-
-
-
 // 全局变量
 var simulator = new Simulator();
 var KEY = "none";
