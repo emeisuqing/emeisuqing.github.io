@@ -232,7 +232,11 @@ function updateSkillTable() {
 		var costBook = 0;
 		for (var k = 0; k < cost.length; k++) {
 			for (var j = 0; j < cost[k]; j++) {
-				costBook = costBook + j + 1;
+				if (j+1 > 10) {
+					costBook = costBook + 10;
+				} else {
+					costBook = costBook + j + 1;
+				}
 			}
 		}
 		document.getElementById("costBook").innerHTML = costBook;
@@ -240,7 +244,11 @@ function updateSkillTable() {
 		var costQianNeng = 0;
 		var sum = cost[0]+cost[1]+cost[2]+cost[3]+cost[4];
 		for (var j = 0; j < sum; j++) {
-			costQianNeng = costQianNeng + 1000000*(2*j+1);
+			if ((2*j+1) > 20) {
+				costQianNeng = costQianNeng + 20000000;
+			} else {
+				costQianNeng = costQianNeng + 1000000*(2*j+1);
+			}
 		}
 		document.getElementById("costQianNeng").innerHTML = costQianNeng;
 	}
