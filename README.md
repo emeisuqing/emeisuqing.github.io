@@ -2,4 +2,4 @@
 
 https://suqing.fun/
 
-个人网站。
+由 GithubPages 以及 Jekyll 作为支撑的免费个人站点。
