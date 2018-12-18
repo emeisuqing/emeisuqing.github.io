@@ -1,0 +1,62 @@
+body {
+	font-size: 62.5%;
+}
+
+
+	button {
+		font-size: 2em;
+		position: relative;
+		margin: 1em 1em 0 0;
+	}
+
+
+	.big_box {
+		width: 40em;
+		height: 60em;
+		position: relative;
+		line-height: 60em;
+		float: left;
+		margin: 1em 1em 0 0;
+		overflow:hidden;
+	}
+	.small_box {
+		width: 10em;
+		height: 15em;
+		position: relative;
+		line-height: 15em;
+		float: left;
+		margin: 1em 1em 0 0;
+		overflow:hidden;
+	}
+	iframe {
+		width: 99%;
+		height: 99%;
+		position: absolute;
+	}
+	.cover {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		text-align: center;
+		font-size: 10em;
+		background: black;
+		color: white;
+	}
+	.disable {
+		display: none;
+	}
+
+.float {
+	background: black;
+	color: #ffffff;
+	width: 7em;
+	height: 2em;
+	line-height: 2em;
+	margin: 0 0 auto;
+}
+
+
+
+
+
+
