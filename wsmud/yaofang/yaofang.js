@@ -152,7 +152,7 @@ var 突破丹 = new Yao();
 归元散.黄 = ['归元散', '20%忙乱',沉香,沉香,冬虫夏草,茯苓,冬虫夏草,茯苓,熟地黄];
 风行丹.黄 = ['风行丹', '20%忽视忙乱',茯苓,络石藤,熟地黄,熟地黄,熟地黄,冬虫夏草,九香虫];
 造化丹.黄 = ['造化丹', '20%负面效果抵抗',络石藤,沉香,熟地黄,茯苓,黄颡鱼,九香虫,太湖银鱼];
-无常丹.黄 = ['无常丹', '20%内力',沉香,沉香,络石藤,九香虫,茯苓,沉香,茯苓];
+无常丹.黄 = ['无常丹', '20%内力',沉香,沉香,络石藤,冬虫夏草,茯苓,沉香,茯苓];
 清心丹.黄 = ['清心丹', '30%学习',茯苓,熟地黄,九香虫,冬虫夏草,沉香,络石藤,沉香];
 冰心丹.黄 = ['冰心丹', '30%练习',熟地黄,沉香,冬虫夏草,沉香,九香虫,络石藤,茯苓];
 蕴象丹.黄 = ['蕴象丹', '30%打坐',沉香,冬虫夏草,冬虫夏草,沉香,熟地黄,九香虫,茯苓];
@@ -237,7 +237,7 @@ function 点击查看药方() {
 				case 0:
 					td.innerHTML = LIST[i][this.value][j];
 					td.className = this.value;
-					td.style.width = "3em";
+					td.style.width = "4em";
 					break;
 				case 1:
 					if (LIST[i][this.value][j]) {
@@ -247,7 +247,11 @@ function 点击查看药方() {
 					break;
 				case 2:
 					for (var index = 2; index < LIST[i][this.value].length; index++) {
-						td.innerHTML = td.innerHTML+'→'+LIST[i][this.value][index].output();
+						if (index == 2) {
+							td.innerHTML = LIST[i][this.value][index].output();
+						} else {
+							td.innerHTML = td.innerHTML+','+LIST[i][this.value][index].output();
+						}
 					}
 					break;
 
