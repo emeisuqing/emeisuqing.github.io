@@ -1,21 +1,17 @@
 // 文件名称
-var array_url = ["基础技能",
-				 "华山派技能",
-				 "少林派技能",
-				 "峨眉派技能",
-				 "逍遥派技能",
-				 "其他技能"];
+var array_url = ["内功","轻功","拳脚","招架","刀法","剑法","棍法","杖法","鞭法","暗器",
+				"武当","少林","华山","峨眉","逍遥","丐帮"];
 
 // 入口
 function start() {
 	for (var i = 0; i < array_url.length; i++) {
 		var skills = document.getElementById("skills");
 		var div = document.createElement("div");
-		var p = document.createElement("p");
- 		div.appendChild(p);
+		var span = document.createElement("span");
+ 		div.appendChild(span);
 		skills.appendChild(div);
 
-		p.innerHTML = array_url[i];
+		span.innerHTML = "「" + array_url[i] + "」";
 		div.id = array_url[i];
 		getDataFromURL(array_url[i]);
 	}

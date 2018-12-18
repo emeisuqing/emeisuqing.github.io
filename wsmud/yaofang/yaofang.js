@@ -9,26 +9,24 @@ CaiLiao.prototype.output = function() {
 };
 
 
-
-var 山楂叶 = new CaiLiao('白', '山楂叶');
 var 当归 = new CaiLiao('白', '当归');
 var 芦荟 = new CaiLiao('白', '芦荟');
-var 金银花 = new CaiLiao('绿', '金银花');
-var 石楠叶 = new CaiLiao('绿', '石楠叶');
 var 柴胡 = new CaiLiao('绿', '柴胡');
-var 熟地黄 = new CaiLiao('蓝', '熟地黄');
 var 沉香 = new CaiLiao('蓝', '沉香');
 var 茯苓 = new CaiLiao('蓝', '茯苓');
+var 人参 = new CaiLiao('紫', '人参');
+var 灵芝 = new CaiLiao('橙', '灵芝');
+var 山楂叶 = new CaiLiao('白', '山楂叶');
+var 金银花 = new CaiLiao('绿', '金银花');
+var 石楠叶 = new CaiLiao('绿', '石楠叶');
+var 熟地黄 = new CaiLiao('蓝', '熟地黄');
 var 九香虫 = new CaiLiao('黄', '九香虫');
 var 络石藤 = new CaiLiao('黄', '络石藤');
-var 冬虫夏草 = new CaiLiao('黄', '冬虫夏草');
 var 凌霄花 = new CaiLiao('紫', '凌霄花');
 var 何首乌 = new CaiLiao('紫', '何首乌');
-var 人参 = new CaiLiao('紫', '人参');
-
 var 盘龙参 = new CaiLiao('橙', '盘龙参');
-var 灵芝 = new CaiLiao('橙', '灵芝');
-// var 不知道 = new CaiLiao('橙色', '不知道');
+var 冬虫夏草 = new CaiLiao('黄', '冬虫夏草');
+//var 橙色药材 = new CaiLiao('橙色', '');
 
 var 草鱼 = new CaiLiao('白', '草鱼');
 var 鲤鱼 = new CaiLiao('白', '鲤鱼');
@@ -36,23 +34,18 @@ var 鲢鱼 = new CaiLiao('白', '鲢鱼');
 var 鲮鱼 = new CaiLiao('绿', '鲮鱼');
 var 鳊鱼 = new CaiLiao('绿', '鳊鱼');
 var 鲂鱼 = new CaiLiao('绿', '鲂鱼');
+var 虹鳟 = new CaiLiao('黄', '虹鳟');
 var 黄金鳉 = new CaiLiao('蓝', '黄金鳉');
-var 太湖银鱼 = new CaiLiao('蓝', '太湖银鱼');
 var 黄颡鱼 = new CaiLiao('蓝', '黄颡鱼');
 var 孔雀鱼 = new CaiLiao('黄', '孔雀鱼');
 var 反天刀 = new CaiLiao('黄', '反天刀');
-var 虹鳟 = new CaiLiao('黄', '虹鳟');
-
 var 黑龙鱼 = new CaiLiao('紫', '黑龙鱼');
 var 银龙鱼 = new CaiLiao('紫', '银龙鱼');
 var 罗汉鱼 = new CaiLiao('紫', '罗汉鱼');
-
-// var 盘龙参 = new CaiLiao('橙色', '盘龙参');
-// var 灵芝 = new CaiLiao('橙色', '灵芝');
-// var 不知道 = new CaiLiao('橙色', '不知道');
-
-
-
+var 太湖银鱼 = new CaiLiao('蓝', '太湖银鱼');
+//var 橙鱼 = new CaiLiao('橙色', '');
+//var 橙鱼 = new CaiLiao('橙色', '');
+//var 橙鱼 = new CaiLiao('橙色', '');
 
 function Yao() {
 this.绿 = [];
@@ -254,25 +247,10 @@ function 点击查看药方() {
 						}
 					}
 					break;
-
 			}
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
