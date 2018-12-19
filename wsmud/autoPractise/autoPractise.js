@@ -165,8 +165,11 @@ function clickCreatePractiseCodeButton() {
 	var div = document.getElementById("code");
 	div.innerHTML = codeString;
 	var ps = document.getElementById("ps");
-	ps.innerHTML = "感谢测试！将以上代码复制粘贴到游戏设置框内即可！<br>" + 
-	  "请确保你有 " + qianneng + " 的潜能！以防挂机。";
+	ps.innerHTML = "请确保你至少有<span style=\"color:red;\"> " + qianneng + " </span>的潜能！以防挂机。"
+					+ "<br>首先将以上代码复制粘贴到游戏的设置高级第三个框内"
+					+ "<br>然后在任意地点打坐结束即可开始自动练习设置的技能"
+					+ "<br>注意：代码过长有时会导致自动练习失败"
+					+ "<br>推荐一次练习技能数量控制在 5 至 8 个或者更少";
 
 	var button = document.getElementById("backToVillaCodeButton");
 	button.onclick = clickBackToVillaCode;
