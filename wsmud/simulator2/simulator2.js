@@ -429,10 +429,10 @@ function updateData() {
 	for (var n = 0; n < buttons.length; n++) buttons[n].className = "button";
 	document.getElementById("无").className = "clickedWuDaoButton";
 	document.getElementById("skillsCanWuDao").innerHTML = "请先选择武道类别";
-	document.getElementsByClassName("affixTds")[0].innerHTML = "By SuQing";
-	document.getElementsByClassName("affixTds")[1].innerHTML = "By SuQing";
-	document.getElementsByClassName("affixTds")[2].innerHTML = "By SuQing";
-	document.getElementById("toConfirm").innerHTML = "Simulator 2.0";
+	document.getElementsByClassName("affixTds")[0].innerHTML = "Simulator 2.0";
+	document.getElementsByClassName("affixTds")[1].innerHTML = "Simulator 2.0";
+	document.getElementsByClassName("affixTds")[2].innerHTML = "Simulator 2.0";
+	document.getElementById("toConfirm").innerHTML = "有任何问题或Bug欢迎加苏轻的QQ群交流：953279200";
 
 	var cost = {"无":0,"内功":0,"轻功":0,"拳脚":0,"招架":0,"武器":0};
 	for (var xx = 0; xx < userSkills.length; xx++) {
