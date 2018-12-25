@@ -429,9 +429,9 @@ function updateData() {
 	for (var n = 0; n < buttons.length; n++) buttons[n].className = "button";
 	document.getElementById("无").className = "clickedWuDaoButton";
 	document.getElementById("skillsCanWuDao").innerHTML = "请先选择武道类别";
-	document.getElementsByClassName("affixTds")[0].innerHTML = "测试";
-	document.getElementsByClassName("affixTds")[1].innerHTML = "测试";
-	document.getElementsByClassName("affixTds")[2].innerHTML = "测试";
+	document.getElementsByClassName("affixTds")[0].innerHTML = "By SuQing";
+	document.getElementsByClassName("affixTds")[1].innerHTML = "By SuQing";
+	document.getElementsByClassName("affixTds")[2].innerHTML = "By SuQing";
 	document.getElementById("toConfirm").innerHTML = "Simulator 2.0";
 
 	var cost = {"无":0,"内功":0,"轻功":0,"拳脚":0,"招架":0,"武器":0};
