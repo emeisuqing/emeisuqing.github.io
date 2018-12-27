@@ -121,7 +121,7 @@
 拳脚,化骨绵掌,蓝色,huagumianzhang,拳脚,无
 拳脚,八卦拳,蓝色,baguaquan,拳脚,无
 拳脚,流云掌,蓝色,liuyunzhang,拳脚,无
-拳脚,泰山拳法,蓝色,
+拳脚,泰山拳法,蓝色,taishanquanfa,,拳脚,无
 拳脚,绝情掌,蓝色,jueqingzhang,拳脚,无
 拳脚,鹰爪功,蓝色,yingzhuagong,拳脚,招架
 拳脚,金蛇游身掌,黄色,jinshezhang,拳脚,无
@@ -135,6 +135,7 @@
 拳脚,空明拳,紫色,kongmingquan,拳脚,无
 拳脚,参合指,紫色,canhezhi,拳脚,无
 拳脚,一阳指,紫色,
+拳脚,六脉神剑,橙色,liumaishenjian,无,无
 拳脚,黯然销魂掌,橙色,anranxiaohun,无,无
 
 招架,基本招架,白色,parry,无,无
@@ -156,12 +157,11 @@
 剑法,泰山剑法,黄色,
 剑法,嵩山剑法,黄色,songshanjianfa,武器,无
 剑法,全真剑法,黄色,quanzhenjianfa,武器,无
-剑法,落英神剑,黄色,
+剑法,落英神剑,黄色,luoyingshenjian,武器,无
 剑法,移风剑法,黄色,yifengjian,武器,无
 剑法,天羽奇剑,黄色,tianyuqijian,武器,无
 剑法,段家剑,黄色,
 剑法,辟邪剑法,橙色,
-剑法,六脉神剑,橙色,liumaishenjian,无,无
 剑法,玄铁剑法,橙色,xuantiejianfa,无,无
 
 刀法,基本刀法,白色,blade,无,无
