@@ -1,0 +1,79 @@
+以下内容需有一些脚本基础，然后配合 wsmud_pluginss 脚本插件最新更新的自命令自监控使用
+（By 四区 苏轻）
+- - - - - - - - - - 自命令 - - - - - - - - - -
+打坐 dazuo
+挖矿 wakuang
+修炼 xiulian
+
+使用物品 use itemid
+- - - 频道发言 - - -
+世界频道 chat xxx
+组队频道 tm xxx
+门派频道 fam xxx
+房间频道 say xxx
+全区频道 es xxx
+帮派频道 pty xxx
+- - - 与 NPC 交互 - - -
+查看 look npcid
+比试 fight npcid
+击杀 kill npcid
+追捕 ask1 npcid
+快速追捕 ask3 npcid
+离婚 no_marry npcid
+解除师徒 no_shitu npcid
+// 一键击杀：查找 $(."room-item") -> 获取 id -> kill id
+- - - - - - - - - - 自监控 - - - - - - - - - -
+
+名称：常驻太上
+类型：status
+动作：remove
+关键：mingyu
+对象：本人
+命令：perform force.wang
+
+名称：常驻明玉
+类型：status
+动作：remove
+关键：force
+对象：本人
+命令：perform force.power
+
+名称：常驻踏歌
+类型：status
+动作：remove
+关键：dodge
+对象：本人
+命令：perform dodge.power
+
+名称：无缝夺魄
+类型：status
+动作：remove
+关键：faint
+对象：他人
+命令：perform unarmed.duo
+
+名称：秒接移花
+类型：status
+动作：remove
+关键：yihua
+对象：他人
+命令：perform parry.yi
+
+名称：十层唱仙（刷到10层之后，自动保持10层）
+类型：status
+动作：refresh
+关键：parry
+对象：本人
+命令：perform parry.chang
+
+- - - - - - - - - - 自己用 - - - - - - - - - -
+打断当前状态 到洪七公房间集合
+stopstate;jh fam 6 start;go down;go east;go east;go east;go east;go east;go up
+- - - - -
+{type:"status","action":"refresh",id:"j9h729c52bc",sid:"parry",count:1} 1545804300.022962
+{type:"status","action":"refresh",id:"al463205450",sid:"fumo2",count:17}    1545804293.7783687
+
+{ type: "msg", ch: "pty", content:"获得一条<HIZ>混天腰带</HIZ>，已存入帮派仓库",  name:"帮派管理" } 1545823896.2209706
+{ type: "msg", ch: "pty", content:"和丐帮的战争结束了，我们获得了最终胜利，接下来的一小时所有弟子练习效率提高50%",  name:"帮派管理" }    1545823896.182481
+
+<hio></hio>

@@ -1,0 +1,607 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+
+<!-- 百度收录代码验证 -->
+<meta name="baidu-site-verification" content="F6vtEyvKOS"/>
+
+<!-- GrowingIO Analytics code version 2.1 -->
+<!-- Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com -->
+<script type='text/javascript'>
+!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");
+  gio('init','8d7d15b63f1d1bb0', {});
+//custom page code begin here
+//custom page code end here
+gio('send');
+</script>
+<!-- End GrowingIO Analytics code version: 2.1 -->
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="欢迎来到苏轻的个人领域！" />
+<meta name="keywords" content="苏轻, 个人, 博客, 空间, Java, JavaScript, HTML" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_perldoc.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="/assets/fonts/sns/iconfont.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpeg" rel="shortcut icon" />
+<link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>jQuery 学习笔记</title>
+
+
+<!-- 百度统计 -->
+
+<!-- 谷歌分析 -->
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" rgb(175, 223, 228) ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:rgb(175, 223, 228);">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">SuQing’s Page</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">诗酒趁年华</a></li>
+              
+                <li><a href="/timeline" style="color: white;">时间线</a></li>
+              
+                <li><a href="/about" style="color: white;">认识我</a></li>
+              
+                <li><a href="/tags" style="color: white;">标签页</a></li>
+              
+                <li><a href="/link" style="color: white;">友情链</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>诗酒趁年华</li></a>
+        
+          <a href="/timeline"><li>时间线</li></a>
+        
+          <a href="/about"><li>认识我</li></a>
+        
+          <a href="/tags"><li>标签页</li></a>
+        
+          <a href="/link"><li>友情链</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">jQuery 学习笔记</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:rgb(175, 223, 228);">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(175, 223, 228)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(175, 223, 228);"><sapn class="main">没有上一页咯</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">jQuery 学习笔记</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(175, 223, 228)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(175, 223, 228);"><sapn class="main">Java 随手笔记</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="javascript:;" class="leftchange" style="border-right: 1px solid rgb(175, 223, 228);border-bottom: 2px solid rgb(175, 223, 228);"><span><br>没有上一篇咯</span></a>
+    
+    
+      <a href="/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html" class="rightchange" style="border-left: 1px solid rgb(175, 223, 228);border-bottom: 2px solid rgb(175, 223, 228);"><span>下一篇<br><br>Java 随手笔记</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+    
+      <div class="postpage-subtitle" style="border-left: 8px solid rgb(175, 223, 228); border-right: 8px solid rgb(175, 223, 228)">
+        JavaScript 函数库之 jQuery
+      </div>
+    
+  
+  <!-- 苏轻自己加的文章署名 -->
+  <div align="right" style="color: gray;">
+    <small>苏轻最后编辑于 2018 年 12 月 27 日 11:04:46</small>
+  </div>
+  <!-- 文章内容 -->
+  <h3 id="jquery-简介">jQuery 简介</h3>
+
+<p>　　jQuery 是一个 JavaScript 函数库。使用 jQuery 之前，我们需要在 HTML 中使用 <code class="highlighter-rouge">&lt;script&gt;</code> 标签来引用它。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>　　官网地址：<a href="http://jquery.com/">jquery.com</a><br />
+　　推荐引用：<a href="https://www.bootcdn.cn/jquery/">bootcdn.cn</a></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 文档就绪事件处理器</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// 为了防止文档在完全加载之前运行代码</span>
+    <span class="c1">// 通常将代码置于此处</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="jquery-语法">jQuery 语法</h3>
+
+<p>　　<code class="highlighter-rouge">$(xxx).action();</code></p>
+
+<p>　　jQuery 使用 <code class="highlighter-rouge">$</code> 符号作为语句的开头，但是在某些其他 JavaScript 库中的函数同样使用了 <code class="highlighter-rouge">$</code> 符号。jQuery 使用名为 <code class="highlighter-rouge">noConflict()</code> 的方法来解决该问题。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sq</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span> <span class="c1">// 使用 sq 代替 $ 符号</span>
+<span class="nx">sq</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span> <span class="c1">// e.g.</span>
+</code></pre></div></div>
+
+<p>　　如果你的 jQuery 代码块使用 <code class="highlighter-rouge">$</code> 简写，并且不愿意改变这个快捷方式，那么可以把 <code class="highlighter-rouge">$</code> 符号作为变量传递给 <code class="highlighter-rouge">ready()</code> 方法。这样就可以在函数内使用 <code class="highlighter-rouge">$</code> 符号了，而在函数外，依旧不得不使用 <code class="highlighter-rouge">jQuery</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
+<span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".test"</span><span class="p">).</span><span class="nx">action</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="jquery-选择器">jQuery 选择器</h3>
+
+<ul>
+  <li>jQuery 元素选择器
+    <ul>
+      <li><code class="highlighter-rouge">$("p")</code> 选取所有的 <code class="highlighter-rouge">&lt;p&gt;</code> 元素</li>
+      <li><code class="highlighter-rouge">$("p.classname")</code> 选取所有 <code class="highlighter-rouge">class = "classname"</code> 的 <code class="highlighter-rouge">&lt;p&gt;</code> 元素</li>
+      <li><code class="highlighter-rouge">$("p#idname")</code> 选取所有 <code class="highlighter-rouge">id = "idname"</code> 的 <code class="highlighter-rouge">&lt;p&gt;</code> 元素</li>
+    </ul>
+  </li>
+  <li>jQuery 属性选择器
+    <ul>
+      <li><code class="highlighter-rouge">$("[href]")</code> 选取所有有 <code class="highlighter-rouge">href</code> 属性的元素</li>
+      <li><code class="highlighter-rouge">$("[href='#']")</code> 选取所有有 <code class="highlighter-rouge">href</code> 属性且值等于 <code class="highlighter-rouge">#</code> 的元素</li>
+      <li><code class="highlighter-rouge">$("[href!='#']")</code> 选取所有有 <code class="highlighter-rouge">href</code> 属性且值不等于 <code class="highlighter-rouge">#</code> 的元素</li>
+      <li><code class="highlighter-rouge">$("[href$='.jpg']")</code> 选取所有有 <code class="highlighter-rouge">href</code> 属性且值以 <code class="highlighter-rouge">.jpg</code> 结尾的元素</li>
+    </ul>
+  </li>
+  <li>jQuery CSS 选择器
+    <ul>
+      <li><code class="highlighter-rouge">$("p").css("background-color","red");</code> 改变属性的 CSS 样式</li>
+    </ul>
+  </li>
+  <li>更多例子
+    <ul>
+      <li><code class="highlighter-rouge">$(this)</code> 当前元素</li>
+      <li><code class="highlighter-rouge">$("ul li:first")</code> 每个 <code class="highlighter-rouge">&lt;ul&gt;</code> 的第一个 <code class="highlighter-rouge">&lt;li&gt;</code> 元素</li>
+      <li><code class="highlighter-rouge">$("div#intro .head")</code> <code class="highlighter-rouge">id = "intro"</code> 的 <code class="highlighter-rouge">&lt;div&gt;</code> 元素中的所有 <code class="highlighter-rouge">class = "head"</code> 的元素</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="jquery-事件">jQuery 事件</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">$(document).ready(function)</code> 将函数绑定到文档的就绪事件（当文档完成加载时）</li>
+  <li><code class="highlighter-rouge">$(selector).click(function)</code> 触发或将函数绑定到被选元素的点击事件</li>
+  <li><code class="highlighter-rouge">$(selector).dblclick(function)</code>  触发或将函数绑定到被选元素的双击事件</li>
+  <li><code class="highlighter-rouge">$(selector).focus(function)</code> 触发或将函数绑定到被选元素的获得焦点事件</li>
+  <li><code class="highlighter-rouge">$(selector).mouseover(function)</code> 触发或将函数绑定到被选元素的鼠标悬停事件</li>
+</ul>
+
+<h3 id="jquery-动画效果">jQuery 动画效果</h3>
+
+<ul>
+  <li>显示 / 隐藏
+    <ul>
+      <li><code class="highlighter-rouge">hide(speed, callback)</code> 隐藏</li>
+      <li><code class="highlighter-rouge">show(speed, callback)</code> 显示
+        <ul>
+          <li>speed 参数设置的是速度，可以取的值有 slow/fast/1000（数值代表毫秒）</li>
+          <li>callback 函数在当前动画 100% 完成之后执行，如有必要请不要忘记</li>
+        </ul>
+      </li>
+      <li><code class="highlighter-rouge">toggle(speed, callback)</code> 显示被隐藏的元素 / 隐藏被显示的元素，相当于切换上面的两种方法</li>
+    </ul>
+  </li>
+  <li>渐变
+    <ul>
+      <li><code class="highlighter-rouge">fadeIn(speed, callback)</code> 淡入</li>
+      <li><code class="highlighter-rouge">fadeOut(speed, callback)</code> 淡出</li>
+      <li><code class="highlighter-rouge">fadeToggle(speed, callback)</code> 切换淡入/淡出</li>
+      <li><code class="highlighter-rouge">fadeTo(speed, opacity, callback)</code>
+        <ul>
+          <li>opacity 参数将元素渐变为指定的不透明度 (0~1)</li>
+          <li>例如：<code class="highlighter-rouge">$("#div").fadeTo("slow", 0.15);</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>滑动
+    <ul>
+      <li><code class="highlighter-rouge">slideDown(speed, callback)</code> 向下滑动</li>
+      <li><code class="highlighter-rouge">slideUp(speed, callback)</code> 向上滑动</li>
+      <li><code class="highlighter-rouge">slideToggle(speed, callback)</code> 切换向下 / 上滑动</li>
+    </ul>
+  </li>
+  <li>自定义动画
+    <ul>
+      <li><code class="highlighter-rouge">animate({params}, speed, callback)</code>
+        <ul>
+          <li>params 参数设置形成动画的 CSS 属性，可以一次操作多个属性</li>
+          <li>对位置进行操作前，要先把元素的 CSS position 属性设置为 relative/fixed/absolute</li>
+          <li>必须使用 Camel 标记法书写所有的属性名，例如使用 paddingLeft 而不是 padding-left 等</li>
+          <li>色彩动画并不包含在核心 jQuery 库中，可以下载 Color Animations 插件</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"div"</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+    <span class="na">left</span><span class="p">:</span><span class="s1">'250px'</span><span class="p">,</span> <span class="c1">// 改变属性的值</span>
+    <span class="na">height</span><span class="p">:</span><span class="s1">'+=150px'</span><span class="p">,</span> <span class="c1">// 相对的值</span>
+    <span class="na">width</span><span class="p">:</span><span class="s1">'toggle'</span> <span class="c1">// 预定义的值</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+    <span class="nx">div</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span><span class="na">left</span><span class="p">:</span> <span class="s1">'100px'</span><span class="p">},</span> <span class="s2">"slow"</span><span class="p">);</span> <span class="c1">// animate() 默认支持队列功能</span>
+    <span class="nx">div</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span><span class="na">fontSize</span><span class="p">:</span> <span class="s1">'3em'</span><span class="p">},</span> <span class="s2">"slow"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">stop(stopAll, goToEnd)</code> 停止动画
+    <ul>
+      <li>stopAll 参数设置是否清除动画队列。默认 false（仅停止活动的动画，允许执行队列中的动画）</li>
+      <li>goToEnd 参数设置是否立即完成当前动画。默认 false</li>
+    </ul>
+  </li>
+  <li>方法链接(Chaining)
+    <ul>
+      <li>在相同的元素上，运行多条 jQuery 命令</li>
+      <li>例如：<code class="highlighter-rouge">$("#p1").css("color","red").slideUp(2000).slideDown(2000);</code></li>
+      <li>jQuery 在语法上不是很严格，当链接过多影响阅读代码时，可以折行和缩进</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="jquery-获取--修改元素">jQuery 获取 / 修改元素</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">text()</code> 设置或返回所选元素的文本内容</li>
+  <li><code class="highlighter-rouge">html()</code> 设置或返回所选元素的内容（包括 HTML 标记）</li>
+  <li><code class="highlighter-rouge">val()</code> 设置或返回表单字段的值</li>
+  <li><code class="highlighter-rouge">attr()</code> 设置或返回元素某个属性的值
+    <ul>
+      <li>使用 <code class="highlighter-rouge">attr()</code> 一次设置多个属性</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"#test"</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span>
+    <span class="s2">"href"</span> <span class="p">:</span> <span class="s2">"https://suqing.fun/"</span><span class="p">,</span>
+    <span class="s2">"title"</span> <span class="p">:</span> <span class="s2">"suqing"</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">text()</code>/<code class="highlighter-rouge">html()</code>/<code class="highlighter-rouge">val()</code>/<code class="highlighter-rouge">attr()</code> 的回调函数
+    <ul>
+      <li>回调函数由两个参数：被选元素列表中当前元素的下标，以及原始值</li>
+      <li>以函数新值返回希望使用的字符串</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#test"</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">origText</span><span class="p">){</span>
+        <span class="k">return</span> <span class="s2">"origText:"</span> <span class="o">+</span> <span class="nx">origText</span> <span class="o">+</span> <span class="s2">", index:"</span> <span class="o">+</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="jquery-添加元素">jQuery 添加元素</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">append("xxxx")</code> 在被选元素的结尾插入内容</li>
+  <li><code class="highlighter-rouge">prepend("xxx")</code> 在被选元素的开头插入内容</li>
+  <li><code class="highlighter-rouge">after("xxxxx")</code> 在被选元素外部后插入内容</li>
+  <li><code class="highlighter-rouge">before("xxxx")</code> 在被选元素外部前插入内容</li>
+</ul>
+
+<h3 id="jquery-删除元素">jQuery 删除元素</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">remove()</code> 删除被选元素以及所有子元素
+    <ul>
+      <li>也可以接受参数，对被删元素进行过滤。</li>
+      <li>例如：<code class="highlighter-rouge">$("p").remove(".test");</code>，删除 <code class="highlighter-rouge">class = "test"</code> 的所有 <code class="highlighter-rouge">&lt;p&gt;</code> 元素</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">empty()</code> 删除被选元素的所有子元素</li>
+</ul>
+
+<h3 id="jquery-设置-css">jQuery 设置 CSS</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">addClass()</code> 添加 class 属性</li>
+  <li><code class="highlighter-rouge">removeClass()</code> 删除 class 属性</li>
+  <li><code class="highlighter-rouge">toggleClass()</code> 切换 class 属性</li>
+  <li><code class="highlighter-rouge">css()</code> 设置或返回样式属性</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"background-color"</span><span class="p">);</span> <span class="c1">// 返回属性的值</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"background-color"</span><span class="p">,</span> <span class="s2">"yellow"</span><span class="p">);</span> <span class="c1">// 设置属性的值</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span> <span class="c1">// 设置多个属性的值</span>
+  <span class="s2">"background-color"</span> <span class="p">:</span><span class="s2">"yellow"</span><span class="p">,</span>
+  <span class="s2">"font-size"</span><span class="p">:</span> <span class="s2">"200%"</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="jquery-尺寸">jQuery 尺寸</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">width()</code> 宽度（不包括内边距、边框或外边距）</li>
+  <li><code class="highlighter-rouge">height()</code> 高度（不包括内边距、边框或外边距</li>
+  <li><code class="highlighter-rouge">innerWidth()</code> 宽度（包括内边距）</li>
+  <li><code class="highlighter-rouge">innerHeight()</code> 高度（包括内边距）</li>
+  <li><code class="highlighter-rouge">outerWidth()</code> 宽度（包括内边距和边框）</li>
+  <li><code class="highlighter-rouge">outerHeight()</code> 高度（包括内边距和边框）</li>
+  <li><code class="highlighter-rouge">outerWidth(true)</code> 宽度（包括内边距、边框和外边距）</li>
+  <li><code class="highlighter-rouge">outerHeight(true)</code> 高度（包括内边距、边框和外边距）
+    <ul>
+      <li><code class="highlighter-rouge">$(document).width()</code> 文档宽度</li>
+      <li><code class="highlighter-rouge">$(window).height()</code> 窗口高度</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="jquery-遍历">jQuery 遍历</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">parent()</code> 返回被选元素的直接父元素</li>
+  <li><code class="highlighter-rouge">parents()</code> 返回被选元素的所有祖先元素</li>
+  <li><code class="highlighter-rouge">parentsUntil()</code> 返回介于两个给定元素之间的所有祖先元素
+    <ul>
+      <li>例如：<code class="highlighter-rouge">$("span").parentsUntil("div");</code></li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">children()</code> 返回被选元素的所有直接子元素</li>
+  <li><code class="highlighter-rouge">find()</code> 返回被选元素的后代元素
+    <ul>
+      <li><code class="highlighter-rouge">$("div").find("span");</code>，返回属于 <code class="highlighter-rouge">&lt;div&gt;</code> 后代的所有 <code class="highlighter-rouge">&lt;span&gt;</code> 元素</li>
+      <li><code class="highlighter-rouge">$("div").find("*");</code>，返回 <code class="highlighter-rouge">&lt;div&gt;</code> 的所有后代</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">siblings()</code> 返回被选元素的所有同胞元素</li>
+  <li><code class="highlighter-rouge">next()</code> 返回被选元素的下一个同胞元素</li>
+  <li><code class="highlighter-rouge">nextAll()</code> 返回被选元素后面的所有同胞元素</li>
+  <li><code class="highlighter-rouge">nextUntil()</code> 返回后面的介于两个给定参数之间的所有同胞元素</li>
+  <li><code class="highlighter-rouge">prev()</code> 返回被选元素的前一个同胞元素</li>
+  <li><code class="highlighter-rouge">prevAll()</code> 返回被选元素前面的所有同胞元素</li>
+  <li>
+    <p><code class="highlighter-rouge">prevUntil()</code> 返回前面的介于两个给定参数之间的所有同胞元素</p>
+  </li>
+  <li><code class="highlighter-rouge">first()</code> 返回被选元素的首个元素</li>
+  <li><code class="highlighter-rouge">last()</code> 返回被选元素的最后一个元素</li>
+  <li><code class="highlighter-rouge">eq()</code> 返回被选元素中指定索引的元素</li>
+  <li><code class="highlighter-rouge">filter()</code> 返回匹配标准的所有元素</li>
+  <li><code class="highlighter-rouge">not()</code> 返回不匹配标准的所有元素</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"div p"</span><span class="p">).</span><span class="nx">first</span><span class="p">();</span> <span class="c1">// 首个 &lt;div&gt; 元素内部的第一个 &lt;p&gt; 元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"div p"</span><span class="p">).</span><span class="nx">last</span><span class="p">();</span> <span class="c1">// 最后一个 &lt;div&gt; 元素中的最后一个 &lt;p&gt; 元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 返回第二个 &lt;p&gt; 元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">".test"</span><span class="p">);</span> <span class="c1">// 带有 class = "test" 的所有 &lt;p&gt; 元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">not</span><span class="p">(</span><span class="s2">".test"</span><span class="p">);</span> <span class="c1">// 没有 class = "test" 的所有 &lt;p&gt; 元素</span>
+</code></pre></div></div>
+
+<h3 id="jquery-ajax异步">jQuery AJAX（异步）</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">load(url, data, callback)</code> 从服务器加载数据，并把返回的数据放入被选元素中
+    <ul>
+      <li>callback 回调函数的参数：
+        <ul>
+          <li>responseTxt 包含调用成功时的结果内容</li>
+          <li>statusTXT 包含调用的状态</li>
+          <li>xhr 包含 XMLHttpRequest 对象</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">"#div"</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="s2">"test.txt"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">responseTxt</span><span class="p">,</span> <span class="nx">statusTxt</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">statusTxt</span> <span class="o">==</span> <span class="s2">"success"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">"Success"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">statusTxt</span> <span class="o">==</span> <span class="s2">"error"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">"Error: "</span> <span class="o">+</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span> <span class="o">+</span> <span class="s2">": "</span> <span class="o">+</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+        <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">$.get(url, callback)</code> 通过 HTTP GET 请求从服务器上请求数据</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"test"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">status</span><span class="p">){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">"Data: "</span> <span class="o">+</span> <span class="nx">data</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Status: "</span> <span class="o">+</span> <span class="nx">status</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">$.post(url, data, callback)</code> POST 请求</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"test"</span><span class="p">,</span>
+       <span class="p">{</span><span class="na">name</span> <span class="p">:</span> <span class="s2">"Donald Duck"</span><span class="p">,</span> <span class="na">city</span> <span class="p">:</span> <span class="s2">"Duckburg"</span><span class="p">},</span>
+       <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">status</span><span class="p">){</span>
+           <span class="c1">// code</span>
+       <span class="p">});</span>
+</code></pre></div></div>
+
+<p>@end</p>
+
+  <!-- 引入share模块 -->
+  
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'qzone'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>
+    SuQing’s Page Copyright ©
+    
+
+    
+        2017
+        -
+    
+
+    2018
+    
+      <br>Powered by Jekyll | Github
+  </span>
+</footer>
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

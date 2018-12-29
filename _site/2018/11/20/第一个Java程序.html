@@ -1,0 +1,457 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+
+<!-- 百度收录代码验证 -->
+<meta name="baidu-site-verification" content="F6vtEyvKOS"/>
+
+<!-- GrowingIO Analytics code version 2.1 -->
+<!-- Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com -->
+<script type='text/javascript'>
+!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");
+  gio('init','8d7d15b63f1d1bb0', {});
+//custom page code begin here
+//custom page code end here
+gio('send');
+</script>
+<!-- End GrowingIO Analytics code version: 2.1 -->
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="欢迎来到苏轻的个人领域！" />
+<meta name="keywords" content="苏轻, 个人, 博客, 空间, Java, JavaScript, HTML" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_perldoc.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="/assets/fonts/sns/iconfont.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpeg" rel="shortcut icon" />
+<link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>第一个Java程序</title>
+
+
+<!-- 百度统计 -->
+
+<!-- 谷歌分析 -->
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" #00ced1 ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:#00ced1;">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">SuQing’s Page</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">诗酒趁年华</a></li>
+              
+                <li><a href="/timeline" style="color: white;">时间线</a></li>
+              
+                <li><a href="/about" style="color: white;">认识我</a></li>
+              
+                <li><a href="/tags" style="color: white;">标签页</a></li>
+              
+                <li><a href="/link" style="color: white;">友情链</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>诗酒趁年华</li></a>
+        
+          <a href="/timeline"><li>时间线</li></a>
+        
+          <a href="/about"><li>认识我</li></a>
+        
+          <a href="/tags"><li>标签页</li></a>
+        
+          <a href="/link"><li>友情链</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">第一个Java程序</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:#00ced1;">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="/2018/11/21/Java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#00ced1';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#00ced1;"><sapn class="main">Java 基本数据类型</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">第一个Java程序</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2018/11/20/Java%E7%AE%80%E4%BB%8B.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#00ced1';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#00ced1;"><sapn class="main">Java简介</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="/2018/11/21/Java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" class="leftchange" style="border-right: 1px solid #00ced1;border-bottom: 2px solid #00ced1;"><span>上一篇<br><br>Java 基本数据类型</span></a>
+    
+    
+      <a href="/2018/11/20/Java%E7%AE%80%E4%BB%8B.html" class="rightchange" style="border-left: 1px solid #00ced1;border-bottom: 2px solid #00ced1;"><span>下一篇<br><br>Java简介</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+  <!-- 苏轻自己加的文章署名 -->
+  <div align="right" style="color: gray;">
+    <small>苏轻 2018年11月20日 12:24:45</small>
+  </div>
+  <!-- 文章内容 -->
+  <ul>
+  <li>使用任意的文本编辑器即可，编辑以下代码。</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Welcome</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World."</span><span class="o">);</span>
+    <span class="o">}</span> <span class="c1">// 致敬 Hello World ！</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>然后
+    <ul>
+      <li>将以上代码保存为<code class="highlighter-rouge">Wecome.java</code>文件</li>
+      <li>终端<code class="highlighter-rouge">cd</code>到指定目录后执行<code class="highlighter-rouge">$ javac Welcome.java</code></li>
+      <li>查看目录里面多了一个<code class="highlighter-rouge">Welcome.class</code>文件</li>
+      <li>终端执行<code class="highlighter-rouge">$ java Welcome</code></li>
+      <li>得到程序的运行结果：<code class="highlighter-rouge">Hello World.</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="通过第一个程序了解java的一些特性">通过第一个程序了解Java的一些特性</h2>
+
+<ul>
+  <li>大小写敏感
+    <ul>
+      <li>Java程序的代码中的变量、方法等，严格区分英文字母的大小写。</li>
+    </ul>
+  </li>
+  <li>
+    <p>每个语句必须以分号结束</p>
+  </li>
+  <li>关键字<code class="highlighter-rouge">class</code>
+    <ul>
+      <li>类。Java是面向对象的语言，所有代码必须位于类里面。</li>
+    </ul>
+  </li>
+  <li>关键字<code class="highlighter-rouge">public</code>
+    <ul>
+      <li>被称作访问修饰符（<em>access modifier</em>），用于控制程序的其它部分对这段代码的访问级别。</li>
+      <li>标识为public的类只有一个，其它的类个数不限。</li>
+      <li>如果源文件中包含一个public类，源文件名必须和其中定义的public的类名相同，且以“.java”为扩展名。</li>
+    </ul>
+  </li>
+  <li>
+    <p>正确编译后的源文件，会得到相应的字节码文件，编译器为每个类生成独立的字节码文件，且将字节码文件自动命名为类的名字且以<code class="highlighter-rouge">.class</code>为扩展名。</p>
+  </li>
+  <li>main方法是Java应用程序的入口方法，固定格式：
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">//注释使用双斜杠</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>常见的Java集成开发环境有
+    <ul>
+      <li>eclipse</li>
+      <li>IntelliJ IDEA</li>
+      <li>NetBeans</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="注释">注释</h2>
+
+<ul>
+  <li>单行注释：// comment</li>
+  <li>多行注释：/* comment */</li>
+  <li>文档注释：包含一些说明以及JavaDoc标签，做项目时有助于生成项目的API。</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Comment class
+ * @author sq
+ * @version 1.0
+ */</span>
+</code></pre></div></div>
+
+<h2 id="标识符">标识符</h2>
+
+<ul>
+  <li>标识符只能由字母、下划线、美元符号、数字组成，且不能以数字开头。</li>
+  <li>字母的大小写敏感，而长度则没有限制。</li>
+  <li>Java已有的关键字，不能作为标识符。</li>
+  <li>其他使用规范：
+    <ul>
+      <li>类名，每个单词的首字母大写。</li>
+      <li>方法名和变量名，使用驼峰命名法。</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="关键字保留字">关键字（保留字）</h2>
+
+<ul>
+  <li>Java关键字是Java语言保留以供内部使用的。</li>
+</ul>
+
+<p><img src="/pic/JavaKeywords.png" alt="JavaKeywords" /></p>
+
+<h2 id="变量variable">变量（variable）</h2>
+
+<p>　　变量本质上就是代表一个<code class="highlighter-rouge">可操作的存储空间</code>，空间位置是确定的，但是里面放置什么值不确定。我们可通过变量名来访问<code class="highlighter-rouge">对应的存储空间</code>，从而操纵这个<code class="highlighter-rouge">存储空间</code>存储的值。</p>
+
+<p>　　Java是一种强类型语言，每个变量都必须声明其数据类型，变量的数据类型决定了变量占据存储空间的大小。</p>
+
+<p>　　变量作为程序中最基本的存储单元，其要素包括变量名，变量类型和作用域。变量在使用前必须对其声明, 只有在变量声明以后，才能为其分配相应长度的存储空间。</p>
+
+<ul>
+  <li>变量的声明</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">type</span> <span class="n">varName</span> <span class="o">[=</span> <span class="n">value</span><span class="o">][,</span> <span class="n">varName</span> <span class="o">[=</span> <span class="n">value</span><span class="o">]...];</span>
+</code></pre></div></div>
+
+<ul>
+  <li>局部变量（<em>local variable</em>）</li>
+</ul>
+
+<p>　　局部变量是方法或语句块内部定义的变量。生命周期从声明位置开始到到方法或语句块执行完毕为止。局部变量在使用前必须先声明、初始化（赋初值）再使用。</p>
+
+<ul>
+  <li>成员变量（也叫实例变量 <em>member variable</em>）</li>
+</ul>
+
+<p>　　成员变量是在方法的外部、类的内部定义的变量。从属于对象，生命周期伴随对象始终。如果不自行初始化，它会自动初始化成该类型的默认初始值。</p>
+
+<ul>
+  <li>静态变量（也叫类变量 <em>static variable</em>）</li>
+</ul>
+
+<p>　　静态变量使用static定义，从属于类，生命周期伴随类始终，从类的加载到卸载。如果不自行初始化，与成员变量相同会自动初始化成该类型的默认初始值。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">数据类型</th>
+      <th style="text-align: center">默认初始值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">int</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">double</td>
+      <td style="text-align: center">0.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">char</td>
+      <td style="text-align: center">‘\u0000’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="常量constant">常量（Constant）</h2>
+
+<p>　　在Java语言中，主要是利用关键字final来定义一个常量。常量一旦被初始化后不能再更改其值。一般将1、2、3、’a’、’b’、true、false、’helloWorld’等称为字面常量，而使用final修饰的常量称为符号常量。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">final</span> <span class="n">type</span> <span class="n">varName</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>常量的命名一般使用大写字母加下划线。例如：NAME、MAX_VALUE</li>
+</ul>
+
+<h3 id="获取键盘输入的简单方式">获取键盘输入的简单方式</h3>
+
+<ul>
+  <li>使用 scanner 获取键盘输入</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 要记得必须先导入这个叫Scanner类</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span> <span class="c1">// 新建一个输入对象</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"请输入你的姓名："</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%s！你好！\n"</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>苏轻笔记：</p>
+
+  <p>目前并不明白对象的详细用法，先照着敲代码玩着就好。先学会用，然后在去慢慢了解原理。</p>
+
+  <p><em>scanner</em>的中文意思是扫描仪，是一种输入设备，通过这个类，可以获得键盘的输入。</p>
+</blockquote>
+
+
+  <!-- 引入share模块 -->
+  
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'qzone'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>
+    SuQing’s Page Copyright ©
+    
+
+    
+        2017
+        -
+    
+
+    2018
+    
+      <br>Powered by Jekyll | Github
+  </span>
+</footer>
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

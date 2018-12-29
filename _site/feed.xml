@@ -1,0 +1,1976 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-29T19:19:53+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SuQing’s Page</title><subtitle>欢迎来到苏轻的个人领域！</subtitle><author><name>true</name></author><entry><title type="html">jQuery 学习笔记</title><link href="http://localhost:4000/2018/12/27/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" rel="alternate" type="text/html" title="jQuery 学习笔记" /><published>2018-12-27T11:05:20+08:00</published><updated>2018-12-27T11:05:20+08:00</updated><id>http://localhost:4000/2018/12/27/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/2018/12/27/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">&lt;h3 id=&quot;jquery-简介&quot;&gt;jQuery 简介&lt;/h3&gt;
+
+&lt;p&gt;　　jQuery 是一个 JavaScript 函数库。使用 jQuery 之前，我们需要在 HTML 中使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 标签来引用它。&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;　　官网地址：&lt;a href=&quot;http://jquery.com/&quot;&gt;jquery.com&lt;/a&gt;&lt;br /&gt;
+　　推荐引用：&lt;a href=&quot;https://www.bootcdn.cn/jquery/&quot;&gt;bootcdn.cn&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 文档就绪事件处理器&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 为了防止文档在完全加载之前运行代码&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 通常将代码置于此处&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jquery-语法&quot;&gt;jQuery 语法&lt;/h3&gt;
+
+&lt;p&gt;　　&lt;code class=&quot;highlighter-rouge&quot;&gt;$(xxx).action();&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;　　jQuery 使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 符号作为语句的开头，但是在某些其他 JavaScript 库中的函数同样使用了 &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 符号。jQuery 使用名为 &lt;code class=&quot;highlighter-rouge&quot;&gt;noConflict()&lt;/code&gt; 的方法来解决该问题。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;noConflict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 使用 sq 代替 $ 符号&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;sq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// e.g.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;　　如果你的 jQuery 代码块使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 简写，并且不愿意改变这个快捷方式，那么可以把 &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 符号作为变量传递给 &lt;code class=&quot;highlighter-rouge&quot;&gt;ready()&lt;/code&gt; 方法。这样就可以在函数内使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 符号了，而在函数外，依旧不得不使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;jQuery&lt;/code&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;noConflict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jquery-选择器&quot;&gt;jQuery 选择器&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jQuery 元素选择器
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;p&quot;)&lt;/code&gt; 选取所有的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 元素&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;p.classname&quot;)&lt;/code&gt; 选取所有 &lt;code class=&quot;highlighter-rouge&quot;&gt;class = &quot;classname&quot;&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 元素&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;p#idname&quot;)&lt;/code&gt; 选取所有 &lt;code class=&quot;highlighter-rouge&quot;&gt;id = &quot;idname&quot;&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 元素&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;jQuery 属性选择器
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;[href]&quot;)&lt;/code&gt; 选取所有有 &lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt; 属性的元素&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;[href='#']&quot;)&lt;/code&gt; 选取所有有 &lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt; 属性且值等于 &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; 的元素&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;[href!='#']&quot;)&lt;/code&gt; 选取所有有 &lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt; 属性且值不等于 &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; 的元素&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;[href$='.jpg']&quot;)&lt;/code&gt; 选取所有有 &lt;code class=&quot;highlighter-rouge&quot;&gt;href&lt;/code&gt; 属性且值以 &lt;code class=&quot;highlighter-rouge&quot;&gt;.jpg&lt;/code&gt; 结尾的元素&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;jQuery CSS 选择器
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;p&quot;).css(&quot;background-color&quot;,&quot;red&quot;);&lt;/code&gt; 改变属性的 CSS 样式&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;更多例子
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(this)&lt;/code&gt; 当前元素&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;ul li:first&quot;)&lt;/code&gt; 每个 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; 的第一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&lt;/code&gt; 元素&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;div#intro .head&quot;)&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;id = &quot;intro&quot;&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 元素中的所有 &lt;code class=&quot;highlighter-rouge&quot;&gt;class = &quot;head&quot;&lt;/code&gt; 的元素&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;jquery-事件&quot;&gt;jQuery 事件&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(document).ready(function)&lt;/code&gt; 将函数绑定到文档的就绪事件（当文档完成加载时）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(selector).click(function)&lt;/code&gt; 触发或将函数绑定到被选元素的点击事件&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(selector).dblclick(function)&lt;/code&gt;  触发或将函数绑定到被选元素的双击事件&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(selector).focus(function)&lt;/code&gt; 触发或将函数绑定到被选元素的获得焦点事件&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(selector).mouseover(function)&lt;/code&gt; 触发或将函数绑定到被选元素的鼠标悬停事件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;jquery-动画效果&quot;&gt;jQuery 动画效果&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;显示 / 隐藏
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;hide(speed, callback)&lt;/code&gt; 隐藏&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;show(speed, callback)&lt;/code&gt; 显示
+        &lt;ul&gt;
+          &lt;li&gt;speed 参数设置的是速度，可以取的值有 slow/fast/1000（数值代表毫秒）&lt;/li&gt;
+          &lt;li&gt;callback 函数在当前动画 100% 完成之后执行，如有必要请不要忘记&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;toggle(speed, callback)&lt;/code&gt; 显示被隐藏的元素 / 隐藏被显示的元素，相当于切换上面的两种方法&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;渐变
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fadeIn(speed, callback)&lt;/code&gt; 淡入&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fadeOut(speed, callback)&lt;/code&gt; 淡出&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fadeToggle(speed, callback)&lt;/code&gt; 切换淡入/淡出&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fadeTo(speed, opacity, callback)&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;opacity 参数将元素渐变为指定的不透明度 (0~1)&lt;/li&gt;
+          &lt;li&gt;例如：&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;#div&quot;).fadeTo(&quot;slow&quot;, 0.15);&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;滑动
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;slideDown(speed, callback)&lt;/code&gt; 向下滑动&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;slideUp(speed, callback)&lt;/code&gt; 向上滑动&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;slideToggle(speed, callback)&lt;/code&gt; 切换向下 / 上滑动&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;自定义动画
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;animate({params}, speed, callback)&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;params 参数设置形成动画的 CSS 属性，可以一次操作多个属性&lt;/li&gt;
+          &lt;li&gt;对位置进行操作前，要先把元素的 CSS position 属性设置为 relative/fixed/absolute&lt;/li&gt;
+          &lt;li&gt;必须使用 Camel 标记法书写所有的属性名，例如使用 paddingLeft 而不是 padding-left 等&lt;/li&gt;
+          &lt;li&gt;色彩动画并不包含在核心 jQuery 库中，可以下载 Color Animations 插件&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;div&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'250px'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 改变属性的值&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'+=150px'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 相对的值&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'toggle'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 预定义的值&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;div&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'100px'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;slow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// animate() 默认支持队列功能&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fontSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'3em'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;slow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stop(stopAll, goToEnd)&lt;/code&gt; 停止动画
+    &lt;ul&gt;
+      &lt;li&gt;stopAll 参数设置是否清除动画队列。默认 false（仅停止活动的动画，允许执行队列中的动画）&lt;/li&gt;
+      &lt;li&gt;goToEnd 参数设置是否立即完成当前动画。默认 false&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;方法链接(Chaining)
+    &lt;ul&gt;
+      &lt;li&gt;在相同的元素上，运行多条 jQuery 命令&lt;/li&gt;
+      &lt;li&gt;例如：&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;#p1&quot;).css(&quot;color&quot;,&quot;red&quot;).slideUp(2000).slideDown(2000);&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;jQuery 在语法上不是很严格，当链接过多影响阅读代码时，可以折行和缩进&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;jquery-获取--修改元素&quot;&gt;jQuery 获取 / 修改元素&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text()&lt;/code&gt; 设置或返回所选元素的文本内容&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;html()&lt;/code&gt; 设置或返回所选元素的内容（包括 HTML 标记）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;val()&lt;/code&gt; 设置或返回表单字段的值&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;attr()&lt;/code&gt; 设置或返回元素某个属性的值
+    &lt;ul&gt;
+      &lt;li&gt;使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;attr()&lt;/code&gt; 一次设置多个属性&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;href&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://suqing.fun/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;title&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;suqing&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text()&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;html()&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;val()&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;attr()&lt;/code&gt; 的回调函数
+    &lt;ul&gt;
+      &lt;li&gt;回调函数由两个参数：被选元素列表中当前元素的下标，以及原始值&lt;/li&gt;
+      &lt;li&gt;以函数新值返回希望使用的字符串&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;origText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;origText:&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;origText&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;, index:&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jquery-添加元素&quot;&gt;jQuery 添加元素&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;append(&quot;xxxx&quot;)&lt;/code&gt; 在被选元素的结尾插入内容&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prepend(&quot;xxx&quot;)&lt;/code&gt; 在被选元素的开头插入内容&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;after(&quot;xxxxx&quot;)&lt;/code&gt; 在被选元素外部后插入内容&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;before(&quot;xxxx&quot;)&lt;/code&gt; 在被选元素外部前插入内容&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;jquery-删除元素&quot;&gt;jQuery 删除元素&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;remove()&lt;/code&gt; 删除被选元素以及所有子元素
+    &lt;ul&gt;
+      &lt;li&gt;也可以接受参数，对被删元素进行过滤。&lt;/li&gt;
+      &lt;li&gt;例如：&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;p&quot;).remove(&quot;.test&quot;);&lt;/code&gt;，删除 &lt;code class=&quot;highlighter-rouge&quot;&gt;class = &quot;test&quot;&lt;/code&gt; 的所有 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 元素&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;empty()&lt;/code&gt; 删除被选元素的所有子元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;jquery-设置-css&quot;&gt;jQuery 设置 CSS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;addClass()&lt;/code&gt; 添加 class 属性&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;removeClass()&lt;/code&gt; 删除 class 属性&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;toggleClass()&lt;/code&gt; 切换 class 属性&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;css()&lt;/code&gt; 设置或返回样式属性&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;background-color&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 返回属性的值&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;background-color&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;yellow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 设置属性的值&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;css&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 设置多个属性的值&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;background-color&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yellow&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;font-size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;200%&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jquery-尺寸&quot;&gt;jQuery 尺寸&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;width()&lt;/code&gt; 宽度（不包括内边距、边框或外边距）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;height()&lt;/code&gt; 高度（不包括内边距、边框或外边距&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;innerWidth()&lt;/code&gt; 宽度（包括内边距）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;innerHeight()&lt;/code&gt; 高度（包括内边距）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;outerWidth()&lt;/code&gt; 宽度（包括内边距和边框）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;outerHeight()&lt;/code&gt; 高度（包括内边距和边框）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;outerWidth(true)&lt;/code&gt; 宽度（包括内边距、边框和外边距）&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;outerHeight(true)&lt;/code&gt; 高度（包括内边距、边框和外边距）
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(document).width()&lt;/code&gt; 文档宽度&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(window).height()&lt;/code&gt; 窗口高度&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;jquery-遍历&quot;&gt;jQuery 遍历&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;parent()&lt;/code&gt; 返回被选元素的直接父元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;parents()&lt;/code&gt; 返回被选元素的所有祖先元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;parentsUntil()&lt;/code&gt; 返回介于两个给定元素之间的所有祖先元素
+    &lt;ul&gt;
+      &lt;li&gt;例如：&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;span&quot;).parentsUntil(&quot;div&quot;);&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;children()&lt;/code&gt; 返回被选元素的所有直接子元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find()&lt;/code&gt; 返回被选元素的后代元素
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;div&quot;).find(&quot;span&quot;);&lt;/code&gt;，返回属于 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 后代的所有 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt; 元素&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$(&quot;div&quot;).find(&quot;*&quot;);&lt;/code&gt;，返回 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 的所有后代&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;siblings()&lt;/code&gt; 返回被选元素的所有同胞元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;next()&lt;/code&gt; 返回被选元素的下一个同胞元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nextAll()&lt;/code&gt; 返回被选元素后面的所有同胞元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nextUntil()&lt;/code&gt; 返回后面的介于两个给定参数之间的所有同胞元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prev()&lt;/code&gt; 返回被选元素的前一个同胞元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prevAll()&lt;/code&gt; 返回被选元素前面的所有同胞元素&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prevUntil()&lt;/code&gt; 返回前面的介于两个给定参数之间的所有同胞元素&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;first()&lt;/code&gt; 返回被选元素的首个元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;last()&lt;/code&gt; 返回被选元素的最后一个元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;eq()&lt;/code&gt; 返回被选元素中指定索引的元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;filter()&lt;/code&gt; 返回匹配标准的所有元素&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;not()&lt;/code&gt; 返回不匹配标准的所有元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;div p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 首个 &amp;lt;div&amp;gt; 元素内部的第一个 &amp;lt;p&amp;gt; 元素&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;div p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 最后一个 &amp;lt;div&amp;gt; 元素中的最后一个 &amp;lt;p&amp;gt; 元素&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 返回第二个 &amp;lt;p&amp;gt; 元素&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 带有 class = &quot;test&quot; 的所有 &amp;lt;p&amp;gt; 元素&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 没有 class = &quot;test&quot; 的所有 &amp;lt;p&amp;gt; 元素&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jquery-ajax异步&quot;&gt;jQuery AJAX（异步）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;load(url, data, callback)&lt;/code&gt; 从服务器加载数据，并把返回的数据放入被选元素中
+    &lt;ul&gt;
+      &lt;li&gt;callback 回调函数的参数：
+        &lt;ul&gt;
+          &lt;li&gt;responseTxt 包含调用成功时的结果内容&lt;/li&gt;
+          &lt;li&gt;statusTXT 包含调用的状态&lt;/li&gt;
+          &lt;li&gt;xhr 包含 XMLHttpRequest 对象&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;#div&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseTxt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;statusTxt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;statusTxt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;success&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Success&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;statusTxt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Error: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;statusText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$.get(url, callback)&lt;/code&gt; 通过 HTTP GET 请求从服务器上请求数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Data: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Status: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$.post(url, data, callback)&lt;/code&gt; POST 请求&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Donald Duck&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;city&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Duckburg&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+       &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+           &lt;span class=&quot;c1&quot;&gt;// code&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;@end&lt;/p&gt;</content><author><name>true</name></author><category term="jQuery" /><summary type="html">jQuery 简介</summary></entry><entry><title type="html">Java 随手笔记</title><link href="http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html" rel="alternate" type="text/html" title="Java 随手笔记" /><published>2018-12-10T17:54:33+08:00</published><updated>2018-12-10T17:54:33+08:00</updated><id>http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html">&lt;h1 id=&quot;java-笔记&quot;&gt;Java 笔记&lt;/h1&gt;
+
+&lt;h5 id=&quot;目录&quot;&gt;目录&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#final&quot;&gt;final&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#抽象方法和抽象类&quot;&gt;抽象方法和抽象类&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#接口&quot;&gt;接口&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#内部类&quot;&gt;内部类&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;final&quot;&gt;final&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;final&lt;/code&gt;修饰的变量
+    &lt;ul&gt;
+      &lt;li&gt;该变量一旦赋值，就不可改变。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;final&lt;/code&gt;修饰的方法
+    &lt;ul&gt;
+      &lt;li&gt;该方法不可被子类重写，但是可以被重载！&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;final&lt;/code&gt;修饰类
+    &lt;ul&gt;
+      &lt;li&gt;该类不能被继承，比如&lt;code class=&quot;highlighter-rouge&quot;&gt;Math&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;等。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;抽象方法和抽象类&quot;&gt;抽象方法和抽象类&lt;/h3&gt;
+
+&lt;p&gt;　　使用 abstract 修饰的方法和类被称为抽象方法和抽象类。只有抽象类中才会有抽象方法，抽象方法只有声明，没有方法体。抽象类的子类必须重写父类的抽象方法，给抽象方法提供具体的实现。通过抽象类中抽象方法必须实现的限制，我们就可以得到相似的子类，子类之间必定具有共通点。
+&lt;br /&gt;
+　　虽然抽象类可以包含属性、方法、构造方法，但是抽象类不能实例化，只能被继承。&lt;/p&gt;
+
+&lt;h3 id=&quot;接口&quot;&gt;接口&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;接口的简单介绍&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　接口就是比抽象类还“抽象”的“抽象类”，更加规范地对子类进行了约束，全面实现了规范和具体实现的分离。抽象类中某些类还是提供了具体实现的，而接口则是不提供任何的实现，接口中的所有方法都是抽象方法。接口完全面向规范，规定了一批类具有的公共方法规范。&lt;/p&gt;
+
+&lt;p&gt;　　从接口的实现者角度看，接口定义了可以向外部提供的服务。从接口的调用者角度看，接口定义了实现者可以提供的服务。接口是两个模块之间通信的标准和规范，只要把所要设计的模块之间的接口定义好，就相当于完成了系统的设计大纲，剩下的就是实现了。我们通常使用“面向接口”的思想来设计一些系统。&lt;/p&gt;
+
+&lt;p&gt;　　接口和实现类之间不是父子关系，是实现规则的关系。接口就是规范，定义的是一组规则，体现了“若是……则必须……”的思想。接口的本质像契约一样，制定好之后必须遵守。&lt;/p&gt;
+
+&lt;p&gt;　　面向对象的精髓，是对对象的抽象，而最能体现这一点的就是接口。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;接口的定义
+    &lt;ul&gt;
+      &lt;li&gt;访问修饰符只能是public或者默认&lt;/li&gt;
+      &lt;li&gt;接口名和类名的命名机制相同&lt;/li&gt;
+      &lt;li&gt;接口可以多继承，子接口扩展父接口将会获得父接口所定义的一切&lt;/li&gt;
+      &lt;li&gt;接口中的属性只能是常量，不管写不写都是使用&lt;code class=&quot;highlighter-rouge&quot;&gt;public static final&lt;/code&gt;修饰&lt;/li&gt;
+      &lt;li&gt;接口中的方法，不管写不写都是使用&lt;code class=&quot;highlighter-rouge&quot;&gt;public abstract&lt;/code&gt;修饰&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;访问修饰符&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;接口名&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;父接口&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;父接口&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;…&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;常量定义&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;方法定义&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// for example&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Father&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;This is just a test!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Child&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Father&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;接口的使用
+    &lt;ul&gt;
+      &lt;li&gt;子类通过&lt;code class=&quot;highlighter-rouge&quot;&gt;implements&lt;/code&gt;来实现接口中的规范&lt;/li&gt;
+      &lt;li&gt;接口不能创建实例，但是可以用于声明引用变量类型&lt;/li&gt;
+      &lt;li&gt;一个类实现了接口，就必须实现接口中的所有方法，并且这些方法只能使用&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;修饰&lt;/li&gt;
+      &lt;li&gt;接口中只能包含静态常量、静态方法、抽象方法&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;面向接口编程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　面向接口编程是面向对象编程的一部分，软件设计中最难处理的就是需求的复杂变化，而需求的复杂变化更多体现在具体的实现上。面向接口编程需要我们把握住真正核心的东西，制定的接口规范必须是项目中最稳定不变的部分，有时候设计比实现要更加困难。&lt;/p&gt;
+
+&lt;p&gt;　　接口本身的语法很简单，如何学会灵活的使用才是重点。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;内部类&quot;&gt;内部类&lt;/h3&gt;
+
+&lt;p&gt;　　通常情况下，我们把每个类定义成独立的单元，而有时我们把一个类放在另一个类的内部定义，这种类就称为内部类（&lt;em&gt;innerclasses&lt;/em&gt;）。内部类可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;default&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;protected&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;static&lt;/code&gt;修饰，而外部类只能使用&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;default&lt;/code&gt;修饰。&lt;/p&gt;
+
+&lt;p&gt;　　内部类只是一个编译时的概念，一旦编译成功每个类会生成各自的&lt;code class=&quot;highlighter-rouge&quot;&gt;.class&lt;/code&gt;字节码文件，它们是相互独立的关系。但是内部类只能让它的外部类直接访问，不允许同一个包中的其他类直接访问。内部类可以直接访问外部类的私有属性，内部类被当成外部类的成员，但是外部类不能访问内部类的内部属性。&lt;/p&gt;</content><author><name>true</name></author><category term="Java" /><summary type="html">Java 笔记</summary></entry><entry><title type="html">Java 中面向对象的三大特性</title><link href="http://localhost:4000/2018/12/05/Java%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81.html" rel="alternate" type="text/html" title="Java 中面向对象的三大特性" /><published>2018-12-05T15:00:56+08:00</published><updated>2018-12-05T15:00:56+08:00</updated><id>http://localhost:4000/2018/12/05/Java%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81</id><content type="html" xml:base="http://localhost:4000/2018/12/05/Java%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81.html">&lt;h3 id=&quot;封装&quot;&gt;封装&lt;/h3&gt;
+&lt;p&gt;　　封装的实现，得益于访问控制符的使用。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;private
+    &lt;ul&gt;
+      &lt;li&gt;表示私有，只有自己能访问&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;default
+    &lt;ul&gt;
+      &lt;li&gt;当没有修饰符修饰时，只有同一个包中的类能访问&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;protected
+    &lt;ul&gt;
+      &lt;li&gt;表示可以被同一个包的类以及其他包中的子类访问&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;public
+    &lt;ul&gt;
+      &lt;li&gt;表示可以被该项目的所有包中的所有类访问&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　类的属性一般使用&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;访问权限，然后提供属性相应的&lt;code class=&quot;highlighter-rouge&quot;&gt;get/set&lt;/code&gt;方法来对相关属性赋值与读取。而这些&lt;code class=&quot;highlighter-rouge&quot;&gt;get/set&lt;/code&gt;方法则使用public修饰，以便于外界调用。&lt;/p&gt;
+
+&lt;p&gt;　　通常情况下，只用于本类的辅助性方法用&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;修饰，希望其他类调用的方法用&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;修饰。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;值得注意的是 boolean 变量的 get 方法需要使用 is 开头！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;继承&quot;&gt;继承&lt;/h3&gt;
+
+&lt;p&gt;　　Java 中的类只有单继承（接口有多继承），在定义一个类的时候可以使用关键字 extends 指定它的父类。子类继承父类，就可以得到父类（除了构造方法）的全部属性和方法，但仍然不可以直接访问父类的私有属性和方法。&lt;/p&gt;
+
+&lt;p&gt;　　如果定义一个类时没有使用 extends，那么它的父类是：&lt;code class=&quot;highlighter-rouge&quot;&gt;java.lang.Object&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h4 id=&quot;方法的重写override&quot;&gt;方法的重写（override）&lt;/h4&gt;
+
+&lt;p&gt;　　子类可以重写父类的方法，在调用这个方法时，子类重写后的方法会直接替换掉父类对应的方法。但是方法的重写必须遵循几个原则：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;方法名、形参列表必须相同&lt;/li&gt;
+  &lt;li&gt;返回值类型和声明异常类型，子类必须小于等于父类&lt;/li&gt;
+  &lt;li&gt;访问权限，子类必须大于等于父类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;下面苏轻就介绍两个经常会去重写的方法！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h6 id=&quot;equals-方法&quot;&gt;equals 方法&lt;/h6&gt;
+
+&lt;p&gt;　　苏轻经常使用&lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;来判断两个数是否相等，这在处理基本类型的数据时很实用。但是在遇到引用类型时，情况有所变化。&lt;/p&gt;
+
+&lt;p&gt;　　如果&lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;的两边是引用类型（对象，比如两个字符串），&lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;会去判断它们的地址是否相同。也就是说这时即使它们（这两个字符串）的内容可能完全相同，只要它们不是指向同一个地址，它们就不相等。于是，在所有类的基类&lt;code class=&quot;highlighter-rouge&quot;&gt;Object&lt;/code&gt;类中，定义有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;equals()&lt;/code&gt;的方法，为我们提供了定义“对象内容相等”的逻辑。&lt;/p&gt;
+
+&lt;p&gt;　　&lt;code class=&quot;highlighter-rouge&quot;&gt;JDK&lt;/code&gt;提供的一些类，如&lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;类、&lt;code class=&quot;highlighter-rouge&quot;&gt;Date&lt;/code&gt;类、包装类等，都已经重写了&lt;code class=&quot;highlighter-rouge&quot;&gt;Object&lt;/code&gt;类的&lt;code class=&quot;highlighter-rouge&quot;&gt;equals&lt;/code&gt;方法。调用这些类的&lt;code class=&quot;highlighter-rouge&quot;&gt;equals&lt;/code&gt;方法，例如：&lt;code class=&quot;highlighter-rouge&quot;&gt;x.equals(y)&lt;/code&gt;，当&lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt;所引用的对象是同一类对象且属性内容相等（可以不是同一个对象）时返回&lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt;，否则返回&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h6 id=&quot;tostring-方法&quot;&gt;toString 方法&lt;/h6&gt;
+
+&lt;p&gt;　　在&lt;code class=&quot;highlighter-rouge&quot;&gt;Object&lt;/code&gt;类中还定义有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;toString()&lt;/code&gt;方法，在打印或用字符串连接对象时，就会自动调用该对象的&lt;code class=&quot;highlighter-rouge&quot;&gt;toString()&lt;/code&gt;方法。所以我们就可以去重写这个方法，来自定义输出某些对象的内容。&lt;/p&gt;
+
+&lt;h4 id=&quot;关键字-super&quot;&gt;关键字 super&lt;/h4&gt;
+
+&lt;p&gt;　　关键字&lt;code class=&quot;highlighter-rouge&quot;&gt;super&lt;/code&gt;是直接父类对象的引用，在子类中可以随时通过&lt;code class=&quot;highlighter-rouge&quot;&gt;super.xxxx&lt;/code&gt;的方式来访问父类中被子类覆盖的方法或属性。&lt;/p&gt;
+
+&lt;p&gt;　　子类的构造方法中如果有&lt;code class=&quot;highlighter-rouge&quot;&gt;super()&lt;/code&gt;，那么必须位于第一句。如果子类构造方法的第一行代码没有显式地调用&lt;code class=&quot;highlighter-rouge&quot;&gt;super()&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;this()&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;Java&lt;/code&gt;仍然会默认调用&lt;code class=&quot;highlighter-rouge&quot;&gt;super()&lt;/code&gt;，这里的含义是调用父类的无参数构造方法。因此，构造方法里的&lt;code class=&quot;highlighter-rouge&quot;&gt;super()&lt;/code&gt;是可以省略的。&lt;/p&gt;
+
+&lt;h3 id=&quot;多态&quot;&gt;多态&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导致多态的存在的3个必要条件：
+    &lt;ul&gt;
+      &lt;li&gt;继承&lt;/li&gt;
+      &lt;li&gt;方法的重写&lt;/li&gt;
+      &lt;li&gt;父类引用指向子类对象&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　首先必须明确一点：多态是方法的多态，与属性无关。当父类引用调用子类重写的方法时，多态就出现了。&lt;/p&gt;
+
+&lt;p&gt;　　当某方法的形参是一个父类的引用时，此方法实际使用时的实参可以是该父类任意的子类对象，可以通过不同的子类对象实现不同的行为方式。&lt;/p&gt;
+
+&lt;p&gt;　　多态的主要优势是提高了代码的可扩展性，符合开闭原则。但是多态也有弊端，就是无法调用子类独有的方法。&lt;/p&gt;</content><author><name>true</name></author><category term="Java自学笔记" /><summary type="html">封装 　　封装的实现，得益于访问控制符的使用。 private 表示私有，只有自己能访问 default 当没有修饰符修饰时，只有同一个包中的类能访问 protected 表示可以被同一个包的类以及其他包中的子类访问 public 表示可以被该项目的所有包中的所有类访问</summary></entry><entry><title type="html">Java中的运算符</title><link href="http://localhost:4000/2018/12/02/Java%E8%BF%90%E7%AE%97%E7%AC%A6.html" rel="alternate" type="text/html" title="Java中的运算符" /><published>2018-12-02T15:17:41+08:00</published><updated>2018-12-02T15:17:41+08:00</updated><id>http://localhost:4000/2018/12/02/Java%E8%BF%90%E7%AE%97%E7%AC%A6</id><content type="html" xml:base="http://localhost:4000/2018/12/02/Java%E8%BF%90%E7%AE%97%E7%AC%A6.html">&lt;h3 id=&quot;算术运算符&quot;&gt;算术运算符&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;二元运算符（+、-、*、/、%）
+    &lt;ul&gt;
+      &lt;li&gt;二元运算符是指需要两个操作数才能完成运算的运算符。&lt;/li&gt;
+      &lt;li&gt;“%”是取模运算符，也即是常说的“取余数”。&lt;/li&gt;
+      &lt;li&gt;整数运算
+        &lt;ul&gt;
+          &lt;li&gt;如果两个操作数至少有一个为long类型，则结果为long类型。&lt;/li&gt;
+          &lt;li&gt;只要两个操作数没有long类型，结果就为int类型，即使操作数中有short或byte类型。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;浮点数运算
+        &lt;ul&gt;
+          &lt;li&gt;如果两个操作数至少有一个为double类型，则结果为double类型。&lt;/li&gt;
+          &lt;li&gt;只有两个操作数都是float类型，结果才是float类型。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;取模运算
+        &lt;ul&gt;
+          &lt;li&gt;取模运算的操作数可以为浮点数，但是一般都使用整数。&lt;/li&gt;
+          &lt;li&gt;结果“余数”的符号和左边的操作数相同。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一元运算符（++、–）
+    &lt;ul&gt;
+      &lt;li&gt;自增、自减，原操作数加一或减一。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// a=1&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 先赋值，在自增 b=a=1 a=a+1=2&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 先自增，在赋值 a=a+1=3 c=a=3&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// d=-1&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// e=1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;赋值运算符&quot;&gt;赋值运算符&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;赋值运算符就是等号。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;赋值的扩展运算符如下表所示：&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;运算符&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;用法&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;等效&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;+=&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a += b;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a = a + b;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;-=&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a -= b;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a = a - b;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;*=&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a *= b;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a = a * b;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;/=&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a /= b;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a = a / b;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;%=&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a %= b;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;a = a % b;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// a=a+b=3&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// a=a*b=6&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;关系运算符&quot;&gt;关系运算符&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;==、!=、&amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=&lt;/li&gt;
+  &lt;li&gt;关系运算符用来进行比较运算，结果是布尔值（true/false）。&lt;/li&gt;
+  &lt;li&gt;==和!=，所有数据类型都可以使用。&lt;/li&gt;
+  &lt;li&gt;&amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=只有数值类型（byte/short/int/long/float/double，还有char）可以使用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;逻辑运算符&quot;&gt;逻辑运算符&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在Java中，逻辑运算的操作数和运算结果都是boolean类型。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;名称&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;符号&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;结果&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;逻辑与&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;amp;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;如果两个操作数都是true，那么结果为true，否则为false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;逻辑或&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;|&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;两个操作数只要有一个是true，结果就为true，否则为false&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;短路与&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;amp;&amp;amp;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;只要有一个为false，就直接返回false结束运算&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;短路或&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;||&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;只要有一个为true，就直接返回true结束运算&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;逻辑非&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;!&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;取反&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;逻辑异或&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;^&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;相同为false，不同为true&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;短路的方式：从左向右计算，如果左边的操作数就已经可以确定该逻辑表达式的值，那么就不会计算右边的操作数，追求高效率。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;a = %d, b = %d\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 因为 a == b 为 false，所以 f = false，短路后右边不计算&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;f = %b\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;a = %d, b = %d\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 因为 ++a 先计算，所以 a = 2&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 发生短路的时候，不会再计算右边部分，某些计算导致的值的改变就不会发生&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;t = %b\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;a = %d, b = %d\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;位运算符&quot;&gt;位运算符&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;位运算符&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;~&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;取反&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;amp;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;按位与&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;|&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;按位或&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;^&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;按位异或&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;«&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;左移运算符，二进制左移相当于乘2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;»&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;右移运算符，二进制右移一位以为相当于除2取商&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“&amp;amp;”和“|”既是逻辑运算符，也是位运算符。如果两侧的操作数都是boolean类型，就作为逻辑运算符使用。如果两侧的操作数都是整数类型，就作为位运算符使用。&lt;/li&gt;
+  &lt;li&gt;不要把“^”当做幂运算，它是“按位异或”操作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;字符串连接符&quot;&gt;字符串连接符（+）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“+”运算符两侧的操作数只要有一个是字符串（String）类型，系统就会自动将另一个操作数转换为字符串然后进行连接。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;条件运算符&quot;&gt;条件运算符&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;格式：&lt;code class=&quot;highlighter-rouge&quot;&gt;T ? A : B&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;T为boolean类型的表达式，先计算T的值。&lt;/li&gt;
+      &lt;li&gt;若T为true，运算结果为表达式A的值，否则为表达式B的值。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;运算符的优先级问题&quot;&gt;运算符的优先级问题&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;优先级&lt;/td&gt;
+      &lt;td&gt;运算符&lt;/td&gt;
+      &lt;td&gt;类&lt;/td&gt;
+      &lt;td&gt;结合性&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;()&lt;/td&gt;
+      &lt;td&gt;括号运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;!、+（正）、-（负）&lt;/td&gt;
+      &lt;td&gt;一元运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;~&lt;/td&gt;
+      &lt;td&gt;位逻辑运算符&lt;/td&gt;
+      &lt;td&gt;由右至左&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;++、–&lt;/td&gt;
+      &lt;td&gt;递增与递减运算符&lt;/td&gt;
+      &lt;td&gt;由右至左&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;*、/、%&lt;/td&gt;
+      &lt;td&gt;算术运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;+、-&lt;/td&gt;
+      &lt;td&gt;算术运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;«、»&lt;/td&gt;
+      &lt;td&gt;位左移、右移运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;&amp;gt;、&amp;gt;=、&amp;lt;、&amp;lt;=&lt;/td&gt;
+      &lt;td&gt;关系运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;==、!=&lt;/td&gt;
+      &lt;td&gt;关系运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;&amp;amp;&lt;/td&gt;
+      &lt;td&gt;位运算符、逻辑运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;^&lt;/td&gt;
+      &lt;td&gt;位运算符、逻辑运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;|&lt;/td&gt;
+      &lt;td&gt;位运算符、逻辑运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;&amp;amp;&amp;amp;&lt;/td&gt;
+      &lt;td&gt;逻辑运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;||&lt;/td&gt;
+      &lt;td&gt;逻辑运算符&lt;/td&gt;
+      &lt;td&gt;由左至右&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;? :&lt;/td&gt;
+      &lt;td&gt;条件运算符&lt;/td&gt;
+      &lt;td&gt;由右至左&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;14&lt;/td&gt;
+      &lt;td&gt;=、+=、-=、*=、/=、%=&lt;/td&gt;
+      &lt;td&gt;赋值运算符、扩展运算符&lt;/td&gt;
+      &lt;td&gt;由右至左&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;　　我现在要举一个例子：&lt;code class=&quot;highlighter-rouge&quot;&gt;A || B &amp;amp;&amp;amp; C&lt;/code&gt;，看第一眼的时候谁能很清晰地反应过来优先级？它等价于&lt;code class=&quot;highlighter-rouge&quot;&gt;A || (B &amp;amp;&amp;amp; C)&lt;/code&gt;，而不是&lt;code class=&quot;highlighter-rouge&quot;&gt;(A || B) &amp;amp;&amp;amp; C&lt;/code&gt;！&lt;/p&gt;
+
+  &lt;p&gt;　　脑容量不够用的苏轻觉得根本没必要记这么多优先级！既然小括号是最高的优先级，那写表达式的时候就全部用小括号括起来吧！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;instanceof-运算符&quot;&gt;instanceof 运算符&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;instanceof 是二元运算符，左边是对象，右边是类。&lt;/li&gt;
+  &lt;li&gt;若左边的对象是右面的类（或右边的类的子类）所创建的对象时，返回 true，否则返回 false。&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>true</name></author><category term="Java自学笔记" /><summary type="html">算术运算符 二元运算符（+、-、*、/、%） 二元运算符是指需要两个操作数才能完成运算的运算符。 “%”是取模运算符，也即是常说的“取余数”。 整数运算 如果两个操作数至少有一个为long类型，则结果为long类型。 只要两个操作数没有long类型，结果就为int类型，即使操作数中有short或byte类型。 浮点数运算 如果两个操作数至少有一个为double类型，则结果为double类型。 只有两个操作数都是float类型，结果才是float类型。 取模运算 取模运算的操作数可以为浮点数，但是一般都使用整数。 结果“余数”的符号和左边的操作数相同。 一元运算符（++、–） 自增、自减，原操作数加一或减一。 int a = 1; // a=1 int b = a++; // 先赋值，在自增 b=a=1 a=a+1=2 int c = ++a; // 先自增，在赋值 a=a+1=3 c=a=3 int d = -7 % 3; // d=-1 int e = 7 % -3; // e=1 赋值运算符 赋值运算符就是等号。 赋值的扩展运算符如下表所示： 运算符 用法 等效 += a += b; a = a + b; -= a -= b; a = a - b; *= a *= b; a = a * b; /= a /= b; a = a / b; %= a %= b; a = a % b; int a = 1; int b = 2; a += b; // a=a+b=3 a *= b; // a=a*b=6 关系运算符 ==、!=、&amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;= 关系运算符用来进行比较运算，结果是布尔值（true/false）。 ==和!=，所有数据类型都可以使用。 &amp;gt;、&amp;lt;、&amp;gt;=、&amp;lt;=只有数值类型（byte/short/int/long/float/double，还有char）可以使用。 逻辑运算符 在Java中，逻辑运算的操作数和运算结果都是boolean类型。 名称 符号 结果 逻辑与 &amp;amp; 如果两个操作数都是true，那么结果为true，否则为false 逻辑或 | 两个操作数只要有一个是true，结果就为true，否则为false 短路与 &amp;amp;&amp;amp; 只要有一个为false，就直接返回false结束运算 短路或 || 只要有一个为true，就直接返回true结束运算 逻辑非 ! 取反 逻辑异或 ^ 相同为false，不同为true 短路的方式：从左向右计算，如果左边的操作数就已经可以确定该逻辑表达式的值，那么就不会计算右边的操作数，追求高效率。 public static void main(String[] args) { int a = 1; int b = 2; System.out.printf(&quot;a = %d, b = %d\n&quot;, a, b); boolean f = (a == b) &amp;amp;&amp;amp; (++a == b); // 因为 a == b 为 false，所以 f = false，短路后右边不计算 System.out.printf(&quot;f = %b\n&quot;, f); System.out.printf(&quot;a = %d, b = %d\n&quot;, a, b); boolean t = (++a == b) &amp;amp;&amp;amp; (a == b); // 因为 ++a 先计算，所以 a = 2 // 发生短路的时候，不会再计算右边部分，某些计算导致的值的改变就不会发生 System.out.printf(&quot;t = %b\n&quot;, t); System.out.printf(&quot;a = %d, b = %d\n&quot;, a, b); } 位运算符 位运算符 说明 ~ 取反 &amp;amp; 按位与 | 按位或 ^ 按位异或 « 左移运算符，二进制左移相当于乘2 » 右移运算符，二进制右移一位以为相当于除2取商 “&amp;amp;”和“|”既是逻辑运算符，也是位运算符。如果两侧的操作数都是boolean类型，就作为逻辑运算符使用。如果两侧的操作数都是整数类型，就作为位运算符使用。 不要把“^”当做幂运算，它是“按位异或”操作。 字符串连接符（+） “+”运算符两侧的操作数只要有一个是字符串（String）类型，系统就会自动将另一个操作数转换为字符串然后进行连接。 条件运算符 格式：T ? A : B T为boolean类型的表达式，先计算T的值。 若T为true，运算结果为表达式A的值，否则为表达式B的值。 运算符的优先级问题 优先级 运算符 类 结合性 1 () 括号运算符 由左至右 2 !、+（正）、-（负） 一元运算符 由左至右 2 ~ 位逻辑运算符 由右至左 2 ++、– 递增与递减运算符 由右至左 3 *、/、% 算术运算符 由左至右 4 +、- 算术运算符 由左至右 5 «、» 位左移、右移运算符 由左至右 6 &amp;gt;、&amp;gt;=、&amp;lt;、&amp;lt;= 关系运算符 由左至右 7 ==、!= 关系运算符 由左至右 8 &amp;amp; 位运算符、逻辑运算符 由左至右 9 ^ 位运算符、逻辑运算符 由左至右 10 | 位运算符、逻辑运算符 由左至右 11 &amp;amp;&amp;amp; 逻辑运算符 由左至右 12 || 逻辑运算符 由左至右 13 ? : 条件运算符 由右至左 14 =、+=、-=、*=、/=、%= 赋值运算符、扩展运算符 由右至左 　　我现在要举一个例子：A || B &amp;amp;&amp;amp; C，看第一眼的时候谁能很清晰地反应过来优先级？它等价于A || (B &amp;amp;&amp;amp; C)，而不是(A || B) &amp;amp;&amp;amp; C！ 　　脑容量不够用的苏轻觉得根本没必要记这么多优先级！既然小括号是最高的优先级，那写表达式的时候就全部用小括号括起来吧！ instanceof 运算符 instanceof 是二元运算符，左边是对象，右边是类。 若左边的对象是右面的类（或右边的类的子类）所创建的对象时，返回 true，否则返回 false。</summary></entry><entry><title type="html">Java对象和类</title><link href="http://localhost:4000/2018/11/28/Java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB.html" rel="alternate" type="text/html" title="Java对象和类" /><published>2018-11-28T10:15:39+08:00</published><updated>2018-11-28T10:15:39+08:00</updated><id>http://localhost:4000/2018/11/28/Java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB</id><content type="html" xml:base="http://localhost:4000/2018/11/28/Java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB.html">&lt;ul&gt;
+  &lt;li&gt;面向过程（ &lt;em&gt;Procedure Oriented&lt;/em&gt; ）
+    &lt;ul&gt;
+      &lt;li&gt;软件分析&lt;/li&gt;
+      &lt;li&gt;软件设计&lt;/li&gt;
+      &lt;li&gt;软件开发&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;面向对象（ &lt;em&gt;Object Oriented&lt;/em&gt; ）
+    &lt;ul&gt;
+      &lt;li&gt;面向对象分析 OOA&lt;/li&gt;
+      &lt;li&gt;面向对象设计 OOD&lt;/li&gt;
+      &lt;li&gt;面向对象编程 OOP&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;面相对象的三大特征&quot;&gt;面相对象的三大特征&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;封装性&lt;/li&gt;
+  &lt;li&gt;继承性&lt;/li&gt;
+  &lt;li&gt;多态性&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;类-class&quot;&gt;类 Class&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;对象 Object/Instance(实例)
+    &lt;ul&gt;
+      &lt;li&gt;类可以看作是一个模板，而根据这个模板制造出来的具体实例就是对象。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 每个源文件有且只有一个public class，且类名和文件名完全相同&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 属性&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 方法&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;birthday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s的出生年份为%d&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2018&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 构造器&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;属性 Field
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;类的静态特征，或者说是这个类的对象所包含的数据，称为属性，也叫成员变量。&lt;/p&gt;
+
+        &lt;table&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;成员变量的数据类型&lt;/th&gt;
+              &lt;th style=&quot;text-align: center&quot;&gt;未初始化时的默认值&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;整型&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;浮点型&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;0.0&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;字符型&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;‘\u0000’&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;布尔型&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;引用类型&lt;/td&gt;
+              &lt;td style=&quot;text-align: center&quot;&gt;null&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;方法
+    &lt;ul&gt;
+      &lt;li&gt;方法用于定义类或者对象的行为特征和功能实现&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;构造器（构造方法）
+    &lt;ul&gt;
+      &lt;li&gt;构造器用于对象的初始化，构造器的本质是一个名称与类名相同的特殊方法。&lt;/li&gt;
+      &lt;li&gt;Java 通过 new 关键字来调用构造器，以返回一个类的实例。&lt;/li&gt;
+      &lt;li&gt;构造器不能定义返回值类型，不能使用 return。&lt;/li&gt;
+      &lt;li&gt;如果没有自定义构造器，则编译器会自动创建一个无参数类型的构造方法。如果已经有了至少一个自定义构造器，则编译器不会再创建。&lt;/li&gt;
+      &lt;li&gt;构造方法也可以重载多个，重载方法的内部一般使用this表示属性。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserInfo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;UserInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;UserInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;userID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;UserInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;UserInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;UserInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;123456&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;UserInfo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name2&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;654321&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;面向对象的内存分析&quot;&gt;面向对象的内存分析&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;栈（ &lt;em&gt;stack&lt;/em&gt; ）
+    &lt;ul&gt;
+      &lt;li&gt;每个方法被调用时都会创建一个栈帧（存储局部变量、操作数、方法出口等），属于线程私有，不会被其他线程共享。&lt;/li&gt;
+      &lt;li&gt;JVM为每个线程创建一个栈，用于存放该线程执行方法的信息（实际参数、局部变量等）&lt;/li&gt;
+      &lt;li&gt;栈是一个由系统自动分配的连续内存空间，有着“先进后出，后进先出”的存储特性，速度快。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;堆（ &lt;em&gt;heap&lt;/em&gt; ）
+    &lt;ul&gt;
+      &lt;li&gt;堆用于存放创建完毕的对象（数组也是对象）&lt;/li&gt;
+      &lt;li&gt;JVM只有一个所有线程共享的堆&lt;/li&gt;
+      &lt;li&gt;堆是一个不连续的内存空间，分配灵活，但是速度慢&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;方法区（ &lt;em&gt;method area&lt;/em&gt; ）
+    &lt;ul&gt;
+      &lt;li&gt;方法区也叫静态区，JVM只有一个所有线程共享的方法区&lt;/li&gt;
+      &lt;li&gt;方法区中存放的是不变或唯一的内容（类信息、静态变量、字符串常量等）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;垃圾回收机制garbage-collection&quot;&gt;垃圾回收机制（Garbage Collection）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;内存管理
+    &lt;ul&gt;
+      &lt;li&gt;对象空间的分配：使用 new 关键字创建对象&lt;/li&gt;
+      &lt;li&gt;对象空间的释放：把一个对象赋值为 null&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;垃圾回收过程
+    &lt;ul&gt;
+      &lt;li&gt;发现无用对象（没有任何变量引用的对象）&lt;/li&gt;
+      &lt;li&gt;回收无用对象所占用的内存空间&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;垃圾回收算法
+    &lt;ul&gt;
+      &lt;li&gt;引用计数法
+        &lt;ul&gt;
+          &lt;li&gt;堆中的每个对象都有一个引用计数，每次引用时计数加一，每次被引用变量的值变为 null 时计数减一，直到计数为零。这种算法简单，但是无法识别循环引用的无用对象。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;引用可达法
+        &lt;ul&gt;
+          &lt;li&gt;从一个节点 GCROOT 出发，寻找对应的引用节点，找到节点之后继续寻找这个节点的引用节点，直到所有的引用节点寻找完毕，剩下的没有被找到的节点则全部被认为是没有被引用到的节点，即无用节点。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分代垃圾回收机制
+    &lt;ul&gt;
+      &lt;li&gt;JVM将堆内存划分为 Eden、Survivor、Tenured/Old 空间。&lt;/li&gt;
+      &lt;li&gt;年轻代
+        &lt;ul&gt;
+          &lt;li&gt;所有的新生成的对象首先都是放在 Eden 区，触发过垃圾回收的对象放在 Survivor 区&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;年老代
+        &lt;ul&gt;
+          &lt;li&gt;在年轻代中经历了 N（默认15）次垃圾回收后仍然存活的对象，会被放到老年代中&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;持久代
+        &lt;ul&gt;
+          &lt;li&gt;用于存放属于静态文件的 Java 类、方法等，不影响垃圾回收&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Minor GC
+        &lt;ul&gt;
+          &lt;li&gt;用于清理年轻代区域。Eden 区满了就会触发一次 Minor GC 来清理无用对象，将有用的对象复制到 Survivor1 或 Survivor2 区中。&lt;/li&gt;
+          &lt;li&gt;Survivor1 与 Survivor2 区域的大小相同，同一时刻只有一个在使用，另一个为空。用于存放触发小于 N（默认15） 次垃圾回收的对象。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Major GC
+        &lt;ul&gt;
+          &lt;li&gt;用于清理年老代区域&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Full GC
+        &lt;ul&gt;
+          &lt;li&gt;用于清理年轻代、年老代，Old 区满了触发。成本较高，会对系统性能产生影响。&lt;/li&gt;
+          &lt;li&gt;有如下原因可能导致Full GC：
+            &lt;ul&gt;
+              &lt;li&gt;年老代(Tenured)被写满&lt;/li&gt;
+              &lt;li&gt;持久代(Perm)被写满&lt;/li&gt;
+              &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;System.gc()&lt;/code&gt;被显式调用时，程序会建议 GC 启动，但是建议并不一定执行&lt;/li&gt;
+              &lt;li&gt;上一次 GC 之后 Heap 的各域分配策略动态变化&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;开发中容易造成内存泄漏的操作
+    &lt;ul&gt;
+      &lt;li&gt;创建大量的对象&lt;/li&gt;
+      &lt;li&gt;使用静态集合类要注意这些静态变量、对象都不能被释放&lt;/li&gt;
+      &lt;li&gt;各种连接对象（IO流、数据库连接、网络连接等）不使用时一定要关闭&lt;/li&gt;
+      &lt;li&gt;监听器的使用，也要注意删除&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;参数传值机制&quot;&gt;参数传值机制&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本数据类型参
+    &lt;ul&gt;
+      &lt;li&gt;传递的是值的副本&lt;/li&gt;
+      &lt;li&gt;副本改变不影响原件&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;引用类型
+    &lt;ul&gt;
+      &lt;li&gt;传递的是值的副本&lt;/li&gt;
+      &lt;li&gt;引用类型指的是“对象的地址”，因此副本和原参数都指向了同一个“地址”。改变副本指向地址对象的值，也意味着原参数指向对象的值也发生了改变。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>true</name></author><category term="Java自学笔记" /><summary type="html">面向过程（ Procedure Oriented ） 软件分析 软件设计 软件开发 面向对象（ Object Oriented ） 面向对象分析 OOA 面向对象设计 OOD 面向对象编程 OOP 面相对象的三大特征 封装性 继承性 多态性 类 Class 对象 Object/Instance(实例) 类可以看作是一个模板，而根据这个模板制造出来的具体实例就是对象。 // 每个源文件有且只有一个public class，且类名和文件名完全相同 public class Person { // 属性 int age; String name; // 方法 void birthday() { System.out.printf(&quot;%s的出生年份为%d&quot;, this.name, 2018 - this.age); } // 构造器 Person() { } } 属性 Field 类的静态特征，或者说是这个类的对象所包含的数据，称为属性，也叫成员变量。 成员变量的数据类型 未初始化时的默认值 整型 0 浮点型 0.0 字符型 ‘\u0000’ 布尔型 false 引用类型 null 方法 方法用于定义类或者对象的行为特征和功能实现 构造器（构造方法） 构造器用于对象的初始化，构造器的本质是一个名称与类名相同的特殊方法。 Java 通过 new 关键字来调用构造器，以返回一个类的实例。 构造器不能定义返回值类型，不能使用 return。 如果没有自定义构造器，则编译器会自动创建一个无参数类型的构造方法。如果已经有了至少一个自定义构造器，则编译器不会再创建。 构造方法也可以重载多个，重载方法的内部一般使用this表示属性。 public class UserInfo { int userID; String name; String password; public UserInfo() { super(); } public UserInfo(int id, String name, String password) { super(); this.userID = id; this.name = name; this.password = password; } public UserInfo(String name, String password) { super(); this.name = name; this.password = password; } public static void main(String[] args) { UserInfo user1 = new UserInfo(); UserInfo user2 = new UserInfo(0, &quot;name&quot;, &quot;123456&quot;); UserInfo user3 = new UserInfo(&quot;name2&quot;, &quot;654321&quot;); System.out.println(user1); System.out.println(user2); System.out.println(user3); } } 面向对象的内存分析 栈（ stack ） 每个方法被调用时都会创建一个栈帧（存储局部变量、操作数、方法出口等），属于线程私有，不会被其他线程共享。 JVM为每个线程创建一个栈，用于存放该线程执行方法的信息（实际参数、局部变量等） 栈是一个由系统自动分配的连续内存空间，有着“先进后出，后进先出”的存储特性，速度快。 堆（ heap ） 堆用于存放创建完毕的对象（数组也是对象） JVM只有一个所有线程共享的堆 堆是一个不连续的内存空间，分配灵活，但是速度慢 方法区（ method area ） 方法区也叫静态区，JVM只有一个所有线程共享的方法区 方法区中存放的是不变或唯一的内容（类信息、静态变量、字符串常量等） 垃圾回收机制（Garbage Collection） 内存管理 对象空间的分配：使用 new 关键字创建对象 对象空间的释放：把一个对象赋值为 null 垃圾回收过程 发现无用对象（没有任何变量引用的对象） 回收无用对象所占用的内存空间 垃圾回收算法 引用计数法 堆中的每个对象都有一个引用计数，每次引用时计数加一，每次被引用变量的值变为 null 时计数减一，直到计数为零。这种算法简单，但是无法识别循环引用的无用对象。 引用可达法 从一个节点 GCROOT 出发，寻找对应的引用节点，找到节点之后继续寻找这个节点的引用节点，直到所有的引用节点寻找完毕，剩下的没有被找到的节点则全部被认为是没有被引用到的节点，即无用节点。 分代垃圾回收机制 JVM将堆内存划分为 Eden、Survivor、Tenured/Old 空间。 年轻代 所有的新生成的对象首先都是放在 Eden 区，触发过垃圾回收的对象放在 Survivor 区 年老代 在年轻代中经历了 N（默认15）次垃圾回收后仍然存活的对象，会被放到老年代中 持久代 用于存放属于静态文件的 Java 类、方法等，不影响垃圾回收 Minor GC 用于清理年轻代区域。Eden 区满了就会触发一次 Minor GC 来清理无用对象，将有用的对象复制到 Survivor1 或 Survivor2 区中。 Survivor1 与 Survivor2 区域的大小相同，同一时刻只有一个在使用，另一个为空。用于存放触发小于 N（默认15） 次垃圾回收的对象。 Major GC 用于清理年老代区域 Full GC 用于清理年轻代、年老代，Old 区满了触发。成本较高，会对系统性能产生影响。 有如下原因可能导致Full GC： 年老代(Tenured)被写满 持久代(Perm)被写满 System.gc()被显式调用时，程序会建议 GC 启动，但是建议并不一定执行 上一次 GC 之后 Heap 的各域分配策略动态变化 开发中容易造成内存泄漏的操作 创建大量的对象 使用静态集合类要注意这些静态变量、对象都不能被释放 各种连接对象（IO流、数据库连接、网络连接等）不使用时一定要关闭 监听器的使用，也要注意删除 参数传值机制 基本数据类型参 传递的是值的副本 副本改变不影响原件 引用类型 传递的是值的副本 引用类型指的是“对象的地址”，因此副本和原参数都指向了同一个“地址”。改变副本指向地址对象的值，也意味着原参数指向对象的值也发生了改变。</summary></entry><entry><title type="html">Java 选择结构和循环结构</title><link href="http://localhost:4000/2018/11/27/Java%E9%80%89%E6%8B%A9%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84.html" rel="alternate" type="text/html" title="Java 选择结构和循环结构" /><published>2018-11-27T19:47:19+08:00</published><updated>2018-11-27T19:47:19+08:00</updated><id>http://localhost:4000/2018/11/27/Java%E9%80%89%E6%8B%A9%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84</id><content type="html" xml:base="http://localhost:4000/2018/11/27/Java%E9%80%89%E6%8B%A9%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84.html">&lt;h1 id=&quot;选择结构&quot;&gt;选择结构&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;单选泽结构 if&lt;/li&gt;
+  &lt;li&gt;双选择结构 if else&lt;/li&gt;
+  &lt;li&gt;多选择结构 if else if else&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.lang.Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TestIf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Math.random()&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 该方法返回一个[0, 1)区间的double类型的随机数&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d + %d + %d = ?\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;请输入你的答案：&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;答案正确！&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;答案错误！正确答案是 &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; !&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;多选择结构 switch&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 这段代码是接着上面的代码的！&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;恭喜中三等奖！&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;恭喜中二等奖！&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;恭喜中一等奖！&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;没有中奖！&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Switch语句会根据表达式的值从相匹配的case标签处开始执行，一直执行到break语句处或者是switch语句的末尾。如果表达式的值与任何case值都不匹配，则进入default语句（如果存在default语句的话）。&lt;/li&gt;
+  &lt;li&gt;Swith语句的case标签必须是整数（long类型除外）或枚举，在JDK1.7之后还允许使用字符串。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;循环结构&quot;&gt;循环结构&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;while 循环&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*boolean表达式*/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 循环体&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;do while 循环&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 循环体（先do后判断，所以循环体至少会被执行一次！）&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*boolean表达式*/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;for 循环&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;初始表达式&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;布尔表达式&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;迭代因子&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 循环体&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;逗号运算符：在表达式的初始化和步进控制部分，我们可以使用一系列由逗号分隔的表达式，而且那些表达式均会独立执行。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;苏轻笔记！&lt;/p&gt;
+
+  &lt;p&gt;for循环的初始化、条件判断、步进部分是可以为空的，for(;;)和while()一样，都是无限循环。但是通常来说我想并不会这么使用它，除非特立独行。我觉得代码还是追求简单美观为好。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;使用while循环计算1~100的和&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;使用for循环计算1~100的和&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;sum2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sum2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;嵌套循环&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 这是一个排序算法，将20个随机数排序。&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.lang.Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MaoPao&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 数组&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 冒泡排序&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 交换位置&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;break 和 continue
+    &lt;ul&gt;
+      &lt;li&gt;break会强行退出循环，不再执行循环中的任何一条语句。&lt;/li&gt;
+      &lt;li&gt;continue会终止循环中的当前这次循环，直接去进行下一次循环。&lt;/li&gt;
+      &lt;li&gt;可以带标签。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 在循环之前设置标签，因为我们希望在其中嵌套另一个循环。&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;outer:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;101&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// 由于break和continue关键字通常只中断当前循环，&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// 但若随同标签使用，它们就会中断到存在标签的地方。&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;  &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;语句块&quot;&gt;语句块&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;语句块(有时候也叫复合语句)，指的是用花括号括起来的任意数量的简单Java语句。&lt;/li&gt;
+  &lt;li&gt;语句块确定了局部变量的作用域，定义的变量作用域只限于语句块内部。&lt;/li&gt;
+  &lt;li&gt;语句块可以被嵌套在另一个语句块中，但是不能在两个嵌套的语句块内声明同名的变量。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;方法&quot;&gt;方法&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;方法的声明格式
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;修饰符&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;修饰符&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;返回值类型&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;方法名&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;形式参数列表&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Java&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;语句&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;方法的调用方式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;err&quot;&gt;对象名&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;方法名&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;实际参数列表&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;形式参数（形参）：在方法声明时，用于接收外界传入的参数&lt;/li&gt;
+  &lt;li&gt;实际参数（实参）：调用方法是，实际传给方法的参数&lt;/li&gt;
+  &lt;li&gt;返回值：方法在执行完毕后，返还的数据&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;返回值类型：事先约定的返回值的数据类型（无返回值时指定为 void）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;实参的数量、类型、顺序，必须和指定方法声明的形参匹配&lt;/li&gt;
+  &lt;li&gt;return 语句终止方法的运行，并指定返回值&lt;/li&gt;
+  &lt;li&gt;传递参数时遵循的原则是值传递（传递数据的副本）&lt;/li&gt;
+  &lt;li&gt;基本数据类型传递的是该数据的 copy 值&lt;/li&gt;
+  &lt;li&gt;引用类型传递的是该对象引用的 copy 值，但是指向的是同一个对象&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 两个随机数，求和&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*实参*/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 调用方法&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*形参*/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;计算 %d + %d 的值\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;方法的重载
+    &lt;ul&gt;
+      &lt;li&gt;同一个类里面可以定义多个方法名相同但参数不同的方法，调用时会根据不同的参数匹配对应的方法。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;苏轻划重点：必须形参不同&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;递归结构&quot;&gt;递归结构&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;通俗来说，递归就是自己调用自己
+    &lt;ul&gt;
+      &lt;li&gt;使用递归一定要明确什么时候调用自身，什么时候不调用自身&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 计算阶乘&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Dg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d的阶乘的结果为%s&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jieCheng&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;jieCheng&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; * &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jieCheng&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;苏轻笔记。&lt;/p&gt;
+
+  &lt;p&gt;这些都是最基础的东西了，基本上大部分的编程语言都有这些结构，有基础的话就很好理解。只要还在编程这些东西就会一直在使用，所以要多敲代码孰能生巧举一反三。&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>true</name></author><category term="Java自学笔记" /><summary type="html">选择结构 单选泽结构 if 双选择结构 if else 多选择结构 if else if else import java.lang.Math; import java.util.Scanner; public class TestIf { public static void main(String[] args) { int a = (int)(100 * Math.random()); int b = (int)(100 * Math.random()); int c = (int)(100 * Math.random()); // Math.random() // 该方法返回一个[0, 1)区间的double类型的随机数 System.out.printf(&quot;%d + %d + %d = ?\n&quot;, a, b, c); System.out.println(&quot;请输入你的答案：&quot;); Scanner scanner = new Scanner(System.in); int result = scanner.nextInt(); if (result == a+b+c) { System.out.println(&quot;答案正确！&quot;); } else { System.out.println(&quot;答案错误！正确答案是 &quot; + (a+b+c) + &quot; !&quot;); } } } 多选择结构 switch // 这段代码是接着上面的代码的！ switch (((a+b+c)/10)) { case 5: case 10: case 15: case 20: case 25: System.out.println(&quot;恭喜中三等奖！&quot;); break; case 8: case 18: case 28: System.out.println(&quot;恭喜中二等奖！&quot;); break; case 0: System.out.println(&quot;恭喜中一等奖！&quot;); break; default: System.out.println(&quot;没有中奖！&quot;); break; } Switch语句会根据表达式的值从相匹配的case标签处开始执行，一直执行到break语句处或者是switch语句的末尾。如果表达式的值与任何case值都不匹配，则进入default语句（如果存在default语句的话）。 Swith语句的case标签必须是整数（long类型除外）或枚举，在JDK1.7之后还允许使用字符串。 循环结构 while 循环 while (/*boolean表达式*/) { // 循环体 } do while 循环 do { // 循环体（先do后判断，所以循环体至少会被执行一次！） } while (/*boolean表达式*/) for 循环 for (初始表达式;布尔表达式;迭代因子) { // 循环体 } 逗号运算符：在表达式的初始化和步进控制部分，我们可以使用一系列由逗号分隔的表达式，而且那些表达式均会独立执行。 for(int i = 1, j = 1; i &amp;lt; 5; i++, j = i * 2) { //... } 苏轻笔记！ for循环的初始化、条件判断、步进部分是可以为空的，for(;;)和while()一样，都是无限循环。但是通常来说我想并不会这么使用它，除非特立独行。我觉得代码还是追求简单美观为好。 public static void main(String[] args) { System.out.println(&quot;使用while循环计算1~100的和&quot;); int a = 0; int sum = 0; while (a &amp;lt; 100) { sum += ++a; } System.out.println(sum); System.out.println(&quot;使用for循环计算1~100的和&quot;); int sum2 = 0; for (int i = 1; i &amp;lt;= 100; i++) { sum2 = sum2 + i; } System.out.println(sum2); } 嵌套循环 // 这是一个排序算法，将20个随机数排序。 import java.lang.Math; public class MaoPao { public static void main(String[] args) { int count = 20; int[] array = new int[count]; // 数组 for (int i = 0; i &amp;lt; count; i++) array[i] = (int)(100 * Math.random()); for (int i = 0; i &amp;lt; count; i++) System.out.print(array[i] + &quot; &quot;); System.out.println(); for (int i = 0; i &amp;lt; count; i++) { // 冒泡排序 for (int j = i + 1; j &amp;lt; count; j++) { if (array[i] &amp;gt; array[j]) { // 交换位置 array[i] = array[i] + array[j]; array[j] = array[i] - array[j]; array[i] = array[i] - array[j]; } } } for (int i = 0; i &amp;lt; count; i++) System.out.print(array[i] + &quot; &quot;); System.out.println(); } } break 和 continue break会强行退出循环，不再执行循环中的任何一条语句。 continue会终止循环中的当前这次循环，直接去进行下一次循环。 可以带标签。 // 在循环之前设置标签，因为我们希望在其中嵌套另一个循环。 outer: for (int i = 101; i &amp;lt; 150; i++) { for (int j = 2; j &amp;lt; i / 2; j++) { if (i % j == 0){ continue outer; // 由于break和continue关键字通常只中断当前循环， // 但若随同标签使用，它们就会中断到存在标签的地方。 } } System.out.print(i + &quot; &quot;); } 语句块 语句块(有时候也叫复合语句)，指的是用花括号括起来的任意数量的简单Java语句。 语句块确定了局部变量的作用域，定义的变量作用域只限于语句块内部。 语句块可以被嵌套在另一个语句块中，但是不能在两个嵌套的语句块内声明同名的变量。 方法 方法的声明格式 [修饰符1 修饰符2 ...] 返回值类型 方法名(形式参数列表) { Java语句; ... } 方法的调用方式 对象名.方法名(实际参数列表) 形式参数（形参）：在方法声明时，用于接收外界传入的参数 实际参数（实参）：调用方法是，实际传给方法的参数 返回值：方法在执行完毕后，返还的数据 返回值类型：事先约定的返回值的数据类型（无返回值时指定为 void） 实参的数量、类型、顺序，必须和指定方法声明的形参匹配 return 语句终止方法的运行，并指定返回值 传递参数时遵循的原则是值传递（传递数据的副本） 基本数据类型传递的是该数据的 copy 值 引用类型传递的是该对象引用的 copy 值，但是指向的是同一个对象 public static void main(String[] args) { int result; // 两个随机数，求和 int a1 = (int)(100 * Math.random()); int a2 = (int)(100 * Math.random()); result = addition(a1 , a2/*实参*/); // 调用方法 System.out.println(result); } static int addition(int a, int b/*形参*/) { System.out.printf(&quot;计算 %d + %d 的值\n&quot;, a, b); return a + b; } 方法的重载 同一个类里面可以定义多个方法名相同但参数不同的方法，调用时会根据不同的参数匹配对应的方法。 苏轻划重点：必须形参不同 递归结构 通俗来说，递归就是自己调用自己 使用递归一定要明确什么时候调用自身，什么时候不调用自身 // 计算阶乘 public class Dg { public static void main(String[] args) { int n = 10; System.out.printf(&quot;%d的阶乘的结果为%s&quot;, n, jieCheng(n)); } static long jieCheng(int n) { if (n == 1) { System.out.println(1); return 1; } else { System.out.print(n + &quot; * &quot;); return n * jieCheng(n - 1); } } } 苏轻笔记。 这些都是最基础的东西了，基本上大部分的编程语言都有这些结构，有基础的话就很好理解。只要还在编程这些东西就会一直在使用，所以要多敲代码孰能生巧举一反三。</summary></entry><entry><title type="html">Java 基本数据类型</title><link href="http://localhost:4000/2018/11/21/Java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" rel="alternate" type="text/html" title="Java 基本数据类型" /><published>2018-11-21T15:07:23+08:00</published><updated>2018-11-21T15:07:23+08:00</updated><id>http://localhost:4000/2018/11/21/Java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B</id><content type="html" xml:base="http://localhost:4000/2018/11/21/Java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html">&lt;h1 id=&quot;基本数据类型&quot;&gt;基本数据类型&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数据类型
+    &lt;ul&gt;
+      &lt;li&gt;基本数据类型
+        &lt;ul&gt;
+          &lt;li&gt;数值型
+            &lt;ul&gt;
+              &lt;li&gt;整数类型（byte、short、int、long）&lt;/li&gt;
+              &lt;li&gt;浮点类型（float、double）&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;字符型（char）&lt;/li&gt;
+          &lt;li&gt;布尔型（boolean）&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;引用数据类型（统一4个字节，记录的是其引用对象的地址）
+        &lt;ul&gt;
+          &lt;li&gt;类（class）&lt;/li&gt;
+          &lt;li&gt;接口（interface）&lt;/li&gt;
+          &lt;li&gt;数组&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;整型&quot;&gt;整型&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;类型&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;占用空间&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;表数范围&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;byte&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1字节&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-2&lt;sup&gt;7&lt;/sup&gt; ~ 2&lt;sup&gt;7&lt;/sup&gt;-1（＝127）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;short&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2字节&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-2&lt;sup&gt;15&lt;/sup&gt; ~ 2&lt;sup&gt;15&lt;/sup&gt;-1（＝32767）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4字节&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-2&lt;sup&gt;31&lt;/sup&gt; ~ 2&lt;sup&gt;31&lt;/sup&gt;-1（＝大约21亿）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;long&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8字节&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-2&lt;sup&gt;63&lt;/sup&gt; ~ 2&lt;sup&gt;63&lt;/sup&gt;-1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;十进制，例如：100、1、-20&lt;/li&gt;
+  &lt;li&gt;八进制，以0开头 例如：0123&lt;/li&gt;
+  &lt;li&gt;十六进制，以0x或0X开头，例如：0x12、0xA&lt;/li&gt;
+  &lt;li&gt;二进制，以0b或0B开头，例如：0b1001&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12345678&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1234567890123L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;需要注意的是，Java语言的整型字面常量的类型默认为int，声明long类型的常量，需要在整数后面加&lt;code class=&quot;highlighter-rouge&quot;&gt;L&lt;/code&gt;，大写或小写都可以。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;浮点型&quot;&gt;浮点型&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;类型&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;占用空间&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;表数范围&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;float&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4字节&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-3.403E38~3.403E38&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;double&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8字节&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-1.798E308~1.798E308&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;十进制：3.14、314.0&lt;/li&gt;
+  &lt;li&gt;科学计数法：314e2、314e-2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;314&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;浮点型常量的默认类型是double。float类型的数值有一个后缀F或者f，也可以在浮点数值后添加后缀D或者d，以明确其为double类型。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;浮点数存在舍入误差，不适合用于不允许误差出现的金融计算领域。浮点数字不能精确表示，因此要避免在比较中使用浮点数。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;java.math包下面的两个类：BigInteger和BigDecimal，可以处理任意长度的数值。BigInteger实现了任意精度的整数运算，BigDecimal实现了任意精度的浮点运算。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.math.BigDecimal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BigDecimalTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 利用BigDecimal计算 1.0-0.1-0.1-0.1-0.1-0.1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;BigDecimal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BigDecimal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subtract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BigDecimal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subtract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BigDecimal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subtract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BigDecimal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subtract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BigDecimal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;subtract&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BigDecimal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//得到0.5&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// 直接计算1.0-0.1-0.1-0.1-0.1-0.1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 得到0.5000000000000001&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;字符型char&quot;&gt;字符型（char）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Java中的字符型在内存中占2个字节，使用单引号来表示字符常量。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// 英文字母&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'汉'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// 中文汉字&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\u0061'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Unicode编码&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\n'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// 转义字符&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ABCDEFG&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// String类其实就是一个字符序列&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Unicode编码
+    &lt;ul&gt;
+      &lt;li&gt;char类型用来表示的是在Unicode编码表中的字符。&lt;/li&gt;
+      &lt;li&gt;Unicode编码被设计用来处理各种语言的文字，它占2个字节，允许有65536个字符。&lt;/li&gt;
+      &lt;li&gt;Unicode编码从’\u0000’到’\uFFFF’，它是使用16进制来表示的。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;转义字符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;转义符&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;表示的内容&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Unicode编码值&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\b&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;退格（backspace）&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\u0008&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\n&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;换行&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\u000a&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\r&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;回车&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\u000d&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\t&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;制表符（tab）&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\u0009&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\\&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;反斜杠&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\u005c&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\”&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;双引号&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\u0022&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\’&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;单引号&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\u0027&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;布尔型boolean&quot;&gt;布尔型（Boolean）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;boolean类型只有两个常量，true和false，在内存中占1位（不是字节！）。和C语言不同的是，Java中不可以使用0或者整数替代true和false。&lt;/li&gt;
+  &lt;li&gt;布尔型通常用来判断逻辑条件，用于流程控制。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;自动类型转换&quot;&gt;自动类型转换&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;容量小的数据类型可以自动转换为容量大的数据类型&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;
+         &lt;span class=&quot;err&quot;&gt;↓&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt;  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt;
+                 &lt;span class=&quot;err&quot;&gt;↓&lt;/span&gt;
+       &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 值得注意的是，下面这些数据类型的自动转换发生的时候，是会有精度损失的！&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;特例
+    &lt;ul&gt;
+      &lt;li&gt;可以将整型常量直接赋值给byte、short、char等类型变量，而不需要进行强制类型转换。但是，不能超出表数范围！&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;88&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 合法&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;88888888&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 非法，超出表数范围了！&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;强制类型转换&quot;&gt;强制类型转换&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;格式：&lt;code class=&quot;highlighter-rouge&quot;&gt;(tape)var&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1415926&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这里会直接舍弃小数部分&lt;/span&gt;
+
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 这里输出的是字母 x 哦~&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;苏轻笔记！&lt;/p&gt;
+
+  &lt;p&gt;不要拿boolean类型和任何类型做强制类型转换！会出事情！&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>true</name></author><category term="Java自学笔记" /><summary type="html">基本数据类型 数据类型 基本数据类型 数值型 整数类型（byte、short、int、long） 浮点类型（float、double） 字符型（char） 布尔型（boolean） 引用数据类型（统一4个字节，记录的是其引用对象的地址） 类（class） 接口（interface） 数组 整型 类型 占用空间 表数范围 byte 1字节 -27 ~ 27-1（＝127） short 2字节 -215 ~ 215-1（＝32767） int 4字节 -231 ~ 231-1（＝大约21亿） long 8字节 -263 ~ 263-1 十进制，例如：100、1、-20 八进制，以0开头 例如：0123 十六进制，以0x或0X开头，例如：0x12、0xA 二进制，以0b或0B开头，例如：0b1001 long a = 12345678; long b = 1234567890123L; 需要注意的是，Java语言的整型字面常量的类型默认为int，声明long类型的常量，需要在整数后面加L，大写或小写都可以。 浮点型 类型 占用空间 表数范围 float 4字节 -3.403E38~3.403E38 double 8字节 -1.798E308~1.798E308 十进制：3.14、314.0 科学计数法：314e2、314e-2 double a = 314e-2; float b = 3.14f; double c = 3.14; 浮点型常量的默认类型是double。float类型的数值有一个后缀F或者f，也可以在浮点数值后添加后缀D或者d，以明确其为double类型。 浮点数存在舍入误差，不适合用于不允许误差出现的金融计算领域。浮点数字不能精确表示，因此要避免在比较中使用浮点数。 java.math包下面的两个类：BigInteger和BigDecimal，可以处理任意长度的数值。BigInteger实现了任意精度的整数运算，BigDecimal实现了任意精度的浮点运算。 import java.math.BigDecimal; public class BigDecimalTest { public static void main(String[] args) { // 利用BigDecimal计算 1.0-0.1-0.1-0.1-0.1-0.1 BigDecimal a = BigDecimal.valueOf(1.0); a = a.subtract(BigDecimal.valueOf(0.1)); a = a.subtract(BigDecimal.valueOf(0.1)); a = a.subtract(BigDecimal.valueOf(0.1)); a = a.subtract(BigDecimal.valueOf(0.1)); a = a.subtract(BigDecimal.valueOf(0.1)); System.out.println(a); //得到0.5 // 直接计算1.0-0.1-0.1-0.1-0.1-0.1 System.out.println(1.0 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1); // 得到0.5000000000000001 } } 字符型（char） Java中的字符型在内存中占2个字节，使用单引号来表示字符常量。 char a = 'A'; // 英文字母 char b = '汉'; // 中文汉字 char c = '\u0061'; // Unicode编码 char d = '\n'; // 转义字符 String s = &quot;ABCDEFG&quot;; // String类其实就是一个字符序列 Unicode编码 char类型用来表示的是在Unicode编码表中的字符。 Unicode编码被设计用来处理各种语言的文字，它占2个字节，允许有65536个字符。 Unicode编码从’\u0000’到’\uFFFF’，它是使用16进制来表示的。 转义字符 转义符 表示的内容 Unicode编码值 \b 退格（backspace） \u0008 \n 换行 \u000a \r 回车 \u000d \t 制表符（tab） \u0009 \\ 反斜杠 \u005c \” 双引号 \u0022 \’ 单引号 \u0027 布尔型（Boolean） boolean类型只有两个常量，true和false，在内存中占1位（不是字节！）。和C语言不同的是，Java中不可以使用0或者整数替代true和false。 布尔型通常用来判断逻辑条件，用于流程控制。 boolean t = true; if (t) { // true } else { // false } 自动类型转换 容量小的数据类型可以自动转换为容量大的数据类型 char ↓ byte → short → int → long ↓ float → double // 值得注意的是，下面这些数据类型的自动转换发生的时候，是会有精度损失的！ int/long → float long → double 特例 可以将整型常量直接赋值给byte、short、char等类型变量，而不需要进行强制类型转换。但是，不能超出表数范围！ short a = 88; // 合法 short b = 88888888; // 非法，超出表数范围了！ 强制类型转换 格式：(tape)var double pi = 3.1415926; int a = (int)pi; // 这里会直接舍弃小数部分 int x = 120; System.out.println((char)x); // 这里输出的是字母 x 哦~ 苏轻笔记！ 不要拿boolean类型和任何类型做强制类型转换！会出事情！</summary></entry><entry><title type="html">第一个Java程序</title><link href="http://localhost:4000/2018/11/20/%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F.html" rel="alternate" type="text/html" title="第一个Java程序" /><published>2018-11-20T12:24:45+08:00</published><updated>2018-11-20T12:24:45+08:00</updated><id>http://localhost:4000/2018/11/20/%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/2018/11/20/%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F.html">&lt;ul&gt;
+  &lt;li&gt;使用任意的文本编辑器即可，编辑以下代码。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Welcome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 致敬 Hello World ！&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;然后
+    &lt;ul&gt;
+      &lt;li&gt;将以上代码保存为&lt;code class=&quot;highlighter-rouge&quot;&gt;Wecome.java&lt;/code&gt;文件&lt;/li&gt;
+      &lt;li&gt;终端&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt;到指定目录后执行&lt;code class=&quot;highlighter-rouge&quot;&gt;$ javac Welcome.java&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;查看目录里面多了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;Welcome.class&lt;/code&gt;文件&lt;/li&gt;
+      &lt;li&gt;终端执行&lt;code class=&quot;highlighter-rouge&quot;&gt;$ java Welcome&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;得到程序的运行结果：&lt;code class=&quot;highlighter-rouge&quot;&gt;Hello World.&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;通过第一个程序了解java的一些特性&quot;&gt;通过第一个程序了解Java的一些特性&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;大小写敏感
+    &lt;ul&gt;
+      &lt;li&gt;Java程序的代码中的变量、方法等，严格区分英文字母的大小写。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;每个语句必须以分号结束&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;关键字&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;类。Java是面向对象的语言，所有代码必须位于类里面。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;关键字&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;被称作访问修饰符（&lt;em&gt;access modifier&lt;/em&gt;），用于控制程序的其它部分对这段代码的访问级别。&lt;/li&gt;
+      &lt;li&gt;标识为public的类只有一个，其它的类个数不限。&lt;/li&gt;
+      &lt;li&gt;如果源文件中包含一个public类，源文件名必须和其中定义的public的类名相同，且以“.java”为扩展名。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;正确编译后的源文件，会得到相应的字节码文件，编译器为每个类生成独立的字节码文件，且将字节码文件自动命名为类的名字且以&lt;code class=&quot;highlighter-rouge&quot;&gt;.class&lt;/code&gt;为扩展名。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;main方法是Java应用程序的入口方法，固定格式：
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//注释使用双斜杠&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;常见的Java集成开发环境有
+    &lt;ul&gt;
+      &lt;li&gt;eclipse&lt;/li&gt;
+      &lt;li&gt;IntelliJ IDEA&lt;/li&gt;
+      &lt;li&gt;NetBeans&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;注释&quot;&gt;注释&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;单行注释：// comment&lt;/li&gt;
+  &lt;li&gt;多行注释：/* comment */&lt;/li&gt;
+  &lt;li&gt;文档注释：包含一些说明以及JavaDoc标签，做项目时有助于生成项目的API。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
+ * Comment class
+ * @author sq
+ * @version 1.0
+ */&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;标识符&quot;&gt;标识符&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;标识符只能由字母、下划线、美元符号、数字组成，且不能以数字开头。&lt;/li&gt;
+  &lt;li&gt;字母的大小写敏感，而长度则没有限制。&lt;/li&gt;
+  &lt;li&gt;Java已有的关键字，不能作为标识符。&lt;/li&gt;
+  &lt;li&gt;其他使用规范：
+    &lt;ul&gt;
+      &lt;li&gt;类名，每个单词的首字母大写。&lt;/li&gt;
+      &lt;li&gt;方法名和变量名，使用驼峰命名法。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;关键字保留字&quot;&gt;关键字（保留字）&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Java关键字是Java语言保留以供内部使用的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/pic/JavaKeywords.png&quot; alt=&quot;JavaKeywords&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;变量variable&quot;&gt;变量（variable）&lt;/h2&gt;
+
+&lt;p&gt;　　变量本质上就是代表一个&lt;code class=&quot;highlighter-rouge&quot;&gt;可操作的存储空间&lt;/code&gt;，空间位置是确定的，但是里面放置什么值不确定。我们可通过变量名来访问&lt;code class=&quot;highlighter-rouge&quot;&gt;对应的存储空间&lt;/code&gt;，从而操纵这个&lt;code class=&quot;highlighter-rouge&quot;&gt;存储空间&lt;/code&gt;存储的值。&lt;/p&gt;
+
+&lt;p&gt;　　Java是一种强类型语言，每个变量都必须声明其数据类型，变量的数据类型决定了变量占据存储空间的大小。&lt;/p&gt;
+
+&lt;p&gt;　　变量作为程序中最基本的存储单元，其要素包括变量名，变量类型和作用域。变量在使用前必须对其声明, 只有在变量声明以后，才能为其分配相应长度的存储空间。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;变量的声明&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]...];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;局部变量（&lt;em&gt;local variable&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　局部变量是方法或语句块内部定义的变量。生命周期从声明位置开始到到方法或语句块执行完毕为止。局部变量在使用前必须先声明、初始化（赋初值）再使用。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;成员变量（也叫实例变量 &lt;em&gt;member variable&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　成员变量是在方法的外部、类的内部定义的变量。从属于对象，生命周期伴随对象始终。如果不自行初始化，它会自动初始化成该类型的默认初始值。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;静态变量（也叫类变量 &lt;em&gt;static variable&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　静态变量使用static定义，从属于类，生命周期伴随类始终，从类的加载到卸载。如果不自行初始化，与成员变量相同会自动初始化成该类型的默认初始值。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;数据类型&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;默认初始值&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;double&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;char&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;‘\u0000’&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;boolean&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;常量constant&quot;&gt;常量（Constant）&lt;/h2&gt;
+
+&lt;p&gt;　　在Java语言中，主要是利用关键字final来定义一个常量。常量一旦被初始化后不能再更改其值。一般将1、2、3、’a’、’b’、true、false、’helloWorld’等称为字面常量，而使用final修饰的常量称为符号常量。&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;varName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;常量的命名一般使用大写字母加下划线。例如：NAME、MAX_VALUE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;获取键盘输入的简单方式&quot;&gt;获取键盘输入的简单方式&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;使用 scanner 获取键盘输入&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 要记得必须先导入这个叫Scanner类&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 新建一个输入对象&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;请输入你的姓名：&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextLine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s！你好！\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;苏轻笔记：&lt;/p&gt;
+
+  &lt;p&gt;目前并不明白对象的详细用法，先照着敲代码玩着就好。先学会用，然后在去慢慢了解原理。&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;scanner&lt;/em&gt;的中文意思是扫描仪，是一种输入设备，通过这个类，可以获得键盘的输入。&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>true</name></author><category term="Java自学笔记" /><summary type="html">使用任意的文本编辑器即可，编辑以下代码。</summary></entry><entry><title type="html">Java简介</title><link href="http://localhost:4000/2018/11/20/Java%E7%AE%80%E4%BB%8B.html" rel="alternate" type="text/html" title="Java简介" /><published>2018-11-20T11:01:26+08:00</published><updated>2018-11-20T11:01:26+08:00</updated><id>http://localhost:4000/2018/11/20/Java%E7%AE%80%E4%BB%8B</id><content type="html" xml:base="http://localhost:4000/2018/11/20/Java%E7%AE%80%E4%BB%8B.html">&lt;h2 id=&quot;java的发展历程&quot;&gt;Java的发展历程&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;1991年 Oak&lt;/li&gt;
+  &lt;li&gt;1995年 Applet → Java&lt;/li&gt;
+  &lt;li&gt;1996年 JDK1.0&lt;/li&gt;
+  &lt;li&gt;1997年 JDK1.1&lt;/li&gt;
+  &lt;li&gt;1998年 J2EE&lt;/li&gt;
+  &lt;li&gt;1999年 Java2（J2ME、J2SE、J2EE）&lt;/li&gt;
+  &lt;li&gt;2004年 J2SE 1.5.0 → Java SE 5.0 Tiger&lt;/li&gt;
+  &lt;li&gt;2005年 Java SE 6&lt;/li&gt;
+  &lt;li&gt;2011年 Java7&lt;/li&gt;
+  &lt;li&gt;2014年 Java8&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;javasejavaeejavame&quot;&gt;JavaSE、JavaEE、JavaME&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;JavaSE&lt;/strong&gt;(&lt;em&gt;Java Standard Edition&lt;/em&gt;) 标准版，定位于个人计算机的应用。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;JavaEE&lt;/strong&gt;(&lt;em&gt;Java Enterprise Edition&lt;/em&gt;) 企业版，定位于服务器端的应用。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;JavaME&lt;/strong&gt;(&lt;em&gt;Java Micro Edition&lt;/em&gt;) 微型版，定位于消费性电子产品的应用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jvmjrejdk&quot;&gt;JVM、JRE、JDK&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;JVM&lt;/strong&gt;(&lt;em&gt;Java Virtual Machine&lt;/em&gt;)是一个虚拟的用于执行字节码(&lt;em&gt;bytecode&lt;/em&gt;)的”虚拟计算机”。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;JRE&lt;/strong&gt;(&lt;em&gt;Java Runtime Environment&lt;/em&gt;)包含虚拟机、库函数等运行Java应用程序所必须的文件。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;JDK&lt;/strong&gt;(&lt;em&gt;Java  Development Kit&lt;/em&gt;)包含JRE、编译器、调试器等，用于程序开发。&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;JVM ∈ JRE ∈ JDK&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;java应用程序的运行机制&quot;&gt;Java应用程序的运行机制&lt;/h2&gt;
+
+&lt;p&gt;　　计算机高级语言的类型主要有编译型和解释型两种，而Java语言是两种类型的结合。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先用文本编辑器编写Java源程序，源文件后缀为&lt;code class=&quot;highlighter-rouge&quot;&gt;.java&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为&lt;code class=&quot;highlighter-rouge&quot;&gt;.class&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;最后利用虚拟机（解释器，java）解释执行&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;java的优势以及未来&quot;&gt;Java的优势以及未来&lt;/h2&gt;
+
+&lt;p&gt;　　Java的核心优势是跨平台，而Java虚拟机是实现跨平台的核心机制。不同的操作系统有不同的虚拟机，Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，随处运行”。&lt;/p&gt;
+
+&lt;p&gt;　　基于JAVA生态建立的产品将会越来越多，基于JAVA虚拟机的编程语言也将会越来越多。生态系统的强大，是JAVA能长盛不衰的根本。&lt;/p&gt;</content><author><name>true</name></author><category term="Java" /><summary type="html">Java的发展历程 1991年 Oak 1995年 Applet → Java 1996年 JDK1.0 1997年 JDK1.1 1998年 J2EE 1999年 Java2（J2ME、J2SE、J2EE） 2004年 J2SE 1.5.0 → Java SE 5.0 Tiger 2005年 Java SE 6 2011年 Java7 2014年 Java8 JavaSE、JavaEE、JavaME JavaSE(Java Standard Edition) 标准版，定位于个人计算机的应用。 JavaEE(Java Enterprise Edition) 企业版，定位于服务器端的应用。 JavaME(Java Micro Edition) 微型版，定位于消费性电子产品的应用。 JVM、JRE、JDK JVM(Java Virtual Machine)是一个虚拟的用于执行字节码(bytecode)的”虚拟计算机”。 JRE(Java Runtime Environment)包含虚拟机、库函数等运行Java应用程序所必须的文件。 JDK(Java Development Kit)包含JRE、编译器、调试器等，用于程序开发。 JVM ∈ JRE ∈ JDK Java应用程序的运行机制 　　计算机高级语言的类型主要有编译型和解释型两种，而Java语言是两种类型的结合。 首先用文本编辑器编写Java源程序，源文件后缀为.java 再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class 最后利用虚拟机（解释器，java）解释执行 Java的优势以及未来 　　Java的核心优势是跨平台，而Java虚拟机是实现跨平台的核心机制。不同的操作系统有不同的虚拟机，Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，随处运行”。 　　基于JAVA生态建立的产品将会越来越多，基于JAVA虚拟机的编程语言也将会越来越多。生态系统的强大，是JAVA能长盛不衰的根本。</summary></entry><entry><title type="html">常见编程语言简单介绍</title><link href="http://localhost:4000/2018/11/19/essay.html" rel="alternate" type="text/html" title="常见编程语言简单介绍" /><published>2018-11-19T10:58:39+08:00</published><updated>2018-11-19T10:58:39+08:00</updated><id>http://localhost:4000/2018/11/19/essay</id><content type="html" xml:base="http://localhost:4000/2018/11/19/essay.html">&lt;h3 id=&quot;c&quot;&gt;C&lt;/h3&gt;
+
+&lt;p&gt;　　经典语言，现代高级语言的鼻祖。1972年诞生于贝尔实验室，至今仍然流行。&lt;/p&gt;
+
+&lt;h3 id=&quot;c-1&quot;&gt;C++&lt;/h3&gt;
+
+&lt;p&gt;　　既可以面向对象编程，也可以开发C语言面向过程的程序，是C语言的拓展。C++语言在科学计算、操作系统、网络通讯、系统开发、引擎开发中被大量使用。&lt;/p&gt;
+
+&lt;h3 id=&quot;java&quot;&gt;Java&lt;/h3&gt;
+
+&lt;p&gt;　　由美国SUN公司发明于1995年，是目前业界应用最广泛、使用人数最多的语言，连续多年排名世界第一，可以称之为“计算机语言界的英语”。&lt;/p&gt;
+
+&lt;p&gt;　　Java广泛应用于企业级软件开发、安卓移动开发、大数据云计算等领域，几乎涉及IT所有行业。&lt;/p&gt;
+
+&lt;h3 id=&quot;php&quot;&gt;PHP&lt;/h3&gt;
+
+&lt;p&gt;　　PHP原始为 &lt;em&gt;Personal Home Page&lt;/em&gt; 的缩写，已经正式更名为 “PHP: Hypertext Preprocessor”。PHP语言一般用于WEB开发领域，大量的中小型网站以及某些大型网站使用PHP开发。&lt;/p&gt;
+
+&lt;h3 id=&quot;ocswift&quot;&gt;OC、Swift&lt;/h3&gt;
+
+&lt;p&gt;　　OC 通常写为 Objective-C、Object-C、Obj-C，是根据C语言所衍生出来的语言，继承了C语言的特性，是扩充C的面向对象编程语言。OC主要用于苹果软件的开发。&lt;/p&gt;
+
+&lt;p&gt;　　Swift是苹果于2014年WWDC发布的新语言，可与OC共同运行于Mac OS和iOS平台，主要用于搭建基于苹果平台的应用程序。&lt;/p&gt;
+
+&lt;h3 id=&quot;javascript&quot;&gt;JavaScript&lt;/h3&gt;
+&lt;p&gt;　　JavaScript是一种脚本语言，已经被广泛用于Web应用开发，应用范围越来越大，重要性越来越高。目前，流行的H5开发的核心其实就是JavaScript语言。&lt;/p&gt;
+
+&lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
+&lt;p&gt;　　Python发明于1989年，语法结构简单，易学易懂。Python具有丰富和强大的库。它常被昵称为胶水语言，能够把用其他语言制作的各种模块（尤其是C/C++）很轻松地联结在一起。Python广泛应用于：图形处理、科学计算、web编程、多媒体应用、引擎开发，更在未来机器学习和人工智能上有非常大的潜力。&lt;/p&gt;
+
+&lt;h3 id=&quot;c-2&quot;&gt;C#&lt;/h3&gt;
+&lt;p&gt;　　C#是微软公司发布的一种面向对象的、运行于.NET Framework之上的高级程序设计语言。C#在基于Windows操作系统的应用开发这一领域在取代C++，占据主导地位。但是C#的微软身份，也成为了发展的阻力，在其他IT领域应用较少。&lt;/p&gt;
+
+&lt;h3 id=&quot;fortran&quot;&gt;Fortran&lt;/h3&gt;
+&lt;p&gt;　　世界上第一种高级语言，IBM公司在1954年提出的，主要用在需要复杂数学计算的科学和工程领域。现在仍然被广泛使用，尤其是工程领域。Fortran虽然适合编写科学计算方面的程序，但是不适于编写系统程序。&lt;/p&gt;
+
+&lt;h3 id=&quot;basic&quot;&gt;Basic&lt;/h3&gt;
+&lt;p&gt;　　虽然易学，但功能不够强大，应用到大程序的有效性令人怀疑。已经逐步退出历史舞台。&lt;/p&gt;
+
+&lt;h3 id=&quot;cobol&quot;&gt;COBOL&lt;/h3&gt;
+&lt;p&gt;　　于1959年提出。主要用于大量精确处理数据的商业领域中，比如金融、银行。今天，仍然有超过一半的商业软件使用COBOL编写。有将近100万人使用COBOL编程。&lt;/p&gt;
+
+&lt;h3 id=&quot;pascal&quot;&gt;Pascal&lt;/h3&gt;
+&lt;p&gt;　　Pascal的名称是为了纪念十七世纪法国著名哲学家和数学家Blaise Pascal而来的，它由瑞士Niklaus Wirth教授于六十年代末设计并创立的。Pascal语言语法严谨，层次分明，程序易写，可读性强，是第一个结构化编程语言。由于没有大厂商和政府的支持，只是限于大学教育这一块。&lt;/p&gt;
+
+&lt;h3 id=&quot;go&quot;&gt;GO&lt;/h3&gt;
+
+&lt;h3 id=&quot;ruby&quot;&gt;Ruby&lt;/h3&gt;</content><author><name>true</name></author><category term="随手记" /><summary type="html">C</summary></entry></feed>

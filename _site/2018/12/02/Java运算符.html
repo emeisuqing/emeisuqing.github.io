@@ -1,0 +1,616 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+
+<!-- 百度收录代码验证 -->
+<meta name="baidu-site-verification" content="F6vtEyvKOS"/>
+
+<!-- GrowingIO Analytics code version 2.1 -->
+<!-- Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com -->
+<script type='text/javascript'>
+!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");
+  gio('init','8d7d15b63f1d1bb0', {});
+//custom page code begin here
+//custom page code end here
+gio('send');
+</script>
+<!-- End GrowingIO Analytics code version: 2.1 -->
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="欢迎来到苏轻的个人领域！" />
+<meta name="keywords" content="苏轻, 个人, 博客, 空间, Java, JavaScript, HTML" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_perldoc.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="/assets/fonts/sns/iconfont.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpeg" rel="shortcut icon" />
+<link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>Java中的运算符</title>
+
+
+<!-- 百度统计 -->
+
+<!-- 谷歌分析 -->
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" #9A85FF ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:#9A85FF;">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">SuQing’s Page</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">诗酒趁年华</a></li>
+              
+                <li><a href="/timeline" style="color: white;">时间线</a></li>
+              
+                <li><a href="/about" style="color: white;">认识我</a></li>
+              
+                <li><a href="/tags" style="color: white;">标签页</a></li>
+              
+                <li><a href="/link" style="color: white;">友情链</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>诗酒趁年华</li></a>
+        
+          <a href="/timeline"><li>时间线</li></a>
+        
+          <a href="/about"><li>认识我</li></a>
+        
+          <a href="/tags"><li>标签页</li></a>
+        
+          <a href="/link"><li>友情链</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">Java中的运算符</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:#9A85FF;">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="/2018/12/05/Java%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#9A85FF';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#9A85FF;"><sapn class="main">Java 中面向对象的三大特性</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">Java中的运算符</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2018/11/28/Java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#9A85FF';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#9A85FF;"><sapn class="main">Java对象和类</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="/2018/12/05/Java%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81.html" class="leftchange" style="border-right: 1px solid #9A85FF;border-bottom: 2px solid #9A85FF;"><span>上一篇<br><br>Java 中面向对象的三大特性</span></a>
+    
+    
+      <a href="/2018/11/28/Java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB.html" class="rightchange" style="border-left: 1px solid #9A85FF;border-bottom: 2px solid #9A85FF;"><span>下一篇<br><br>Java对象和类</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+    
+      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
+        各类运算符介绍以及优先级问题
+      </div>
+    
+  
+  <!-- 苏轻自己加的文章署名 -->
+  <div align="right" style="color: gray;">
+    <small>苏轻最后编辑于2018年12月2日15:17:34</small>
+  </div>
+  <!-- 文章内容 -->
+  <h3 id="算术运算符">算术运算符</h3>
+<ul>
+  <li>二元运算符（+、-、*、/、%）
+    <ul>
+      <li>二元运算符是指需要两个操作数才能完成运算的运算符。</li>
+      <li>“%”是取模运算符，也即是常说的“取余数”。</li>
+      <li>整数运算
+        <ul>
+          <li>如果两个操作数至少有一个为long类型，则结果为long类型。</li>
+          <li>只要两个操作数没有long类型，结果就为int类型，即使操作数中有short或byte类型。</li>
+        </ul>
+      </li>
+      <li>浮点数运算
+        <ul>
+          <li>如果两个操作数至少有一个为double类型，则结果为double类型。</li>
+          <li>只有两个操作数都是float类型，结果才是float类型。</li>
+        </ul>
+      </li>
+      <li>取模运算
+        <ul>
+          <li>取模运算的操作数可以为浮点数，但是一般都使用整数。</li>
+          <li>结果“余数”的符号和左边的操作数相同。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>一元运算符（++、–）
+    <ul>
+      <li>自增、自减，原操作数加一或减一。</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>   <span class="c1">// a=1</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">++;</span> <span class="c1">// 先赋值，在自增 b=a=1 a=a+1=2</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="o">++</span><span class="n">a</span><span class="o">;</span> <span class="c1">// 先自增，在赋值 a=a+1=3 c=a=3</span>
+    <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span><span class="o">;</span> <span class="c1">// d=-1</span>
+    <span class="kt">int</span> <span class="n">e</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">%</span> <span class="o">-</span><span class="mi">3</span><span class="o">;</span> <span class="c1">// e=1</span>
+</code></pre></div></div>
+
+<h3 id="赋值运算符">赋值运算符</h3>
+<ul>
+  <li>赋值运算符就是等号。</li>
+  <li>
+    <p>赋值的扩展运算符如下表所示：</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">运算符</th>
+          <th style="text-align: center">用法</th>
+          <th style="text-align: center">等效</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">+=</td>
+          <td style="text-align: center">a += b;</td>
+          <td style="text-align: center">a = a + b;</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">-=</td>
+          <td style="text-align: center">a -= b;</td>
+          <td style="text-align: center">a = a - b;</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">*=</td>
+          <td style="text-align: center">a *= b;</td>
+          <td style="text-align: center">a = a * b;</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">/=</td>
+          <td style="text-align: center">a /= b;</td>
+          <td style="text-align: center">a = a / b;</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">%=</td>
+          <td style="text-align: center">a %= b;</td>
+          <td style="text-align: center">a = a % b;</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="n">b</span><span class="o">;</span> <span class="c1">// a=a+b=3</span>
+  <span class="n">a</span> <span class="o">*=</span> <span class="n">b</span><span class="o">;</span> <span class="c1">// a=a*b=6</span>
+</code></pre></div></div>
+
+<h3 id="关系运算符">关系运算符</h3>
+
+<ul>
+  <li>==、!=、&gt;、&lt;、&gt;=、&lt;=</li>
+  <li>关系运算符用来进行比较运算，结果是布尔值（true/false）。</li>
+  <li>==和!=，所有数据类型都可以使用。</li>
+  <li>&gt;、&lt;、&gt;=、&lt;=只有数值类型（byte/short/int/long/float/double，还有char）可以使用。</li>
+</ul>
+
+<h3 id="逻辑运算符">逻辑运算符</h3>
+
+<ul>
+  <li>在Java中，逻辑运算的操作数和运算结果都是boolean类型。</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">名称</th>
+      <th style="text-align: center">符号</th>
+      <th style="text-align: center">结果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">逻辑与</td>
+      <td style="text-align: center">&amp;</td>
+      <td style="text-align: center">如果两个操作数都是true，那么结果为true，否则为false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">逻辑或</td>
+      <td style="text-align: center">|</td>
+      <td style="text-align: center">两个操作数只要有一个是true，结果就为true，否则为false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">短路与</td>
+      <td style="text-align: center">&amp;&amp;</td>
+      <td style="text-align: center">只要有一个为false，就直接返回false结束运算</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">短路或</td>
+      <td style="text-align: center">||</td>
+      <td style="text-align: center">只要有一个为true，就直接返回true结束运算</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">逻辑非</td>
+      <td style="text-align: center">!</td>
+      <td style="text-align: center">取反</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">逻辑异或</td>
+      <td style="text-align: center">^</td>
+      <td style="text-align: center">相同为false，不同为true</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>短路的方式：从左向右计算，如果左边的操作数就已经可以确定该逻辑表达式的值，那么就不会计算右边的操作数，追求高效率。</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"a = %d, b = %d\n"</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+
+        <span class="kt">boolean</span> <span class="n">f</span> <span class="o">=</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(++</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">);</span>
+        <span class="c1">// 因为 a == b 为 false，所以 f = false，短路后右边不计算</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"f = %b\n"</span><span class="o">,</span> <span class="n">f</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"a = %d, b = %d\n"</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+
+        <span class="kt">boolean</span> <span class="n">t</span> <span class="o">=</span> <span class="o">(++</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">);</span>
+        <span class="c1">// 因为 ++a 先计算，所以 a = 2</span>
+        <span class="c1">// 发生短路的时候，不会再计算右边部分，某些计算导致的值的改变就不会发生</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"t = %b\n"</span><span class="o">,</span> <span class="n">t</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"a = %d, b = %d\n"</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="位运算符">位运算符</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">位运算符</th>
+      <th style="text-align: center">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">~</td>
+      <td style="text-align: center">取反</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">&amp;</td>
+      <td style="text-align: center">按位与</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">|</td>
+      <td style="text-align: center">按位或</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">^</td>
+      <td style="text-align: center">按位异或</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">«</td>
+      <td style="text-align: center">左移运算符，二进制左移相当于乘2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">»</td>
+      <td style="text-align: center">右移运算符，二进制右移一位以为相当于除2取商</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>“&amp;”和“|”既是逻辑运算符，也是位运算符。如果两侧的操作数都是boolean类型，就作为逻辑运算符使用。如果两侧的操作数都是整数类型，就作为位运算符使用。</li>
+  <li>不要把“^”当做幂运算，它是“按位异或”操作。</li>
+</ul>
+
+<h3 id="字符串连接符">字符串连接符（+）</h3>
+
+<ul>
+  <li>“+”运算符两侧的操作数只要有一个是字符串（String）类型，系统就会自动将另一个操作数转换为字符串然后进行连接。</li>
+</ul>
+
+<h3 id="条件运算符">条件运算符</h3>
+
+<ul>
+  <li>格式：<code class="highlighter-rouge">T ? A : B</code>
+    <ul>
+      <li>T为boolean类型的表达式，先计算T的值。</li>
+      <li>若T为true，运算结果为表达式A的值，否则为表达式B的值。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="运算符的优先级问题">运算符的优先级问题</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>优先级</td>
+      <td>运算符</td>
+      <td>类</td>
+      <td>结合性</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>()</td>
+      <td>括号运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>!、+（正）、-（负）</td>
+      <td>一元运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>~</td>
+      <td>位逻辑运算符</td>
+      <td>由右至左</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>++、–</td>
+      <td>递增与递减运算符</td>
+      <td>由右至左</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>*、/、%</td>
+      <td>算术运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>+、-</td>
+      <td>算术运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>«、»</td>
+      <td>位左移、右移运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>&gt;、&gt;=、&lt;、&lt;=</td>
+      <td>关系运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>==、!=</td>
+      <td>关系运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>&amp;</td>
+      <td>位运算符、逻辑运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>^</td>
+      <td>位运算符、逻辑运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>|</td>
+      <td>位运算符、逻辑运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>&amp;&amp;</td>
+      <td>逻辑运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>||</td>
+      <td>逻辑运算符</td>
+      <td>由左至右</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>? :</td>
+      <td>条件运算符</td>
+      <td>由右至左</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>=、+=、-=、*=、/=、%=</td>
+      <td>赋值运算符、扩展运算符</td>
+      <td>由右至左</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>　　我现在要举一个例子：<code class="highlighter-rouge">A || B &amp;&amp; C</code>，看第一眼的时候谁能很清晰地反应过来优先级？它等价于<code class="highlighter-rouge">A || (B &amp;&amp; C)</code>，而不是<code class="highlighter-rouge">(A || B) &amp;&amp; C</code>！</p>
+
+  <p>　　脑容量不够用的苏轻觉得根本没必要记这么多优先级！既然小括号是最高的优先级，那写表达式的时候就全部用小括号括起来吧！</p>
+</blockquote>
+
+<h3 id="instanceof-运算符">instanceof 运算符</h3>
+
+<ul>
+  <li>instanceof 是二元运算符，左边是对象，右边是类。</li>
+  <li>若左边的对象是右面的类（或右边的类的子类）所创建的对象时，返回 true，否则返回 false。</li>
+</ul>
+
+
+  <!-- 引入share模块 -->
+  
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'qzone'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>
+    SuQing’s Page Copyright ©
+    
+
+    
+        2017
+        -
+    
+
+    2018
+    
+      <br>Powered by Jekyll | Github
+  </span>
+</footer>
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

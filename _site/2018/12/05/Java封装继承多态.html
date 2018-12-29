@@ -1,0 +1,353 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+
+<!-- 百度收录代码验证 -->
+<meta name="baidu-site-verification" content="F6vtEyvKOS"/>
+
+<!-- GrowingIO Analytics code version 2.1 -->
+<!-- Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com -->
+<script type='text/javascript'>
+!function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");
+  gio('init','8d7d15b63f1d1bb0', {});
+//custom page code begin here
+//custom page code end here
+gio('send');
+</script>
+<!-- End GrowingIO Analytics code version: 2.1 -->
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="欢迎来到苏轻的个人领域！" />
+<meta name="keywords" content="苏轻, 个人, 博客, 空间, Java, JavaScript, HTML" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_perldoc.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="/assets/fonts/sns/iconfont.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpeg" rel="shortcut icon" />
+<link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>Java 中面向对象的三大特性</title>
+
+
+<!-- 百度统计 -->
+
+<!-- 谷歌分析 -->
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" #87ceeb ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:#87ceeb;">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">SuQing’s Page</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">诗酒趁年华</a></li>
+              
+                <li><a href="/timeline" style="color: white;">时间线</a></li>
+              
+                <li><a href="/about" style="color: white;">认识我</a></li>
+              
+                <li><a href="/tags" style="color: white;">标签页</a></li>
+              
+                <li><a href="/link" style="color: white;">友情链</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>诗酒趁年华</li></a>
+        
+          <a href="/timeline"><li>时间线</li></a>
+        
+          <a href="/about"><li>认识我</li></a>
+        
+          <a href="/tags"><li>标签页</li></a>
+        
+          <a href="/link"><li>友情链</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">Java 中面向对象的三大特性</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:#87ceeb;">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='#87ceeb';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:#87ceeb;"><sapn class="main">Java 随手笔记</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">Java 中面向对象的三大特性</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2018/12/02/Java%E8%BF%90%E7%AE%97%E7%AC%A6.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='#87ceeb';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:#87ceeb;"><sapn class="main">Java中的运算符</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html" class="leftchange" style="border-right: 1px solid #87ceeb;border-bottom: 2px solid #87ceeb;"><span>上一篇<br><br>Java 随手笔记</span></a>
+    
+    
+      <a href="/2018/12/02/Java%E8%BF%90%E7%AE%97%E7%AC%A6.html" class="rightchange" style="border-left: 1px solid #87ceeb;border-bottom: 2px solid #87ceeb;"><span>下一篇<br><br>Java中的运算符</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+    
+      <div class="postpage-subtitle" style="border-left: 8px solid #87ceeb; border-right: 8px solid #87ceeb">
+        封装、继承、多态
+      </div>
+    
+  
+  <!-- 苏轻自己加的文章署名 -->
+  <div align="right" style="color: gray;">
+    <small>苏轻最后编辑于2018年12月5日15:01:02</small>
+  </div>
+  <!-- 文章内容 -->
+  <h3 id="封装">封装</h3>
+<p>　　封装的实现，得益于访问控制符的使用。</p>
+<ul>
+  <li>private
+    <ul>
+      <li>表示私有，只有自己能访问</li>
+    </ul>
+  </li>
+  <li>default
+    <ul>
+      <li>当没有修饰符修饰时，只有同一个包中的类能访问</li>
+    </ul>
+  </li>
+  <li>protected
+    <ul>
+      <li>表示可以被同一个包的类以及其他包中的子类访问</li>
+    </ul>
+  </li>
+  <li>public
+    <ul>
+      <li>表示可以被该项目的所有包中的所有类访问</li>
+    </ul>
+  </li>
+</ul>
+
+<p>　　类的属性一般使用<code class="highlighter-rouge">private</code>访问权限，然后提供属性相应的<code class="highlighter-rouge">get/set</code>方法来对相关属性赋值与读取。而这些<code class="highlighter-rouge">get/set</code>方法则使用public修饰，以便于外界调用。</p>
+
+<p>　　通常情况下，只用于本类的辅助性方法用<code class="highlighter-rouge">private</code>修饰，希望其他类调用的方法用<code class="highlighter-rouge">public</code>修饰。</p>
+
+<blockquote>
+  <p>值得注意的是 boolean 变量的 get 方法需要使用 is 开头！</p>
+</blockquote>
+
+<h3 id="继承">继承</h3>
+
+<p>　　Java 中的类只有单继承（接口有多继承），在定义一个类的时候可以使用关键字 extends 指定它的父类。子类继承父类，就可以得到父类（除了构造方法）的全部属性和方法，但仍然不可以直接访问父类的私有属性和方法。</p>
+
+<p>　　如果定义一个类时没有使用 extends，那么它的父类是：<code class="highlighter-rouge">java.lang.Object</code>。</p>
+
+<h4 id="方法的重写override">方法的重写（override）</h4>
+
+<p>　　子类可以重写父类的方法，在调用这个方法时，子类重写后的方法会直接替换掉父类对应的方法。但是方法的重写必须遵循几个原则：</p>
+<ul>
+  <li>方法名、形参列表必须相同</li>
+  <li>返回值类型和声明异常类型，子类必须小于等于父类</li>
+  <li>访问权限，子类必须大于等于父类</li>
+</ul>
+
+<blockquote>
+  <p>下面苏轻就介绍两个经常会去重写的方法！</p>
+</blockquote>
+
+<h6 id="equals-方法">equals 方法</h6>
+
+<p>　　苏轻经常使用<code class="highlighter-rouge">==</code>来判断两个数是否相等，这在处理基本类型的数据时很实用。但是在遇到引用类型时，情况有所变化。</p>
+
+<p>　　如果<code class="highlighter-rouge">==</code>的两边是引用类型（对象，比如两个字符串），<code class="highlighter-rouge">==</code>会去判断它们的地址是否相同。也就是说这时即使它们（这两个字符串）的内容可能完全相同，只要它们不是指向同一个地址，它们就不相等。于是，在所有类的基类<code class="highlighter-rouge">Object</code>类中，定义有一个<code class="highlighter-rouge">equals()</code>的方法，为我们提供了定义“对象内容相等”的逻辑。</p>
+
+<p>　　<code class="highlighter-rouge">JDK</code>提供的一些类，如<code class="highlighter-rouge">String</code>类、<code class="highlighter-rouge">Date</code>类、包装类等，都已经重写了<code class="highlighter-rouge">Object</code>类的<code class="highlighter-rouge">equals</code>方法。调用这些类的<code class="highlighter-rouge">equals</code>方法，例如：<code class="highlighter-rouge">x.equals(y)</code>，当<code class="highlighter-rouge">x</code>和<code class="highlighter-rouge">y</code>所引用的对象是同一类对象且属性内容相等（可以不是同一个对象）时返回<code class="highlighter-rouge">true</code>，否则返回<code class="highlighter-rouge">false</code>。</p>
+
+<h6 id="tostring-方法">toString 方法</h6>
+
+<p>　　在<code class="highlighter-rouge">Object</code>类中还定义有一个<code class="highlighter-rouge">toString()</code>方法，在打印或用字符串连接对象时，就会自动调用该对象的<code class="highlighter-rouge">toString()</code>方法。所以我们就可以去重写这个方法，来自定义输出某些对象的内容。</p>
+
+<h4 id="关键字-super">关键字 super</h4>
+
+<p>　　关键字<code class="highlighter-rouge">super</code>是直接父类对象的引用，在子类中可以随时通过<code class="highlighter-rouge">super.xxxx</code>的方式来访问父类中被子类覆盖的方法或属性。</p>
+
+<p>　　子类的构造方法中如果有<code class="highlighter-rouge">super()</code>，那么必须位于第一句。如果子类构造方法的第一行代码没有显式地调用<code class="highlighter-rouge">super()</code>或<code class="highlighter-rouge">this()</code>，<code class="highlighter-rouge">Java</code>仍然会默认调用<code class="highlighter-rouge">super()</code>，这里的含义是调用父类的无参数构造方法。因此，构造方法里的<code class="highlighter-rouge">super()</code>是可以省略的。</p>
+
+<h3 id="多态">多态</h3>
+
+<ul>
+  <li>导致多态的存在的3个必要条件：
+    <ul>
+      <li>继承</li>
+      <li>方法的重写</li>
+      <li>父类引用指向子类对象</li>
+    </ul>
+  </li>
+</ul>
+
+<p>　　首先必须明确一点：多态是方法的多态，与属性无关。当父类引用调用子类重写的方法时，多态就出现了。</p>
+
+<p>　　当某方法的形参是一个父类的引用时，此方法实际使用时的实参可以是该父类任意的子类对象，可以通过不同的子类对象实现不同的行为方式。</p>
+
+<p>　　多态的主要优势是提高了代码的可扩展性，符合开闭原则。但是多态也有弊端，就是无法调用子类独有的方法。</p>
+
+
+  <!-- 引入share模块 -->
+  
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'qzone'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>
+    SuQing’s Page Copyright ©
+    
+
+    
+        2017
+        -
+    
+
+    2018
+    
+      <br>Powered by Jekyll | Github
+  </span>
+</footer>
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
