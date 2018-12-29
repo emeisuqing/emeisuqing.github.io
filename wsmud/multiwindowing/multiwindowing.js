@@ -58,7 +58,8 @@ function run() {
 		var iframe = document.createElement("iframe");
 		iframe.src = "http://game.wsmud.com/";
 		//target="_blank"
-		iframe.target = "_blank";
+		// iframe.target = "_blank";
+		$("iframe").attr("target", "_blank");
 
 		var cover = document.createElement("div");
 		cover.className = "cover";
