@@ -1,4 +1,8 @@
-.DS_Store # Finder 的文件夹属性
-_site # 本地服务器预览文件
-TEST # 测试文件
-_useless # 无用文件
+# Finder 的文件夹属性
+.DS_Store
+# 本地服务器预览文件
+_site
+# 测试文件
+TEST
+# 无用文件
+_useless
