@@ -3,7 +3,7 @@ webtitle: 'SuQing’s Page' # 首页标题
 title: 'SuQing’s Page' # 页面 title 标签的显示内容
 description: '欢迎来到苏轻的个人领域！' # 网站简介
 keywords: '苏轻, 个人, 博客, 空间, Java, JavaScript, HTML' # 网站关键词
-url: 'suqing.fun' # 网站域名
+url: 'https://suqing.fun' # 网站域名
 
 
 # 是否开启博主关于信息
