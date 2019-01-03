@@ -3,6 +3,10 @@ html, body, header, a, ul, li, div, table {
     padding: 0;
 }
 
+body {
+    min-width: 20em;
+}
+
 a {
     color: #ffffff;
     background: #505050;
@@ -10,7 +14,6 @@ a {
 }
 
 .title {
-    width: 40em;
     background: #404040;
     line-height: 2.2em;
     font-size: 2em;
