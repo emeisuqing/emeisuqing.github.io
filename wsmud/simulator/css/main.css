@@ -4,7 +4,7 @@ html, body, header, a, ul, li, div, table {
 }
 
 body {
-    min-width: 20em;
+    min-width: 40em;
 }
 
 a {
