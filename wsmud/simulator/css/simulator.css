@@ -1,26 +1,21 @@
-body {
-	background: #000000;
-	color: #ffffff;
-}
-
 .button {
     border: 0.1em solid gray;
     border-collapse: collapse;
-    background: black;
-    color: gray;
+    background: #404040;
+    color: #bfbfbf;
     text-align: center;
 }
 .clickedButton {
     border: 0.1em solid white;
     border-collapse: collapse;
-    background: black;
+    background: #404040;
     color: white;
     text-align: center;
 }
 .clickedWuDaoButton {
     border: 0.1em solid white;
     border-collapse: collapse;
-    background: black;
+    background: #404040;
     color: white;
     text-align: center;
 }
@@ -38,7 +33,6 @@ th,td {
 	border: 0.1em solid #ffffff;
 }
 
-
 .skillNameTd {
 	font-size: 0.8em;
 /*	width: 8em;*/
@@ -48,10 +42,8 @@ th,td {
 /*	width: 15em;*/
 }
 .editable { /* 可编辑的 TD */
-	background: #444058;
+	background: #303030;
 }
-
-
 
 .白色 {
 	color:white;
@@ -71,7 +63,6 @@ th,td {
 .橙色 {
 	color:orange;
 }
-
 
 .hidden {
 	display: none;

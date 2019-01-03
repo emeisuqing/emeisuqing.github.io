@@ -1,7 +1,7 @@
 var colorNameArray = ["白色","绿色","蓝色","黄色","紫色","橙色"]; // 0=白 1~5=绿蓝黄紫橙
 var wudaoNameArray = ["无","内功","轻功","拳脚","招架","武器"]; // 0=无 1~4=内轻拳招 5=武器
 
-var FILENAME = "skillData.wscs";
+var FILENAME = "data/skillData.wscs";
 var skillData = {}; // 文件技能数据
 var userSkills = []; // 用户技能数据
 var wudaoList = {"内功":[],"轻功":[],"拳脚":[],"招架":[],"武器":[]}; // 武道进阶队列
@@ -99,15 +99,6 @@ var AFFIX = {"内功":FORCE,"轻功":DODGE,"拳脚":UNARMED,"招架":PARRY,"武�
 
 
 
-
-
-
-
-
-
-
-
-
 // 开始
 (function() {
 	$.ajax({
@@ -127,12 +118,37 @@ var AFFIX = {"内功":FORCE,"轻功":DODGE,"拳脚":UNARMED,"招架":PARRY,"武�
  			}
  		} // skillData 处理完毕
  		layout();
- 		updateSkillList();
+		updateSkillList();
  	});
  	// AJAX是异步
 })();
 
+// 生成自动练习代码的部分
+var isBackHome = false;
+function clickBackHome() {
+	$("#notBackHome").toggleClass("button");
+	$("#notBackHome").toggleClass("clickedButton");
+	$("#needBackHome").toggleClass("button");
+	$("#needBackHome").toggleClass("clickedButton");
+	isBackHome = !isBackHome;
+	updateData();
+}
+var isWaKuang = true;
+function clickWaKuang() {
+	$("#wakuang").toggleClass("button");
+	$("#wakuang").toggleClass("clickedButton");
+	$("#xiulian").toggleClass("button");
+	$("#xiulian").toggleClass("clickedButton");
+	isWaKuang = !isWaKuang;
+	updateData();
+}
+
 function layout() {
+	$("#notBackHome").click(clickBackHome);
+	$("#needBackHome").click(clickBackHome);
+	$("#wakuang").click(clickWaKuang);
+	$("#xiulian").click(clickWaKuang);
+	
 	var tds = document.getElementsByClassName("affixClassTds");
 	for (var i = 0; i < tds.length; i++) {
 		var button = document.createElement("button");
@@ -365,9 +381,15 @@ function updateData() {
 	}
 	skillTable.parentNode.className = "hidden";
 
+	var codeString = ""; // practise code
+	if (isBackHome) codeString += "jh fam 0 start,go west,go west,go north,go enter,go west,";
+
 	for (var i = 0; i < userSkills.length; i++) {
 		skillTable.parentNode.className = "";
 		var skill = userSkills[i];
+
+		// practise code
+		codeString = codeString + "lianxi " + skill.skillId + " " + skill.levelTo + ",";
 
 		var td_skillName = document.createElement("td"); // 技能名称
 		td_skillName.innerHTML = skill.skillName;
@@ -432,7 +454,7 @@ function updateData() {
 	document.getElementsByClassName("affixTds")[0].innerHTML = "Simulator 2.0";
 	document.getElementsByClassName("affixTds")[1].innerHTML = "Simulator 2.0";
 	document.getElementsByClassName("affixTds")[2].innerHTML = "Simulator 2.0";
-	document.getElementById("toConfirm").innerHTML = "有任何问题或Bug欢迎加苏轻的QQ群交流：953279200";
+	document.getElementById("toConfirm").innerHTML = "使用的时候注意了哟，可能还有没解决的问题。";
 
 	var cost = {"无":0,"内功":0,"轻功":0,"拳脚":0,"招架":0,"武器":0};
 	for (var xx = 0; xx < userSkills.length; xx++) {
@@ -467,4 +489,13 @@ function updateData() {
 
 	var button = document.getElementById("reset");
 	button.onclick = reset;
+
+
+	if (isWaKuang) {
+		codeString += "wakuang";
+	} else {
+		codeString += "xiulian";
+	}
+	$("#code").html(codeString);
+	
 }

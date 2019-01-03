@@ -1,1 +1,0 @@
-command＋shift＋. 显示/隐藏 隐藏文件
