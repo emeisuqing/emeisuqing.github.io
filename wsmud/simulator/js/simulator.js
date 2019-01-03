@@ -148,6 +148,9 @@ function layout() {
 	$("#needBackHome").click(clickBackHome);
 	$("#wakuang").click(clickWaKuang);
 	$("#xiulian").click(clickWaKuang);
+	$("#lxxl").blur(updateData);
+	$("#xtwx").blur(updateData);
+	$("#htwx").blur(updateData);
 	
 	var tds = document.getElementsByClassName("affixClassTds");
 	for (var i = 0; i < tds.length; i++) {
@@ -384,13 +387,18 @@ function updateData() {
 	var codeString = ""; // practise code
 	if (isBackHome) codeString += "jh fam 0 start,go west,go west,go north,go enter,go west,";
 
+	var qnxh = 0; // qnxh
+
 	for (var i = 0; i < userSkills.length; i++) {
 		skillTable.parentNode.className = "";
 		var skill = userSkills[i];
 
 		// practise code
 		codeString = codeString + "lianxi " + skill.skillId + " " + skill.levelTo + ",";
+		// qnxh
+		qnxh += skill.cost();
 
+		// table
 		var td_skillName = document.createElement("td"); // 技能名称
 		td_skillName.innerHTML = skill.skillName;
 		td_skillName.className = "skillNameTd";
@@ -487,8 +495,9 @@ function updateData() {
 	document.getElementById("totalBook").innerHTML = costBook;
 	document.getElementById("totalQn").innerHTML = costQianNeng;
 
-	var button = document.getElementById("reset");
-	button.onclick = reset;
+	// var button = document.getElementById("reset");
+	// button.onclick = reset;
+	$("#reset").click(reset); // jQuery 方式
 
 
 	if (isWaKuang) {
@@ -497,5 +506,32 @@ function updateData() {
 		codeString += "xiulian";
 	}
 	$("#code").html(codeString);
-	
+
+	// qnxh
+	$("#qnxh").html(qnxh);
+	var lxxl = parseInt($("#lxxl").html());
+	var xtwx = parseInt($("#xtwx").html());
+	var htwx = parseInt($("#htwx").html());
+
+	var t = qnxh/(xtwx+htwx)/(100/100+lxxl/100-xtwx/100)/12;
+	$("#time").html(timeText(t));
+}
+
+function timeText(t) {
+	var string = "";
+	if (t < 60) {
+		string = string + parseInt(t) + "分钟";
+		return string;
+	} else {
+		var h = parseInt(t/60);
+		var m = parseInt(t%60);
+
+		if (h>24) {
+			var d = parseInt(h/24);
+			h = h % 24;
+			string = string + d + "天";
+		}
+		string = string + h + "小时" + m + "分钟";
+		return string;
+	}
 }
