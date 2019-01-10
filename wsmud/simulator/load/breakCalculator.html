@@ -1,0 +1,56 @@
+<table>
+    <tr>
+        <td>技能名称</td>
+        <td>技能等级</td>
+        <td>添加技能</td>
+    </tr>
+    <tr>
+        <td class="editable" contenteditable="true" id="skillName">NAME</td>
+        <td class="editable" contenteditable="true" id="skillLevel">LEVEL</td>
+        <td>
+            <button onclick="addSkill('green')">绿</button>
+            <button onclick="addSkill('blue')">蓝</button>
+            <button onclick="addSkill('yellow')">黄</button>
+            <button onclick="addSkill('purple')">紫</button>
+        </td>
+    </tr>
+</table>
+
+<table id="logTable">
+    <tr><td>L</td><td>O</td><td>G</td></tr>
+    <tr><td colspan="3">
+        <div id="log">
+            <a id="flag" href="#flag" name="flag"></a>
+        </div>
+    </td></tr>
+</table>
+
+
+<table id="skillTable"></table>
+
+<table id="break">
+    <tr><td colspan="4">请输入你的突破丹的数量</td></tr>
+    <tr class="green">
+        <td>突破丹</td>
+        <td class="editable" contenteditable="true" id="绿突破">0</td>
+        <td rowspan="3"><button onclick="start()">一键嗑药</button></td>
+    </tr>
+    <tr class="blue">
+        <td>突破丹</td>
+        <td class="editable" contenteditable="true" id="蓝突破">0</td>
+    </tr>
+    <tr class="yellow">
+        <td>突破丹</td>
+        <td class="editable" contenteditable="true" id="黄突破">0</td>
+    </tr>
+</table>
+
+
+
+
+
+<script src="js/breakCalculator.js"></script>
+<script>
+    $("#logTable").hide();
+    updateSkills();
+</script>
