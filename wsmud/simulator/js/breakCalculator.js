@@ -85,7 +85,6 @@ function takeMedicine() {
         if (colorArray[skills[index].skillColor]>3) return;
         document.getElementById("黄突破").innerHTML = yellow - 1;
     } else {
-        $("#break").show();
         $("#logTable").hide();
         stop();
         return;
