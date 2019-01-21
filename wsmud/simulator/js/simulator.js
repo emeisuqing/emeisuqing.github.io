@@ -61,36 +61,36 @@ Affix.prototype.message = function(level, color) {
 
 // 1000级橙色技能的武道数据
 var FORCE = [new Affix("【御气之道】", "内力上限＋", 125000, "", 0),
-			 new Affix("【防御之道】", "防御＋", 2500, "", 1),
-			 new Affix("【气血之道】", "气血＋", 60000, "", 2),
-			 new Affix("【炼体之术】", "根骨＋", 400, "", 3),
+			 new Affix("【防御之道】", "防御＋", 2500, "", 1), //cheaked
+			 new Affix("【气血之道】", "气血＋", 60000, "", 2), //cheaked
+			 new Affix("【炼体之术】", "根骨＋", 400, "", 3), //cheaked
 			 new Affix("【强体之术】", "臂力＋", 300, "", 4),
 			 new Affix("【永生之道】", "年龄－", 10, "岁", 5),
 			 new Affix("【守护之道】", "免伤＋", 5, "%", 6),
 			 new Affix("【暴虐之道】", "终伤＋", 5, "%", 7)];
-var DODGE = [new Affix("【躲闪之道】", "躲闪＋", 2500, "", 8),
-			 new Affix("【防御之道】", "防御＋", 2500, "", 9),
+var DODGE = [new Affix("【躲闪之道】", "躲闪＋", 2500, "", 8), //cheaked
+			 new Affix("【防御之道】", "防御＋", 2500, "", 9), //cheaked
 			 new Affix("【御气之道】", "内力上限＋", 110000, "", 10),
 			 new Affix("【命中之道】", "命中＋", 2000, "", 11),
-			 new Affix("【轻盈之道】", "身法＋", 300, "", 12)];
+			 new Affix("【轻盈之道】", "身法＋", 300, "", 12)]; //cheaked
 
-var PARRY = [new Affix("【招架之道】", "招架＋", 2400, "", 13),
-			 new Affix("【气血之道】", "气血＋", 47500, "", 14),
+var PARRY = [new Affix("【招架之道】", "招架＋", 2400, "", 13), //cheaked
+			 new Affix("【气血之道】", "气血＋", 47500, "", 14), //cheaked
 			 new Affix("【御气之道】", "内力上限＋", 110000, "", 15),
-			 new Affix("【防御之道】", "防御＋", 2000, "", 16),
-			 new Affix("【明悟之术】", "悟性＋", 150, "", 18),
-			 new Affix("【炼体之术】", "根骨＋", 300, "", 17)];
-var UNARMED = [new Affix("【命中之道】", "命中＋", 2500, "", 19),
+			 new Affix("【防御之道】", "防御＋", 2000, "", 16), //cheaked
+			 new Affix("【明悟之术】", "悟性＋", 150, "", 17), //cheaked
+			 new Affix("【炼体之术】", "根骨＋", 300, "", 18)]; //cheaked
+var UNARMED = [new Affix("【命中之道】", "命中＋", 2500, "", 19), //cheaked
 			   new Affix("【进攻之道】", "攻击＋", 2150, "", 20),
-			   new Affix("【御气之道】", "内力上限＋", 110000, "", 21),
-			   new Affix("【防守之道】", "防御＋", 2000, "", 22),
+			   new Affix("【御气之道】", "内力上限＋", 110000, "", 21), //cheaked
+			   new Affix("【防守之道】", "防御＋", 2000, "", 22), //cheaked
 			   new Affix("【招架之道】", "招架＋", 2000, "", 23),
 			   new Affix("【强体之术】", "臂力＋", 400, "", 24)];
-var WEAPON = [new Affix("【进攻之道】", "攻击＋", 2000, "", 25),
-			  new Affix("【命中之道】", "命中＋", 2300, "", 27),
-			  new Affix("【防守之道】", "防御＋", 2300, "", 26),
-			  new Affix("【招架之道】", "招架＋", 2000, "", 28),
-			  new Affix("【强体之术】", "臂力＋", 300, "", 29),
+var WEAPON = [new Affix("【进攻之道】", "攻击＋", 2000, "", 27), //cheaked
+			  new Affix("【命中之道】", "命中＋", 2300, "", 25), //cheaked
+			  new Affix("【防守之道】", "防御＋", 2300, "", 26), //cheaked
+			  new Affix("【招架之道】", "招架＋", 2000, "", 28), //cheaked
+			  new Affix("【强体之术】", "臂力＋", 300, "", 29), //cheaked
 			  new Affix("【躲闪之道】", "躲闪＋", 2000, "", 30),
 			  new Affix("【残暴之心】", "暴击＋", 2.5, "%", 31)];
 var AFFIX = {"内功":FORCE,"轻功":DODGE,"拳脚":UNARMED,"招架":PARRY,"武器":WEAPON};
@@ -172,7 +172,7 @@ function layout() {
 
 function clickCopyCmd() {
 	$("#wd_cmd").html(getCommandGroup(string_wd_cmd)); // 武道进阶流程数据显示
-	var text = $("#wd_cmd").html();
+	var text = $("#wd_cmd").text();
 	copyText(text);
 }
 
