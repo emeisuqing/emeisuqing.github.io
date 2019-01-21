@@ -81,7 +81,7 @@ var PARRY = [new Affix("【招架之道】", "招架＋", 2400, "", 13), //cheak
 			 new Affix("【明悟之术】", "悟性＋", 150, "", 17), //cheaked
 			 new Affix("【炼体之术】", "根骨＋", 300, "", 18)]; //cheaked
 var UNARMED = [new Affix("【命中之道】", "命中＋", 2500, "", 19), //cheaked
-			   new Affix("【进攻之道】", "攻击＋", 2150, "", 20),
+			   new Affix("【进攻之道】", "攻击＋", 2150, "", 20), //cheaked
 			   new Affix("【御气之道】", "内力上限＋", 110000, "", 21), //cheaked
 			   new Affix("【防守之道】", "防御＋", 2000, "", 22), //cheaked
 			   new Affix("【招架之道】", "招架＋", 2000, "", 23),

@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-21T23:01:26+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SuQing’s Page</title><subtitle>欢迎来到苏轻的个人领域！</subtitle><author><name>true</name></author><entry><title type="html">jQuery 基础知识</title><link href="http://localhost:4000/2018/12/27/jQuery.html" rel="alternate" type="text/html" title="jQuery 基础知识" /><published>2018-12-27T11:05:20+08:00</published><updated>2018-12-27T11:05:20+08:00</updated><id>http://localhost:4000/2018/12/27/jQuery</id><content type="html" xml:base="http://localhost:4000/2018/12/27/jQuery.html">&lt;h3 id=&quot;jquery-简介&quot;&gt;jQuery 简介&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-21T23:39:10+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SuQing’s Page</title><subtitle>欢迎来到苏轻的个人领域！</subtitle><author><name>true</name></author><entry><title type="html">JavaScript 复制内容到剪贴板</title><link href="http://localhost:4000/2019/01/21/JS%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E8%B4%B4%E6%9D%BF.html" rel="alternate" type="text/html" title="JavaScript 复制内容到剪贴板" /><published>2019-01-21T23:20:46+08:00</published><updated>2019-01-21T23:20:46+08:00</updated><id>http://localhost:4000/2019/01/21/JS%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E8%B4%B4%E6%9D%BF</id><content type="html" xml:base="http://localhost:4000/2019/01/21/JS%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E8%B4%B4%E6%9D%BF.html">&lt;ul&gt;
+  &lt;li&gt;直接上代码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;copyText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;textarea&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'textarea'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;textarea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;textarea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;textarea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;execCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Copy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;textarea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;display&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'none'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 不显示&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'已经复制到剪贴板！'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Copy successfully.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;在各种兼容问题比较复杂的情况下，上面的代码创建了一个不可见的 &lt;code class=&quot;highlighter-rouge&quot;&gt;textarea&lt;/code&gt; 用来复制内容，此方法可以兼容多种浏览器与系统，即粗暴又方便。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;document.execCommand(&quot;Copy&quot;)&lt;/code&gt; 函数针对于 &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;textarea&lt;/code&gt; 这两种标签，先 &lt;code class=&quot;highlighter-rouge&quot;&gt;select()&lt;/code&gt; 选中，然后就可以 &lt;code class=&quot;highlighter-rouge&quot;&gt;Copy&lt;/code&gt; 其中的内容。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果需要被复制的内容中没有换行，那么使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; 代替 &lt;code class=&quot;highlighter-rouge&quot;&gt;textarea&lt;/code&gt; 其实也可以。而推荐使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;textarea&lt;/code&gt; 的原因就是会保留换行。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>true</name></author><category term="JavaScript" /><summary type="html">直接上代码</summary></entry><entry><title type="html">jQuery 基础知识</title><link href="http://localhost:4000/2018/12/27/jQuery.html" rel="alternate" type="text/html" title="jQuery 基础知识" /><published>2018-12-27T11:05:20+08:00</published><updated>2018-12-27T11:05:20+08:00</updated><id>http://localhost:4000/2018/12/27/jQuery</id><content type="html" xml:base="http://localhost:4000/2018/12/27/jQuery.html">&lt;h3 id=&quot;jquery-简介&quot;&gt;jQuery 简介&lt;/h3&gt;
 
 &lt;p&gt;　　jQuery 是一个 JavaScript 函数库。使用 jQuery 之前，我们需要在 HTML 中使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 标签来引用它。&lt;/p&gt;
 
@@ -339,7 +365,13 @@
        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;@end&lt;/p&gt;</content><author><name>true</name></author><category term="JavaScript" /><category term="jQuery" /><summary type="html">jQuery 简介</summary></entry><entry><title type="html">Java 随手笔记</title><link href="http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html" rel="alternate" type="text/html" title="Java 随手笔记" /><published>2018-12-10T17:54:33+08:00</published><updated>2018-12-10T17:54:33+08:00</updated><id>http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html">&lt;h1 id=&quot;java-笔记&quot;&gt;Java 笔记&lt;/h1&gt;
+&lt;p&gt;@end&lt;/p&gt;
+
+&lt;h3 id=&quot;苏轻使用-jquery-的一些心得笔记&quot;&gt;苏轻使用 jQuery 的一些心得笔记&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;为了获取一个元素的文本时，使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;.html()&lt;/code&gt; 方法默认会转义一些特殊字符（例如：&amp;amp;）。这种情况下，使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;.text()&lt;/code&gt; 来获取文本内容就不会自动转义了。&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>true</name></author><category term="JavaScript" /><category term="jQuery" /><summary type="html">jQuery 简介</summary></entry><entry><title type="html">Java 随手笔记</title><link href="http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html" rel="alternate" type="text/html" title="Java 随手笔记" /><published>2018-12-10T17:54:33+08:00</published><updated>2018-12-10T17:54:33+08:00</updated><id>http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/2018/12/10/Java%E9%9A%8F%E6%89%8B%E8%AE%B0.html">&lt;h1 id=&quot;java-笔记&quot;&gt;Java 笔记&lt;/h1&gt;
 
 &lt;h5 id=&quot;目录&quot;&gt;目录&lt;/h5&gt;
 &lt;ul&gt;
@@ -1926,51 +1958,4 @@
 
 &lt;p&gt;　　Java的核心优势是跨平台，而Java虚拟机是实现跨平台的核心机制。不同的操作系统有不同的虚拟机，Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，随处运行”。&lt;/p&gt;
 
-&lt;p&gt;　　基于JAVA生态建立的产品将会越来越多，基于JAVA虚拟机的编程语言也将会越来越多。生态系统的强大，是JAVA能长盛不衰的根本。&lt;/p&gt;</content><author><name>true</name></author><category term="Java" /><summary type="html">Java的发展历程 1991年 Oak 1995年 Applet → Java 1996年 JDK1.0 1997年 JDK1.1 1998年 J2EE 1999年 Java2（J2ME、J2SE、J2EE） 2004年 J2SE 1.5.0 → Java SE 5.0 Tiger 2005年 Java SE 6 2011年 Java7 2014年 Java8 JavaSE、JavaEE、JavaME JavaSE(Java Standard Edition) 标准版，定位于个人计算机的应用。 JavaEE(Java Enterprise Edition) 企业版，定位于服务器端的应用。 JavaME(Java Micro Edition) 微型版，定位于消费性电子产品的应用。 JVM、JRE、JDK JVM(Java Virtual Machine)是一个虚拟的用于执行字节码(bytecode)的”虚拟计算机”。 JRE(Java Runtime Environment)包含虚拟机、库函数等运行Java应用程序所必须的文件。 JDK(Java Development Kit)包含JRE、编译器、调试器等，用于程序开发。 JVM ∈ JRE ∈ JDK Java应用程序的运行机制 　　计算机高级语言的类型主要有编译型和解释型两种，而Java语言是两种类型的结合。 首先用文本编辑器编写Java源程序，源文件后缀为.java 再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class 最后利用虚拟机（解释器，java）解释执行 Java的优势以及未来 　　Java的核心优势是跨平台，而Java虚拟机是实现跨平台的核心机制。不同的操作系统有不同的虚拟机，Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，随处运行”。 　　基于JAVA生态建立的产品将会越来越多，基于JAVA虚拟机的编程语言也将会越来越多。生态系统的强大，是JAVA能长盛不衰的根本。</summary></entry><entry><title type="html">常见编程语言简单介绍</title><link href="http://localhost:4000/2018/11/19/essay.html" rel="alternate" type="text/html" title="常见编程语言简单介绍" /><published>2018-11-19T10:58:39+08:00</published><updated>2018-11-19T10:58:39+08:00</updated><id>http://localhost:4000/2018/11/19/essay</id><content type="html" xml:base="http://localhost:4000/2018/11/19/essay.html">&lt;h3 id=&quot;c&quot;&gt;C&lt;/h3&gt;
-
-&lt;p&gt;　　经典语言，现代高级语言的鼻祖。1972年诞生于贝尔实验室，至今仍然流行。&lt;/p&gt;
-
-&lt;h3 id=&quot;c-1&quot;&gt;C++&lt;/h3&gt;
-
-&lt;p&gt;　　既可以面向对象编程，也可以开发C语言面向过程的程序，是C语言的拓展。C++语言在科学计算、操作系统、网络通讯、系统开发、引擎开发中被大量使用。&lt;/p&gt;
-
-&lt;h3 id=&quot;java&quot;&gt;Java&lt;/h3&gt;
-
-&lt;p&gt;　　由美国SUN公司发明于1995年，是目前业界应用最广泛、使用人数最多的语言，连续多年排名世界第一，可以称之为“计算机语言界的英语”。&lt;/p&gt;
-
-&lt;p&gt;　　Java广泛应用于企业级软件开发、安卓移动开发、大数据云计算等领域，几乎涉及IT所有行业。&lt;/p&gt;
-
-&lt;h3 id=&quot;php&quot;&gt;PHP&lt;/h3&gt;
-
-&lt;p&gt;　　PHP原始为 &lt;em&gt;Personal Home Page&lt;/em&gt; 的缩写，已经正式更名为 “PHP: Hypertext Preprocessor”。PHP语言一般用于WEB开发领域，大量的中小型网站以及某些大型网站使用PHP开发。&lt;/p&gt;
-
-&lt;h3 id=&quot;ocswift&quot;&gt;OC、Swift&lt;/h3&gt;
-
-&lt;p&gt;　　OC 通常写为 Objective-C、Object-C、Obj-C，是根据C语言所衍生出来的语言，继承了C语言的特性，是扩充C的面向对象编程语言。OC主要用于苹果软件的开发。&lt;/p&gt;
-
-&lt;p&gt;　　Swift是苹果于2014年WWDC发布的新语言，可与OC共同运行于Mac OS和iOS平台，主要用于搭建基于苹果平台的应用程序。&lt;/p&gt;
-
-&lt;h3 id=&quot;javascript&quot;&gt;JavaScript&lt;/h3&gt;
-&lt;p&gt;　　JavaScript是一种脚本语言，已经被广泛用于Web应用开发，应用范围越来越大，重要性越来越高。目前，流行的H5开发的核心其实就是JavaScript语言。&lt;/p&gt;
-
-&lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
-&lt;p&gt;　　Python发明于1989年，语法结构简单，易学易懂。Python具有丰富和强大的库。它常被昵称为胶水语言，能够把用其他语言制作的各种模块（尤其是C/C++）很轻松地联结在一起。Python广泛应用于：图形处理、科学计算、web编程、多媒体应用、引擎开发，更在未来机器学习和人工智能上有非常大的潜力。&lt;/p&gt;
-
-&lt;h3 id=&quot;c-2&quot;&gt;C#&lt;/h3&gt;
-&lt;p&gt;　　C#是微软公司发布的一种面向对象的、运行于.NET Framework之上的高级程序设计语言。C#在基于Windows操作系统的应用开发这一领域在取代C++，占据主导地位。但是C#的微软身份，也成为了发展的阻力，在其他IT领域应用较少。&lt;/p&gt;
-
-&lt;h3 id=&quot;fortran&quot;&gt;Fortran&lt;/h3&gt;
-&lt;p&gt;　　世界上第一种高级语言，IBM公司在1954年提出的，主要用在需要复杂数学计算的科学和工程领域。现在仍然被广泛使用，尤其是工程领域。Fortran虽然适合编写科学计算方面的程序，但是不适于编写系统程序。&lt;/p&gt;
-
-&lt;h3 id=&quot;basic&quot;&gt;Basic&lt;/h3&gt;
-&lt;p&gt;　　虽然易学，但功能不够强大，应用到大程序的有效性令人怀疑。已经逐步退出历史舞台。&lt;/p&gt;
-
-&lt;h3 id=&quot;cobol&quot;&gt;COBOL&lt;/h3&gt;
-&lt;p&gt;　　于1959年提出。主要用于大量精确处理数据的商业领域中，比如金融、银行。今天，仍然有超过一半的商业软件使用COBOL编写。有将近100万人使用COBOL编程。&lt;/p&gt;
-
-&lt;h3 id=&quot;pascal&quot;&gt;Pascal&lt;/h3&gt;
-&lt;p&gt;　　Pascal的名称是为了纪念十七世纪法国著名哲学家和数学家Blaise Pascal而来的，它由瑞士Niklaus Wirth教授于六十年代末设计并创立的。Pascal语言语法严谨，层次分明，程序易写，可读性强，是第一个结构化编程语言。由于没有大厂商和政府的支持，只是限于大学教育这一块。&lt;/p&gt;
-
-&lt;h3 id=&quot;go&quot;&gt;GO&lt;/h3&gt;
-
-&lt;h3 id=&quot;ruby&quot;&gt;Ruby&lt;/h3&gt;</content><author><name>true</name></author><category term="随手记" /><summary type="html">C</summary></entry></feed>
+&lt;p&gt;　　基于JAVA生态建立的产品将会越来越多，基于JAVA虚拟机的编程语言也将会越来越多。生态系统的强大，是JAVA能长盛不衰的根本。&lt;/p&gt;</content><author><name>true</name></author><category term="Java" /><summary type="html">Java的发展历程 1991年 Oak 1995年 Applet → Java 1996年 JDK1.0 1997年 JDK1.1 1998年 J2EE 1999年 Java2（J2ME、J2SE、J2EE） 2004年 J2SE 1.5.0 → Java SE 5.0 Tiger 2005年 Java SE 6 2011年 Java7 2014年 Java8 JavaSE、JavaEE、JavaME JavaSE(Java Standard Edition) 标准版，定位于个人计算机的应用。 JavaEE(Java Enterprise Edition) 企业版，定位于服务器端的应用。 JavaME(Java Micro Edition) 微型版，定位于消费性电子产品的应用。 JVM、JRE、JDK JVM(Java Virtual Machine)是一个虚拟的用于执行字节码(bytecode)的”虚拟计算机”。 JRE(Java Runtime Environment)包含虚拟机、库函数等运行Java应用程序所必须的文件。 JDK(Java Development Kit)包含JRE、编译器、调试器等，用于程序开发。 JVM ∈ JRE ∈ JDK Java应用程序的运行机制 　　计算机高级语言的类型主要有编译型和解释型两种，而Java语言是两种类型的结合。 首先用文本编辑器编写Java源程序，源文件后缀为.java 再利用编译器（javac）将源程序编译成字节码文件，字节码文件的后缀名为.class 最后利用虚拟机（解释器，java）解释执行 Java的优势以及未来 　　Java的核心优势是跨平台，而Java虚拟机是实现跨平台的核心机制。不同的操作系统有不同的虚拟机，Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，随处运行”。 　　基于JAVA生态建立的产品将会越来越多，基于JAVA虚拟机的编程语言也将会越来越多。生态系统的强大，是JAVA能长盛不衰的根本。</summary></entry></feed>
