@@ -153,6 +153,10 @@ function layout() {
 	$("#lxxl").blur(updateData);
 	$("#xtwx").blur(updateData);
 	$("#htwx").blur(updateData);
+
+	$("#copy_cmd").click(clickCopyCmd);
+
+	
 	
 	var tds = document.getElementsByClassName("affixClassTds");
 	for (var i = 0; i < tds.length; i++) {
@@ -165,6 +169,23 @@ function layout() {
 		tds[i].appendChild(button);
 	}
 }
+
+function clickCopyCmd() {
+	$("#wd_cmd").html(getCommandGroup(string_wd_cmd)); // 武道进阶流程数据显示
+	var text = $("#wd_cmd").html();
+	copyText(text);
+}
+
+function copyText(value) {
+	var textarea = document.createElement('textarea');
+	textarea.value = value;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand("Copy");
+	textarea.style.display = 'none'; // 不显示
+	alert('已经复制到剪贴板！');
+}
+
 
 function updateSkillList() {
 	for (var key in skillData) { // 遍历数据
@@ -380,7 +401,7 @@ function reset() {
 
 
 function updateData() {
-	$("#wd_cmd").html(string_wd_cmd); // 武道进阶流程数据显示
+	
 
 	var skillTable = document.getElementById("skillTable");
 	while (skillTable.rows.length != 1) { // 清空表格
@@ -538,4 +559,54 @@ function timeText(t) {
 		string = string + h + "小时" + m + "分钟";
 		return string;
 	}
+}
+
+
+
+
+function getCommandGroup(exp) {
+    var getType = function(code) {
+        var codes = [7, 12, 18, 24, 31];
+        var types = ["force", "dodge", "parry", "unarmed", "weapon"];
+        for (let i = 0; i < codes.length; i++) {
+            const max = codes[i];
+            if (code <= max) return types[i];
+        }
+        throw "unknown lingwu number";
+    };
+    var getCommands = function(counter, number, code, skill) {
+        var type = getType(code);
+        var commands = `
+        [(${counter})==${number}]($flag)=null
+        [(${counter})==${number}]($flag2)=null
+        [(${counter})==${number}]packitem wu {<hio>武道</hio>}
+        [(${counter})==${number}]@tip 你想从武道秘籍中领悟($flag)技能|你正在领悟|你从武道($flag2)中领悟到了
+        [(${counter})==${number}&(flag)!=null]lingwu type ${type}
+        [(${counter})==${number}&(flag)!=null]@tip 你想从武道秘籍中领悟哪种($type)秘技
+        [(${counter})==${number}&(flag)!=null]lingwu no ${code}
+        [(${counter})==${number}&(flag)==null&(flag2)==null]lingwu continue
+        [(${counter})==${number}&(flag2)==null]@tip 你从武道秘籍中领悟到了
+        [(${counter})==${number}]lingwu select
+        [(${counter})==${number}]@tip 你目前有以下技能可使用你领悟的
+        [(${counter})==${number}]lingwu ${skill}
+        [(${counter})==${number}]@tip 你领悟了
+        [(${counter})==${number}]($${counter})=(${counter})+1`;
+        commands = commands.replace(/\n\s*/g, "\n");
+        return commands;
+	};
+	if (exp=="") { // exp = null
+		return exp;
+	}
+    var parts = exp.split(/,+/);
+    var counter = `WudaoCounter__${new Date().getTime()}`;
+    var result = `@stopSSAuto\nstopstate\n[(${counter})==null]($${counter})=0`;
+    for (let j = 0; j < parts.length; j++) {
+        const part = parts[j];
+        var code = /^\s*(\d+)\s/.exec(part)[1];
+        var skill = /\s*([a-zA-Z][a-zA-Z0-9]*)/.exec(part)[1];
+        var commands = getCommands(counter, j, code, skill);
+        result += commands;
+    }
+    result += "\n$to 练功房;dazuo\n@recoverSSAuto";
+    return result;
 }

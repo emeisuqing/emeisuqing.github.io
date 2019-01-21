@@ -47,8 +47,13 @@ th,td {
 #wd_cmd {
 	background: #303030;
 	min-height: 1em;
+	text-align: left;
+	font-size: 0.5em;
+	white-space: pre-line;
 }
-
+.input {
+	white-space: pre-line;
+}
 .白色 {
 	color:white;
 }
