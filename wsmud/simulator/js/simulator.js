@@ -78,8 +78,8 @@ var PARRY = [new Affix("【招架之道】", "招架＋", 2400, "", 13),
 			 new Affix("【气血之道】", "气血＋", 47500, "", 14),
 			 new Affix("【御气之道】", "内力上限＋", 110000, "", 15),
 			 new Affix("【防御之道】", "防御＋", 2000, "", 16),
-			 new Affix("【明悟之术】", "悟性＋", 150, "", 17),
-			 new Affix("【炼体之术】", "根骨＋", 300, "", 18)];
+			 new Affix("【明悟之术】", "悟性＋", 150, "", 18),
+			 new Affix("【炼体之术】", "根骨＋", 300, "", 17)];
 var UNARMED = [new Affix("【命中之道】", "命中＋", 2500, "", 19),
 			   new Affix("【进攻之道】", "攻击＋", 2150, "", 20),
 			   new Affix("【御气之道】", "内力上限＋", 110000, "", 21),
@@ -87,8 +87,8 @@ var UNARMED = [new Affix("【命中之道】", "命中＋", 2500, "", 19),
 			   new Affix("【招架之道】", "招架＋", 2000, "", 23),
 			   new Affix("【强体之术】", "臂力＋", 400, "", 24)];
 var WEAPON = [new Affix("【进攻之道】", "攻击＋", 2000, "", 25),
-			  new Affix("【命中之道】", "命中＋", 2300, "", 26),
-			  new Affix("【防守之道】", "防御＋", 2300, "", 27),
+			  new Affix("【命中之道】", "命中＋", 2300, "", 27),
+			  new Affix("【防守之道】", "防御＋", 2300, "", 26),
 			  new Affix("【招架之道】", "招架＋", 2000, "", 28),
 			  new Affix("【强体之术】", "臂力＋", 300, "", 29),
 			  new Affix("【躲闪之道】", "躲闪＋", 2000, "", 30),
@@ -184,6 +184,7 @@ function copyText(value) {
 	document.execCommand("Copy");
 	textarea.style.display = 'none'; // 不显示
 	alert('已经复制到剪贴板！');
+	console.log("copy successfully.");
 }
 
 
