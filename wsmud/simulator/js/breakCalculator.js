@@ -1,14 +1,14 @@
 var skills = [
-    {"skillName":"基础内功", "skillColor":"white", "level":2300, "add":0}, 
-    {"skillName":"基础轻功", "skillColor":"white", "level":2300, "add":0},
-    {"skillName":"基础拳脚", "skillColor":"white", "level":2300, "add":0},
-    {"skillName":"基础招架", "skillColor":"white", "level":2300, "add":0},
-    {"skillName":"基础刀法", "skillColor":"white", "level":2300, "add":0},
-    {"skillName":"基础剑法", "skillColor":"white", "level":2300, "add":0},
-    {"skillName":"基础棍法", "skillColor":"white", "level":2300, "add":0},
-    {"skillName":"基础杖法", "skillColor":"white", "level":2300, "add":0},
-    {"skillName":"基础鞭法", "skillColor":"white", "level":2300, "add":0},
-    {"skillName":"基础暗器", "skillColor":"white", "level":2300, "add":0},
+    {"skillName":"基础内功", "skillColor":"white", "level":2000, "add":0}, 
+    {"skillName":"基础轻功", "skillColor":"white", "level":2000, "add":0},
+    {"skillName":"基础拳脚", "skillColor":"white", "level":2000, "add":0},
+    {"skillName":"基础招架", "skillColor":"white", "level":2000, "add":0},
+    {"skillName":"基础刀法", "skillColor":"white", "level":2000, "add":0},
+    {"skillName":"基础剑法", "skillColor":"white", "level":2000, "add":0},
+    {"skillName":"基础棍法", "skillColor":"white", "level":2000, "add":0},
+    {"skillName":"基础杖法", "skillColor":"white", "level":2000, "add":0},
+    {"skillName":"基础鞭法", "skillColor":"white", "level":2000, "add":0},
+    {"skillName":"基础暗器", "skillColor":"white", "level":2000, "add":0},
 ];
 
 colorArray = {"white":0, "green":1, "blue":2, "yellow":3, "purple":4, "orange":5};
@@ -68,6 +68,7 @@ function takeMedicine() {
     var green = parseInt(document.getElementById("绿突破").innerHTML);
     var blue = parseInt(document.getElementById("蓝突破").innerHTML);
     var yellow = parseInt(document.getElementById("黄突破").innerHTML);
+    var purple = parseInt(document.getElementById("紫突破").innerHTML);
     var add = randomInt(1, 5);
     var index = randomInt(0, skills.length - 1);
 
@@ -84,6 +85,8 @@ function takeMedicine() {
     } else if (yellow>0) {
         if (colorArray[skills[index].skillColor]>3) return;
         document.getElementById("黄突破").innerHTML = yellow - 1;
+    } else if (purple>0) {
+        document.getElementById("紫突破").innerHTML = purple - 1;
     } else {
         $("#logTable").hide();
         stop();

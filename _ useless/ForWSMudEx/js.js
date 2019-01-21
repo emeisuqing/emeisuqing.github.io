@@ -1,7 +1,7 @@
 var colorNameArray = ["白色","绿色","蓝色","黄色","紫色","橙色"]; // 0=白 1~5=绿蓝黄紫橙
 var wudaoNameArray = ["无","内功","轻功","拳脚","招架","武器"]; // 0=无 1~4=内轻拳招 5=武器
 
-var FILENAME = "data/skillData.wscs";
+var FILENAME = "skillData.wscs";
 var skillData = {}; // 文件技能数据
 var userSkills = []; // 用户技能数据
 var wudaoList = {"内功":[],"轻功":[],"拳脚":[],"招架":[],"武器":[]}; // 武道进阶队列
@@ -73,19 +73,18 @@ var DODGE = [new Affix("【躲闪之道】", "躲闪＋", 2500, "", 8),
 			 new Affix("【御气之道】", "内力上限＋", 110000, "", 10),
 			 new Affix("【命中之道】", "命中＋", 2000, "", 11),
 			 new Affix("【轻盈之道】", "身法＋", 300, "", 12)];
-
-var PARRY = [new Affix("【招架之道】", "招架＋", 2400, "", 13),
-			 new Affix("【气血之道】", "气血＋", 47500, "", 14),
-			 new Affix("【御气之道】", "内力上限＋", 110000, "", 15),
-			 new Affix("【防御之道】", "防御＋", 2000, "", 16),
-			 new Affix("【明悟之术】", "悟性＋", 150, "", 17),
-			 new Affix("【炼体之术】", "根骨＋", 300, "", 18)];
 var UNARMED = [new Affix("【命中之道】", "命中＋", 2500, "", 19),
 			   new Affix("【进攻之道】", "攻击＋", 2150, "", 20),
 			   new Affix("【御气之道】", "内力上限＋", 110000, "", 21),
 			   new Affix("【防守之道】", "防御＋", 2000, "", 22),
 			   new Affix("【招架之道】", "招架＋", 2000, "", 23),
 			   new Affix("【强体之术】", "臂力＋", 400, "", 24)];
+var PARRY = [new Affix("【招架之道】", "招架＋", 2400, "", 13),
+			 new Affix("【气血之道】", "气血＋", 47500, "", 14),
+			 new Affix("【御气之道】", "内力上限＋", 110000, "", 15),
+			 new Affix("【防御之道】", "防御＋", 2000, "", 16),
+			 new Affix("【明悟之术】", "悟性＋", 150, "", 17),
+			 new Affix("【炼体之术】", "根骨＋", 300, "", 18)];
 var WEAPON = [new Affix("【进攻之道】", "攻击＋", 2000, "", 25),
 			  new Affix("【命中之道】", "命中＋", 2300, "", 26),
 			  new Affix("【防守之道】", "防御＋", 2300, "", 27),
@@ -94,12 +93,6 @@ var WEAPON = [new Affix("【进攻之道】", "攻击＋", 2000, "", 25),
 			  new Affix("【躲闪之道】", "躲闪＋", 2000, "", 30),
 			  new Affix("【残暴之心】", "暴击＋", 2.5, "%", 31)];
 var AFFIX = {"内功":FORCE,"轻功":DODGE,"拳脚":UNARMED,"招架":PARRY,"武器":WEAPON};
-
-
-
-
-
-
 
 // 开始
 (function() {
@@ -338,9 +331,6 @@ function clickAffix() {
 	}
 }
 
-
-var string_wd_cmd = "";
-// 点击确认进阶按钮
 function clickConfirm() {
 	var array = document.getElementsByClassName("clickedWuDaoButton");
 
@@ -357,10 +347,6 @@ function clickConfirm() {
 			skill.affix.push(affix); // 技能升阶
 			skill.newLevel(); // 等级转换
 			wudaoList[string_class].splice(i, 1); // 删除队列中的武道属性
-
-			// 武道进阶流程数据记录
-			if(string_wd_cmd != "") string_wd_cmd += ",";
-			string_wd_cmd = string_wd_cmd + affix.number + " " + skill.skillId;
 			break;
 		}
 	}
@@ -377,10 +363,9 @@ function reset() {
 	updateData();
 }
 
-
-
 function updateData() {
-	$("#wd_cmd").html(string_wd_cmd); // 武道进阶流程数据显示
+
+    var string_code_for_lx = ""; // add a length of code for lixin
 
 	var skillTable = document.getElementById("skillTable");
 	while (skillTable.rows.length != 1) { // 清空表格
@@ -400,7 +385,8 @@ function updateData() {
 		// practise code
 		codeString = codeString + "lianxi " + skill.skillId + " " + skill.levelTo + ",";
 		// qnxh
-		qnxh += skill.cost();
+        qnxh += skill.cost();
+        
 
 		// table
 		var td_skillName = document.createElement("td"); // 技能名称
@@ -437,14 +423,26 @@ function updateData() {
 		td_delete.innerHTML = "×";
 		td_delete.onclick = deleteSkill;
 
+        // for lixin
+        if (string_code_for_lx != "") string_code_for_lx += ","; // add ","
+        
+
 		for (var x = 0; x < skill.log.length; x++) { //遍历武道记录
 			if (x!=0) {
 				td_class.innerHTML += "<br>";
 				td_affix.innerHTML += "<br>";
 			}
 			td_class.innerHTML += skill.log[x];
-			td_affix.innerHTML += skill.affix[x].message(skill.levelFr,skill.color());
-		}
+            td_affix.innerHTML += skill.affix[x].message(skill.levelFr,skill.color());
+            
+            // for lixin
+            string_code_for_lx = string_code_for_lx
+                                    + skill.affix[x].number
+                                    + " " + skill.skillId;
+        }
+        // for lixin 
+        $("#add_a_code_for_lx").html(string_code_for_lx);
+        
 
 		var tr = document.createElement("tr");
 		tr.className = colorNameArray[skill.color()];

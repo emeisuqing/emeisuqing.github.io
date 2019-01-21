@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ page.title }}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/wsmud2/wsmud.css">
+    <!-- JS -->
+    <script src="/wsmud2/wsmud.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="content">
+        <header>
+            <div class="title">
+                <!-- <a> 标签 href="." 会刷新当前页 -->
+                <a href="/wsmud2/">武神传说 Tools</a>
+            </div>
+            <div class="navigationBar">
+                <ul>
+                    <li><a href="/wsmud2/simulator/">技能模拟</a></li>
+                    <li><a href="#">装备数据表</a></li>
+                    <li><a href="#">药方数据表</a></li>
+                </ul>
+                <!-- 清除浮动 -->
+                <div style="clear:both"></div>
+            </div>
+
+        </header>
+        <main>
+            {{ content }}
+        </main>
+    </div>
+    <div id="footer">
+            Version 2.121.1735 CopyRight &copy; 2018~2019 SuQing
+    </div>
+</body>
+</html>

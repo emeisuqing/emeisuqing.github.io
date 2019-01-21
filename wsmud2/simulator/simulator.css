@@ -44,10 +44,6 @@ th,td {
 .editable { /* 可编辑的 TD */
 	background: #303030;
 }
-#wd_cmd {
-	background: #303030;
-	min-height: 1em;
-}
 
 .白色 {
 	color:white;

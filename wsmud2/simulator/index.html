@@ -1,0 +1,93 @@
+---
+layout: wsmud
+title: 技能模拟
+---
+
+<!-- 技能列表 -->
+<div>
+    <table id="skillList">
+        <tr>
+            <th style="width: 5em">类别</th>
+            <th>技能</th>
+        </tr>
+    </table>
+</div>
+
+<div class="hidden">
+    <!-- 选中的技能 -->
+    <table id="skillTable">
+        <tr style="width: 40em">
+            <td style="width: 5em">技能名称</td>
+            <td style="width: 2.5em">当前等级</td>
+            <td style="width: 2.5em">目标等级</td>
+            <td style="width: 5em">消耗潜能</td>
+            <td style="width: 5em">武道类别</td>
+            <td style="width: 15em">武道属性</td>
+            <td style="width: 5em">删除技能</td>
+        </tr>
+    </table>
+    <!-- 生成自动练习的代码 -->
+    <table style="margin-bottom: 0.2em;">
+        <tr>
+            <td colspan="2">练习代码</td>
+        </tr>
+        <tr>
+            <td>
+                <button id="notBackHome" class="clickedButton">不回豪宅</button>
+                <button id="needBackHome" class="button">要回豪宅</button>
+            </td>
+            <td>
+                <button id="wakuang" class="clickedButton" class="clickedButton">练完挖矿</button>
+                <button id="xiulian" class="button" class="button">练完修炼</button></td>
+        </tr>
+        <tr><td id="code" colspan="2">code.</td></tr>
+        <tr><td>共计消耗潜能</td><td id="qnxh"></td></tr>
+    </table>
+    <table style="margin-top: 0;">
+        <tr><td>练习效率</td><td>先天悟性</td><td>后天悟性</td></tr>
+        <tr>
+            <td id="lxxl" class="editable" contenteditable="true">100%</td>
+            <td id="xtwx" class="editable" contenteditable="true">50</td>
+            <td id="htwx" class="editable" contenteditable="true">1000</td>
+        </tr>
+        <tr><td>练习总时间</td><td id="time" colspan="2">#</td></tr>
+    </table>
+    <!-- 模拟武道过程 -->
+    <table>
+        <tr><td colspan="6">武道进阶</td></tr>
+        <tr>
+            <td class="affixClassTds"></td>
+            <td class="affixClassTds" style="width: 6em"></td>
+            <td class="affixClassTds" style="width: 6em"></td>
+            <td class="affixClassTds" style="width: 6em"></td>
+            <td class="affixClassTds" style="width: 6em"></td>
+            <td class="affixClassTds" style="width: 6em"></td>
+        </tr>
+        <tr><td colspan="6" style="height: 3em;" id="skillsCanWuDao"></td></tr>
+        <tr>
+            <td colspan="2" class="affixTds"></td>
+            <td colspan="2" class="affixTds"></td>
+            <td colspan="2" class="affixTds"></td>
+        </tr>
+        <tr><td colspan="6" id="toConfirm"></td></tr>
+    </table>
+    <!-- 统计武道消耗 以及 重置武道 -->
+    <table>
+        <tr>
+            <td rowspan="2" style="width: 28%">共计消耗</td>
+            <td style="width: 28%">武道书</td><td id="totalBook">0 本</td>
+        </tr>
+        <tr>
+            <td>潜能</td><td id="totalQn">0</td>
+        </tr>
+        <tr><td colspan="3"><button id="reset">重置武道</button></td></tr>
+    </table>
+
+</div>
+
+<!-- JS -->
+<script src="simulator.js"></script>
+<!-- CSS -->
+<script>
+    
+</script>
