@@ -14,8 +14,16 @@ html, body {
     color: #ffffff;
     line-height: 100px;
     padding-left: 20px;
-    font-size: 50px; font-family: Xingkai SC; font-weight: bold;
+    font-size: 50px;
+    font-family: wscs;
+    /* font-weight: bold; */
 }
+
+@font-face {
+    font-family: wscs;
+    src: url("wscs.ttc");
+}
+
 #top_header .message {
     top: 100px;
     height: 30px;
