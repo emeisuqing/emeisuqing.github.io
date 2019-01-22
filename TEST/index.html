@@ -50,6 +50,8 @@
                 <script>
                     function setContentLayout() {
                         $("#content").height($(window).height() - 160);
+                        $("#content").width($(document).width() * 0.8);
+                        $("#content").css({"left" : $("#left_bar").width()});
                     }
                     window.onload = setContentLayout;
                     window.onresize = setContentLayout;
