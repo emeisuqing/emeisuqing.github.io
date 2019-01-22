@@ -155,8 +155,7 @@ function layout() {
 	$("#htwx").blur(updateData);
 
 	$("#copy_cmd").click(clickCopyCmd);
-
-	
+	$("#wd_cmd").hide(); // 先隐藏。
 	
 	var tds = document.getElementsByClassName("affixClassTds");
 	for (var i = 0; i < tds.length; i++) {
@@ -171,6 +170,7 @@ function layout() {
 }
 
 function clickCopyCmd() {
+	$("#wd_cmd").show(); // 恢复显示.
 	$("#wd_cmd").html(getCommandGroup(string_wd_cmd)); // 武道进阶流程数据显示
 	var text = $("#wd_cmd").text();
 	copyText(text);
@@ -564,7 +564,8 @@ function timeText(t) {
 
 
 
-
+// 转换字符串为命令组的函数
+// 此函数由 wsmud_Raid 的作者 Rob.cn / 一区令狐凯 提供
 function getCommandGroup(exp) {
     var getType = function(code) {
         var codes = [7, 12, 18, 24, 31];
@@ -580,7 +581,7 @@ function getCommandGroup(exp) {
         var commands = `
         [(${counter})==${number}]($flag)=null
         [(${counter})==${number}]($flag2)=null
-        [(${counter})==${number}]packitem wu {<hio>武道</hio>}
+        [(${counter})==${number}]packitem wu {武道o%}
         [(${counter})==${number}]@tip 你想从武道秘籍中领悟($flag)技能|你正在领悟|你从武道($flag2)中领悟到了
         [(${counter})==${number}&(flag)!=null]lingwu type ${type}
         [(${counter})==${number}&(flag)!=null]@tip 你想从武道秘籍中领悟哪种($type)秘技
@@ -595,9 +596,7 @@ function getCommandGroup(exp) {
         commands = commands.replace(/\n\s*/g, "\n");
         return commands;
 	};
-	if (exp=="") { // exp = null
-		return exp;
-	}
+	
     var parts = exp.split(/,+/);
     var counter = `WudaoCounter__${new Date().getTime()}`;
     var result = `@stopSSAuto\nstopstate\n[(${counter})==null]($${counter})=0`;
