@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TEST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <main>
+        <!-- 页面头部 Title -->
+        <div id="top_header">
+            <div class="title">
+                武神传说　
+            </div>
+            <span id="s" style="color: #ffffff; float: right; margin-top: 50px">一切，为了更好地挖矿！</span>
+            <div class="message">欢迎来到本站点！</div>
+        </div>
+        <div style="clear:both"></div>
+
+        <div id="main">
+            <!-- 左侧功能栏 -->
+            <div id="left_bar">
+                <ul>
+                    <hr>
+                    <li><a id="roleInfo" href="#">角色信息</a></li>
+                    <li><a id="skillSelect" href="#">技能选择</a></li>
+                    <li><a id="levelSetting" href="#">等级配置</a></li>
+                    <li><a id="autoPractise" href="#">自动练习</a></li>
+                    <li><a id="simulator" href="#">武道模拟</a></li>
+                    <li><a id="commandFlow" href="#">进阶流程</a></li>
+                    <hr>
+                    <li><a id="readMe" href="#">萌新必读</a></li>
+                    <li><a id="equipmentData" href="#">装备数据</a></li>
+                    <li><a id="medicineData" href="#">药方数据</a></li>
+                    <hr>
+                    <li><a id="updateLog" href="#">更新记录</a></li>
+                    <li><a id="aboutAuthor" href="#">关于作者</a></li>
+                    <hr>
+                </ul>
+            </div>
+
+            
+            <!-- 右侧内容部分 Content -->
+            <div id="content">
+                <script>
+                    function setContentLayout() {
+                        $("#content").height($(window).height() - 160);
+                    }
+                    window.onload = setContentLayout;
+                    window.onresize = setContentLayout;
+                </script>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 Footer -->
+    <footer>
+            <script>
+                var date = new Date();
+                var year = date.getFullYear();
+                var footer = "Copyright &copy; 2018 - " + year + " 苏轻 "
+                            + "<a href='https://suqing.fun'>suqing.fun</a>"
+                            + " All rights Reserved.";
+                if ($("footer") != null) {
+                    $("footer").html(footer);
+                }
+            </script>
+    </footer>
+</body>
+</html>

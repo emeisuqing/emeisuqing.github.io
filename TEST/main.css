@@ -1,0 +1,94 @@
+* { margin: 0; padding: 0; }
+html, body {
+    height: 100%;
+    /* min-width: 600px; */
+    background: #404040;
+}
+
+#top_header {
+    height: 130px;
+    background-image: linear-gradient(to right, #404040, #808080);
+}
+#top_header .title {
+    display: inline;
+    color: #ffffff;
+    line-height: 100px;
+    padding-left: 20px;
+    font-size: 50px; font-family: Xingkai SC; font-weight: bold;
+}
+#top_header .message {
+    top: 100px;
+    height: 30px;
+    line-height: 30px;
+    color: #000000;
+    background: #ffffff;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* #main {
+    position: relative;
+    height: auto;
+    min-width: 600px;
+} */
+
+#left_bar {
+    display: block;
+    background: #404040;
+    width: 20%;
+    min-width: 120px;
+}
+#left_bar a {
+    display: block;
+    width: 80%;
+    height: 30px;
+    margin-left: 10%;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+}
+#left_bar a:hover {
+    background-image: linear-gradient(to right, #404040, #808080, #404040);
+}
+#left_bar hr {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #808080, #ffffff, #808080);
+}
+
+#content {
+    color: #ffffff;
+    background: #202020;
+    position: absolute;
+    width: 80%;
+    left: 20%;
+    height: 500px;
+    top: 130px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+main {
+    min-height: 100%;
+}
+footer {
+    color: #808080;
+    background: #303030;
+    height: 30px;
+    line-height: 30px;
+    margin-top: -46px;
+    text-align: center;
+    font-size: 15px;
+}
+footer a { color: #808080; text-decoration: none; }
+footer a:hover { color: #00fff0; }
+
+
+#content div p {
+    margin: 100px;
+}
