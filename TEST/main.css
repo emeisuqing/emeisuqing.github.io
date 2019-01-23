@@ -21,7 +21,7 @@ html, body {
 
 @font-face {
     font-family: wscs;
-    src: url("wscs.ttc");
+    src: url("font/wscs.ttf");
 }
 
 #top_header .message {
