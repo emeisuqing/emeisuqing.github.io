@@ -1,3 +1,22 @@
+本文件说明
+1、技能类别
+2、技能名称
+3、颜色(白0绿1蓝2黄3紫4橙5红6)
+4、技能ID(skid)
+5、可武道进阶的类型1
+6、可武道进阶的类型2
+
+基础技能,基本内功,白色,force,0,0
+基础技能,基本轻功,白色,dodge,0,0
+基础技能,基本拳脚,白色,unarmed,0,0
+基础技能,基本招架,白色,parry,0,0
+基础技能,基本刀法,白色,blade,0,0
+基础技能,基本剑法,白色,sword,0,0
+基础技能,基本棍法,白色,club,0,0
+基础技能,基本杖法,白色,staff,0,0
+基础技能,基本鞭法,白色,whip,0,0
+基础技能,基本暗器,白色,throwing,0,0
+
 武当,武当心法,绿色,wudangxinfa,内功,无
 武当,武当剑法,绿色,wudangjianfa,武器,无
 武当,武当长拳,绿色,wudangchangquan,拳脚,无
@@ -9,6 +28,7 @@
 武当,梯云纵(进阶),紫色,tiyunzong2,轻功,无
 武当,太极剑法(进阶),橙色,taijijian2,无,无
 武当,先天太极(进阶),橙色,taijishengong2,无,无
+
 少林,韦陀棍,绿色,weituogun,武器,无
 少林,少林身法,绿色,shaolinshenfa,无,无
 少林,混元一气,绿色,hunyuanyiqi,内功,无
@@ -22,6 +42,7 @@
 少林,一指禅(进阶),紫色,yizhichan2,拳脚,无
 少林,燃木刀法(进阶),橙色,ranmudao2,无,无
 少林,金刚不坏体(进阶),橙色,yijinjing2,无,无
+
 华山,飞燕回翔,绿色,feiyanhuixiang,轻功,无
 华山,华山心法,绿色,huashanxinfa,内功,无
 华山,华山剑法,绿色,huashanjianfa,武器,无
@@ -34,6 +55,7 @@
 华山,紫霞神功(进阶),紫色,zixiashengong2,内功,无
 华山,独孤九剑(进阶),橙色,dugujiujian2,无,无
 华山,狂风快剑(进阶),橙色,kuangfengkuaijian2,无,无
+
 峨眉,诸天化身步,绿色,zhutianbu,无,无
 峨眉,峨眉心法,绿色,emeixinfa,内功,无
 峨眉,金顶绵掌,绿色,jindingzhang,拳脚,招架
@@ -45,6 +67,7 @@
 峨眉,诸天化身步(进阶),紫色,zhutianbu2,轻功,无
 峨眉,临济十二庄(进阶),橙色,linjizhuang2,无,无
 峨眉,倚天剑法(进阶),橙色,yitianjianfa2,无,无
+
 逍遥,如意刀,绿色,ruyidao,武器,无
 逍遥,逍遥心法,绿色,xiaoyaoxinfa,内功,无
 逍遥,天山折梅手,蓝色,zhemeishou,拳脚,招架
@@ -56,6 +79,7 @@
 逍遥,天山六阳掌(进阶),紫色,liuyangzhang2,拳脚,无
 逍遥,凌波微步(进阶),橙色,lingboweibu2,无,无
 逍遥,小无相功(进阶),橙色,xiaowuxianggong2,无,无
+
 丐帮,叫花棒法,绿色,jiaohuabangfa,武器,招架
 丐帮,飞檐走壁,绿色,feiyanzoubi,轻功,无
 丐帮,丐帮心法,绿色,gaibangxinfa,内功,无
@@ -69,7 +93,6 @@
 丐帮,打狗棒(进阶),橙色,dagoubang2,无,无
 丐帮,降龙十八掌(进阶),橙色,xianglongzhang2,无,无
 
-内功,基本内功,白色,force,无,无
 内功,密宗心法,绿色,mizongxinfa,内功,无
 内功,云龙心法,绿色,yunlongxinfa,内功,无
 内功,冷月神功,绿色,lengyueshengong,内功,无
@@ -97,7 +120,6 @@
 内功,九阴神功,橙色,jiuyinshengong,无,无
 内功,太玄功,橙色,taixuangong,无,无
 
-轻功,基本轻功,白色,dodge,无,无
 轻功,意形步法,绿色,yixingbufa,轻功,无
 轻功,云龙身法,绿色,yunlongshenfa,轻功,无
 轻功,金雁功,绿色,jinyangong,轻功,无
@@ -116,7 +138,6 @@
 轻功,暗影浮香,黄色,anyingfuxiang,轻功,无
 轻功,玄虚步,紫色,xuanxubu,轻功,无
 
-拳脚,基本拳脚,白色,unarmed,无,无
 拳脚,密宗大手印,绿色,dashouyin,拳脚,无
 拳脚,猴拳,绿色,houquan,拳脚,无
 拳脚,化骨绵掌,蓝色,huagumianzhang,拳脚,无
@@ -139,12 +160,10 @@
 拳脚,六脉神剑,橙色,liumaishenjian,无,无
 拳脚,黯然销魂掌,橙色,anranxiaohun,无,无
 
-招架,基本招架,白色,parry,无,无
 招架,移花接木,紫色,yihuajiemu,招架,无
 招架,斗转星移,橙色,douzhuanxingyi,无,无
 招架,乾坤大挪移,橙色,qiankundanuoyi,无,无
 
-剑法,基本剑法,白色,sword,无,无
 剑法,神龙剑,绿色,shenlongjian,武器,无
 剑法,唐诗剑法,绿色,tangshijianfa,武器,无
 剑法,云龙剑,蓝色,yunlongjian,武器,无
@@ -165,27 +184,23 @@
 剑法,辟邪剑法,橙色,bixiejianfa,无,无
 剑法,玄铁剑法,橙色,xuantiejianfa,无,无
 
-刀法,基本刀法,白色,blade,无,无
 刀法,五虎断门刀,绿色,wuhuduanmendao,武器,无
 刀法,胡家刀法,蓝色,hujiadaofa,武器,招架
 刀法,狂风快刀,黄色,kuangfengkuaidao,武器,无
 刀法,血刀,橙色,xuedao,无,无
 
-棍法,基本棍法,白色,club,无,无
 棍法,绝门棍,绿色,juemengun,武器,轻功
 棍法,八卦棍法,蓝色,baguagun,武器,无
 棍法,中平枪法,黄色,zhongpingqiang,武器,招架
 棍法,蒙古骑枪,黄色,mengguqiqiang,武器,无
 
-杖法,基本杖法,白色,staff,无,无
 杖法,蛇岛奇功,蓝色,shedaoqigong,武器,招架
 杖法,灵蛇杖法,紫色,lingshezhangfa,武器,招架
 
-鞭法,基本鞭法,白色,whip,无,无
 鞭法,云龙鞭法,绿色,yunlongbian,武器,无
 鞭法,秋风拂尘,绿色,qiufengfuchen,武器,无
 鞭法,银索金铃,黄色,yinsuojinling,武器,无
 
-暗器,基本暗器,白色,throwing,无,无
 暗器,金蛇锥法,蓝色,jinshezhui,武器,无
 暗器,飞星术,蓝色,feixingshu,武器,无
+

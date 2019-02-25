@@ -1,0 +1,51 @@
+<div style="height:20px;"></div>
+<div id="role_list"></div>
+<div style="height:40px;"></div>
+
+<div class="div-row">
+    <div style="width:100px;float:left;">尊姓大名：</div>
+    <div style="float:left;"><input id="name" style="width:200px;height:20px;" type="text"></div>
+</div>
+
+<div class="div-row">
+    <div style="width:100px;float:left;">来自何方：</div>
+    <div style="float:left;">
+        <select id="fwq" style="width:200px;">
+            <option value="server1">一区</option>
+            <option value="server2">二区</option>
+            <option value="server3">三区</option>
+            <option value="server4">四区</option>
+        </select>
+    </div>
+</div>
+
+<div class="div-row">
+    <div style="width:100px;float:left;">师从何处：</div>
+    <div style="float:left;">
+        <select id="mp" style="width:200px;">
+            <option value="wd">武当派</option>
+            <option value="sl">少林派</option>
+            <option value="hs">华山派</option>
+            <option value="em">峨眉派</option>
+            <option value="xy">逍遥派</option>
+            <option value="gb">丐帮</option>
+            <option value="sr">无门无派</option>
+        </select>
+    </div>
+</div>
+
+<div style="height:40px;"></div>
+<button id="creatRoleButton" class="button">创建新的角色数据</button>
+
+<div style="padding-top:100px;padding-left:20px;">
+    <p>说明：</p>
+    <br>
+    <ol style="padding-left:20px;">
+        <li>可创建多个不同的角色用于保存数据，可以重名。</li>
+        <li>角色数据会保存在当前使用的浏览器的本地缓存中。</li>
+        <li>同一台设备的不同的浏览器之间，缓存数据不共享。</li>
+    </ol>
+</div>
+
+<!-- 加载 JS 文件 -->
+<script src="load/roleInfo.js"></script>
