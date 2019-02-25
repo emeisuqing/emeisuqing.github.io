@@ -9,10 +9,8 @@
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <!-- <script src="main.js"></script> -->
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="buttons.css"> -->
-    <script src="layout.js"></script>
-    <script src="load.js"></script>
-    <script src="localData.js"></script>
+    <script src="wsmud.js"></script>
+    <script src="wsmud_db.js"></script>
 </head>
 <body>
     <header>
@@ -23,6 +21,7 @@
         <div id="message">欢迎来到本站点！</div>
     </header>
     <main>
+        <!-- 左侧导航栏 -->
         <div id="left">
             <ul>
                 <hr>
@@ -47,15 +46,20 @@
                 </div>
             </ul>
         </div>
+        <!-- 右侧 主体信息展示 -->
         <div id="right">
             <div style="padding-top:100px;padding-left:50px;">
                 苏轻正在敲代码...
+                <br><br>
+                目前只适配了电脑浏览器，手机访问本站可能存在某些待修复的问题。
+                <br><br>
+                http://www.wsmud.site/ 没有备案被封杀了。悲伤/(ㄒoㄒ)/~~
             </div>
         </div>
     </main>
     <footer>
         <div id="footer"></div>
-        <script>setFooter();</script>
+        <script>layout.setFooter();</script>
     </footer>
 </body>
 </html>

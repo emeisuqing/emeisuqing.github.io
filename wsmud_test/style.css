@@ -8,6 +8,12 @@
     -ms-user-select: none;
     user-select: none;
 }
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
 html, body {
     height: 100%;
 }
@@ -15,6 +21,13 @@ header, footer, main {
     float: left;
 }
 
+.color0 { color: #FFFFFF }
+.color1 { color: #00FF00 }
+.color2 { color: #00FFFF }
+.color3 { color: #FFFF00 }
+.color4 { color: #912CEE }
+.color5 { color: #FFA500 }
+.color6 { color: #FF0000 }
 
 @font-face {
     font-family: "wscs";

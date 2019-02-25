@@ -1,9 +1,21 @@
+<div class="div-row">
+    请选择你已经习得的武学
+</div>    
+
+<div class="div-row">
+    <select id="skillClass" style="width:7em">
+        <option value="0">请选择</option>
+    </select>
+    <select id="skills" style="width:15em"></select>
+</div>
+
+<div class="div-row">
+    <button id="addSkill" class="button">添加选中的技能</button>
+</div>
 
 
+<table>
+    <tr><th>类别</th><th>技能</th></tr>
+</table>
 
-
-
-
-
-
-<script src="load/skillChooser.js"></script>
+<script>skillChooser.load();</script>
