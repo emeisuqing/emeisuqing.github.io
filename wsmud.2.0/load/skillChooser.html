@@ -1,0 +1,69 @@
+<table>
+    <tr><td colspan="2">当前角色：<span id="roleName"></span></td></tr>
+</table>
+
+<table>
+    <tr><td>技能</td><td>等级</td></tr>
+</table>
+
+
+
+
+<div class="div-row">
+    <select id="skillClass" style="width:7em">
+        <option value="0">请选择</option>
+    </select>
+    <select id="skills" style="width:15em"></select>
+</div>
+
+<div class="div-row">
+    <button id="addSkillButton" class="button">添加选中的技能</button>
+</div>
+
+
+<script>
+loading();
+function loading() {
+    loadOptions();
+    $("#roleName").html(userData.roles[userData.index].name);
+
+    $("#addSkillButton").click(clickAddSkillButton);
+}
+function loadOptions() {
+    var option_value = 1;
+    for (const key in skillData) {
+        $("#skillClass").append(new Option(key, option_value++));
+        $("#skillClass").change(changeSkillClass);
+    }
+}
+function changeSkillClass() {
+    var option = $("#skillClass option:selected");
+    var key = option.val();
+    $("#skills").html("");
+    if (key != 0) {
+        for (let i = 0; i < skillData[key].length; i++) {
+            const skill = skillData[key][i];
+            $("#skills").append(new Option(skill.name, skill.id));
+        }
+    }
+}
+
+function clickAddSkillButton() {
+    var key = $("#skillClass option:selected").val();
+    var skillid = $("#skills option:selected").val();
+    var skill = undefined;
+    for (let index = 0; index < skillData[key].length; index++) {
+        const element = skillData[key][index];
+        if (element.id == skillid) {
+            skill = element;
+            break;
+        }
+    }
+    if (userData.skills[userData.index] == undefined) {
+        userData.skills[userData.index] = [];
+    }
+    userData.skills[userData.index].push(skill);
+    userData.save();
+    $("#message").html("添加了技能：" + skill.name);
+}
+</script>

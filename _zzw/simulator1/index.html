@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>武道模拟器</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<script src="simulator.js"></script>
+	<style type="text/css">
+		body {
+			background: black;
+			color: white;
+		}
+		p {
+			text-align: center;
+		}
+		table {
+			width: 80%;
+			margin: 10px auto;
+			border-collapse: collapse;
+		}
+		td {
+			height: 25px;
+			width: auto;
+			line-height: 25px;
+			text-align: center;
+			border: 1px solid #ccc;
+		}
+		.color1 { color: green; }
+		.color2 { color: blue; }
+		.color3 { color: yellow; }
+		.color4 { color: purple; }
+		.color5 { color: orange; }
+	</style>
+</head>
+<body>
+
+<div>
+<p>预制技能（可直接选择）</p>
+<table>
+	<tr><td id="chooseSkill"></td></tr>
+</table>
+</div>
+
+<div id="">
+<p>请输入技能信息</p>
+<table>
+	<tr><td>技能名称</td>
+		<td id="skillName" class="editable" contenteditable="true">请输入技能名称</td></tr>
+	<tr><td>技能颜色</td>
+		<td><select id="skillColorSelect"></select></td></tr>
+	<tr><td>当前等级</td>
+		<td id="skillLevel" class="editable" contenteditable="true">1000</td></tr>
+	<tr><td>技能类别</td>
+		<td><select id="classSelectOne"></select>
+			<select id="classSelectTwo"></select></td></tr>
+	<tr><td colspan="2">
+		<button id="addSkillButton">确认添加技能</button></td></tr>
+	<tr><td colspan="2">
+		<div id="message1">武道模拟器测试版</div></td></tr>
+</table></div>
+
+
+<div id="">
+<p>模拟进阶步骤</p>
+<table>
+	<tr><td><button id="forceButton">内功</button></td>
+		<td><button id="dodgeButton">轻功</button></td>
+		<td><button id="unarmedButton">拳法</button></td>
+		<td><button id="parryButton">招架</button></td>
+		<td><button id="weaponButton">武器</button></td></tr>
+	<tr><td id="messageTdTwo" colspan="5" >武道模拟器测试版</td></tr>
+	<tr><td colspan="5">
+		<button id="advanceButton0">Advance0</button>
+		<button id="advanceButton1">Advance1</button>
+		<button id="advanceButton2">Advance2</button></td></tr>
+	<tr><td id="advanceSkillList" colspan="5">武道模拟器测试版</td></tr>
+</table></div>
+
+
+<div id="">
+<p>武道属性一览</p>
+<table id="skillTable">
+	<tr><td>技能</td>
+		<td>等级</td>
+		<td>类别</td>
+		<td>属性</td></tr>
+</table>
+<table>
+	<tr><td>武道书消耗</td>
+		<td id="costBook">0</td></tr>
+	<tr><td>潜能消耗</td>
+		<td id="costQianNeng">0</td></tr>
+</table></div>
+
+<p>欢迎使用<br>有BUG或问题请联系苏轻 QQ874717373</p>
+
+<script>configurePage();</script>
+</body>
+</html>

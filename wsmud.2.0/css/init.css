@@ -1,0 +1,24 @@
+* {
+    margin: 0; /*消除格式*/
+    padding: 0;
+    -webkit-user-select: none; /*无法直接复制文本*/
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input, textarea {
+    -webkit-user-select: text; /*允许编辑文本*/
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+header, footer, main {
+    float: left;
+}

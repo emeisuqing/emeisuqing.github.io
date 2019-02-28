@@ -1,0 +1,62 @@
+html, body, header, main, footer, a, ul, li, table, td {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+header {
+    background: #404040;
+    color: #ffffff;
+}
+
+a:link, a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover, a:active {
+    background-color:#333333;
+}
+
+.title {
+    width: 10em;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+}
+
+main {
+    background: #404040;
+    min-height: 100%;
+    margin-bottom: 5em;
+}
+
+footer {
+    width: 100%;
+    height: 5em;
+    margin-top: -10em; 
+    background: #404040;
+    color: #ffffff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    color: #ffffff;
+    display: inline;
+}
+
+.nav a {
+    width: 5em;
+    margin: 0, 1em, 1em, 0;
+}
+
+.nav li {
+    float: left;
+}
+
+

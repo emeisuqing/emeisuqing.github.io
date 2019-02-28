@@ -1,0 +1,112 @@
+<div id="addRole">
+    <label for="userName">角色：</label>
+    <input id="userName" type="text" class="input" style="width:7em">
+    <label for="jj_selector">境界：</label>
+    <select id="jj_selector" style="width:7em">
+        <option value="0"></option>
+        <option value="1">百姓</option>
+        <option value="2">武士</option>
+        <option value="3">武师</option>
+        <option value="4">宗师</option>
+        <option value="5">武圣</option>
+        <option value="6">武神</option>
+    </select>
+    <label for="mp_selector">门派：</label>
+    <select id="mp_selector" style="width:7em">
+        <option value="0"></option>
+        <option value="sr">无门无派</option>
+        <option value="wd">武当派</option>
+        <option value="sl">少林派</option>
+        <option value="hs">华山派</option>
+        <option value="em">峨眉派</option>
+        <option value="xy">逍遥派</option>
+        <option value="gb">丐帮</option>
+        <option value="ss">杀手楼</option>
+    </select>
+    <label for="fwq_selector">区服：</label>
+    <select id="fwq_selector" style="width:7em">
+        <option value="0"></option>
+        <option value="1">一区</option>
+        <option value="2">二区</option>
+        <option value="3">三区</option>
+        <option value="4">四区</option>
+    </select>
+</div>
+
+<div style="height:20px;"></div>
+<table>
+    <tr>
+        <td style="width:3em">序号</td>
+        <td style="width:20%">角色</td>
+        <td style="width:20%">境界</td>
+        <td style="width:20%">门派</td>
+        <td style="width:20%">区服</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>
+            <input type="text" class="input">
+        </td>
+        <td>
+            <select id="jj_selector" style="width:5em">
+                <option value="0"></option>
+                <option value="1">百姓</option>
+                <option value="2">武士</option>
+                <option value="3">武师</option>
+                <option value="4">宗师</option>
+                <option value="5">武圣</option>
+                <option value="6">武神</option>
+            </select>
+        </td>
+        <td>
+            <select id="mp_selector" style="width:7em">
+                <option value="0"></option>
+                <option value="sr">无门无派</option>
+                <option value="wd">武当派</option>
+                <option value="sl">少林派</option>
+                <option value="hs">华山派</option>
+                <option value="em">峨眉派</option>
+                <option value="xy">逍遥派</option>
+                <option value="gb">丐帮</option>
+                <option value="ss">杀手楼</option>
+            </select>
+        </td>
+        <td>
+            <select id="fwq_selector" style="width:5em">
+                <option value="0"></option>
+                <option value="1">一区</option>
+                <option value="2">二区</option>
+                <option value="3">三区</option>
+                <option value="4">四区</option>
+            </select>
+        </td>
+        <td style="width:4em;">
+            <p style="text-align:center">
+                <button class="buttonInTable">
+                    保存
+                </button>
+            </p>
+        </td>
+    </tr>
+</table>
+<div style="height:40px;"></div>
+
+<script>
+
+</script>
+
+<div class="auth_inputLabel">
+        <label>姓名&nbsp;:&nbsp;&nbsp;</label>
+    <input id="auth_nameInput" type="text" name="" class="auth_input" />
+    <span id="authNameHint" class="authSpanHint"></span>
+</div>
+<script>
+function check() {
+    if(!/^[\u4e00-\u9fa5]+$/gi.test(document.getElementById("auth_nameInput").value)){
+        $('#authNameHint').html("只能输入汉字!");
+        isChinese = false;
+    }else{
+        isChinese = true;
+    }
+}</script>

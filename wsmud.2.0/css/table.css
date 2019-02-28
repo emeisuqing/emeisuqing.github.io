@@ -1,0 +1,33 @@
+table {
+    width: 80%;
+    margin-left: 9%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+
+th, td {
+    height: 1.5em;
+    line-height: 1.5em;
+    /* font-size: 16px; */
+    text-align: center;
+    border: 1px solid #ffffff;
+}
+
+.buttonInTable {
+    padding-left: 4px;
+    padding-right: 4px;
+    font-family: serif;
+    text-align: center;
+    color: #ffffff;
+    background-color: #404040;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+}
+.buttonInTable:hover {
+    background-color: #202020;
+}
+.buttonInTable:active {
+    background-color: #101010;
+    transform: translateY(1px);
+}
