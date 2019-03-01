@@ -1,68 +1,332 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>wsmud.2.0</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>苏轻的武神小站</title>
 
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="css/init.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/table.css">
-
-    <script src="js/suqing.fun.js"></script>
-    <script src="js/skilldata.js"></script>
-    <script src="js/skill.js"></script>
+    <style>
+        * {
+            margin: 0; /*消除格式*/
+            padding: 0;
+            /* user-select: none; 无法直接复制文本 */
+            -webkit-user-select: none; /* Chrome && Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE */
+        }
+        input {
+            -webkit-user-select: text; /* Chrome && Safari */
+            -moz-user-select: text; /* Firefox */
+            -ms-user-select: text; /* IE */
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+        .main {
+            width: 800px;
+            height: 100%;
+            margin: 0 auto;
+            background-color: #080808;
+        }
+        .header {
+            width: 100%;
+            height: 150px;
+        }
+        @font-face {
+            font-family: "wscs";
+            src: url("font/wscs/wscs.woff") format("woff"),
+                url("font/wscs/wscs.ttf") format("truetype"),
+                url("font/wscs/wscs.svg") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+        .header .title {
+            height: 120px;
+            line-height: 120px;
+            font-size: 60px;
+            font-family: wscs;
+            padding-left: 30px;
+        }
+        .header .title a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .header .subtitle {
+            height: 30px;
+            line-height: 30px;
+            float: right;
+            font-size: 16px;
+            font-family: serif;
+            margin-top: 90px;
+            margin-right: 30px;
+        }
+        .header .console {
+            height: 30px;
+            line-height: 30px;
+            background-color: #101010;
+            text-align: center;
+        }
+        .left {
+            float: left;
+            width: 150px;
+            background-color: #050505;
+        }
+        .left ul {
+            list-style: none;
+        }
+        .left a {
+            display: block;
+            width: 100px;
+            height: 30px;
+            margin: 0 auto;
+            line-height: 30px;
+            text-align: center;
+            color: #FFFFFF;
+            text-decoration: none;
+            border: 1px solid #808080;
+        }
+        .left a:hover {
+            background-image: linear-gradient(to right, #404040, #808080, #404040);
+        }
+        .left hr {
+            width: 100%;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, #000000, #FFFFFF, #000000);
+        }
+        .left .qq {
+            width: 80%;
+            padding-left: 10%;
+            color: #808080;
+            text-align: center;
+            font-size: 13px;
+        }
+        .right {
+            float: left;
+            width: 650px;
+            background-color: #080808;
+        }
+        .footer {
+            width: 100%;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            color: #808080;
+        }
+        .footer a {
+            color: #808080;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #00ff00;
+        }
+        .clear {
+            clear: both;
+        }
+        /* role.html */
+        .roleList table{
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+        .roleList td {
+            height: 1.5em;
+            line-height: 1.5em;
+            /* font-size: 16px; */
+            text-align: center;
+            border: 1px solid #808080;
+        }
+        .toggleDiv, .addRole {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid #808080;
+        }
+        .addRole div {
+            height: 40px;
+            line-height: 40px;
+        }
+        .addRole button {
+            width: 100px;
+            height: 32px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div id="title">
-            <a href="">武神传说</a>
-            <span id="subtitle">一切为了更好地挖矿！</span>
-        </div>
-        <div id="message">欢迎来到本站点！</div>
-    </header>
-    <main>
-        <!-- 左侧导航栏 -->
-        <div id="left">
-            <ul>
-                <hr>
-                <li><a href="" onclick="return false;" id="roleInfo">角色信息</a></li>
-                <li><a href="" onclick="return false;" id="skillChooser">技能选择</a></li>
-                <li><a href="" onclick="return false;">自动练习</a></li>
-                <hr>
-                <li><a href="" onclick="return false;">武道模拟</a></li>
-                <li><a href="" onclick="return false;">武道流程</a></li>
-                <hr>
-                <li><a href="" onclick="return false;">装备数据</a></li>
-                <li><a href="" onclick="return false;">药方数据</a></li>
-                <hr>
-                <li><a href="" onclick="return false;" id="updateLog">更新历程</a></li>
-                <li><a href="" onclick="return false;" id="aboutAuthor">关于作者</a></li>
-                <li><a href="" onclick="return false;" id="friendLink">其他链接</a></li>
-                <hr>
-                <div style="color:#808080;width:80%;padding-left:10%;text-align:center">
-                    QQ群 953279200<br>
-                    加入我们<br>
-                    研究更好的挖矿姿势
-                </div>
-            </ul>
-        </div>
-        <!-- 右侧 主体信息展示 -->
-        <div id="right">
-            <div style="padding-top:100px;padding-left:50px;">
-                苏轻正在敲代码...
-                <br><br>
-                只适配了电脑浏览器，手机访问本站可能存在问题。
-                <br><br>
-                http://www.wsmud.site/ 没有备案被封杀了。悲伤/(ㄒoㄒ)/~~
+    <div class="main">
+        <div class="header">
+            <div class="title">
+                <a href="">武神传说</a>
+                <span class="subtitle">一切为了更好地挖矿！</span>
             </div>
+            <div class="console">欢迎访问本站</div>
         </div>
-    </main>
-    <footer>
-        <div id="footer"></div>
-        <script>layout.setFooter();</script>
-    </footer>
+        <div class="left">
+                <ul>
+                    <hr>
+                    <li><a class="leftBar role">角色档案</a></li>
+                    <li><a class="leftBar skill">技能选择</a></li>
+                    <!-- <li><a class="leftBar">自动练习</a></li>
+                    <hr>
+                    <li><a class="leftBar">武道模拟</a></li>
+                    <li><a class="leftBar">武道流程</a></li>
+                    <hr>
+                    <li><a class="leftBar">装备数据</a></li>
+                    <li><a class="leftBar">药方数据</a></li>
+                    <hr>
+                    <li><a class="leftBar">更新历程</a></li>
+                    <li><a class="leftBar">关于作者</a></li>
+                    <li><a class="leftBar">其他链接</a></li> -->
+                    <hr>
+                    <div class="qq">QQ群 953279200<br>加入我们<br>研究更好的挖矿姿势</div>
+                </ul>
+        </div>
+        <div class="right">
+            首页
+        </div>
+        <div class="clear"></div>
+        <div class="footer">
+
+        </div>
+    </div>
 </body>
 </html>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+layout = {
+    setSize : function() {
+        var window_h = $(window).height();
+        var header_h = $(".header").height();
+        var footer_h = $(".footer").height();
+        $(".left").height(window_h - header_h - footer_h);
+        $(".right").height(window_h - header_h - footer_h);
+        console.log("Set size.");
+    },
+    leftBarName : ["role", "skill"],
+    setLeftBar : function() {
+        $(".leftBar").attr("href", "");
+        $(".leftBar").attr("onclick", "return false");
+        for (let i = 0; i < this.leftBarName.length; i++) {
+            const className = this.leftBarName[i];
+            $("."+className).click(function() {
+                $(".right").load("./" + className + ".html");
+                console.log("Load: " + className + ".html");
+            });
+        }
+    },
+    setFooter: function() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var footer = "Copyright &copy; 2018 - " + year;
+        $(".footer").html(footer + " <a href='https://suqing.fun'>suqing.fun</a> All rights Reserved.");
+    },
+}
+
+window.onload = function() {
+    layout.setSize();
+    layout.setLeftBar();
+    layout.setFooter();
+}
+window.onresize = function() {
+    timeout.ids.push(setTimeout(function() {
+        if (timeout.actionTime < timeout.timestamp()) {
+            layout.setSize();
+            timeout.clear();
+        }
+    }, 1000));
+    timeout.actionTime = timeout.timestamp() + 1000;
+}
+timeout = {
+    ids : [],
+    actionTime : 0,
+    clear : function() {
+        for (let i = 0; i < timeout.ids.length; i++) {
+            const id = timeout.ids[i];
+            clearTimeout(id);
+        }
+        ids = [];
+        console.log("Clear all timeout.");
+    },
+    timestamp : function() {
+        var time = Date.parse(new Date()).toString();
+        return time;
+    }
+}
+
+
+
+
+
+
+
+
+userData = {
+    index : 0,
+    roles : [{name:"苏轻预设", jj:"武圣", fwq:"四区", mp:"峨眉派"}],
+    skills : [{"苏轻预设": []}],
+    lingwus : [{"苏轻预设": []}],
+    load: function() {
+        userData.index = JSON.parse(localStorage.getItem("index"));
+        userData.roles = JSON.parse(localStorage.getItem("roles"));
+        userData.skills = JSON.parse(localStorage.getItem("skills"));
+        userData.lingwus = JSON.parse(localStorage.getItem("lingwus"));
+    },
+    save: function() {
+        localStorage.setItem("index", JSON.stringify(userData.index));
+        localStorage.setItem("roles", JSON.stringify(userData.roles));
+        localStorage.setItem("skills", JSON.stringify(userData.skills));
+        localStorage.setItem("lingwus", JSON.stringify(userData.lingwus));
+    },
+    clear: function() {
+        localStorage.clear();
+    },
+}
+
+// 检查是否支持本地缓存 localStorage
+if (window.localStorage) {
+    if (localStorage.getItem("index")) {
+        userData.load();
+    } else {
+        userData.save();
+    }
+} else {
+    alert("请退出浏览器的隐私模式，否则无法使用本地缓存！");
+}
+</script>
+
+
+
+
+
+
+
+
+<!-- 
+赵敏的戒指
+0,命中:＋180,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+1,命中＋198,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+2,命中＋216,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+3,命中＋252,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+4,命中＋306,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+5,命中＋378,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+6,命中＋468,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+7,命中＋576,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+8,命中＋702,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+9,命中＋846,最终伤害＋4%,忽视对方防御＋4%,绝招冷却时间-4%
+10,命中＋1008,最终伤害＋4%,忽视对方防御＋4%,绝招冷却时间-4%
+11,命中＋0,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+12,命中＋0,最终伤害＋3%,忽视对方防御＋3%,绝招冷却时间-3%
+
+杨不悔的项链
+8,根骨:+117,悟性:+136,身法:+136,容貌:+7
+9,根骨:+141,悟性:+164,身法:+164,容貌:+8
+10,根骨:+168,悟性:+196,身法:+196,容貌:+9
+
+ -->

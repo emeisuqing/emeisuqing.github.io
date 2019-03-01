@@ -26,6 +26,7 @@ nav:
 
 links: #友情链接
   武神传说工具包: '/wsmud'
+  小炒肉 Blog: "https://jicki.me"
 
 paginate: 5 # 分页
 paginatepath: ['page:num']

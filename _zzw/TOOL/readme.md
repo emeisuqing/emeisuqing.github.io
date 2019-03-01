@@ -1,1 +1,0 @@
-java -jar sfnttool.jar  -s "提取的文字" from.ttf to.ttf
