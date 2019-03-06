@@ -148,7 +148,7 @@
 剑法,神龙剑,绿色,shenlongjian,武器,无
 剑法,唐诗剑法,绿色,tangshijianfa,武器,无
 剑法,云龙剑,蓝色,yunlongjian,武器,无
-剑法,神剑诀,蓝色,
+剑法,神剑诀,蓝色,shenjianjue,武器,无
 剑法,圣火令法,蓝色,shenghuojianfa,武器,无
 剑法,金蛇剑法,黄色,jinshejianfa,武器,无
 剑法,五毒钩法,黄色,wudugoufa,武器,无
@@ -179,6 +179,7 @@
 
 杖法,基本杖法,白色,staff,无,无
 杖法,蛇岛奇功,蓝色,shedaoqigong,武器,招架
+杖法,无常杖,蓝色,wuchangzhang,武器,招架
 杖法,灵蛇杖法,紫色,lingshezhangfa,武器,招架
 
 鞭法,基本鞭法,白色,whip,无,无

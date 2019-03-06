@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+// 闭包
+var cnt = (function() {
+    var n = 1; // 只有下面的匿名函数可以改变这个变量 n
+    return function() {
+        return n++;
+    }
+})();
+
+// 命名空间
+var Y18 = {};
+Y18.cnt = cnt;
+Y18.cnt();
+</script>
+
+
+<script>
+// 对象
+var bird = {};
+bird.leg = 2;
+bird.song = function() {
+    console.log("song");
+};
+delete bird.song; // 删除属性
+
+// 构造方法 = 类
+function Dog(name, color) {
+    this.name = name;
+    this.color = color;
+}
+var dog = new Dog("dd", "black");
+dog.name = "mydog";
+// 完全公开的没有封闭，可以自由增删改。
+
+// 私有属性（需要使用闭包）
+function Girl(name, lover) {
+    var n = name;
+    var love = lover;
+
+    this.getLover = function() {
+        return love;
+    }
+    this.getName = function() {
+        return n;
+    }
+}
+// 只有两个属性，function，可以调用，但是无法改变。
+
+// 继承
+function Cat() {
+    this.climb = function() {
+        alert("爬树");
+    }
+}
+
+function Tiger() {
+    this.hunt = function() {
+        alert("打猎");
+    }
+}
+
+Tiger.prototype = new Cat(); // 让老虎以猫为原型。
+
+var tiger = new Tiger();
+tiger.hunt();
+
+tiger.climb(); // 老虎就也学会爬树了。
+
+
+// 原型冒充，原型复制，等。
+
+</script>
+
+<script>
+
+// 作用域。
+// 对变量是如何寻找的
+
+</script>

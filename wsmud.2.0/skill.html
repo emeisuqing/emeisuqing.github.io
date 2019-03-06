@@ -1,0 +1,112 @@
+<table class="skillTable">
+    <tr>
+        <td style="width:9em">SKILL</td>
+        <td style="width:9em">ID</td>
+        <td style="width:7em">LEVEL</td>
+        <td style="width:4em">DEL</td>
+    </tr>
+</table>
+<script>
+
+$(".skillTable").css({
+    "margin" : "2em auto"
+});
+
+var loadUserSkills = function() {
+    var index = userData.index;
+    var skills = userData.getSkills();
+    sortArrayByBubble(skills);
+
+    for (let i = 0; i < skills.length; i++) {
+        const skill = skills[i];
+        $(".skillTable").append(
+            $("<tr ></tr>").addClass("color_" + skill.color)
+            .append($("<td></td>").html(skill.name))
+            .append($("<td></td>").html(skill.skid))
+            .append(
+                $("<td></td>").html(skill.level)
+                .attr({
+                    "class" : "editable_td",
+                    "value" : skill.skid,
+                    "contenteditable" : true,
+                })
+                .blur(function() {
+                    var skid = $(this).attr("value");
+                    console.log(skid);
+                    var level = parseInt($(this).text());
+                    console.log("skillLevelChange", skid, level);
+                    userData.setUserSKillLevelById(skid, level);
+                })
+            )
+            .append($("<td></td>").html(
+                $("<a></a>").attr({
+                    "href" : " ",
+                    "onclick" : "return false",
+                    "skid" : skill.skid,
+                }).click(function() {
+                    var skid = $(this).attr("skid");
+                    console.log("click delete", skid);
+                    userData.delSkillById(skid);
+                    $(".skill").click();
+                }).html("×").css({
+                    "color" : "#808080",
+                    "text-decoration" : "none",
+                })
+            ))
+        );
+    }
+}
+
+loadUserSkills();
+</script>
+
+<div class="addSkillDiv">
+    <select class="skill_selector1" style="width:7em">
+        <option value="0">更多技能</option>
+    </select>
+    <select class="skill_selector2" style="width:15em"></select>
+    <button class="addSkillButton">确认添加技能</button>
+</div>
+
+<script>
+
+// $(".addSkillDiv").css({
+//     "margin" : "2em auto"
+// });
+
+for (const key in skillData) {
+    $(".skill_selector1").append($("<option></option>").attr("value", key).html(key));
+}
+$(".skill_selector1").change(function() {
+    var key = $(".skill_selector1 option:selected").attr("value");
+    console.log(key);
+    if (key == 0) return;
+    $(".skill_selector2").html("");
+    for (let i = 0; i < skillData[key].length; i++) {
+        const skill = skillData[key][i];
+        $(".skill_selector2").append(
+            $("<option></option>").attr("value", skill.skid).html(skill.name)
+        );
+    }
+});
+
+$(".addSkillButton").click(function() {
+    var skid = $(".skill_selector2 option:selected").attr("value");
+    console.log("skid: ", skid);
+    var skill = getSkillById(skid);
+
+    var skills = userData.getSkills();
+    if (skills == undefined) skills = [];
+
+    for (let i = 0; i < skills.length; i++) {
+        const skillId = skills[i].skid;
+        if (skill.skid == skillId) {
+            console.log("此技能已经添加过");
+            return;
+        }
+    }
+    userData.addSkillById(skill.skid);
+    $(".skill").click();
+    console.log(userData.getSkills());
+});
+</script>

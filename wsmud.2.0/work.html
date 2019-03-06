@@ -1,0 +1,146 @@
+<table class="toLevel_table">
+    <tr>
+        <td style="width:9em">技能名称</td>
+        <td>当前等级</td>
+        <td>目标等级</td>
+        <td>是否练习</td>
+    </tr>
+</table>
+<script>
+var skills = userData.getSkills();
+for (let i = 0; i < skills.length; i++) {
+    const skill = skills[i];
+    $(".toLevel_table").append(
+        $("<tr></tr>").addClass("color_" + skill.color)
+        .append(
+            $("<td></td>").html(skill.name)
+        ).append(
+            $("<td></td>").html(skill.level)
+            .addClass("editable_td")
+            .attr({
+                "contenteditable": true,
+                "skid": skill.skid,
+            })
+            .blur(function() {
+                var skid = $(this).attr("skid");
+                var level = parseInt($(this).text());
+                userData.setUserSKillLevelById(skid, level);
+            })
+        ).append(
+            $("<td></td>").html(skill.levelTo)
+            .addClass("editable_td")
+            .attr({
+                "contenteditable": true,
+                "skid": skill.skid,
+            })
+            .blur(function() {
+                var skid = $(this).attr("skid");
+                var levelTo = parseInt($(this).text());
+                userData.setUserSKillLevelToById(skid, levelTo);
+            })
+        ).append(
+            $("<td></td>").append(
+                // $("<a></a>").attr({
+                //     "skid": skill.skid,
+
+                // }).click(function() {
+                //     var skid = $(this).attr("skid");
+                //     var skill = userData.getUserSkillBySkid(skid);
+                //     var text = $(this).html();
+                //     if (text == "-") {
+                //         skill.isPractice = true;
+                //         $(this).html("√");
+                //     } else if (text == "√") {
+                //         skill.isPractice = false;
+                //         $(this).html("-");
+                //     }
+                // }).html(needAutoPracticeBySkill(skill))
+                $("<input>").attr({
+                    "type": "checkbox",
+                    "checked": skill.isPractice,
+                    "id": "checked" + skill.skid,
+                    "skid": skill.skid,
+                }).click(function() {
+                    var skid = $(this).attr("skid");
+                    var id = "checked" + skid;
+                    var checked = document.getElementById(id).checked;
+                    var skill = userData.getUserSkillBySkid(skid);
+                    skill.isPractice = checked;
+                    console.log("checked", checked);
+                    console.log("skill.isPractice", skill.isPractice);
+                    userData.save();
+                })
+            )
+        )
+    );
+}
+
+function needAutoPracticeBySkill(skill) {
+    if (skill.needAutoPractice) {
+        return "√";
+    } else {
+        return "-";
+    }
+}
+
+</script>
+
+<table class="work_table">
+    <tr>
+        <td><input id="gohome" type="checkbox"> 回宅练习</td>
+        <td><input id="wakuang" type="checkbox"> 练完挖矿</td>
+        <td><input id="xiulian" type="checkbox"> 练完修炼</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="work_code_div">
+                Area for code of auto work.
+            </div>
+        </td>
+    </tr>
+    <tr style="height:2em"></tr>
+    <tr>
+        <td>先天悟性</td>
+        <td>后天悟性</td>
+        <td>练习效率</td>
+    </tr>
+    <tr>
+        <td id="xtwx" contenteditable="true" class="editable_td"></td>
+        <td id="htwx" contenteditable="true" class="editable_td"></td>
+        <td id="lxxl" contenteditable="true" class="editable_td"></td>
+    </tr>
+    <tr>
+        
+        
+    </tr>
+</table>
+
+
+<script>
+gohome = document.getElementById("gohome");
+wakuang = document.getElementById("wakuang");
+xiulian = document.getElementById("xiulian");
+
+gohome.checked = false;
+// console.log('$("#checked").attr("checked")', $("#checked").attr("checked"));
+
+if (userData.roles[userData.index].jj == "武帝") {
+    wakuang.checked = false;
+    xiulian.checked =  true;
+} else {
+    wakuang.checked = true;
+    xiulian.checked = false;
+}
+
+wakuang.onclick = check;
+xiulian.onclick = check;
+
+function check() {
+    if (this.id == "wakuang" && wakuang.checked == true) {
+        xiulian.checked = false;
+    } else if (this.id == "xiulian" && xiulian.checked == true) {
+        wakuang.checked = false;
+    }
+}
+
+</script>

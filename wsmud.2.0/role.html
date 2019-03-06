@@ -2,11 +2,11 @@
     <table>
         <tr>
             <td>&nbsp;</td>
-            <td>角色</td>
-            <td>境界</td>
-            <td>门派</td>
-            <td>区服</td>
-            <td>　</td>
+            <td style="width:100px">角色</td>
+            <td style="width:100px">境界</td>
+            <td style="width:100px">门派</td>
+            <td style="width:100px">区服</td>
+            <td style="width:50px">　</td>
         </tr>
     </table>
 </div>
@@ -15,10 +15,19 @@
 
 for (let i = 0; i < userData.roles.length; i++) {
     const role = userData.roles[i];
-    var index = userData.index;
 
     $(".roleList table").append($("<tr></tr>").append(
-        $("<td></td>").html(i),
+        $("<td><a></a></td>").html(i == userData.index
+            ? $("<span></span>").html("√").addClass("color_1")
+            : $("<a></a>").attr({
+                "href" : " ",
+                "onclick":"return false;",
+                "index" : i
+            }).addClass("color_0").html(i + 1).click(function() {
+                var index = $(this).attr("index");
+                userData.index = index;
+                $(".role").click();
+            }).css("text-decoration", "none")),
         $("<td></td>").html(role.name),
         $("<td></td>").html(role.jj),
         $("<td></td>").html(role.mp),
@@ -26,12 +35,14 @@ for (let i = 0; i < userData.roles.length; i++) {
         $("<td></td>").append(
             $("<a></a>").attr({ "href" : " ",
                                 "onclick":"return false;",
-                                "index" : index
+                                "index" : i
                             })
                         .html("删")
                         .click(function() {
-                            var index = $(this).attr("value");
+                            var index = $(this).attr("index");
+                            console.log("index:" + index);
                             userData.deleteByIndex(index);
+                            $(".role").click();
                         })
         ),
     ));
@@ -124,9 +135,11 @@ $(".addNewRole").click(function() {
         jj : role.getJj(),
         mp : role.getMp(),
         fwq : role.getFwq(),
+        skills : [],
+        wudaos : [],
     };
-    JSON.stringify(newRole);
-    console.log(JSON.stringify(newRole));
+    userData.roles.push(newRole);
+    userData.save();
     $(".role").click();
 });
 
