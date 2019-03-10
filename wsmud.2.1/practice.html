@@ -1,0 +1,166 @@
+<table id="table_practice">
+    <tr>
+        <td style="width:9em">技能</td>
+        <td style="width:5em">当前等级</td>
+        <td style="width:5em">目标等级</td>
+        <td style="width:6em">需要潜能</td>
+        <td style="width:3em">练习</td>
+    </tr>
+</table>
+<script>
+userdata.skillArray.forEach((skill, index) => {
+    $("#table_practice").append($("<tr></tr>").append(
+        $("<td></td>").html(skill.name),
+        $("<td></td>").html(skill.level),
+        $("<td></td>").html(skill.levelTo).attr({
+                "class" : "editable",
+                "contenteditable" : true,
+                "value" : skill.id,
+            }).blur(function() {
+                var levelTo = parseInt($(this).text());
+                // userdata.setSkillLevelToById(skill.id, level);
+                skill.levelTo = levelTo;
+                userdata.save();
+                $(".practice").click();
+            }),
+        $("<td></td>").html(skill.cost),
+        $("<td></td>").append(
+            $("<input>").attr("type", "checkbox")
+            .prop("checked", skill.needPractice)
+            .click(function() {
+                // skill.needPractice = $(this).prop("checked");
+                userdata.setSkillPractice(skill, $(this).prop("checked"));
+            })
+        ),
+    ).addClass("color_" + skill.color))
+});
+</script>
+
+<table id="table_practice">
+    <tr>
+        <td style="width:9em"><input id="gohome" type="checkbox"> 回宅练习</td>
+        <td style="width:9em"><input id="wakuang" type="checkbox"> 练完挖矿</td>
+        <td style="width:9em"><input id="xiulian" type="checkbox"> 练完修炼</td>
+    </tr>
+    <tr style="height:1em"></tr>
+    <tr>
+        <td colspan="3" class="color_10" style="text-align:left;font-size:0.9em">
+            当你学习，练习，打坐中断后，自动去挖矿或以下操作　<button id="copyCode"></button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" id="autowork" class="color_10"
+            style="width:28em;text-align:left;overflow:visible;">code area</td>
+    </tr>
+
+    <tr style="height:1em"></tr>
+    <tr>
+        <td>先天悟性</td>
+        <td>后天悟性</td>
+        <td>练习效率</td>
+    </tr>
+    <tr>
+        <td class="editable" contenteditable="true" id="iq"></td>
+        <td class="editable" contenteditable="true" id="iq2"></td>
+        <td class="editable" contenteditable="true" id="efficiency"></td>
+    </tr>
+    <tr>
+        <td>总共需要消耗潜能</td>
+        <td colspan="2" id="total_cost"></td>
+    </tr>
+    <tr>
+        <td>预计练习需要时间</td>
+        <td colspan="2" id="total_time"></td>
+    </tr>
+</table>
+<script>
+var role = userdata.role;
+$("#gohome").prop("checked", role.gohome).click(function() {
+    role.gohome = $(this).prop("checked");
+    refresh();
+});
+$("#wakuang").prop("checked", role.wakuang).click(function() {
+    role.wakuang = $(this).prop("checked");
+    refresh();
+});
+$("#xiulian").prop("checked", !role.wakuang).click(function() {
+    role.wakuang = !$(this).prop("checked");
+    refresh();
+});
+
+// auto work
+var code = role.gohome ? "jh fam 0 start,go west,go west,go north,go enter,go west" : "";
+userdata.skillArray.forEach(skill => {
+    if (skill.needPractice) {
+        code += ",lianxi " + skill.id + " " + skill.levelTo;
+    }
+});
+code += role.wakuang ? ",wakuang" : ",xiulian";
+$("#autowork").html(code);
+$("#copyCode").click(function() {
+    copyText(code);
+}).html("一键复制");
+// 计算
+$("#iq").html(role.iq).blur(function() {
+    role.iq = parseInt($(this).text());
+    userdata.save();
+    refresh();
+});
+$("#iq2").html(role.iq2).blur(function() {
+    role.iq2 = parseInt($(this).text());
+    userdata.save();
+    refresh();
+});
+$("#efficiency").html(role.efficiency + "%").blur(function() {
+    role.efficiency = parseInt($(this).text());
+    userdata.save();
+    refresh();
+});
+// cost
+var cost = 0;
+userdata.skillArray.forEach(skill => {
+    if (skill.needPractice) {
+        cost += skill.cost;
+    }
+});
+$("#total_cost").html(cost);
+
+// 时间
+// var t = qnxh/(xtwx+htwx)/(100/100+lxxl/100-xtwx/100)/12;
+var time = cost / (role.iq + role.iq2) / (1 + role.efficiency / 100 - role.iq / 100) / 12;
+$("#total_time").html(timeText(time));
+// f5
+function refresh() {
+    $(".practice").click();
+}
+// time
+function timeText(t) {
+	var string = "";
+	if (t < 60) {
+		string = string + parseInt(t) + "分钟";
+		return string;
+	} else {
+		var h = parseInt(t/60);
+		var m = parseInt(t%60);
+
+		if (h>24) {
+			var d = parseInt(h/24);
+			h = h % 24;
+			string = string + d + "天";
+		}
+		string = string + h + "小时" + m + "分钟";
+		return string;
+	}
+}
+// copy
+function copyText(value) {
+	var textarea = document.createElement('textarea');
+	textarea.value = value;
+	document.body.appendChild(textarea);
+	textarea.select();
+	document.execCommand("Copy");
+	textarea.style.display = 'none'; // 不显示
+	alert('已经复制到剪贴板！');
+	console.log("Copy successfully.");
+}
+</script>

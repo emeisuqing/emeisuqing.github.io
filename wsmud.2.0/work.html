@@ -1,9 +1,10 @@
 <table class="toLevel_table">
     <tr>
         <td style="width:9em">技能名称</td>
-        <td>当前等级</td>
-        <td>目标等级</td>
-        <td>是否练习</td>
+        <td style="width:5em">当前等级</td>
+        <td style="width:5em">目标等级</td>
+        <td style="width:8em">需要潜能</td>
+        <td style="width:5em">是否练习</td>
     </tr>
 </table>
 <script>
@@ -38,7 +39,9 @@ for (let i = 0; i < skills.length; i++) {
                 var levelTo = parseInt($(this).text());
                 userData.setUserSKillLevelToById(skid, levelTo);
             })
-        ).append(
+        ).append($("<td></td>").html(
+            costQian(skill)
+        )).append(
             $("<td></td>").append(
                 // $("<a></a>").attr({
                 //     "skid": skill.skid,
@@ -142,5 +145,20 @@ function check() {
         wakuang.checked = false;
     }
 }
+
+
+function createCode() {
+    var code = "";
+    userData.getSkills().forEach(skill => {
+        if (skill.isPractice) {
+            code += "lianxi " + skill.skid + " " + skill.levelTo + ",";
+        }
+    });
+    if (wakuang.checked) {
+        code += "wakuang";
+    }
+    return code;
+}
+$(".work_code_div").html(createCode());
 
 </script>

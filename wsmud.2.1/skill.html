@@ -1,0 +1,85 @@
+<table id="table_skill">
+    <tr class="color_10">
+        <td style="width:9em">名称</td>
+        <td style="width:9em">代码</td>
+        <td style="width:7em">等级</td>
+        <td style="width:4em">删除</td>
+    </tr>
+</table>
+<script>
+userdata.sortSkillArray();
+// 
+console.log(userdata.skillArray);
+console.log(userdata);
+userdata.skillArray.forEach((skill, index) => {
+    $("#table_skill").append(
+        $("<tr ></tr>").append(
+            $("<td></td>").html(skill.name),
+            $("<td></td>").html(skill.id),
+            $("<td></td>").html(skill.level).attr({
+                "class" : "editable",
+                "contenteditable" : true,
+                "value" : skill.id,
+            }).blur(function() {
+                var level = parseInt($(this).text());
+                console.log("Level: " + level);
+                userdata.setSkillLevelById(skill.id, level);
+            }),
+            $("<td></td>").append(
+                $("<a></a>").attr({
+                    "href": "",
+                    "id": skill.id,
+                    "onclick": "return false",
+                }).click(function() {
+                    var id = $(this).attr("id");
+                    userdata.deleteSkillById(id);
+                    $(".skill").click();
+                }).html(skill.color == 0 ? "" : "删").addClass("color_10")
+            ),
+        ).addClass("color_" + skill.color)
+    )
+});
+</script>
+
+
+<div>
+    <select id="select_skill_category"></select>
+    <select id="select_skill_name"></select>
+    <button id="button_add_skill"></button>
+</div>
+<script>
+$("#select_skill_category").css("width", "8em");
+$("#select_skill_name").css("width", "12em").append(
+    $("<option></option>").attr("value", "undefined").html("基础技能已默认")
+);
+// 1
+for (const key in allSkillData) {
+    $("#select_skill_category").append(
+        $("<option></option>").attr("value", key).html(key)
+    );
+}
+// 2
+$("#select_skill_category").change(function() {
+    $("#select_skill_name").html("");
+    var key = $("#select_skill_category option:selected").html();
+    for (let index = 0; index < allSkillData[key].length; index++) {
+        var skill = allSkillData[key][index];
+        if (userdata.getSkillById(skill.id) == null) {
+            $("#select_skill_name").append(
+                $("<option></option>").attr("value", skill.id).html(skill.name)
+            );
+        }
+    }
+});
+// 3 按钮 => 添加技能
+$("#button_add_skill").click(function() {
+    var id = $("#select_skill_name option:selected").val();
+    console.log(id);
+    if (id == undefined || id == "undefined") return;
+    userdata.addSkillById(id);
+    $(".skill").click();
+}).html("确认添加技能").attr("type", "button").css({
+    "width": "10em",
+    "height": "1.8em",
+});
+</script>

@@ -1,0 +1,50 @@
+<table id="table_doexe">
+    <tr class="color10">
+        <td style="width:9em">技能</td>
+        <td style="width:5em">当前等级</td>
+        <td style="width:5em">目标等级</td>
+        <td style="width:6em">需要潜能</td>
+        <td style="width:3em">练习</td>
+    </tr>
+</table>
+
+<table id="table_code">
+    <tr>
+        <td style="width:9em"><input id="gohome" type="checkbox"> 回宅练习</td>
+        <td style="width:9em"><input id="wakuang" type="checkbox"> 练完挖矿</td>
+        <td style="width:9em"><input id="xiulian" type="checkbox"> 练完修炼</td>
+    </tr>
+    <tr style="height:1em"></tr>
+    <tr style="height:2em">
+        <td colspan="3" class="color10" style="text-align:left;font-size:0.9em">
+            当你学习，练习，打坐中断后，自动去挖矿或以下操作　
+            <button id="copyCode" style="width:5em;"></button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" id="autocode" class="color10"
+            style="width:28em;text-align:left;overflow:visible;">code area</td>
+    </tr>
+
+    <tr style="height:1em"></tr>
+    <tr>
+        <td>先天悟性</td>
+        <td>后天悟性</td>
+        <td>练习效率</td>
+    </tr>
+    <tr>
+        <td class="editable" contenteditable="true" id="iq1"></td>
+        <td class="editable" contenteditable="true" id="iq2"></td>
+        <td class="editable" contenteditable="true" id="exe"></td>
+    </tr>
+    <tr>
+        <td>总共需要消耗潜能</td>
+        <td colspan="2" id="total_cost"></td>
+    </tr>
+    <tr>
+        <td>预计练习需要时间</td>
+        <td colspan="2" id="total_time"></td>
+    </tr>
+</table>
+
+<script src="./html/doexe.js"></script>

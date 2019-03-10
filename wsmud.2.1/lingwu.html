@@ -1,0 +1,109 @@
+<div><p>武道模拟</p></div>
+<div id="lingwuArea"></div>
+
+
+
+<script>
+// strat
+$.area = $("#lingwuArea").addClass("color_10");
+$.button = function() {
+    return $("<button type=\"button\"></button>");
+};
+$.area.css({
+    "line-height": "1.5em",
+    "border": "#008000 solid 0.1em",
+    "margin": "1em 5em",
+    "padding": "1em 1em",
+}).html("请选择你想要进阶的武道类别<br>");
+
+// 1
+for (var typeEN in WSData.type) {
+    var typeCN = WSData.type[typeEN].cn;
+    $.area.append($.button().attr("type", typeEN).html(typeCN).click(clickType));
+}
+// 2
+function clickType() {
+    var typeCN = $(this).html();
+    var typeEN = $(this).attr("type");
+    $.area.html("请选择你想要进阶的" + typeCN + "属性<br>");
+    // WSData.type[typeEN].ls;
+    var l = WSData.type[typeEN].ls.lenght;
+    if (l == undefined || l < 2) {
+        WSData.type[typeEN].ls = WSData[typeEN]();
+    }
+    for (var i = 0; i < 3; i++) {
+        var prop = WSData.type[typeEN].ls[i];
+        $.area.append($.button().attr({"type": typeEN, "index": i}).html(prop.name).click(clickProp));
+    }
+}
+// 3
+function clickProp() {
+    var typeEN = $(this).attr("type");
+    var index = $(this).attr("index");
+    var typeCN = WSData.type[typeEN].cn;
+    // var list = WSData.type[typeEN].ls;
+    console.log(index);
+    console.log(WSData.type[typeEN].ls);
+    
+    var prop = WSData.type[typeEN].ls[index];
+    $.area.html("请选择你想要进阶" + typeCN + prop.name + "的技能<br>").append($.button().html("取消").click(refresh));
+    userdata.skillArray.forEach(skill => {
+        if ((skill.typeOne == typeCN || skill.typeTwo == typeCN) && skill.couldUp) {
+            $.area.append($.button()
+                .attr({"type": typeEN, "index": index, "skillId": skill.id})
+                .html(skill.name).click(clickSkill));
+        }
+    });
+}
+// 4
+function clickSkill() {
+    var typeEN = $(this).attr("type");
+    var index = $(this).attr("index");
+    var skillId = $(this).attr("skillId");
+    var typeCN = WSData.type[typeEN].cn;
+    // var list = WSData.type[typeEN].ls;
+
+    console.log(index);
+    // console.log(list);
+    var prop = WSData.type[typeEN].ls[index];
+
+    var skill = userdata.skillArray.find(function(element) {
+        return element.id == skillId;
+    });
+    skill.upLog.push(prop);
+    WSData.type[typeEN].ls.splice(index, 1);
+    refresh();
+}
+</script>
+
+
+
+
+<table id="table_lingwu">
+    <tr>
+        <td>技能</td>
+        <td>等级</td>
+        <td>武道类别</td>
+        <td>武道属性</td>
+    </tr>
+</table>
+<script>
+// $("#table_lingwu");
+userdata.skillArray.forEach(skill => {
+    skill.upLog.forEach(lingwu => {
+        console.log(lingwu);
+        $("#table_lingwu").append($("<tr></tr>").addClass("color_" + (skill.count + skill.color)).append(
+            $("<td></td>").html(skill.name),
+            $("<td></td>").html(skill.level),
+            $("<td></td>").html(lingwu.type),
+            $("<td></td>").html(lingwu.getTextByLevelAndCount(skill.level, skill.count)),
+        ));
+    });
+});
+
+
+function refresh() {
+    $(".lingwu").click();
+    userdata.save();
+}
+</script>

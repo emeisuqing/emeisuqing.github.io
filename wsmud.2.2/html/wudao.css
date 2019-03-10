@@ -1,0 +1,14 @@
+#board {
+    width: auto;
+    line-height: 1.5em;
+    border: #008000 solid 0.1em;
+    margin: 1em 5em;
+    padding: 1em 1em;
+}
+
+#board button {
+    width: auto;
+    height: auto;
+    margin:  0.2em 0.2em;
+    padding: 0 0.4em;
+}

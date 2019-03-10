@@ -196,8 +196,14 @@
             margin: 2em auto;
             border-collapse: collapse;
         }
-        .work_table td, .toLevel_table td {
+        .work_table td {
             width: 7em;
+            height: 1.5em;
+            line-height: 1.5em;
+            text-align: center;
+            border: 1px solid #FFFFFF;
+        }
+        td {
             height: 1.5em;
             line-height: 1.5em;
             text-align: center;
@@ -284,7 +290,17 @@ layout = {
         $(".footer").html(footer + " <a href='https://suqing.fun'>suqing.fun</a> All rights Reserved.");
     },
 }
-
+costQian = function(skill) {
+    console.log("计算潜能");
+    var l = skill.level;
+    var l2 = skill.levelTo;
+    if (l > l2) {
+        return 0;
+    }
+    var k = skill.color + 1;
+    var cost = k*2.5*(l2*l2 - l*l);
+    return cost;
+}
 window.addEventListener("load", function() {
     layout.setSize();
     layout.setLeftBar();
@@ -651,6 +667,7 @@ const skillData = {
         { name : "飞星术", color : 2, skid : "feixingshu", type1 : "武器", type2 : "无" },
     ],
 }
+
 /*
 剑法,神剑诀,蓝色,shenjianjue,武器,无
 杖法,无常杖,蓝色,wuchangzhang,武器,招架
@@ -667,6 +684,7 @@ const skillData = {
 公共剑法,泰山剑法,3,
 公共剑法,段家剑,3,
 */
+
 getSkillById = function(skid) {
     for (const key in skillData) {
         for (let i = 0; i < skillData[key].length; i++) {

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>健忘症无药可治</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="tag" style="text-align:center"></div>
+</body>
+<script>
+function creatButton(title, detail) {
+    return $("<div></div>")
+    .append(
+        $("<div></div>").append(
+            $("<a></a>").attr({
+                "href": " ",
+                "onclick": "return false;",
+            }).click(function() {
+                $("#detail_" + title).slideToggle(1000, function(){
+                    console.log("click.");
+                })
+            }).html(title).css({
+                "color": "#000000",
+            })
+        )
+    )
+    .append(
+        $("<div></div>").html(detail)
+        .attr({
+            "id": "detail_" + title,
+        }).hide()
+    );
+}
+var note = [
+    ["苏蛰", "小健忘鬼"],
+    ["Steam", "suzhe_5"],
+];
+note.forEach(element => {
+    $("#tag").append(creatButton(element[0], element[1]));
+});
+</script>
+</html>

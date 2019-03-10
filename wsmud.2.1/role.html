@@ -1,0 +1,104 @@
+<table id="tableShowRoles">
+    <tr>
+        <td style="width:1.5em"></td>
+        <td style="width:8em">角色</td>
+        <td style="width:4em">境界</td>
+        <td style="width:6em">门派</td>
+        <td style="width:5em">服务器</td>
+        <td style="width:3em">删除</td>
+    </tr>
+</table>
+<script>
+// console.log("userdata.index: " + userdata.index);
+// 角色列表
+userdata.roleArray.forEach((role, index) => {
+    $("#tableShowRoles").append(
+        $("<tr></tr>").append(
+            $("<td></td>").append(
+                $("<input type='checkbox'>")
+                .prop("checked", userdata.index == index) // 这里不能使用 === 因为可能是字符串和数字
+                .attr("index", index)
+                .addClass("checkbox")
+                .click(function() {
+                    $(".checkbox").prop("checked", false); // 针对 checked 属性
+                    $(this).prop("checked", true); // 这里使用 $().prop() 方法可以返回或设置布尔值
+                    userdata.index = $(this).attr("index"); // 而 $().attr() 对于 checked 属性就不行
+                    console.log("userdata.index: " + userdata.index);
+                    userdata.save();
+                })
+            ),
+            $("<td></td>").html(role.name),
+            $("<td></td>").html(Role.getLevelArray()[role.level]),
+            $("<td></td>").html(Role.getSchoolArray()[role.school]),
+            $("<td></td>").html(Role.getServerArray()[role.server]),
+            $("<td></td>").append(
+                $("<a></a>")
+                .attr({"href": " ", "onclick": "return false;", "index": index})
+                .html("删").addClass("color_10")
+                .click(function() {
+                    userdata.deleteRoleByIndex(index);
+                    $(".role").click();
+                })
+            ),
+        ).addClass("color_" + role.level)
+    );
+});
+</script>
+
+<div><button id="button_open"></button></div>
+<table id="table_add">
+    <tr><td>角色<input id="input_name"></td></tr>
+    <tr><td>境界<select id="select_level"></select></td></tr>
+    <tr><td>门派<select id="select_school"></select></td></tr>
+    <tr><td>区服<select id="select_server"></select></td></tr>
+    <tr><td><button id="button_add"></button></td></tr>
+</table>
+<script>
+$("#table_add").hide();
+// 1 按钮 => 打开或隐藏
+var toggle1 = "新建角色档案 △ ";
+var toggle2 = "新建角色档案 ▽ ";
+$("#button_open").click(function() {
+    $("#table_add").slideToggle(200, function() {
+        if ($("#button_open").html() === toggle1) {
+            $("#button_open").html(toggle2);
+        } else {
+            $("#button_open").html(toggle1);
+        }
+    });
+}).html(toggle2).css({
+    "width": "10em",
+});
+// 2 姓名
+$("#input_name").attr({
+    "type": "text",
+    "placeholder": "请输入角色姓名",
+});
+// 3 境界
+Role.getLevelArray().forEach((level, index) => {
+    $("#select_level").append($("<option></option>").attr("value", index).html(level));
+});
+// 4 门派
+Role.getSchoolArray().forEach((school, index) => {
+    $("#select_school").append($("<option></option>").attr("value", index).html(school));
+});
+// 5 服务器
+Role.getServerArray().forEach((server, index) => {
+    $("#select_server").append($("<option></option>").attr("value", index).html(server));
+});
+// 6 按钮 => 确认添加
+$("#button_add").html("创建新的角色档案").click(function() {
+    var name = $("#input_name").val();
+    if (Role.checkName(name)) {
+        userdata.addRole(new Role(
+            name,
+            $("#select_level option:selected").val(),
+            $("#select_school option:selected").val(),
+            $("#select_server option:selected").val(),
+        ));
+        $(".role").click();
+    } else {
+        alert("输入有误！")
+    }
+}).attr("type", "button");
+</script>
