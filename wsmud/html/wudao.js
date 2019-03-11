@@ -111,8 +111,8 @@
                     // wudao.getText(skill.level, skill.upCount)
                     var r = "";
                     skill.upLogs.forEach(wudao => {
-                        if (r == "") r = wudao.getText(skill.level, skill.upCount);
-                        else r += "<br>" + wudao.getText(skill.level, skill.upCount);
+                        if (r == "") r = wudao.getText(skill.level, skill.k);
+                        else r += "<br>" + wudao.getText(skill.level, skill.k);
                     });
                     return r;
                 })()),

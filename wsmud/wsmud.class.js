@@ -12,8 +12,10 @@ class WuDao {
         for (var key in object) this[key] = object[key];
     }
     getText(level, count) {
+        console.log(`level: ${level}, count: ${count}`);
         var value = parseInt(level * count * (this.value / 5000));
         var text = this.name + this.propCN + value + this.unit;
+        console.log(`text: ${text}`);
         return text;
     }
 }

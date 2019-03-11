@@ -27,7 +27,7 @@ wsmud.layout = function() {
     };
     // footer
     var setFooter = function() {
-        $(".footer").html("Copyright &copy; 2018 - " + suqing.year
+        $(".footer").html("Copyright &copy; 2018 - " + suqing.thisyear
             + " <a href='https://suqing.fun'>suqing.fun</a>"
             + " All rights Reserved.");
     };

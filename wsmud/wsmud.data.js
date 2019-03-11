@@ -131,12 +131,11 @@ wsmud.data.skilldata = function() {
             new Skill("baiyunxinfa", "白云心法", 3, "内功", "无"),
             new Skill("zhenyuejue", "镇岳诀", 3, "内功", "无"),
             new Skill("shenghuoshengong", "圣火神功", 3, "内功", "无"),
-            new Skill("没有数据", "寒冰真气", 4, 0, 0),
-            new Skill("没有数据", "先天功", 4, 0, 0),
-            new Skill("没有数据", "蒙古心法", 2, 0, 0),
-            new Skill("没有数据", "磐石神功", 3, 0, 0),
-            new Skill("没有数据", "玉女心经", 3, 0, 0),
-            
+            new Skill("hbzq数据缺失", "寒冰真气", 4, 0, 0),
+            new Skill("xtg数据缺失", "先天功", 4, 0, 0),
+            new Skill("mgxf数据缺失", "蒙古心法", 2, 0, 0),
+            new Skill("pssg数据缺失", "磐石神功", 3, 0, 0),
+            new Skill("ynxj数据缺失", "玉女心经", 3, 0, 0),
         ],
         "公共轻功" : [
             new Skill("shenxingbaibian", "神行百变", 2, "轻功", "无"),
@@ -154,8 +153,8 @@ wsmud.data.skilldata = function() {
             new Skill("chuanyunzong", "穿云纵", 2, "轻功", "无"),
             new Skill("chanchubufa", "蟾蜍步法", 2, "轻功", "无"),
             new Skill("qingfushenfa", "青蝠身法", 2, "轻功", "无"),
-            new Skill("没有数据", "摘星功", 2, 0, 0),
-            new Skill("没有数据", "身空行", 2, 0, 0),
+            new Skill("zxg数据缺失", "摘星功", 2, 0, 0),
+            new Skill("skx数据缺失", "身空行", 2, 0, 0),
         ],
         "公共拳脚" : [
             new Skill("yingzhuagong", "鹰爪功", 2, "拳脚", "招架"),
@@ -177,8 +176,7 @@ wsmud.data.skilldata = function() {
             new Skill("jueqingzhang", "绝情掌", 2, "拳脚", "无"),
             new Skill("tianchangzhang", "天长掌法", 3, "拳脚", "无"),
             new Skill("cuixinzhang", "摧心掌", 3, "拳脚", "无"),
-            new Skill("没有数据", "一阳指", 4, 0, 0),
-            
+            new Skill("yyz数据缺失", "一阳指", 4, 0, 0),
         ],
         "公共招架": [
             new Skill("yihuajiemu", "移花接木", 4, "招架", "无"),
@@ -203,8 +201,8 @@ wsmud.data.skilldata = function() {
             new Skill("yifengjian", "移风剑法", 3, "武器","无"),
             new Skill("tianyuqijian", "天羽奇剑", 3, "武器", "无"),
             new Skill("shenjianjue", "神剑诀", 2, "武器", "无"),
-            new Skill("没有数据", "泰山剑法", 3, 0, 0),
-            new Skill("没有数据", "段家剑", 3, 0, 0),
+            new Skill("tsjf数据缺失", "泰山剑法", 3, 0, 0),
+            new Skill("djj数据缺失", "段家剑", 3, 0, 0),
         ],
         "公共刀法": [
             new Skill("wuhuduanmendao", "五虎断门刀", 1, "武器", "无"),
