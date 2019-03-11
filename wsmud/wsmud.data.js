@@ -267,14 +267,14 @@ wsmud.data.wudaodata = function() {
             new WuDao("【命中之道】", "命中＋", 2500, "", "unarmed", "mz", 19),
             new WuDao("【进攻之道】", "攻击＋", 2150, "", "unarmed", "gj", 20),
             new WuDao("【御气之道】", "内力上限＋", 110000, "", "unarmed", "yq", 21),
-            new WuDao("【防御之道】", "防御＋", 2000, "", "unarmed", "fy", 22),
+            new WuDao("【防守之道】", "防御＋", 2000, "", "unarmed", "fy", 22),
             new WuDao("【招架之道】", "招架＋", 2000, "", "unarmed", "zj", 23),
             new WuDao("【强体之术】", "臂力＋", 400, "", "unarmed", "bl", 24)
         ],
         weapon: [
             new WuDao("【进攻之道】", "攻击＋", 2000, "", "weapon", "jg", 27),
-            new WuDao("【命中之道】", "命中＋", 2300, "", "weapon", "mz", 25),
-            new WuDao("【防御之道】", "防御＋", 2300, "", "weapon", "fy", 26),
+            new WuDao("【精准之道】", "命中＋", 2300, "", "weapon", "mz", 25),
+            new WuDao("【防守之道】", "防御＋", 2300, "", "weapon", "fy", 26),
             new WuDao("【招架之道】", "招架＋", 2000, "", "weapon", "zj", 28),
             new WuDao("【强体之术】", "臂力＋", 300, "", "weapon", "bl", 29),
             new WuDao("【躲闪之道】", "躲闪＋", 2000, "", "weapon", "ds", 30),
