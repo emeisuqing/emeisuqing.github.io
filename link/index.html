@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 君将何处去
-page-title: 暂时还没有什么友链
-home-title: 个人测试使用
+page-title: 子站点 & 友情链接
+home-title: 可以联系我挂上友情链接
 description: 
 ---
 
@@ -12,13 +12,17 @@ description:
 <main>
     {% include title.html %}
     <ul class="ex-list">
+        <!-- {% for link in site.links %}
         <li  class="fadeInUp animated">
-
-            {% for link in site.links %}
-                <span class="tag-name"><a href="{{ link[1] }}">「&emsp;{{ link[0] }}&emsp;」</a></span>
-            {% endfor %}
-
+            <span class="tag-name"><a href="{{ link[1] }}">「&emsp;{{ link[0] }}&emsp;」</a></span>
         </li>
+        {% endfor %} -->
+        <li  class="fadeInUp animated">
+            <span class="tag-name"><a href="/wsmud/">「&emsp;武神小站&emsp;」</a></span>
+        </li>
+        <li  class="fadeInUp animated">
+                <span class="tag-name"><a href=”https://jicki.me/“>「&emsp;小炒肉 Blog&emsp;」</a></span>
+            </li>
     </ul>
 </main>
 

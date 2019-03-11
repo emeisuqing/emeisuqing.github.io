@@ -19,14 +19,14 @@ bio: 'QQ：874717373' # 个人简历
 # 导航栏
 nav: 
   诗酒趁年华: '/'
-  时间线: '/timeline'
-  认识我: '/about'
-  标签页: '/tags'
-  友情链: '/link'
+  时间轴: '/timeline'
+  关于&苏轻: '/about'
+  标签&查找: '/tags'
+  子站&友链: '/link'
 
-links: #友情链接
-  武神传说工具包: '/wsmud'
-  小炒肉 Blog: "https://jicki.me"
+# links: #友情链接
+#   武神传说工具包: '/wsmud/'
+#   小炒肉 Blog: "https://jicki.me/"
 
 paginate: 5 # 分页
 paginatepath: ['page:num']
