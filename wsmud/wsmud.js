@@ -17,56 +17,111 @@ suqing.fun = function() {
     var version = "2.0.0";
     return {
         version: version,
-        getTimeStampNow: function() {
-            return (new Date()).valueOf();
-        },
         getYear: function() {
             return (new Date()).getFullYear();
         },
-        
-    };
-}();
-
-
-
-
-
-window.namespace("suqing");
-suqing = function() {
-    return {
-        version: "0.19.308",
-        checkLocalStorage: function() {
-            try { window.localStorage.setItem("suqing.check", "localStorage")}
-            catch (error) { alert("(SuQing) Check window.localStorage => " + error)}
+        getMonth: function() {
+            return (new Date()).getMonth() + 1; // 1 - 12
         },
-        localLoad: function(key) {
-            return JSON.parse(localStorage.getItem(key));
+        getDay: function() {
+            return (new Date()).getDay(); // 1 - 31
         },
-        localSave: function(key, data) {
-            localStorage.setItem(key, JSON.stringify(data));
+        getWeekday: function() {
+            var day = (new Date()).getDay();
+            return day == 0 ? 7 : day; // 1 - 7
         },
-        localClear: function() {
-            localStorage.clear();
+        getHour: function() {
+            return (new Date()).getHours(); // 0 -23
         },
-        // 时间戳
-        timestamp: function() {
+        getMinute: function() {
+            return (new Date()).getMinutes(); // 0 - 59
+        },
+        getSecond: function() {
+            return (new Date()).getSeconds(); // 0 - 59
+        },
+        getMilliSecond: function() {
+            return (new Date()).getMilliseconds(); // 0 - 999
+        },
+        getTimeStampNow: function() {
             return (new Date()).valueOf();
         },
-        // 当前年份 4位数
-        thisyear: function() {
-            return (new Date()).getFullYear();
-        },
-        // copy
-        copyText: function(value) {
+        copyToClipborad: function(value) {
             var textarea = document.createElement('textarea');
             textarea.value = value;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand("Copy");
-            textarea.style.display = 'none'; // 不显示
-            alert('已经复制到剪贴板！');
-            console.log("Copy successfully.");
-        }
+            textarea.style.display = "none";
+            if (document.body) {
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("Copy");
+                textarea.parentNode.removeChild(textarea);
+                alert('复制成功！');
+            }
+        },
+        setLocalStorage: function(key, data) {
+            localStorage.setItem(key, JSON.stringify(data));
+        },
+        getLocalStorage: function(key) {
+            return JSON.parse(localStorage.getItem(key));
+        },
+        removeLocalStorage: function(key) {
+            localStorage.removeItem(key);
+        },
+        clearLocalStorage: function() {
+            localStorage.clear();
+        },
     };
 }();
-console.log("(SuQing) Version: " + suqing.version);
+
+window.namespace("wsmud.layout");
+wsmud.layout = function() {
+    var fn = suqing.fun;
+    var linkNames = {
+        role: "角色档案",
+        skill: "技能配置",
+        doexe: "练习模拟",
+        wudao: "武道模拟",
+    };
+    var taskIds = [], actionTime = null;
+    var setSize = function() {
+        var windowH = $(window).height();
+        var headerH = $(".header").height();
+        var footerH = $(".footer").height();
+        $(".left").height(windowH - headerH - footerH);
+        $(".right").height(windowH - headerH - footerH);
+    };
+    var setLeft = function() {
+        $(".link").attr({"href": "", "onclick": "return false"});
+        for (const key in linkNames) {
+            $("." + key).click(function() {
+                $(".right").load("./html/" + key + ".html");
+            }).html(linkNames[key]);
+        }
+    };
+    var setFooter = function() {
+        $(".footer").html("Copyright &copy; 2018 - " + suqing.thisyear
+            + " <a href='https://suqing.fun'>suqing.fun</a>"
+            + " All rights Reserved.");
+    };
+    return {
+        load: function() {
+            setSize();
+            setLeft();
+            setFooter();
+            console.log("(WSMUD) Layout Successfully.");
+        },
+        reSize: function() {
+            actionTime = suqing.fun.getTimeStampNow() + 1000; // 唯一的 actionTime
+            taskIds.push(setTimeout(function() {
+                if (actionTime < fn.getTimeStampNow()) {
+                    setSize();
+                    for (let i = 0; i < taskIds.length; i++) clearTimeout(taskIds[i]);
+                    taskIds = [];
+                }
+            }, 1000));
+        },
+    };
+}();
+
+window.addEventListener("load", wsmud.layout.load);
+window.addEventListener("resize", wsmud.layout.reSize);
+

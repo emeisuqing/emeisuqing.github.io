@@ -1,22 +1,33 @@
 "use strict";
 window.namespace("wsmud.user");
 wsmud.user = function() {
+    var fn = suqing.fun;
     var index = 0, roles = [], baseSkill = "基础技能";
+    var list = {
+        force: [],
+        dodge: [],
+        parry: [],
+        unarmed: [],
+        weapon: [],
+        role: new Role(),
+    };
     function load() {
-        if (suqing.localLoad("sqlog") == null) return;
-        index = suqing.localLoad("index");
-        var objects = suqing.localLoad("roles");
+        if (fn.getLocalStorage("log") == null) {
+            return;
+        }
+        index = fn.getLocalStorage("index");
+        var objects = fn.getLocalStorage("roles");
         objects.forEach(object => {
             var role = new Role();
             role.parseObject(object);
             roles.push(role);
         });
-        console.log("加载数据完毕");
+        console.log("(WSMUD) 加载数据完毕");
     }
     function save() {
-        suqing.localSave("sqlog", suqing.timestamp());
-        suqing.localSave("index", index);
-        suqing.localSave("roles", roles);
+        fn.setLocalStorage("log", fn.getTimeStampNow());
+        fn.setLocalStorage("index", index);
+        fn.setLocalStorage("roles", roles);
     }
     function getSkill(id) {
         var data = wsmud.data.skilldata;
@@ -108,19 +119,46 @@ wsmud.user = function() {
             roles[index].exe = exe;
             save();
         },
-        addSkillUpLogs: function(id, wudao) {
-            getUserSkill(id).upLogs.push(wudao);
-            save();
-        },
+        // addSkillUpLogs: function(id, wudao) {
+        //     getUserSkill(id).upLogs.push(wudao);
+        //     save();
+        // },
         state: ["百姓", "武士", "武师", "宗师", "武圣", "武帝", "武神"],
         school: ["无门无派", "武当派", "少林派", "华山派", "峨眉派", "逍遥派", "丐帮", "杀手楼"],
         server: ["一区", "二区", "三区", "四区"],
-        wudaos: {
-            force: { cn: "内功", list: []},
-            dodge: { cn: "轻功", list: []},
-            parry: { cn: "招架", list: []},
-            unarmed: { cn: "拳脚", list: []},
-            weapon: { cn: "武器", list: []},
+        resetWuDao: function() {
+            roles[index].logs = [];
+            for (var skill of roles[index].skills) {
+                skill.upLogs = [];
+            }
+            save();
+        },
+        typeEN: ["force", "dodge", "parry", "unarmed", "weapon"],
+        typeCN: ["内功", "轻功", "招架", "拳脚", "武器"],
+        list: list,
+        upWuDao: function(type, wdid, skid) {
+            console.log(list);
+            console.log([type, wdid, skid]);
+            console.log(list[type]);
+
+            if (list[type] == [] || list[type].length < 2) {
+                list[type] = wsmud.data.wudaodata[type];
+            }
+            for (var i = 0; i < 3; i++) {
+                var wd = list[type][i];
+                if (wd.id == wdid) {
+                    // this.addSkillUpLogs(skid, wd);
+                    getUserSkill(skid).upLogs.push(wd);
+                    console.log(roles[index].logs);
+                    
+                    roles[index].logs.push([type, wdid, skid]);
+                    list[type].splice(i, 1);
+                    save();
+                    console.log(roles[index].logs);
+                    break;
+                }
+            }
+            
         },
     };
 }();

@@ -1,5 +1,3 @@
-suqing.checkLocalStorage();
-
 (function() {
     var u = wsmud.user;
     console.log(u.roles[u.getIndex()]);

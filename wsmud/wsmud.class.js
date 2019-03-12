@@ -18,7 +18,11 @@ class WuDao {
         console.log(`text: ${text}`);
         return text;
     }
+    static fromObject(object) {
+
+    }
 }
+
 
 class Skill {
     constructor(id, name, color, typeOne, typeTwo) {
@@ -35,17 +39,11 @@ class Skill {
         
         this.family = "";
         this.description = "description";
-
-        // this.cost;
     }
     parseObject(object) {
         for (var key in object) {
             if (key == "upLogs") {
-                object.upLogs.forEach(value => {
-                    var wd = new WuDao();
-                    wd.parseObject(value);
-                    this[key].push(wd);
-                });
+                this.upLogs = [];
             } else {
                 this[key] = object[key];
             }
@@ -88,6 +86,7 @@ class Role {
 
         this.skills = []; // 技能列表
         this.logs = [];   // 武道记录
+
         this.gohome = true;
         this.wakuang = true;
         this.iq1 = 50;
@@ -102,8 +101,6 @@ class Role {
                     skill.parseObject(value);
                     this[key].push(skill);
                 });
-            // } else if (key == "logs") {
-                
             } else {
                 this[key] = object[key];
             }
@@ -165,3 +162,28 @@ var wsdata = {
 
 
 */
+
+/**
+ * 自制装备
+ * 攻击 475 +1（6星的话每洗一次增加8点攻击）
+ * 命中 517 528
+ * 防御 472 473 476 10%
+ * 招架 465 498 500 520 523
+ * 躲闪 477 500 517
+ * 暴击 9%
+ * 暴击伤害 9% 10%
+ * 
+ * 
+ * 
+ * 
+ * 打坐效率 8% 11%
+ * 忙乱时间 9% 11%
+ * 忽视忙乱 10% 11%
+ * 负面状态抵抗 10%
+ * 气血 24270 27737 29134 8% 10%
+ * 内力上限 23391 27951
+ * 臂力 38
+ * 根骨 32 38 40
+ * 身法 32 36 40 42
+ * 悟性 33 35 36
+ */

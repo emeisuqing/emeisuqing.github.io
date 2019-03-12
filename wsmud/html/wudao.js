@@ -4,60 +4,63 @@
     var data = wsmud.data.wudaodata;
     var u = wsmud.user;
     var r = u.roles[u.getIndex()];
+
+    console.log(r.logs);
+
+    for (var log of r.logs) {
+        console.log(log);
+        u.upWuDao(log[0], log[1], log[2]);
+    }
+
+    
     // 1
     $("#message").html("请选择你想要进阶的武道类别");
-    for (var type in u.wudaos) {
-        var typeCN = u.wudaos[type].cn;
-        console.log(typeCN);
+    u.typeEN.forEach((type, index) => {
+        var typeCN = u.typeCN[index];
         $("#buttons").append(
             $("<button type=\"button\"></button>")
-            .html(typeCN).attr("en", type).click(clickType)
+            .html(typeCN).attr("t", index).click(clickType)
         );
-    }
+    });
+
     // 2
     function clickType() {
-        var type = $(this).attr("en");
-        var typeCN = u.wudaos[type].cn;
+        var index = $(this).attr("t");
+        var typeEN = u.typeEN[index];
+        var typeCN = u.typeCN[index];
         $("#message").html("请选择你想要进阶的" + typeCN + "属性");
         $("#buttons").html("");
 
-        var list = u.wudaos[type].list;
-        if (list.length == undefined || list.length < 2) {
-            // list = data[type];
-            u.wudaos[type].list = data[type];
-            // console.log(list);
+        var list = u.list[typeEN];
+        if (list == [] || list.length < 2) {
+            u.list[typeEN] = data[typeEN];
         }
         for (var i = 0; i < 3; i++) {
-            var wudao = u.wudaos[type].list[i];
+            var wudao = u.list[typeEN][i];
             $("#buttons").append(
                 $("<button type=\"button\"></button>").html(wudao.name).click(clickWudao).attr({
-                    "en": type,
+                    "t": index,
                     "index": i,
                 })
             );
         }
+        // log[0] = typeEN;
     }
     // 3
     function clickWudao() {
-        var type = $(this).attr("en");
-        var index = $(this).attr("index");
-        var typeCN = u.wudaos[type].cn;
-        // console.log(u.wudaos);
-        var list = u.wudaos[type].list;
-        // console.log(list);
-        // console.log(index);
-        var wudao = list[index];
+        var index = $(this).attr("t");
+        var typeEN = u.typeEN[index];
+        var typeCN = u.typeCN[index];
+        var i = $(this).attr("index");
+        var list = u.list[typeEN];
+        var wudao = list[i];
 
         $("#message").html("请选择你想要进阶" + typeCN + wudao.name + "的技能<br>");
-        $("#buttons").html("");
-        $("#buttons").append(
+        $("#buttons").html("").append(
             $("<button type=\"button\"></button>").html("取消").click(refresh)
         );
-        // console.log(wsmud.user.roles[wsmud.user.getIndex()].skills);
-        wsmud.user.roles[wsmud.user.getIndex()].skills.forEach(skill => {
-            console.log(skill);
-            if ((skill.typeOne == typeCN || skill.typeTwo == typeCN)
-            && skill.upable) {
+        u.roles[u.getIndex()].skills.forEach(skill => {
+            if ((skill.typeOne == typeCN || skill.typeTwo == typeCN) && skill.upable) {
 
                 for (let i = 0; i < skill.upLogs.length; i++) {
                     const w = skill.upLogs[i];
@@ -66,8 +69,8 @@
 
                 $("#buttons").append(
                     $("<button type=\"button\"></button>").html(skill.name).click(clickSkill).attr({
-                        "en": type,
-                        "index": index,
+                        "t": index,
+                        "index": i,
                         "skillId": skill.id,
                     })
                 )
@@ -76,24 +79,25 @@
     }
     // 4
     function clickSkill() {
-        var type = $(this).attr("en");
-        var index = $(this).attr("index");
-        var skillId = $(this).attr("skillId");
-        var typeCN = u.wudaos[type].cn;
-        var wudao = u.wudaos[type].list[index];
+        var index = $(this).attr("t");
+        var typeEN = u.typeEN[index];
+        var typeCN = u.typeCN[index];
+        var i = $(this).attr("index");
+        var list = u.list[typeEN];
+        var wudao = list[i];
 
-        var skill = r.skills.find(skill => {
-            return skill.id == skillId;
-        });
-        // skill.upLogs.push(wudao);
-        u.addSkillUpLogs(skillId, wudao);
-        u.wudaos[type].list.splice(index, 1);
+        var skillId = $(this).attr("skillId");
+
+        // var log = [, , ];
+        // r.logs.push(log);
+        // u.list[typeEN].splice(i, 1);
+
+        u.upWuDao(typeEN, wudao.id, skillId);
         refresh();
     }
 
     r.skills.forEach(skill => {
         if (skill.upCount == 0) return;
-        // skill.upLogs.forEach(wudao => {
         $("#table_wudao").append(
             $("<tr></tr>").addClass(skill.colorStyle).append(
                 $("<td></td>").html(skill.name),
@@ -101,7 +105,9 @@
                 $("<td></td>").html((function() {
                     var r = "";
                     skill.upLogs.forEach(wudao => {
-                        var cn = u.wudaos[wudao.type].cn;
+                        var index = u.typeEN.indexOf(wudao.type);
+                        var typeCN = u.typeCN[index];
+                        var cn = typeCN;
                         if (r == "") r = cn;
                         else r += "<br>" + cn;
                     });
@@ -119,6 +125,15 @@
             )
         );
         // });
+    });
+
+    $("#reset_wudao").click(function() {
+        // r.logs = [];
+        // for (var skill of r.skills) {
+        //     skill.upLogs = [];
+        // }
+        u.resetWuDao();
+        refresh();
     });
 
     function refresh() {

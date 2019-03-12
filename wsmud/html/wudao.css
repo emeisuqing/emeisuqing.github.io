@@ -6,9 +6,10 @@
     padding: 1em 1em;
 }
 
-#board button {
+#board button, #reset_wudao {
     width: auto;
     height: auto;
     margin:  0.2em 0.2em;
     padding: 0 0.4em;
 }
+

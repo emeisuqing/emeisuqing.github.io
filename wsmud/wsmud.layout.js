@@ -23,6 +23,8 @@ wsmud.layout = function() {
             $("." + key).click(function() {
                 $(".right").load("./html/" + key + ".html");
             }).html(linkNames[key]);
+            console.log(suqing);
+            window.suqing.fun.copyToClipborad(key);
         }
     };
     // footer
