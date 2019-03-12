@@ -49,7 +49,7 @@
     code += role.wakuang ? ",wakuang" : ",xiulian";
     $("#autocode").html(code);
     $("#copyCode").click(function() {
-        sq.copyText(code);
+        suqing.fun.copyToClipborad(code);
     }).html("一键复制");
 
     // time
