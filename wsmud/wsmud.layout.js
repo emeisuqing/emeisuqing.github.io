@@ -2,6 +2,7 @@
 window.namespace("wsmud.layout");
 wsmud.layout = function() {
     var version = "0.19.309";
+    var fn = suqing.fun;
     // size
     var setSize = function() {
         var windowH = $(window).height();

@@ -98,7 +98,7 @@ wsmud.layout = function() {
         }
     };
     var setFooter = function() {
-        $(".footer").html("Copyright &copy; 2018 - " + suqing.thisyear
+        $(".footer").html("Copyright &copy; 2018 - " + fn.getYear()
             + " <a href='https://suqing.fun'>suqing.fun</a>"
             + " All rights Reserved.");
     };
