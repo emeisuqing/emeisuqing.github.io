@@ -231,7 +231,7 @@ wsmud.data.skilldata = function() {
             new Skill("feixingshu", "飞星术", 2, "武器", "无"),
         ],
     }
-}();
+};
 
 window.namespace("wsmud.data.wudaodata");
 wsmud.data.wudaodata = function() {
@@ -279,4 +279,4 @@ wsmud.data.wudaodata = function() {
             new WuDao("【残暴之心】", "暴击＋", 2.5, "%", "weapon", "bj", 31)
         ],
     }
-}();
+};

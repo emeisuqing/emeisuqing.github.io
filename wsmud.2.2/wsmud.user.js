@@ -9,7 +9,6 @@ wsmud.user = function() {
         parry: [],
         unarmed: [],
         weapon: [],
-        role: new Role(),
     };
     function load() {
         if (fn.getLocalStorage("log") == null) {
@@ -30,7 +29,8 @@ wsmud.user = function() {
         fn.setLocalStorage("roles", roles);
     }
     function getSkill(id) {
-        var data = wsmud.data.skilldata;
+        var data = wsmud.data.skilldata();
+        console.log(data);
         for (var family in data) {
             for (var i = 0; i < data[family].length; i++) {
                 var skill = data[family][i];
@@ -56,7 +56,7 @@ wsmud.user = function() {
         },
         
         addRole: function(role) {
-            wsmud.data.skilldata[baseSkill].forEach(skill => {
+            wsmud.data.skilldata()[baseSkill].forEach(skill => {
                 skill.family = baseSkill;
                 role.skills.push(skill);
             });
@@ -73,10 +73,13 @@ wsmud.user = function() {
             save();
         },
         addSkill: function(id) {
+            // console.log(wsmud.data.skilldata);
             var skill = getSkill(id);
-            console.log(skill);
+            // skill.level = 1000;
+            // console.log(skill);
+            // console.log(wsmud.data.skilldata);
             roles[index].skills.push(skill);
-            console.log("新增技能 id = " + id);
+            // console.log("新增技能 id = " + id);
             save();
         },
         deleteSkill: function(id) {
@@ -137,25 +140,26 @@ wsmud.user = function() {
         typeCN: ["内功", "轻功", "招架", "拳脚", "武器"],
         list: list,
         upWuDao: function(type, wdid, skid) {
-            console.log(list);
-            console.log([type, wdid, skid]);
-            console.log(list[type]);
+            // console.log(list);
+            // console.log([type, wdid, skid]);
+            // console.log(list[type]);
+            // debugger;
 
             if (list[type] == [] || list[type].length < 2) {
-                list[type] = wsmud.data.wudaodata[type];
+                console.log(list[type]);
+                list[type] = wsmud.data.wudaodata()[type];
+                console.log(list[type]);
             }
             for (var i = 0; i < 3; i++) {
                 var wd = list[type][i];
-                if (wd.id == wdid) {
-                    // this.addSkillUpLogs(skid, wd);
+                if (wd && wd.id == wdid) {
                     getUserSkill(skid).upLogs.push(wd);
-                    console.log(roles[index].logs);
+                    // console.log(roles[index].logs);
                     
                     roles[index].logs.push([type, wdid, skid]);
                     list[type].splice(i, 1);
                     save();
-                    console.log(roles[index].logs);
-                    break;
+                    // console.log(roles[index].logs);
                 }
             }
             
@@ -164,3 +168,6 @@ wsmud.user = function() {
 }();
 
 wsmud.user.load();
+
+
+// 橙 k=5 紫4黄3蓝2绿1白0 
