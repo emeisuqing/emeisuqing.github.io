@@ -79,26 +79,25 @@ class 角色 {
         this.list = {force: [], dodge: [], parry: [], unarmed: [], weapon: []};
     }
     fromObject(object) {
+        console.log("(Role) Method: fromObject()");
+        console.log(object);
         for (var key in object) {
             if (key == "skills") {
                 this[key] = [];
                 object[key].forEach((obj, index) => {
                     var skill = new 技能();
                     skill.fromObject(obj);
-                    // object[key][index] = skill;
                     this[key].push(skill);
                 });
-            } else if (key = "list") {
+            } else if (key == "list") {
                 this.list = {force: [], dodge: [], parry: [], unarmed: [], weapon: []};
                 for (var type in object[key]) {
                     var array = object[key][type];
-                    // console.log("数组对象", array);
                     array.forEach(obj => {
                         var wd = new 武道();
                         wd.fromObject(obj);
                         this[key][type].push(wd);
                     });
-                    console.log(this[key][type]);
                 }
             } else {
                 this[key] = object[key];
@@ -207,13 +206,13 @@ var wsmud = function() {
                 } else {
                     wsmud.getSkillData().forEach(skill => {if (skill.category == "基础技能") role.skills.push(skill)});
                 }
-                console.log(role);
             }
+            console.log("(WsMud) Method: getRole()");
+            console.log(role);
             return role;
         },
 
         setMainHeight: function() {
-            console.log(`window.height = ${$(window).height()}\nheader.height = ${$("header").height()}\nfooter.heoght = ${$("footer").height()}\nhr.height = ${$(".hr").height()}`);
             $("main").height(
                 $(window).height() - $("header").height() - $("footer").height() - $(".hr").height() - $(".hr").height() - $(".hr").height() - $(".hr").height()
             );
@@ -494,6 +493,7 @@ var wsmud = function() {
             // 重置武道
             $("#reset").click(function() {
                 wsmud.getRole().wudaos = [];
+                wsmud.getRole().list = {force: [], dodge: [], parry: [], unarmed: [], weapon: []};
                 wsmud.getRole().skills.forEach(skill => skill.wudaos = []);
 
                 $(".type").removeClass("clicked");
