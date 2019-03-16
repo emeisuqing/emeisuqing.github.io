@@ -57,12 +57,14 @@ html, body {
 body .hr {
     height: 0.1em;
     width: 30em;
-    margin-left: 1em;
+    /* margin-left: 1em; */
+    margin: auto;
     background-color: #808080;
 }
 header, main, footer {
     width: 30em;
-    margin-left: 1em;
+    /* margin-left: 1em; */
+    margin: auto;
     background-color: #202020;
     border-left: 0.1em solid #808080;
     border-right: 0.1em solid #808080;
