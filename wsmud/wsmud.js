@@ -155,6 +155,8 @@ var wsmud = function() {
         weapon: "武器",
     };
 
+    var h = null; // showMessage() 方法中的变量
+
     // 关于本地缓存 localStorage
     // 1. key = "role"     value = ${name}
     // 2. key = "roles"    value = [${name1}, ${name2}, ...]
@@ -233,8 +235,11 @@ var wsmud = function() {
             function fn() {
                 var a = $("footer")[0].scrollTop;
                 var b = $("footer")[0].scrollHeight;
-                if (a >= b - 80) {
-                    $("footer")[0].scrollTop = b - 80;
+                if (h == null) {
+                    h = b - a;
+                }
+                if (a >= b - h) {
+                    $("footer")[0].scrollTop = b - h;
                 } else {
                     $("footer")[0].scrollTop = a + 1;
                     setTimeout(fn, 1000/60);
@@ -973,4 +978,18 @@ window.addEventListener("resize", function() {
         }, 10000);
     }, 200);
 });
+
+
+
 // ToDo List
+// 武道模拟的撤销功能
+// 删除技能的完善
+
+
+
+
+
+
+// 2019年03月16日21:44:14 优化了底部文字滚动的视觉效果
+// 2019年03月16日 修复了武道重置之后出现的 bug
+// 2019年03月16日 更新了武神小站的界面 修复了大部分 bug
