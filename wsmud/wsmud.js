@@ -239,7 +239,8 @@ var wsmud = function() {
                     h = b - a;
                 }
                 if (a >= b - h) {
-                    $("footer")[0].scrollTop = b - h;
+                    // $("footer")[0].scrollTop = b - h;
+                    $("footer")[0].scrollTop = b;
                 } else {
                     $("footer")[0].scrollTop = a + 1;
                     setTimeout(fn, 1000/60);
@@ -252,6 +253,7 @@ var wsmud = function() {
             wsmud.showMessage("多开页面的地址 => http://www.wsmud.site/");
             wsmud.showMessage("当前页面是3月16日的版本，之前出现的 bug 已改，请大家帮忙测试一下。");
             wsmud.showMessage("关闭页面之前要记得保存哟！");
+            $("#角色姓名").html(wsmud.getRole().name);
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
             // 0.2 主页按钮的点击事件
@@ -989,7 +991,7 @@ window.addEventListener("resize", function() {
 
 
 
-
+// 修复了姓名不同步的 bug
 // 2019年03月16日21:44:14 优化了底部文字滚动的视觉效果
 // 2019年03月16日 修复了武道重置之后出现的 bug
 // 2019年03月16日 更新了武神小站的界面 修复了大部分 bug
