@@ -249,8 +249,7 @@ var wsmud = function() {
             fn();
         },
         setElements: function() {
-            wsmud.showMessage("旧版本模拟器地址 => https://suqing.fun/wsmud.old/");
-            wsmud.showMessage("多开页面的地址 => http://www.wsmud.site/");
+            wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/'>多开页面的地址</a>");
             wsmud.showMessage("当前页面是3月17日的版本，之前出现的 bug 已改，请大家帮忙测试一下。");
             wsmud.showMessage("<span class='color1'>点击最上面的标题可以返回首页！</span>");
             wsmud.showMessage("<span class='color1'>修复</span>武道书消耗计算不正确的 bug！");
@@ -936,7 +935,7 @@ var wsmud = function() {
                                     break;
                                 }
                             }
-                            wudao.value = value / 1000 * skill.level1 / 5 * skill.k;
+                            wudao.value = parseInt(value / 1000 * skill.level1 / 5 * skill.k);
                             // 文本
                             if (text != "") text += "<br>";
                             text += typeNames[wudao.type];
@@ -1032,9 +1031,10 @@ window.addEventListener("resize", function() {
 
 
 
-
-// 修复了武道书消耗计算不正确的 bug
-// 修复了姓名不同步的 bug
+// 修复了删除技能时武道记录没删除干净的情况
+// 修复了武道属性数值为很长的小数显示问题
+// 3.17 修复了武道书消耗计算不正确的 bug
+// 3.16 修复了姓名不同步的 bug
 // 2019年03月16日21:44:14 优化了底部文字滚动的视觉效果
 // 2019年03月16日 修复了武道重置之后出现的 bug
 // 2019年03月16日 更新了武神小站的界面 修复了大部分 bug
@@ -1044,7 +1044,82 @@ window.addEventListener("resize", function() {
 
 
 
-// console.log(returnCitySN);
+
+
+// function get(URL, PARAMS) {
+//     var temp = document.createElement("form");
+//     temp.method = "get";
+//     temp.style.display = "none";
+//     var data = "?";
+//     for (var x in PARAMS) {
+//         data += x + "=" + PARAMS[x] + "&";
+//     }
+//     data = data.slice(0, data.length - 1);
+//     temp.action = URL + data;
+
+//     document.body.appendChild(temp);
+//     temp.submit();
+//     return temp;
+// }
+
+// var data = get("http://ip.taobao.com/service/getIpInfo.php", {ip: "112.10.247.124"});
+// http://ip.taobao.com/service/getIpInfo.php?ip=112.10.247.124
+
+// var url = "http://ip.taobao.com/service/getIpInfo.php";
+// var data = {"ip": "112.10.247.124"};
+
+// $.get(url, data, function(json) {
+//     console.log(json);
+// });
+
+
+console.log(returnCitySN);
+console.log(returnCitySN.cip);
+
+$.ajax({
+    url: "http://ip.taobao.com/service/getIpInfo.php?ip=112.10.247.124",
+    type: "GET",
+    dataType: "JSON",
+    timeout: 500,
+    success: (json => console.log(json)),
+    error: (e => console.log(e)),
+});
+
+
+
+
+
+
+// $.ajax({
+//     type: "get",
+//     async: false,
+//     url: "http://ip.taobao.com/service/getIpInfo.php?ip=112.10.247.124",
+//     dataType: "jsonp",
+//     jsonp: "callback",
+//     jsonpCallback: "JsonCallback",
+//     // scriptCharset: 'GBK',//设置编码，否则会乱码
+//     success: function(data) {
+//         //var result = JSON.stringify(data);
+//         JsonCallback(data);
+//     },
+//     error: function() {
+//         alert('fail');
+//     }
+// });
+
+// function JsonCallback(json){
+//     var data = json.songlist;
+//     var html = '';
+//     for (var i=0;i<data.length;i++) {
+//         document.write(data[i].url+"<br>");
+//     }
+// }
+
+
+
+
+
+// console.log(data);
 
 // var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
 // httpRequest.open('GET', `http://ip.taobao.com/service/getIpInfo.php?ip=${returnCitySN.cip}`, true); //第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
