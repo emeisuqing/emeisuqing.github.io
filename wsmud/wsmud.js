@@ -1073,8 +1073,8 @@ window.addEventListener("resize", function() {
 // });
 
 
-console.log(returnCitySN);
-console.log(returnCitySN.cip);
+// console.log(returnCitySN);
+// console.log(returnCitySN.cip);
 
 $.ajax({
     url: "http://ip.taobao.com/service/getIpInfo.php?ip=112.10.247.124",
