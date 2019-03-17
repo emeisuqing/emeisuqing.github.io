@@ -209,8 +209,8 @@ var wsmud = function() {
                     wsmud.getSkillData().forEach(skill => {if (skill.category == "基础技能") role.skills.push(skill)});
                 }
             }
-            console.log("(WsMud) Method: getRole()");
-            console.log(role);
+            // console.log("(WsMud) Method: getRole()");
+            // console.log(role);
             return role;
         },
 
@@ -253,8 +253,8 @@ var wsmud = function() {
             wsmud.showMessage("多开页面的地址 => http://www.wsmud.site/");
             wsmud.showMessage("当前页面是3月17日的版本，之前出现的 bug 已改，请大家帮忙测试一下。");
             wsmud.showMessage("<span class='color1'>点击最上面的标题可以返回首页！</span>");
-            wsmud.showMessage("标题可以返回！手机党是不是舒服多了！");
-            wsmud.showMessage("修复了武道书消耗计算不正确的 bug！");
+            wsmud.showMessage("<span class='color1'>修复</span>武道书消耗计算不正确的 bug！");
+            wsmud.showMessage("<span class='color1'>增加实验功能</span>武道的撤销操作，作者测试的不多，请大家帮忙测试一下是否有问题。");
             $("#角色姓名").html(wsmud.getRole().name);
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
@@ -502,7 +502,34 @@ var wsmud = function() {
             // 撤销操作
             $("#retract").click(function() {
                 wsmud.showMessage("稍等！功能还在敲！");
+                var index = wsmud.getRole().wudaos.length - 1;
+                var code = wsmud.getRole().wudaos[index][2];
+                var id = wsmud.getRole().wudaos[index][1];
+                var type = wsmud.getRole().wudaos[index][0];
+                
+
+
+                console.log(code);
+
+                for (let i = 0; i < wsmud.getRole().skills.length; i++) {
+                    var skill = wsmud.getRole().skills[i];
+                    if (skill.code === code) {
+                        let n = skill.wudaos.length - 1;
+
+                        wsmud.getRole().list[type].unshift(wsmud.getRole().skills[i].wudaos[n]);
+
+                        wsmud.getRole().skills[i].wudaos.splice(n, 1);
+                        skill.level1 = Math.sqrt(skill.level1 * skill.level1 * (skill.k + 1) / (skill.k));
+                        wsmud.getRole().skills[i].level1 = parseInt(skill.level1);
+                        break;
+                    }
+                }
+
+                wsmud.getRole().wudaos.splice(index, 1);
+                wsmud.refreshWuDaos();
+
             });
+
             // 重置武道
             $("#reset").click(function() {
                 wsmud.getRole().wudaos = [];
@@ -966,8 +993,17 @@ var wsmud = function() {
             var index = this.getRole().skills.findIndex(skill => {
                 return skill.code == code;
             });
-            console.log(`deleteSkillByCode: code=${code} deleteIndex=${index}`);
-            this.getRole().skills.splice(index, 1);
+            this.getRole().skills.splice(index, 1);            
+
+            var i = this.getRole().wudaos.length;
+            while (i --) {
+                var wudao = this.getRole().wudaos[i];
+                if (wudao[2] == code) {
+                    this.getRole().wudaos.splice(i, 1);
+                }
+            }
+
+            wsmud.showMessage(`你删除了一个技能。 => ${code}`);
             wsmud.refreshSkills();
         },
     };
