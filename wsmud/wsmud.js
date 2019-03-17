@@ -251,8 +251,10 @@ var wsmud = function() {
         setElements: function() {
             wsmud.showMessage("旧版本模拟器地址 => https://suqing.fun/wsmud.old/");
             wsmud.showMessage("多开页面的地址 => http://www.wsmud.site/");
-            wsmud.showMessage("当前页面是3月16日的版本，之前出现的 bug 已改，请大家帮忙测试一下。");
-            wsmud.showMessage("关闭页面之前要记得保存哟！");
+            wsmud.showMessage("当前页面是3月17日的版本，之前出现的 bug 已改，请大家帮忙测试一下。");
+            wsmud.showMessage("<span class='color1'>点击最上面的标题可以返回首页！</span>");
+            wsmud.showMessage("标题可以返回！手机党是不是舒服多了！");
+            wsmud.showMessage("修复了武道书消耗计算不正确的 bug！");
             $("#角色姓名").html(wsmud.getRole().name);
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
@@ -494,8 +496,12 @@ var wsmud = function() {
                 $(".props").html("请选择武道类别");
                 $(".skillsToWd").html("武道模拟");
                 $(".clicked").removeClass("clicked");
-                wsmud.getRole().wudaos.push(wudao);
+                // wsmud.getRole().wudaos.push(wudao);
                 wudao = ["", "", ""];
+            });
+            // 撤销操作
+            $("#retract").click(function() {
+                wsmud.showMessage("稍等！功能还在敲！");
             });
             // 重置武道
             $("#reset").click(function() {
@@ -925,12 +931,13 @@ var wsmud = function() {
             }
             // 再算书 每个类型 1+2+3+...+10+10 （10本封顶）
             a.forEach(b => {
-                if (temp[b.type]) {
-                    temp[b.type] ++;
+                if (temp[b[0]]) {
+                    temp[b[0]] ++;
                 } else {
-                    temp[b.type] = 1;
+                    temp[b[0]] = 1;
                 }
             });
+            console.log(temp);
             for (var type in temp) {
                 var n = temp[type];
                 for (var i = 0; i < n; i++) {
@@ -990,8 +997,108 @@ window.addEventListener("resize", function() {
 
 
 
-
+// 修复了武道书消耗计算不正确的 bug
 // 修复了姓名不同步的 bug
 // 2019年03月16日21:44:14 优化了底部文字滚动的视觉效果
 // 2019年03月16日 修复了武道重置之后出现的 bug
 // 2019年03月16日 更新了武神小站的界面 修复了大部分 bug
+
+
+
+
+
+
+// console.log(returnCitySN);
+
+// var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+// httpRequest.open('GET', `http://ip.taobao.com/service/getIpInfo.php?ip=${returnCitySN.cip}`, true); //第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+// httpRequest.send();//第三步：发送请求  将请求参数写在URL中
+// /**
+//  * 获取数据后的处理程序
+//  */
+// httpRequest.onreadystatechange = function () {
+//     if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+//         var json = httpRequest.responseText;//获取到json字符串，还需解析
+//         console.log(json);
+//     }
+// };
+
+/*
+基础比较好（不仅仅是 js 基础，还有计算机体系基础和编程基础）
+三大框架熟悉其一并略懂原理
+这两点是最起码的
+
+自己用 webpack 配置过项目
+懂得 webpack 打包原理
+学习过框架源码
+对性能优化有过实践
+对新技术的了解程度
+这些都是加分项
+（因为我们项目中没有用到 node，node 基本不会问，除非你在简历中写有）。
+
+并且也会考虑面试者的综合素质，主要是表达能力（沟通无碍就好）、性格是否十分内向、回答问题是否条理清晰。
+我个人的话会有一个常问的面试题库，然后在电面前根据面试者的简历筛选要问的问题，比如前面说到的，你简历中写有“对面向对象有深刻的理解”，那么我就会准备几个面试对象的问题。
+整体来说，电面之后就基本可以确定了面试者和我们招聘岗位的匹配程度，在面试的过程中会记录下面试者的回答情况，对于有明确答案的问题看其是否回答正确，对于开放性问题，看其思路是否清晰。
+我个人的话问
+框架 api
+都是一些比较常用基础的 api，考察下你使用到什么程度
+
+原理
+比如 vue 的双向绑定原理（vue 2.0 和 vue 3.0，两种实现的优缺点）、vue 的 nexttick 原理、diff 算法等
+
+一句话概述下什么是 promise
+
+如何遍历一个树，并对其进行优化。
+*/
+
+
+/*
+
+问：三列布局？
+1、绝对定位，中间板块不给宽度。
+2、两侧浮动，中间自动撑开。
+3、flex，左右设置 flex-basis，中间设置 flex-grow
+
+Q 1-1: flex 具体是怎么实现三列布局的（左侧和右侧的宽度是怎么设置的，中间自适应使用的是哪个属性）
+
+flex 设置宽度和宽度自适应应该算是 flex 的最基本用法，在面试中，问到 flex 的设置宽度和中间自适应具体是哪个属性，很多面试者都回答“不记得了，平时都是自动填充的”
+
+Q 1-2: 设为 flex 属性之后，子元素的哪些属性会失效
+float、clear 和 vertical-align
+Q 1-3  float/绝对定位 怎么实现中间宽度自适应
+Q2: 移动端开发 rem 布局的原理（rem 单位换算）
+
+Q3: 有没有自己写过组件
+Q 3-1: 怎么实现样式的继承和复用
+Q 3-2: 你平时都是怎么管理自己的 CSS
+
+base.css、common.css、page.css（对应都存放哪些内容）
+
+Q 3-3: 你平时都是使用 sass/lass/styles 的哪些功能，sass 的计算属性对页面性能有影响吗？
+Q4: 如何在页面上画一个圆
+
+SVG
+CANVAS
+css border-radius
+background
+map + area
+直接放一张圆形图片
+
+
+Q 4-1: 如何在页面上画一个椭圆
+<style>
+  .sector {
+    width: 0;
+    height: 0;
+    border-width: 50px;
+    border-style: solid;
+    border-color: #f00 transparent transparent;
+    border-radius: 50px;
+  }
+</style>
+复制代码Q 4-2: 如果圆边界模糊，有什么办法去锯齿
+
+这几个问题基本上可以了解到面试者平时都是怎么使用 CSS 的了，对于 CSS，我觉得够用就好，因为我们现在基本急太处理兼容性问题（有 babel 并且我们的项目不要求兼容 ie6 等古老的浏览器）
+
+
+*/
