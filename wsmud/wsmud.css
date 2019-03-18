@@ -35,12 +35,11 @@ th, td {
     border: 0.1em solid #606060;
 }
 a {
-    color: #606060;
-    /* text-decoration-style: none; */
+    color: #C0C0C0;
     text-decoration: none;
 }
 a:hover {
-    color: #202020;
+    color: #008000;
 }
 a:active {
     color: #101010;
@@ -98,6 +97,7 @@ main {
     overflow-x: hidden;
     overflow-y: auto;
     color: #808080;
+    background-color: #202020;
 }
 
 
@@ -220,7 +220,7 @@ main {
     width: 26.2em;
     height: 3em;
 }
-.模拟武道 .wudao button {
+.模拟武道 button {
     font-size: 1em;
     height: 2em;
     margin: 0.5em;
@@ -239,6 +239,9 @@ main {
     color: #FFFFFF;
     border-color: #FFFFFF;
 }
+.wudaos {
+    background-color: #202020;
+}
 .wudaos .p1 {
     width: 8em;
 }
@@ -256,7 +259,37 @@ main {
     color: #009000;
     border-color: #009000;
 }
+#btn_download {
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
 
+.武道流程 .readme {
+    padding: 1em;
+}
+.武道流程 .readme p {
+    margin: 0.5em;
+}
+#process_code {
+    font-size: 0.5em;
+    /* white-space: pre-wrap; */
+    max-height: 30em;
+    overflow: scroll;
+    margin-bottom: 2em;
+}
+.武道流程 button {
+    position: absolute;
+    width: 5em;
+    font-size: 1em;
+    padding: 0.3em;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
 
 
 

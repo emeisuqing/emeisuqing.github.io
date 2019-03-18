@@ -144,7 +144,7 @@ class 角色 {
 
 var wsmud = function() {
     // 一些常量字符串
-    var classNames = ["主页菜单", "基础配置", "模拟练习", "模拟武道"];
+    var classNames = ["主页菜单", "基础配置", "模拟练习", "模拟武道", "武道流程"];
     var stateNames = ["百姓", "武士", "武师", "宗师", "武圣", "武帝", "武神"];
     var schoolNames = ["无门无派", "武当派", "少林派", "华山派", "峨眉派", "逍遥派", "丐帮", "杀手楼"];
     var typeNames = {
@@ -249,11 +249,10 @@ var wsmud = function() {
             fn();
         },
         setElements: function() {
-            wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/'>多开页面的地址</a>");
-            wsmud.showMessage("当前页面是3月17日的版本，之前出现的 bug 已改，请大家帮忙测试一下。");
-            wsmud.showMessage("<span class='color1'>点击最上面的标题可以返回首页！</span>");
-            wsmud.showMessage("<span class='color1'>修复</span>武道书消耗计算不正确的 bug！");
-            wsmud.showMessage("<span class='color1'>增加实验功能</span>武道的撤销操作，作者测试的不多，请大家帮忙测试一下是否有问题。");
+            wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/' target='_blank'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/' target='_blank'>多开页面的地址</a>");
+            wsmud.showMessage("<span class='color1'>增加</span>武道的撤销操作、武道的一键截图、武道的流程。");
+            wsmud.showMessage("当前版本的更新时间是3月18日，有 BUG 请用手机加 QQ 群 953279200 联系作者。");
+            wsmud.showMessage("<span class='color1'>点击标题可以返回！</span>");
             $("#角色姓名").html(wsmud.getRole().name);
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
@@ -277,6 +276,9 @@ var wsmud = function() {
                         $(".skillsToWd").html("武道模拟");
                         wsmud.showMessage("发现武道模拟有错的话请告诉作者！");
                         wsmud.refreshWuDaos();
+                        break;
+                    case "4":
+                        wsmud.refreshProcess();
                         break;
                     default:
                         break;
@@ -397,6 +399,13 @@ var wsmud = function() {
 
             // 武道页面
             wsmud.setBlock3();
+        
+            // 武道流程
+            $("#copy_process").click(function() {
+                console.log("(Event) button.click");
+                var text = $("#process_code").html();
+                wsmud.copyToClipboard(text);
+            });
         },
         setBlock1: function() {
             $("#setAllLevelButton").click(() => {
@@ -505,9 +514,6 @@ var wsmud = function() {
                 var code = wsmud.getRole().wudaos[index][2];
                 var id = wsmud.getRole().wudaos[index][1];
                 var type = wsmud.getRole().wudaos[index][0];
-                
-
-
                 console.log(code);
 
                 for (let i = 0; i < wsmud.getRole().skills.length; i++) {
@@ -526,7 +532,6 @@ var wsmud = function() {
 
                 wsmud.getRole().wudaos.splice(index, 1);
                 wsmud.refreshWuDaos();
-
             });
 
             // 重置武道
@@ -541,14 +546,87 @@ var wsmud = function() {
                 wsmud.showMessage("路漫漫其修远兮，武道之路重头再来！");
                 wsmud.refreshWuDaos();
             });
+
+            // 下载按钮
+            $("#btn_download").click(function() {
+                $("#download tbody").append(
+                    $(`<tr><td colspan="3">武神传说小站 —— https://suqing.fun/wsmud/</td></tr>`)
+                );
+                wsmud.downloadImageById("download");
+                setTimeout(() => {
+                    wsmud.refreshWuDaos();
+                }, 10);
+            });
         },
+        refreshProcess: function() {
+            var string = "";
+            for (const array of wsmud.getRole().wudaos) {
+                var id = array[1];
+                var code = array[2];
+                if (string != "") string += ",";
+                string += `${id} ${code}`;
+            }
+            console.log(string);
+            var process = getCommandGroup(string);
+            // console.log(process);
+            $("#process_code").html(process);
+            // 转换字符串为命令组的函数
+            // 此函数由 wsmud_Raid 的作者 Rob.cn / 一区令狐凯 提供
+            function getCommandGroup(exp) {
+                if (exp == "") return;
+                var getType = function(code) {
+                    var codes = [7, 12, 18, 24, 31];
+                    var types = ["force", "dodge", "parry", "unarmed", "weapon"];
+                    for (let i = 0; i < codes.length; i++) {
+                        const max = codes[i];
+                        if (code <= max) return types[i];
+                    }
+                    throw "unknown lingwu number";
+                };
+                var getCommands = function(counter, number, code, skill) {
+                    var type = getType(code);
+                    var commands = `
+                    [(${counter})==${number}]($flag)=null
+                    [(${counter})==${number}]($flag2)=null
+                    [(${counter})==${number}]packitem wu {武道o%}
+                    [(${counter})==${number}]@tip 你想从武道秘籍中领悟($flag)技能|你正在领悟|你从武道($flag2)中领悟到了
+                    [(${counter})==${number}&(flag)!=null]lingwu type ${type}
+                    [(${counter})==${number}&(flag)!=null]@tip 你想从武道秘籍中领悟哪种($type)秘技
+                    [(${counter})==${number}&(flag)!=null]lingwu no ${code}
+                    [(${counter})==${number}&(flag)==null&(flag2)==null]lingwu continue
+                    [(${counter})==${number}&(flag2)==null]@tip 你从武道秘籍中领悟到了
+                    [(${counter})==${number}]lingwu select
+                    [(${counter})==${number}]@tip 你目前有以下技能可使用你领悟的
+                    [(${counter})==${number}]lingwu ${skill}
+                    [(${counter})==${number}]@tip 你领悟了
+                    [(${counter})==${number}]($${counter})=(${counter})+1`;
+                    commands = commands.replace(/\n\s*/g, "\n");
+                    return commands;
+                };
+                
+                var parts = exp.split(/,+/);
+                var counter = `WudaoCounter__${new Date().getTime()}`;
+                var result = `@stopSSAuto\nstopstate\n[(${counter})==null]($${counter})=0`;
+                for (let j = 0; j < parts.length; j++) {
+                    const part = parts[j];
+                    var code = /^\s*(\d+)\s/.exec(part)[1];
+                    var skill = /\s*([a-zA-Z][a-zA-Z0-9]*)/.exec(part)[1];
+                    var commands = getCommands(counter, j, code, skill);
+                    result += commands;
+                }
+                result += "\n$to 练功房;dazuo\n@recoverSSAuto";
+                return result;
+            }
+        },
+
         copyToClipboard: function(text) {
             var textarea = document.createElement('textarea');
             textarea.value = text;
             document.body.appendChild(textarea);
             textarea.select();
             document.execCommand("Copy");
-            wsmud.showMessage(`copy to clipboard...<br>${text}<br>>> 复制成功！`);
+            wsmud.showMessage(`copy to clipboard ...
+            <br>>> 复制成功！`);
             textarea.parentNode.removeChild(textarea);
         },
 
@@ -915,6 +993,9 @@ var wsmud = function() {
         },
         // 刷新武道列表
         refreshWuDaos: function() {
+            var role = wsmud.getRole();
+            $("#wd_title").html(`${schoolNames[role.school]} ${stateNames[role.state]}<br>${role.name}`);
+
             $(".wudaos tbody").html("");
             wsmud.getRole().skills.forEach(skill => {
                 if (skill.wudaos.length == 0) {
@@ -941,7 +1022,7 @@ var wsmud = function() {
                             text += typeNames[wudao.type];
                             text += wudao.text;
                         });
-                        return text;
+                        return `&nbsp;${text}`;
                     })()}</td>`).css("text-align", "left").css("font-size", "0.9em"),
                 ))
             });
@@ -1005,6 +1086,50 @@ var wsmud = function() {
             wsmud.showMessage(`你删除了一个技能。 => ${code}`);
             wsmud.refreshSkills();
         },
+
+        // 下载图片
+        downloadImageById: function(id) {
+            var content = document.getElementById(id);
+            var w = content.offsetWidth, h = content.offsetHeight, scale = 3;
+            var canvas = document.createElement("canvas");
+            canvas.width = w * scale;
+            canvas.height = h * scale;
+            canvas.getContext("2d").scale(scale, scale);
+        
+            html2canvas(content, {
+                canvas: canvas,
+                scale: scale,
+                width: w,
+                height: h,
+                logging: false,
+            }).then(canvas => {
+                var context = canvas.getContext("2d");
+                context.mozImageSmoothingEnabled = false; //关闭抗锯齿
+                context.webkitImageSmoothingEnabled = false;
+                context.msImageSmoothingEnabled = false;
+                context.imageSmoothingEnabled = false;
+                var img = Canvas2Image.convertToImage(canvas, canvas.width, canvas.height);
+                var data = img.getAttribute("src");
+                download(data);
+            });
+            function download(data){
+                var link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+                link.href = data;
+                link.download = getFilename();
+                var event = document.createEvent('MouseEvents');
+                event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                link.dispatchEvent(event);
+            };
+            function getFilename() {
+                if (wsmud.getRole()) {
+                    var role = wsmud.getRole();
+                    console.log(schoolNames[role.school]);
+                    return `${schoolNames[role.school]}${stateNames[role.state]}${role.name}武道进阶数据图.png`;
+                } else {
+                    return "武道进阶数据图.png";
+                }
+            };
+        }
     };
 }();
 window.addEventListener("load", function() {
@@ -1022,7 +1147,6 @@ window.addEventListener("resize", function() {
         }, 10000);
     }, 200);
 });
-
 
 
 // ToDo List
@@ -1045,94 +1169,6 @@ window.addEventListener("resize", function() {
 
 
 
-
-// function get(URL, PARAMS) {
-//     var temp = document.createElement("form");
-//     temp.method = "get";
-//     temp.style.display = "none";
-//     var data = "?";
-//     for (var x in PARAMS) {
-//         data += x + "=" + PARAMS[x] + "&";
-//     }
-//     data = data.slice(0, data.length - 1);
-//     temp.action = URL + data;
-
-//     document.body.appendChild(temp);
-//     temp.submit();
-//     return temp;
-// }
-
-// var data = get("http://ip.taobao.com/service/getIpInfo.php", {ip: "112.10.247.124"});
-// http://ip.taobao.com/service/getIpInfo.php?ip=112.10.247.124
-
-// var url = "http://ip.taobao.com/service/getIpInfo.php";
-// var data = {"ip": "112.10.247.124"};
-
-// $.get(url, data, function(json) {
-//     console.log(json);
-// });
-
-
-// console.log(returnCitySN);
-// console.log(returnCitySN.cip);
-
-$.ajax({
-    url: "http://ip.taobao.com/service/getIpInfo.php?ip=112.10.247.124",
-    type: "GET",
-    dataType: "JSON",
-    timeout: 500,
-    success: (json => console.log(json)),
-    error: (e => console.log(e)),
-});
-
-
-
-
-
-
-// $.ajax({
-//     type: "get",
-//     async: false,
-//     url: "http://ip.taobao.com/service/getIpInfo.php?ip=112.10.247.124",
-//     dataType: "jsonp",
-//     jsonp: "callback",
-//     jsonpCallback: "JsonCallback",
-//     // scriptCharset: 'GBK',//设置编码，否则会乱码
-//     success: function(data) {
-//         //var result = JSON.stringify(data);
-//         JsonCallback(data);
-//     },
-//     error: function() {
-//         alert('fail');
-//     }
-// });
-
-// function JsonCallback(json){
-//     var data = json.songlist;
-//     var html = '';
-//     for (var i=0;i<data.length;i++) {
-//         document.write(data[i].url+"<br>");
-//     }
-// }
-
-
-
-
-
-// console.log(data);
-
-// var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
-// httpRequest.open('GET', `http://ip.taobao.com/service/getIpInfo.php?ip=${returnCitySN.cip}`, true); //第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
-// httpRequest.send();//第三步：发送请求  将请求参数写在URL中
-// /**
-//  * 获取数据后的处理程序
-//  */
-// httpRequest.onreadystatechange = function () {
-//     if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-//         var json = httpRequest.responseText;//获取到json字符串，还需解析
-//         console.log(json);
-//     }
-// };
 
 /*
 基础比较好（不仅仅是 js 基础，还有计算机体系基础和编程基础）

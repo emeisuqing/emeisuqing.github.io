@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="wsmud.css">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="http://pv.sohu.com/cityjson"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/canvas2image.js"></script>
 </head>
 <body>
     <div class="hr"></div>
@@ -22,7 +23,7 @@
             <div><button value="1" type="button">基础配置</button></div>
             <div><button value="2" type="button">模拟练习</button></div>
             <div><button value="3" type="button">模拟武道</button></div>
-            <div><button value="0" type="button" class="disable">备用菜单</button></div>
+            <div><button value="4" type="button">武道流程</button></div>
             <div><button value="0" type="button" class="disable">备用菜单</button></div>
             <div><button value="0" type="button" class="disable">备用菜单</button></div>
             <div><button value="0" type="button" class="disable">备用菜单</button></div>
@@ -207,10 +208,10 @@
                     </td>
                 </tr>
             </table>
-            <table class="wudaos">
+            <table id="download" class="wudaos">
                 <thead>
                     <tr>
-                        <td rowspan="2" colspan="2">武道数据</td>
+                        <td rowspan="2" colspan="2" id="wd_title"></td>
                         <td id="book"></td>
                     </tr>
                     <tr>
@@ -224,6 +225,30 @@
                 </thead>
                 <tbody></tbody>
             </table>
+
+            <button id="btn_download" type="button">一键下载你的武道配置图</button>
+
+        </div>
+        <!-- block 4 -->
+        <div class="武道流程">
+            <div class="readme">
+                <p>主要功能：可以实现无人值守的武道进阶过程。</p>
+                <p>使用方法：本流程必须在 wsmud_Raid 插件的流程功能中使用，电脑端浏览器插件设置好之后挂机即可。</p>
+                <p>免责声明：武道进阶失败、流程运行出错等（无论是因为何种因素导致的一切损失），本站概不负责。</p>
+                <p>
+                    其他链接：目前武神传说两个主流插件
+                    <a href="https://greasyfork.org/zh-CN/scripts/371372" target="_blank">wsmud_pluginss</a>
+                    (作者 knva)、
+                    <a href="https://greasyfork.org/zh-CN/scripts/375851" target="_blank">wsmud_Raid</a>
+                    (作者 Bob.cn)，还有 Bob.cn 搭建的论坛
+                    <a href="http://wsmud.bobcn.me" target="_blank">江湖客栈</a>
+                    。
+                </p>
+            </div>
+            <pre id="process_code">
+            </pre>
+            <button type="button" id="copy_process">一键复制</button>
+
         </div>
         
     </main>
