@@ -206,7 +206,8 @@ main {
     max-width: 24.9em;
 }
 #autocode {
-    word-wrap: break-word; /*自动断行*/
+    /* word-wrap: ; 自动断行 */
+    white-space: pre-wrap;
 }
 
 .模拟武道 {

@@ -171,6 +171,7 @@ function layout() {
 
 function clickCopyCmd() {
 	$("#wd_cmd").show(); // 恢复显示.
+	console.log(string_wd_cmd);
 	$("#wd_cmd").html(getCommandGroup(string_wd_cmd)); // 武道进阶流程数据显示
 	var text = $("#wd_cmd").text();
 	copyText(text);
