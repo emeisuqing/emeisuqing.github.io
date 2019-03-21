@@ -141,7 +141,7 @@
     
     $(document).ready(function() {
         addStyle();
-
+        $("body").append($(`<div class="left"></div>`));
         $("body").append($("<div class=\"extra\"></div>"));
         $(".extra").append(
             
@@ -192,19 +192,28 @@
     function addStyle() {
         GM_addStyle(`
             body {
-                width: 100%;
+                display: flex;
+                flex-flow: row no-wrap;
+                width: 100vw;
+            }
+            .login-content, .container {
+                flex: 0 1 30rem;
             }
             .container {
-                float: left;
-                width: 40%;
+                width: 30rem;
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select": none;
             }
+            .left {
+                order: -1;
+                flex: 0 1 20rem;
+            }
             .extra {
-                float: left;
-                width: 60%;
-                height: 100%;
+                
+                flex: 1;
+                width: auto;
+                height: 100vh;
                 overflow: scroll;
                 border: 0.05em solid #008000;
             }
