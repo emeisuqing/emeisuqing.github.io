@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name        武神详细数据电脑端
-// @namespace   wsmud_beautify
+// @name        wsmud_details_sq
+// @namespace   details
 // @version     0.1.0
 // @author      suqing
 // @match       http://game.wsmud.com/*
 // @homepage    https://greasyfork.org/zh-CN/scripts/------
-// @description 更加友好的武神传说游戏界面
+// @description Show More Info
 // @run-at      document-start
 // @require     https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js
 // @grant       unsafeWindow
@@ -140,55 +140,50 @@
     };
     
     $(document).ready(function() {
+        addDiv();
         addStyle();
-        $("body").append($(`<div class="left"></div>`));
-        $("body").append($("<div class=\"extra\"></div>"));
-        $(".extra").append(
-            
-            // 3
-            $(`<div class="extra3"></div>`).append(
-                $(`
-                <table class="skills">
-                    <thead>
-                    <tr><td colspan="3">Skills</td><tr>
-                    <tr>
-                        <td class="skillname">技能</td>
-                        <td class="skillid">代码</td>
-                        <td class="skilllevel">等级</td>
-                    <tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-                `),
-            ),
-            // 2
-            $(`<div class="extra2"></div>`).append(
-                $(`
-                <table class="character">
-                    <tr><td colspan="4">Character Attribute</td><tr>
-                    <tr><td>角色</td><td></td><td>境界</td><td></td></tr>
-                    <tr><td>年龄</td><td colspan="3"></td></tr>
-                    <tr><td>经验</td><td></td><td>潜能</td><td></td></tr>
-                    <tr><td>气血</td><td></td><td>内力</td><td></td></tr>
-                    <tr><td>臂力</td><td></td><td>根骨</td><td></td></tr>
-                    <tr><td>身法</td><td></td><td>悟性</td><td></td></tr>
-                    <tr><td>攻击</td><td></td><td>防御</td><td></td></tr>
-                    <tr><td>命中</td><td></td><td>躲闪</td><td></td></tr>
-                    <tr><td>招架</td><td></td><td>暴击</td><td></td></tr>
-                    <tr><td>攻速</td><td></td><td>功绩</td><td></td></tr>
-                </table>
-                `),
-            ),
-            // 1
-            $(`<div class="extra1"></div>`).append(
-                $(`<div class="color3">Message Sended</div>`),
-                $(`<div class="console color5"></div>`),
-            ),
-
-        );
     });
 
+    function addDiv() {
+        // 左右两侧作为弹性空间 再加一个额外区域 extra
+        $("body").append($(`<div class="left"></div>`));
+        $("body").append($(`<div class="right"></div>`));
+        $("body").append($(`<div class="extra"></div>`));
+        // 额外区域再分为 extra1 extra2
+        $(".extra").append($(`<div class="extra1"></div>`));
+        $(".extra").append($(`<div class="extra2"></div>`));
+        // extra1 role
+        $(".extra1").append(`<table class="role">
+            <tr><td colspan="4">Character Attribute</td><tr>
+            <tr><td>角色</td><td></td><td>境界</td><td></td></tr>
+            <tr><td>年龄</td><td colspan="3"></td></tr>
+            <tr><td>经验</td><td></td><td>潜能</td><td></td></tr>
+            <tr><td>气血</td><td></td><td>内力</td><td></td></tr>
+            <tr><td>臂力</td><td></td><td>根骨</td><td></td></tr>
+            <tr><td>身法</td><td></td><td>悟性</td><td></td></tr>
+            <tr><td>攻击</td><td></td><td>防御</td><td></td></tr>
+            <tr><td>命中</td><td></td><td>躲闪</td><td></td></tr>
+            <tr><td>招架</td><td></td><td>暴击</td><td></td></tr>
+            <tr><td>攻速</td><td></td><td>功绩</td><td></td></tr>
+        <table>`);
+        // extra1 skill
+        $(".extra1").append(`<table class="skill">
+            <thead>
+                <tr><td colspan="3">Skills</td><tr>
+                <tr>
+                    <td class="s1">技能</td>
+                    <td class="s2">代码</td>
+                    <td class="s3">等级</td>
+                <tr>
+            </thead>
+            <tbody></tbody>
+        <table>`);
+        // extra1 send
+        $(".extra1").append(`<table class="send">
+            <tr><td>Message Sended</td></tr>
+            <tr><td class="console"></td></tr>
+        <table>`);
+    }
     function addStyle() {
         GM_addStyle(`
             body {
@@ -197,21 +192,31 @@
                 width: 100vw;
             }
             .login-content, .container {
-                flex: 0 1 30rem;
+                flex: 0 0 28rem;
+                border: 0.05em solid #008000;
             }
             .container {
-                width: 30rem;
+                width: 28rem;
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select": none;
             }
-            .left {
-                order: -1;
-                flex: 0 1 20rem;
+
+            .left, .right {
+                flex: 0 1 10rem;
+                border: 0.05em solid #008000;
             }
+            .left {
+                order: -10;
+            }
+            .right {
+                order: 10;
+            }
+
             .extra {
-                
-                flex: 1;
+                display: flex;
+                flex-direction: column;
+                flex: 1 0 50rem;
                 width: auto;
                 height: 100vh;
                 overflow: scroll;
@@ -221,72 +226,46 @@
                 border-collapse: collapse;
             }
             .extra td {
-                font-size: 0.8em;
-                height: 1.5em;
-                line-height: 1.5em;
+                display: flex;
+                height: 1.5rem;
+                line-height: 1.5rem;
                 text-align: center;
-                border: 0.05em solid #008000;
+                border: 0.05rem solid #008000;
             }
 
             .extra1, .extra2 {
-                float: left;
-                margin: 1em;
+                display: flex;
+                flex-direction: column;
+                flex: 0 0 30rem;
+            }
+
+            .extra1 {
+                width: 30rem;
+            }
+
+            .role {
+                flex: 0 0 20rem;
+            }
+            .role td { width: 5rem; }
+            . skill {
+                flex: 0 1;
+            }
+            .skill .s1 { width: 6rem; }
+            .skill .s1 { width: 10rem; }
+            .skill .s1 { width: 3rem; }
+            .send {
+                flex: 0 0 ;
             }
             .console {
-                float: left;
-                width: 16em;
-                height: 8em;
+                width: 100%;
+                height: 8rem;
                 overflow: scroll;
                 white-space: nowrap;
                 border: 0.05em solid #008000;
             }
-
-            .character td {
-                width: 5em;
-            }
-            .skills .skillname {
-                width: 6em;
-            }
-            .skills .skillid {
-                width: 10em;
-            }
-            .skills .skilllevel {
-                width: 3em;
-            }
-
-
-            .clear {
-                clear: both;
-            }
-            .color0 {
-                color: #FFFFFF;
-            }
-            .color1 {
-                color: #00FF00;
-            }
-            .color2 {
-                color: #00FFFF;
-            }
-            .color3 {
-                color: #FFFF00;
-            }
-            .color4 {
-                color: #912CEE;
-            }
-            .color5 {
-                color: #FFA500;
-            }
-            .color6 {
-                color: #FF0000;
-            }
-            .color10 {
-                color: #008000;
-            }
-            .color40 {
-                color: #404040;
-            }
         `);
     }
+    
 
 })();
 
@@ -307,6 +286,4 @@ int_add:  后天悟性
 object: {type:"dialog", dialog:"score",  ...}
 study_per:  学习效率
 lianxi_per: 练习效率
-
-
 */
