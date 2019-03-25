@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>https://suqing.fun/wsmud</title>
     <link rel="stylesheet" href="wsmud.css">
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="js/jquery.js"></script>
     <script src="js/html2canvas.min.js"></script>
     <script src="js/canvas2image.js"></script>
 </head>
 <body>
+    <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
     <div class="hr"></div>
     <header>
         <p>武神传说</p>
@@ -86,24 +86,27 @@
                 <tbody></tbody>
             </table>
             <table class="addSkill">
-                <thead><tr><td colspan="3">手动添加技能</td></tr></thead>
-                <tbody>
-                    <tr>
-                        <td>选择类别</td>
-                        <td>选择技能</td>
-                        <td rowspan="2">
-                            <button type="button" id="addskill">确认添加</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <select name="" id="选择类别">
-                                <option value="/">请选择</option>
-                            </select>
-                        </td>
-                        <td><select name="" id="选择技能"></select></td>
-                    </tr>
-                </tbody>
+                <tr><td colspan="3">手动添加技能</td></tr>
+                <tr>
+                    <td>选择类别</td>
+                    <td>选择技能</td>
+                    <td rowspan="2">
+                        <button type="button" id="addskill">确认添加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="" id="选择类别">
+                            <option value="/">请选择</option>
+                        </select>
+                    </td>
+                    <td><select name="" id="选择技能"></select></td>
+                </tr>
+                <tr><td colspan="3">一键导入技能 (JSON 字符串)</td></tr>
+                <tr>
+                    <td colspan="2" contenteditable="true" class="editable" id="skill_json"></td>
+                    <td><button type="button" id="addskill_json">确认导入</button></td>
+                </tr>
             </table>
 
             <div class="buttons">
@@ -252,7 +255,7 @@
             <button type="button" id="copy_process">一键复制</button>
 
         </div>
-        
+
     </main>
     <div class="hr"></div>
     <footer>

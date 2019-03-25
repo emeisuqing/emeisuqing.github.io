@@ -154,6 +154,10 @@ main {
 .基础配置 .skill .delete {
     width: 2.9em;
 }
+.基础配置 .addSkill {
+    width: 25em;
+    table-layout: fixed;
+}
 .基础配置 .addSkill td {
     width: 8.3em;
 }
@@ -162,6 +166,12 @@ main {
 }
 #setAllLevelButton {
     padding: 0.2em 0.2em 0.2em 0.2em;
+}
+#skill_json {
+    width: 16.6em;
+    /* height: 3em; */
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 
@@ -292,8 +302,6 @@ main {
     right: 0;
 }
 
-
-
 .日志输出 {
     height: auto;
     padding-left: 1em;
@@ -301,12 +309,6 @@ main {
     font-size: 0.8em;
     color: #008000;
 }
-
-
-
-
-
-
 
 .disable {
     color: #606060;
@@ -348,3 +350,5 @@ main {
 .color40 {
     color: #404040;
 }
+
+

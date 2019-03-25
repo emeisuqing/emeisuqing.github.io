@@ -235,7 +235,7 @@
 
             .extra1, .extra2 {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 flex: 0 0 30rem;
             }
 

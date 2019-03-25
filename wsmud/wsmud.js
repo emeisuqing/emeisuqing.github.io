@@ -1,3 +1,10 @@
+/*
+ * @Author: fun.suqing
+ * @Date: 2019-03-12 21:01:24
+ * @Last Modified by: fun.suqing
+ * @Last Modified time: 2019-03-25 15:23:04
+ */
+
 "use strict"; // 严格模式
 
 class 武道 {
@@ -13,7 +20,7 @@ class 武道 {
     fromObject(object) {
         for (var key in object) {
             this[key] = object[key];
-        } 
+        }
     }
     get text() {
         return `【${this.name}】${this.prop}${this.value}${this.unit}`;
@@ -55,7 +62,7 @@ class 技能 {
             } else {
                 this[key] = object[key];
             }
-        } 
+        }
     }
     upgradeByWudao(wudao) {
         this.level1 = Math.sqrt(this.level1 * this.level1 * (this.k + 1) / (this.k + 2));
@@ -102,7 +109,7 @@ class 角色 {
             } else {
                 this[key] = object[key];
             }
-        } 
+        }
     }
     getSkillIndexByCode(code) {
         var index = this.skills.findIndex(skill => {
@@ -246,10 +253,9 @@ var wsmud = function() {
         },
         setElements: function() {
             wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/' target='_blank'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/' target='_blank'>多开页面的地址</a>");
-            wsmud.showMessage("<span class='color1'>增加</span>武道的撤销操作、武道的一键截图、武道的流程。");
-            wsmud.showMessage("当前版本的更新时间是3月18日，有 BUG 请用手机加 QQ 群 953279200 联系作者。");
-            wsmud.showMessage("<span class='color1'>点击标题可以返回！</span>");
-            $("#角色姓名").html(wsmud.getRole().name);
+            wsmud.showMessage("最后更新时间:2019.3.25");
+            wsmud.showMessage("<span class='color1'>点击标题可以返回！有 BUG 请用手机加 QQ 群 953279200 联系作者。</span>");
+            wsmud.showMessage("与 wsmud_pluginss 合作加了一键导入技能的功能。(其实是初心先斩后奏好嘛，他先把技能导出都做好了才告诉我，我想偷懒都不行。)");
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
             // 0.2 主页按钮的点击事件
@@ -285,7 +291,7 @@ var wsmud = function() {
             var set = new Set(), value = 0;
             wsmud.getSkillData().forEach(skill => set.add(skill.category));
             set.forEach(category => $("#选择类别").append($(`<option value="${value++}">${category}</option>`)));
-            
+
             wsmud.setBlock1();
             // 2.2 选择技能类别的事件
             $("#选择类别").change(() => {
@@ -395,7 +401,7 @@ var wsmud = function() {
 
             // 武道页面
             wsmud.setBlock3();
-        
+
             // 武道流程
             $("#copy_process").click(function() {
                 console.log("(Event) button.click");
@@ -404,11 +410,40 @@ var wsmud = function() {
             });
         },
         setBlock1: function() {
+            var role = wsmud.getRole();
             $("#setAllLevelButton").click(() => {
                 var level = parseInt($("#setAllLevel").html());
                 wsmud.getRole().skills.forEach(skill => skill.level1 = level);
                 wsmud.refreshSkills();
             });
+            $("#角色姓名").html(wsmud.getRole().name);
+            $("#境界选择").val(role.state);
+            $("#门派选择").val(role.school);
+
+            // 导入技能数据 - json 字符串
+            $("#addskill_json").click(() => {
+                let string = $("#skill_json").text();
+                if (string) {
+                    let array = JSON.parse(string);
+                    console.log(array);
+                    for (let obj of array) {
+                        let code = obj.id;
+                        let level = obj.level;
+                        if (code === "lianyao" || code === "literate") continue;
+                        // console.log(code, level);
+                        let check = wsmud.getRole().skills.find(skill => skill.code == code);
+                        if (check === undefined) {
+                            var skill = wsmud.getSkillData().find(skill => skill.code == code);
+                            skill.level1 = level;
+                            wsmud.getRole().skills.push(skill);
+                        } else {
+                            check.level1 = level;
+                        }
+                    }
+                    wsmud.refreshSkills();
+                }
+            });
+
         },
         setBlock3: function() { // 武道模拟界面
             // 0.1 前置
@@ -423,7 +458,7 @@ var wsmud = function() {
                 // 重置过程
                 $(".props").html("");
                 $(".skillsToWd").html("武道模拟");
-                // 
+                //
                 var type = $(this).attr("id");
                 var list = wsmud.getRole().list;
                 if (list[type].length < 2) {
@@ -485,7 +520,7 @@ var wsmud = function() {
                     if (wudao[i] == "") return;
                 }
                 // 执行进阶
-                wsmud.getRole().upgradeSkillByData(wudao); 
+                wsmud.getRole().upgradeSkillByData(wudao);
                 // 删掉进阶过的属性
                 var type = wudao[0];
                 var id = wudao[1];
@@ -563,7 +598,7 @@ var wsmud = function() {
                 string += `${id} ${code}`;
             }
             console.log(string);
-            
+
             var process = getCommandGroup(string);
             // console.log(process);
             $("#process_code").html(process);
@@ -600,7 +635,7 @@ var wsmud = function() {
                     commands = commands.replace(/\n\s*/g, "\n");
                     return commands;
                 };
-                
+
                 var parts = exp.split(/,+/);
                 var counter = `WudaoCounter__${new Date().getTime()}`;
                 var result = `@stopSSAuto\nstopstate\n[(${counter})==null]($${counter})=0`;
@@ -622,8 +657,7 @@ var wsmud = function() {
             document.body.appendChild(textarea);
             textarea.select();
             document.execCommand("Copy");
-            wsmud.showMessage(`copy to clipboard ...
-            <br>>> 复制成功！`);
+            wsmud.showMessage(`copy to clipboard ...<br>>> 复制成功！`);
             textarea.parentNode.removeChild(textarea);
         },
 
@@ -750,11 +784,11 @@ var wsmud = function() {
                 new 技能("公共内功", "baiyunxinfa", "白云心法", 3, "内功", "无"),
                 new 技能("公共内功", "zhenyuejue", "镇岳诀", 3, "内功", "无"),
                 new 技能("公共内功", "shenghuoshengong", "圣火神功", 3, "内功", "无"),
-                new 技能("公共内功", "hbzq数据缺失", "寒冰真气", 4, 0, 0),
-                new 技能("公共内功", "xtg数据缺失", "先天功", 4, 0, 0),
-                new 技能("公共内功", "mgxf数据缺失", "蒙古心法", 2, 0, 0),
-                new 技能("公共内功", "pssg数据缺失", "磐石神功", 3, 0, 0),
-                new 技能("公共内功", "ynxj数据缺失", "玉女心经", 3, 0, 0),
+                new 技能("公共内功", "hanbingzhenqi", "寒冰真气", 4, "内功", 0),
+                new 技能("公共内功", "xiantiangong", "先天功", 4, "内功", 0),
+                new 技能("公共内功", "mengguxinfa", "蒙古心法", 2, "内功", 0),
+                new 技能("公共内功", "panshishengong", "磐石神功", 3, "内功", 0),
+                new 技能("公共内功", "yunvxinjing", "玉女心经", 3, "内功", 0),
                 // 公共轻功
                 new 技能("公共轻功", "shenxingbaibian", "神行百变", 2, "轻功", "无"),
                 new 技能("公共轻功", "tagexing", "踏歌行", 2, "轻功", "无"),
@@ -784,6 +818,7 @@ var wsmud = function() {
                 new 技能("公共拳脚", "canhezhi", "参合指", 4, "拳脚", "无"),
                 new 技能("公共拳脚", "liumaishenjian", "六脉神剑", 5, "无","无"),
                 new 技能("公共拳脚", "anranxiaohun", "黯然销魂掌", 5, "无", "无"),
+                new 技能("公共拳脚", "taizuchangquan", "太祖长拳", 1, "拳脚", 0),
                 new 技能("公共拳脚", "dashouyin", "密宗大手印", 1, "拳脚", "无"),
                 new 技能("公共拳脚", "houquan", "猴拳", 1, "拳脚", "无"),
                 new 技能("公共拳脚", "huagumianzhang", "化骨绵掌", 2, "拳脚", "无"),
@@ -816,8 +851,8 @@ var wsmud = function() {
                 new 技能("公共剑法", "yifengjian", "移风剑法", 3, "武器","无"),
                 new 技能("公共剑法", "tianyuqijian", "天羽奇剑", 3, "武器", "无"),
                 new 技能("公共剑法", "shenjianjue", "神剑诀", 2, "武器", "无"),
-                new 技能("公共剑法", "tsjf数据缺失", "泰山剑法", 3, 0, 0),
-                new 技能("公共剑法", "djj数据缺失", "段家剑", 3, 0, 0),
+                new 技能("公共剑法", "taishanjianfa", "泰山剑法", 3, "武器", 0),
+                new 技能("公共剑法", "duanjiajianfa", "段家剑", 3, "武器", 0),
                 // 公共刀法
                 new 技能("公共刀法","wuhuduanmendao", "五虎断门刀", 1, "武器", "无"),
                 new 技能("公共刀法","hujiadaofa", "胡家刀法", 2, "武器", "招架"),
@@ -831,8 +866,7 @@ var wsmud = function() {
                 // 公共杖法
                 new 技能("公共杖法", "shedaoqigong", "蛇岛奇功", 2, "武器", "招架"),
                 new 技能("公共杖法", "lingshezhangfa", "灵蛇杖法", 4, "武器", "招架"),
-                new 技能("公共杖法", "wuchangzhang", "", 2, "武器", "招架"),
-                new 技能("公共杖法", "数据残缺wuchangzhang", "无常杖", 2, "武器", "招架"),
+                new 技能("公共杖法", "wuchangzhang", "无常杖", 2, "武器", "招架"),
                 // 公共鞭法
                 new 技能("公共鞭法", "yunlongbian", "云龙鞭法", 1, "武器", "无"),
                 new 技能("公共鞭法", "qiufengfuchen", "秋风拂尘", 1, "武器", "无"),
@@ -840,6 +874,13 @@ var wsmud = function() {
                 // 公共暗器
                 new 技能("公共暗器", "jinshezhui", "金蛇锥法", 2, "武器", "无"),
                 new 技能("公共暗器", "feixingshu", "飞星术", 2, "武器", "无"),
+                // 补充 new 技能("其他补充", "", "", 6, 0, 0),
+                new 技能("其他补充", "wunianchangong", "无念禅功", 5, "内功", 0),
+                new 技能("其他补充", "rulaishenzhang", "如来神掌", 5, "拳脚", 0),
+
+                new 技能("其他补充", "changshengjue", "长生诀", 6, "内功", 0),
+                new 技能("其他补充", "cihangjiandian", "慈航剑典", 6, "内功", 0),
+                new 技能("其他补充", "yinyangjiuzhuan", "阴阳九转", 6, "内功", 0),
             ];
         },
         getWudaoData: function() {
@@ -1071,7 +1112,7 @@ var wsmud = function() {
             var index = this.getRole().skills.findIndex(skill => {
                 return skill.code == code;
             });
-            this.getRole().skills.splice(index, 1);            
+            this.getRole().skills.splice(index, 1);
 
             var i = this.getRole().wudaos.length;
             while (i --) {
@@ -1093,7 +1134,7 @@ var wsmud = function() {
             canvas.width = w * scale;
             canvas.height = h * scale;
             canvas.getContext("2d").scale(scale, scale);
-        
+
             html2canvas(content, {
                 canvas: canvas,
                 scale: scale,
@@ -1146,9 +1187,9 @@ window.addEventListener("resize", function() {
     }, 200);
 });
 
-var update = `
-武神传说小站开发 2019年3月下旬计划
-3.16 重构了武神小站的整体代码
+let update = `
+3.12 构思了网页的布局
+3.16 重构了武神小站的整体代码 (使用 jQuery)
 3.16 修复了武道重置的 bug
 3.16 优化了底部文字滚动的视觉效果
 3.17 修复了姓名不同步的 bug
@@ -1158,6 +1199,9 @@ var update = `
 3.18 修复了删除武道进阶过的技能出错的 bug
 3.18 增加了一键生成图片的功能
 3.18 增加了生成武道流程的页面
+3.20 修复了境界不同步的 bug
+3.20 修复了门派不同步的 bug
+3.25 增加了一键导入技能的功能
 
 TO DO LIST:
 1. 角色数据的导入导出
