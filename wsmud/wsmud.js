@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-25 19:11:44
+ * @Last Modified time: 2019-03-25 19:35:31
  */
 
 "use strict"; // 严格模式
@@ -449,9 +449,9 @@ var wsmud = function() {
                             check.level1 = level;
                         }
                     }
-                    $("#角色姓名").html(name);
-                    $("#境界选择").val(stateNames.indexOf(state));
-                    $("#门派选择").val(schoolNames.indexOf(school));
+                    wsmud.getRole().name = name;
+                    wsmud.getRole().state = state;
+                    wsmud.getRole().school = school;
                     wsmud.refreshSkills();
                 }
             });
