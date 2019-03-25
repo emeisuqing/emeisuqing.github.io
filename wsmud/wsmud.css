@@ -169,7 +169,6 @@ main {
 }
 #skill_json {
     width: 16.6em;
-    /* height: 3em; */
     overflow: hidden;
     white-space: nowrap;
 }
@@ -308,6 +307,13 @@ main {
     padding-right: 1em;
     font-size: 0.8em;
     color: #008000;
+}
+
+
+.读取配置 button {
+    font-size: 1em;
+    margin: 0.3em;
+    padding: 0.3em;
 }
 
 .disable {

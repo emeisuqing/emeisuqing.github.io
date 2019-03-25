@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-25 16:34:05
+ * @Last Modified time: 2019-03-25 19:11:44
  */
 
 "use strict"; // 严格模式
@@ -253,9 +253,8 @@ var wsmud = function() {
         },
         setElements: function() {
             wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/' target='_blank'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/' target='_blank'>多开页面的地址</a>");
-            wsmud.showMessage("最后更新时间:2019.3.25");
             wsmud.showMessage("<span class='color1'>点击标题可以返回！有 BUG 请用手机加 QQ 群 953279200 联系作者。</span>");
-            wsmud.showMessage("与 wsmud_pluginss 合作加了一键导入技能的功能。(其实是初心先斩后奏好嘛，他先把技能导出都做好了才告诉我，我想偷懒都不行。)");
+            wsmud.showMessage("最后更新时间：2019.3.25，增加了一键导入技能、多存档管理。");
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
             // 0.2 主页按钮的点击事件
@@ -282,6 +281,8 @@ var wsmud = function() {
                     case "4":
                         wsmud.refreshProcess();
                         break;
+                    case "5":
+                        wsmud.refreshRoles();
                     default:
                         break;
                 }
@@ -328,12 +329,19 @@ var wsmud = function() {
             // 2.6 门派选择的事件
             $("#门派选择").change(() => {
                 var school = $("#门派选择 option:selected").text();
+                wsmud.getRole().school = $("#门派选择 option:selected").val();
                 wsmud.getSkillData().forEach(skill => {
                     if (skill.category == school) {
                         wsmud.addSkillByCode(skill.code);
                     }
                 });
                 wsmud.refreshSkills();
+            });
+            $("#境界选择").change(() => {
+                wsmud.getRole().state = $("#境界选择 option:selected").val();
+            });
+            $("#角色姓名").blur(function() {
+                wsmud.getRole().name = $(this).text();
             });
 
             // 3.1 一键设置练习等级按钮的点击事件
@@ -417,9 +425,7 @@ var wsmud = function() {
                 wsmud.getRole().skills.forEach(skill => skill.level1 = level);
                 wsmud.refreshSkills();
             });
-            $("#角色姓名").html(wsmud.getRole().name);
-            $("#境界选择").val(role.state);
-            $("#门派选择").val(role.school);
+
 
             // 导入技能数据 - json 字符串
             $("#addskill_json").click(() => {
@@ -597,13 +603,50 @@ var wsmud = function() {
         },
         setBlock5: function() {
             // console.log($("#roles"));
-            let array = JSON.parse(localStorage.getItem("roles"));
-            for (const name of array) {
 
-            }
 
         },
-
+        refreshRoles: function() {
+            $("#roles tbody").html("");
+            let array = JSON.parse(localStorage.getItem("roles"));
+            for (const name of array) {
+                let data = JSON.parse(localStorage.getItem(name));
+                $("#roles tbody").append(
+                    $(`<tr class="color${data.state}"></tr>`).append(
+                        $(`<td style="width:5em">${data.name}</td>`),
+                        $(`<td style="width:5em">${stateNames[data.state]}</td>`),
+                        $(`<td style="width:5em">${schoolNames[data.school]}</td>`),
+                        $(`<td style="width:5em"></td>`).append(
+                            $(`<button type="button" value="${data.name}">读取</button>`).click(function() {
+                                let name = $(this).attr("value");
+                                let obj = JSON.parse(localStorage.getItem(name));
+                                wsmud.getRole().fromObject(obj);
+                                localStorage.setItem("role", name);
+                                wsmud.showMessage(`你读取了数据：${data.name}`);
+                            })
+                        ),
+                        $(`<td style="width:5em"></td>`).append(
+                            $(`<button type="button" value="${data.name}">删除</button>`).click(function() {
+                                if ($(this).html() === "删除") {
+                                    $(this).html("确认");
+                                } else {
+                                    let name = $(this).attr("value");
+                                    let array = JSON.parse(localStorage.getItem("roles"));
+                                    let newArray = [];
+                                    for (let i = 0; i < array.length; i++) {
+                                        if (name !== array[i]) newArray.push(array[i]);
+                                    }
+                                    localStorage.setItem("roles", JSON.stringify(newArray));
+                                    localStorage.removeItem(name);
+                                    wsmud.showMessage(`你删除了数据：${name}`);
+                                    wsmud.refreshRoles();
+                                }
+                            })
+                        ),
+                    )
+                );
+            }
+        },
         refreshProcess: function() {
             var string = "";
             for (const array of wsmud.getRole().wudaos) {
@@ -943,6 +986,10 @@ var wsmud = function() {
 
         // 刷新技能列表
         refreshSkills: function() {
+            $("#角色姓名").html(wsmud.getRole().name);
+            $("#境界选择").val(role.state);
+            $("#门派选择").val(role.school);
+
             $(".skill tbody").html("");
             sortSkills(); // 刷新之前排个序
             wsmud.getRole().skills.forEach(skill => {
@@ -1123,7 +1170,7 @@ var wsmud = function() {
         },
         // 删除技能
         deleteSkillByCode: function(code) {
-            console.log(this.getRole().skills);
+            // console.log(this.getRole().skills);
             var index = this.getRole().skills.findIndex(skill => {
                 return skill.code == code;
             });
@@ -1217,6 +1264,7 @@ let update = `
 3.20 修复了境界不同步的 bug
 3.20 修复了门派不同步的 bug
 3.25 增加了一键导入技能的功能
+3.25 增加了保存多个存档的功能
 
 TO DO LIST:
 1. 角色数据的导入导出
