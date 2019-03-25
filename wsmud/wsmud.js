@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-25 19:35:31
+ * @Last Modified time: 2019-03-25 19:37:39
  */
 
 "use strict"; // 严格模式
@@ -450,8 +450,8 @@ var wsmud = function() {
                         }
                     }
                     wsmud.getRole().name = name;
-                    wsmud.getRole().state = state;
-                    wsmud.getRole().school = school;
+                    wsmud.getRole().state = stateNames[state];
+                    wsmud.getRole().school = schoolNames[school];
                     wsmud.refreshSkills();
                 }
             });
