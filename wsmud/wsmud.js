@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-25 15:23:04
+ * @Last Modified time: 2019-03-25 16:34:05
  */
 
 "use strict"; // 严格模式
@@ -151,7 +151,7 @@ class 角色 {
 
 var wsmud = function() {
     // 一些常量字符串
-    var classNames = ["主页菜单", "基础配置", "模拟练习", "模拟武道", "武道流程"];
+    var classNames = ["主页菜单", "基础配置", "模拟练习", "模拟武道", "武道流程", "读取配置"];
     var stateNames = ["百姓", "武士", "武师", "宗师", "武圣", "武帝", "武神"];
     var schoolNames = ["无门无派", "武当派", "少林派", "华山派", "峨眉派", "逍遥派", "丐帮", "杀手楼"];
     var typeNames = {
@@ -401,6 +401,7 @@ var wsmud = function() {
 
             // 武道页面
             wsmud.setBlock3();
+            wsmud.setBlock5();
 
             // 武道流程
             $("#copy_process").click(function() {
@@ -424,9 +425,11 @@ var wsmud = function() {
             $("#addskill_json").click(() => {
                 let string = $("#skill_json").text();
                 if (string) {
-                    let array = JSON.parse(string);
-                    console.log(array);
-                    for (let obj of array) {
+                    let object = JSON.parse(string);
+                    console.log(object);
+                    let name = object.player, state = object.level, school = object.family;
+                    let skills = object.items;
+                    for (let obj of skills) {
                         let code = obj.id;
                         let level = obj.level;
                         if (code === "lianyao" || code === "literate") continue;
@@ -440,6 +443,9 @@ var wsmud = function() {
                             check.level1 = level;
                         }
                     }
+                    $("#角色姓名").html(name);
+                    $("#境界选择").val(stateNames.indexOf(state));
+                    $("#门派选择").val(schoolNames.indexOf(school));
                     wsmud.refreshSkills();
                 }
             });
@@ -589,6 +595,15 @@ var wsmud = function() {
                 }, 10);
             });
         },
+        setBlock5: function() {
+            // console.log($("#roles"));
+            let array = JSON.parse(localStorage.getItem("roles"));
+            for (const name of array) {
+
+            }
+
+        },
+
         refreshProcess: function() {
             var string = "";
             for (const array of wsmud.getRole().wudaos) {
