@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-25 19:37:39
+ * @Last Modified time: 2019-03-25 19:42:33
  */
 
 "use strict"; // 严格模式
@@ -450,8 +450,8 @@ var wsmud = function() {
                         }
                     }
                     wsmud.getRole().name = name;
-                    wsmud.getRole().state = stateNames[state];
-                    wsmud.getRole().school = schoolNames[school];
+                    wsmud.getRole().state = stateNames.indexOf(state);
+                    wsmud.getRole().school = schoolNames.indexOf(school);
                     wsmud.refreshSkills();
                 }
             });
@@ -987,8 +987,8 @@ var wsmud = function() {
         // 刷新技能列表
         refreshSkills: function() {
             $("#角色姓名").html(wsmud.getRole().name);
-            $("#境界选择").val(role.state);
-            $("#门派选择").val(role.school);
+            $("#境界选择").val(wsmud.getRole().state);
+            $("#门派选择").val(wsmud.getRole().school);
 
             $(".skill tbody").html("");
             sortSkills(); // 刷新之前排个序
