@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-25 19:42:33
+ * @Last Modified time: 2019-03-29 18:36:50
  */
 
 "use strict"; // 严格模式
@@ -151,7 +151,7 @@ class 角色 {
 
 var wsmud = function() {
     // 一些常量字符串
-    var classNames = ["主页菜单", "基础配置", "模拟练习", "模拟武道", "武道流程", "读取配置"];
+    var classNames = ["主页菜单", "基础配置", "模拟练习", "模拟武道", "武道流程", "读取配置", "问题反馈"];
     var stateNames = ["百姓", "武士", "武师", "宗师", "武圣", "武帝", "武神"];
     var schoolNames = ["无门无派", "武当派", "少林派", "华山派", "峨眉派", "逍遥派", "丐帮", "杀手楼"];
     var typeNames = {
@@ -253,7 +253,7 @@ var wsmud = function() {
         },
         setElements: function() {
             wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/' target='_blank'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/' target='_blank'>多开页面的地址</a>");
-            wsmud.showMessage("<span class='color1'>点击标题可以返回！有 BUG 请用手机加 QQ 群 953279200 联系作者。</span>");
+            wsmud.showMessage("<span class='color1'>点击标题可以返回！点击标题可以返回！点击标题可以返回！</span>");
             wsmud.showMessage("最后更新时间：2019.3.25，增加了一键导入技能、多存档管理。");
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
@@ -1266,7 +1266,6 @@ let update = `
 3.25 增加了一键导入技能的功能
 3.25 增加了保存多个存档的功能
 
-TO DO LIST:
-1. 角色数据的导入导出
-2. 多开页面的重构
+3.2? 角色数据的导入导出
+3.2? 多开页面的重构
 `;
