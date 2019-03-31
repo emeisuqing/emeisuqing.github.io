@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-29 18:36:50
+ * @Last Modified time: 2019-03-31 22:43:06
  */
 
 "use strict"; // 严格模式
@@ -863,8 +863,8 @@ var wsmud = function() {
                 new 技能("公共轻功", "chuanyunzong", "穿云纵", 2, "轻功", "无"),
                 new 技能("公共轻功", "chanchubufa", "蟾蜍步法", 2, "轻功", "无"),
                 new 技能("公共轻功", "qingfushenfa", "青蝠身法", 2, "轻功", "无"),
-                new 技能("公共轻功", "zxg数据缺失", "摘星功", 2, 0, 0),
-                new 技能("公共轻功", "skx数据缺失", "身空行", 2, 0, 0),
+                new 技能("公共轻功", "zhaixingong", "摘星功", 2, 0, 0),
+                new 技能("公共轻功", "shenkongxing", "身空行", 2, 0, 0),
                 // 公共拳脚
                 new 技能("公共拳脚", "yingzhuagong", "鹰爪功", 2, "拳脚", "招架"),
                 new 技能("公共拳脚", "jinshezhang", "金蛇游身掌", 3, "拳脚", "无"),
@@ -886,7 +886,7 @@ var wsmud = function() {
                 new 技能("公共拳脚", "jueqingzhang", "绝情掌", 2, "拳脚", "无"),
                 new 技能("公共拳脚", "tianchangzhang", "天长掌法", 3, "拳脚", "无"),
                 new 技能("公共拳脚", "cuixinzhang", "摧心掌", 3, "拳脚", "无"),
-                new 技能("公共拳脚", "yyz数据缺失", "一阳指", 4, 0, 0),
+                new 技能("公共拳脚", "yiyangzhi", "一阳指", 4, "拳脚", 0),
                 // 公共招架
                 new 技能("公共招架","yihuajiemu", "移花接木", 4, "招架", "无"),
                 new 技能("公共招架","douzhuanxingyi", "斗转星移", 5, "无", "无"),
@@ -1265,7 +1265,10 @@ let update = `
 3.20 修复了门派不同步的 bug
 3.25 增加了一键导入技能的功能
 3.25 增加了保存多个存档的功能
+3.26 多开页面的重构
 
-3.2? 角色数据的导入导出
-3.2? 多开页面的重构
+??? 角色数据的导入导出
 `;
+
+var data = wsmud.getSkillData();
+console.log(data);
