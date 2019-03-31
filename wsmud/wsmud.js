@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-31 22:43:06
+ * @Last Modified time: 2019-03-31 22:57:26
  */
 
 "use strict"; // 严格模式
@@ -414,7 +414,7 @@ var wsmud = function() {
             // 武道流程
             $("#copy_process").click(function() {
                 console.log("(Event) button.click");
-                var text = $("#process_code").html();
+                var text = $("#process_code").text();
                 wsmud.copyToClipboard(text);
             });
         },
@@ -659,7 +659,7 @@ var wsmud = function() {
 
             var process = getCommandGroup(string);
             // console.log(process);
-            $("#process_code").html(process);
+            $("#process_code").text(process);
             // 转换字符串为命令组的函数
             // 此函数由 wsmud_Raid 的作者 Rob.cn / 一区令狐凯 提供
             function getCommandGroup(exp) {
