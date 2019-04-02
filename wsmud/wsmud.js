@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-03-31 22:57:26
+ * @Last Modified time: 2019-04-02 15:38:35
  */
 
 "use strict"; // 严格模式
@@ -254,7 +254,7 @@ var wsmud = function() {
         setElements: function() {
             wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/' target='_blank'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/' target='_blank'>多开页面的地址</a>");
             wsmud.showMessage("<span class='color1'>点击标题可以返回！点击标题可以返回！点击标题可以返回！</span>");
-            wsmud.showMessage("最后更新时间：2019.3.25，增加了一键导入技能、多存档管理。");
+            wsmud.showMessage("最后更新时间：2019.4.2，增加了一键导入技能、多存档管理。");
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
             // 0.2 主页按钮的点击事件
@@ -609,8 +609,14 @@ var wsmud = function() {
         refreshRoles: function() {
             $("#roles tbody").html("");
             let array = JSON.parse(localStorage.getItem("roles"));
+            // if (typeof array !== "Array") return;
             for (const name of array) {
                 let data = JSON.parse(localStorage.getItem(name));
+                if (data === null) {
+                    localStorage.setItem("roles", "[]");
+                    wsmud.showMessage(`<span class="color6">数据出错，请重新保存一下！</span>`);
+                    return;
+                }
                 $("#roles tbody").append(
                     $(`<tr class="color${data.state}"></tr>`).append(
                         $(`<td style="width:5em">${data.name}</td>`),
