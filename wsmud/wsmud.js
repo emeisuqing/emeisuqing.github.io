@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-04-02 15:38:35
+ * @Last Modified time: 2019-04-09 13:45:26
  */
 
 "use strict"; // 严格模式
@@ -254,7 +254,7 @@ var wsmud = function() {
         setElements: function() {
             wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/' target='_blank'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/' target='_blank'>多开页面的地址</a>");
             wsmud.showMessage("<span class='color1'>点击标题可以返回！点击标题可以返回！点击标题可以返回！</span>");
-            wsmud.showMessage("最后更新时间：2019.4.2，增加了一键导入技能、多存档管理。");
+            wsmud.showMessage("最后更新时间：2019.4.8");
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
             // 0.2 主页按钮的点击事件
@@ -316,16 +316,21 @@ var wsmud = function() {
             $("#saveData").click(function() {
                 saveRole();
             });
+            $(`#newData`).click(function() {
+                role = null;
+                localStorage.removeItem("role");
+                wsmud.refreshSkills();
+            });
             // 2.5 加载的点击事件
-            $("#loadData").click(function() {
-                wsmud.showMessage("快去催苏轻敲代码！");
-            });
-            $("#input").click(function() {
-                wsmud.showMessage("快去催苏轻敲代码！");
-            });
-            $("#output").click(function() {
-                wsmud.showMessage("快去催苏轻敲代码！");
-            });
+            // $("#loadData").click(function() {
+            //     wsmud.showMessage("快去催苏轻敲代码！");
+            // });
+            // $("#input").click(function() {
+            //     wsmud.showMessage("快去催苏轻敲代码！");
+            // });
+            // $("#output").click(function() {
+            //     wsmud.showMessage("快去催苏轻敲代码！");
+            // });
             // 2.6 门派选择的事件
             $("#门派选择").change(() => {
                 var school = $("#门派选择 option:selected").text();
