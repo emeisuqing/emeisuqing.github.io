@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-04-09 13:45:26
+ * @Last Modified time: 2019-04-12 19:49:06
  */
 
 "use strict"; // 严格模式
@@ -898,6 +898,8 @@ var wsmud = function() {
                 new 技能("公共拳脚", "tianchangzhang", "天长掌法", 3, "拳脚", "无"),
                 new 技能("公共拳脚", "cuixinzhang", "摧心掌", 3, "拳脚", "无"),
                 new 技能("公共拳脚", "yiyangzhi", "一阳指", 4, "拳脚", 0),
+                new 技能("公共拳脚", "qianzhuwandushou", "千蛛万毒手", 4, "拳脚", "招架"),
+                //
                 // 公共招架
                 new 技能("公共招架","yihuajiemu", "移花接木", 4, "招架", "无"),
                 new 技能("公共招架","douzhuanxingyi", "斗转星移", 5, "无", "无"),
