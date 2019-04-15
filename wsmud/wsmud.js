@@ -2,7 +2,7 @@
  * @Author: fun.suqing
  * @Date: 2019-03-12 21:01:24
  * @Last Modified by: fun.suqing
- * @Last Modified time: 2019-04-12 19:50:32
+ * @Last Modified time: 2019-04-15 13:00:51
  */
 
 "use strict"; // 严格模式
@@ -254,7 +254,7 @@ var wsmud = function() {
         setElements: function() {
             wsmud.showMessage("<a href='https://suqing.fun/wsmud.old/' target='_blank'>旧版本模拟器地址</a> && <a href='http://www.wsmud.site/' target='_blank'>多开页面的地址</a>");
             wsmud.showMessage("<span class='color1'>点击标题可以返回！点击标题可以返回！点击标题可以返回！</span>");
-            wsmud.showMessage("最后更新时间：2019.4.8");
+            wsmud.showMessage("最后更新时间：2019.4.15 修复了轻功武道进阶防御数值的问题");
             // 0.1 页头的点击事件
             $("header").click(() => wsmud.showBlockByIndex(0));
             // 0.2 主页按钮的点击事件
@@ -967,7 +967,7 @@ var wsmud = function() {
                 new 武道("暴虐之道", "终伤＋", 5, "%", "force", "zs", 7),
                 // 轻功
                 new 武道("躲闪之道", "躲闪＋", 2500, "", "dodge", "ds", 8),
-                new 武道("防御之道", "防御＋", 2500, "", "dodge", "fy", 9),
+                new 武道("防御之道", "防御＋", 2000, "", "dodge", "fy", 9),
                 new 武道("御气之道", "内力上限＋", 110000, "", "dodge", "yq", 10),
                 new 武道("命中之道", "命中＋", 2000, "", "dodge", "mz", 11),
                 new 武道("轻盈之道", "身法＋", 300, "", "dodge", "sf", 12),
