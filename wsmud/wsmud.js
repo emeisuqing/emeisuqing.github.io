@@ -831,6 +831,13 @@ var wsmud = function() {
                 new 技能("杀手楼", "shashengjue2", "杀生决(进阶)", 4, "内功", "无"),
                 new 技能("杀手楼", "mantianhuayu2", "漫天花雨(进阶)", 5, "武器", "无"),
                 new 技能("杀手楼", "taxuexunmei2", "踏雪寻梅(进阶)", 5, "轻功", "无"),
+                // 六扇门
+                new 技能("六扇门", "zonghengshu", "纵横术", 1, "招架", "无"),
+                new 技能("六扇门", "qianlizhuifeng", "千里追风", 2, "轻功", "无"),
+                new 技能("六扇门", "feilongshou", "飞龙探云手", 2, "拳脚", "无"),
+                new 技能("六扇门", "shuangdao", "双刀流", 3, "武器", "无"),
+                new 技能("六扇门", "tianluodiwang", "天罗地网", 4, "武器", "无"),
+                new 技能("六扇门", "xixingdafa", "吸星大法", 4, "内功", "无"),
                 // 公共内功
                 new 技能("公共内功", "hamagong", "蛤蟆功", 4, "内功", "拳脚"),
                 new 技能("公共内功", "huagongdafa", "化功大法", 4, "内功", "无"),
@@ -876,6 +883,7 @@ var wsmud = function() {
                 new 技能("公共轻功", "qingfushenfa", "青蝠身法", 2, "轻功", "无"),
                 new 技能("公共轻功", "zhaixingong", "摘星功", 2, "轻功", 0),
                 new 技能("公共轻功", "shenkongxing", "身空行", 2, "轻功", 0),
+                new 技能("公共轻功", "yunvshenfa", "玉女身法", 2, "轻功", 0),
                 // 公共拳脚
                 new 技能("公共拳脚", "yingzhuagong", "鹰爪功", 2, "拳脚", "招架"),
                 new 技能("公共拳脚", "jinshezhang", "金蛇游身掌", 3, "拳脚", "无"),
@@ -948,7 +956,6 @@ var wsmud = function() {
                 // 补充 new 技能("其他补充", "", "", 6, 0, 0),
                 new 技能("其他补充", "wunianchangong", "无念禅功", 5, "内功", 0),
                 new 技能("其他补充", "rulaishenzhang", "如来神掌", 5, "拳脚", 0),
-
                 new 技能("其他补充", "changshengjue", "长生诀", 6, "内功", 0),
                 new 技能("其他补充", "cihangjiandian", "慈航剑典", 6, "内功", 0),
                 new 技能("其他补充", "yinyangjiuzhuan", "阴阳九转", 6, "内功", 0),
@@ -960,14 +967,9 @@ var wsmud = function() {
                 new 技能("其他补充", "bianjianfa", "彼岸剑法", 4, "武器", "招架"),
                 new 技能("其他补充", "lingxibu", "灵犀步", 5, "轻功", "无"),
                 new 技能("其他补充", "fuyujianfa", "覆雨剑法", 6, "武器", "招架"),
+                new 技能("其他补充", "tianmoce", "天魔策", 6, "内功", "招架"),
                 new 技能("其他补充", "zhanshentulu", "战神图录", 6, "内功", 0),
                 new 技能("其他补充", "bite", "野兽扑咬", 0, 0, 0),
-                new 技能("六扇门", "zonghengshu", "纵横术", 1, "招架", "无"),
-                new 技能("六扇门", "qianlizhuifeng", "千里追风", 2, "轻功", "无"),
-                new 技能("六扇门", "feilongshou", "飞龙探云手", 2, "拳脚", "无"),
-                new 技能("六扇门", "shuangdao", "双刀流", 3, "武器", "无"),
-                new 技能("六扇门", "tianluodiwang", "天罗地网", 4, "武器", "无"),
-                new 技能("六扇门", "xixingdafa", "吸星大法", 4, "内功", "无"),
             ];
         },
         getWudaoData: function() {
