@@ -37,6 +37,7 @@ class 技能 {
         this.level1 = 0;           // 当前等级
         this.level2 = 0;           // 目标等级
         this.needPractice = false; // 是否需要练习
+        this.limitPractice = false;// 练习至上限
         this.wudaos = [];          // 武道进阶记录
     }
     get k() {
@@ -133,6 +134,12 @@ class 角色 {
         var index = this.getSkillIndexByCode(code);
         if (index != null) {
             this.skills[index].needPractice = bool;
+        }
+    }
+    setLimitPracticeByCode(code, bool) {
+        var index = this.getSkillIndexByCode(code);
+        if (index != null) {
+            this.skills[index].limitPractice = bool;
         }
     }
     upgradeSkillByData(array) {
@@ -1081,6 +1088,15 @@ var wsmud = function() {
                             wsmud.refreshAutoCode();
                             wsmud.refreshPracticeCost();
                         })),
+                        $(`<td></td>`)
+                        .append($(`<input type="checkbox" code="${skill.code}">`)
+                        .prop("checked", skill.limitPractice).click(function() {
+                            var code = $(this).attr("code");
+                            var bool = $(this).prop("checked");
+                            wsmud.getRole().setLimitPracticeByCode(code, bool);
+                            wsmud.refreshAutoCode();
+                            wsmud.refreshPracticeCost();
+                        })),
                     )
                 );
             });
@@ -1093,8 +1109,12 @@ var wsmud = function() {
             var role = wsmud.getRole();
             string += role.needGohouse ? "jh fam 0 start,go west,go west,go north,go enter,go west," : "";
             role.skills.forEach(skill => {
-                if (skill.needPractice) {
-                    string += `lianxi ${skill.code} ${skill.level2},`;
+                if ((skill.needPractice) || (skill.limitPractice)) {
+                    if (skill.limitPractice) {
+                        string += `lianxi ${skill.code},`;
+                    } else {
+                        string += `lianxi ${skill.code} ${skill.level2},`;
+                    }
                 }
             });
             string += role.needWakuang ? "wakuang" : "xiulian";
