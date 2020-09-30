@@ -711,8 +711,8 @@ var wsmud = function() {
                     [(${counter})==${number}]lingwu ${skill}
                     [(${counter})==${number}]@tip 你领悟了
                     [(${counter})==${number}]($${counter})=(${counter})+1
-                    [(${counter})<${times}]tm 当前武道进阶进度：(${counter})/${times}
-                    [(${counter})==${times}]tm 本次武道进阶已完成。`;
+                    [(${counter})<${times}]tm (:hour):(:minute):(:second) 当前武道进阶进度：(${counter})/${times}
+                    [(${counter})==${times}]tm (:hour):(:minute):(:second) 本次武道进阶已完成。`;
                     commands = commands.replace(/\n\s*/g, "\n");
                     return commands;
                 };
