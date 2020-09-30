@@ -693,8 +693,9 @@ var wsmud = function() {
                     }
                     throw "unknown lingwu number";
                 };
-                var getCommands = function(counter, number, code, skill) {
+                var getCommands = function(counter, times, number, code, skill) {
                     var type = getType(code);
+                    var now = number + 1;
                     var commands = `
                     [(${counter})==${number}]($flag)=null
                     [(${counter})==${number}]($flag2)=null
@@ -709,22 +710,25 @@ var wsmud = function() {
                     [(${counter})==${number}]@tip 你目前有以下技能可使用你领悟的
                     [(${counter})==${number}]lingwu ${skill}
                     [(${counter})==${number}]@tip 你领悟了
-                    [(${counter})==${number}]($${counter})=(${counter})+1`;
+                    [(${counter})==${number}]($${counter})=(${counter})+1
+                    [(${counter})<${times}]tm 当前武道进阶进度：(${counter})/${times}
+                    [(${counter})==${times}]tm 本次武道进阶已完成。`;
                     commands = commands.replace(/\n\s*/g, "\n");
                     return commands;
                 };
 
                 var parts = exp.split(/,+/);
+                var times = parts.length;
                 var counter = `WudaoCounter__${new Date().getTime()}`;
                 var result = `@stopSSAuto\nstopstate\n[(${counter})==null]($${counter})=0`;
                 for (let j = 0; j < parts.length; j++) {
                     const part = parts[j];
                     var code = /^\s*(\d+)\s/.exec(part)[1];
                     var skill = /\s*([a-zA-Z][a-zA-Z0-9]*)/.exec(part)[1];
-                    var commands = getCommands(counter, j, code, skill);
+                    var commands = getCommands(counter, times, j, code, skill);
                     result += commands;
                 }
-                result += "\n$to 练功房;dazuo\n@recoverSSAuto";
+                result += `\n($${counter})=null\n$to 住房-练功房;dazuo\n@recoverSSAuto`;
                 return result;
             }
         },
