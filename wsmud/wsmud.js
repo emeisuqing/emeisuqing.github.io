@@ -768,6 +768,7 @@ var wsmud = function() {
                 new 技能("武当派", "tiyunzong2", "梯云纵(进阶)", 4, "轻功", "无"),
                 new 技能("武当派", "taijijian2", "太极剑法(进阶)", 5, "无", "无"),
                 new 技能("武当派", "taijishengong2", "先天太极(进阶)", 5, "无", "无"),
+                new 技能("武当派", "taijishengong4", "太极真义", 6, 0, 0),
                 // 少林派
                 new 技能("少林派","shaolinshenfa", "少林身法", 1, 0, 0),
                 new 技能("少林派","ranmudao", "燃木刀法", 3, 0, 0),
@@ -782,6 +783,7 @@ var wsmud = function() {
                 new 技能("少林派","yizhichan2", "一指禅(进阶)", 4, "拳脚", "无"),
                 new 技能("少林派","ranmudao2", "燃木刀法(进阶)", 5, "无", "无"),
                 new 技能("少林派","yijinjing2", "金刚不坏体(进阶)", 5, "无", "无"),
+                new 技能("少林派","yijinjing4", "金刚不灭体", 6, 0, 0),
                 // 华山派
                 new 技能("华山派","poyuquan", "劈石破玉拳", 1, 0, 0),
                 new 技能("华山派","zixiashengong", "紫霞神功", 3, 0, 0),
@@ -795,6 +797,7 @@ var wsmud = function() {
                 new 技能("华山派","zixiashengong2", "紫霞神功(进阶)", 4, "内功", "无"),
                 new 技能("华山派","dugujiujian2", "独孤九剑(进阶)", 5, "无", "无"),
                 new 技能("华山派","kuangfengkuaijian2", "狂风快剑(进阶)", 5, "无", "无"),
+                new 技能("华山派","dugujiujian4", "独孤剑诀", 6, 0, 0),
                 // 峨眉派
                 new 技能("峨眉派","zhutianbu", "诸天化身步", 1, 0, 0),
                 new 技能("峨眉派","linjizhuang", "临济十二庄", 3, 0, 0),
@@ -807,6 +810,7 @@ var wsmud = function() {
                 new 技能("峨眉派","zhutianbu2", "诸天化身步(进阶)", 4, "轻功", "无"),
                 new 技能("峨眉派","linjizhuang2", "临济十二庄(进阶)", 5, "无", "无"),
                 new 技能("峨眉派","yitianjianfa2", "倚天剑法(进阶)", 5, "无", "无"),
+                new 技能("峨眉派","yitianjianfa4", "诸天剑诀", 6, 0, 0),
                 // 逍遥派
                 new 技能("逍遥派", "lingboweibu", "凌波微步", 3, 0, 0),
                 new 技能("逍遥派", "beimingshengong", "北冥神功", 3, 0, 0),
@@ -819,6 +823,7 @@ var wsmud = function() {
                 new 技能("逍遥派", "liuyangzhang2", "天山六阳掌(进阶)", 4, "拳脚", "无"),
                 new 技能("逍遥派", "lingboweibu2", "凌波微步(进阶)", 5, "无","无"),
                 new 技能("逍遥派", "xiaowuxianggong2", "小无相功(进阶)", 5, "无", "无"),
+                new 技能("逍遥派", "lingboweibu4", "神游太虚", 6, 0, 0),
                 // 丐帮
                 new 技能("丐帮", "huntianqigong2", "混元天罡(进阶)", 4, "内功", "无"),
                 new 技能("丐帮", "xiaoyaoyou2", "逍遥游(进阶)", 4, "轻功", "无"),
@@ -832,6 +837,7 @@ var wsmud = function() {
                 new 技能("丐帮", "feiyanzoubi", "飞檐走壁", 1, "轻功", "无"),
                 new 技能("丐帮", "gaibangxinfa", "丐帮心法", 1, "内功", "无"),
                 new 技能("丐帮", "taizuchangquan", "太祖长拳", 1, "拳脚", "无"),
+                new 技能("丐帮", "xianglongzhang4", "降龙掌", 6, 0, 0),
                 // 杀手楼
                 new 技能("杀手楼", "shashoubufa", "杀手步法", 1, "轻功", "无"),
                 new 技能("杀手楼", "shashouxinfa", "杀手心法", 1, "内功", "无"),
@@ -844,6 +850,7 @@ var wsmud = function() {
                 new 技能("杀手楼", "shashengjue2", "杀生决(进阶)", 4, "内功", "无"),
                 new 技能("杀手楼", "mantianhuayu2", "漫天花雨(进阶)", 5, "武器", "无"),
                 new 技能("杀手楼", "taxuexunmei2", "踏雪寻梅(进阶)", 5, "轻功", "无"),
+                new 技能("杀手楼", "mantianhuayu4", "天谕", 6, 0, 0),
                 // 六扇门
                 new 技能("六扇门", "zonghengshu", "纵横术", 1, "招架", "无"),
                 new 技能("六扇门", "qianlizhuifeng", "千里追风", 2, "轻功", "无"),
