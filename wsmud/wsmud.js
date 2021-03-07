@@ -455,8 +455,12 @@ var wsmud = function() {
                         let check = wsmud.getRole().skills.find(skill => skill.code == code);
                         if (check === undefined) {
                             var skill = wsmud.getSkillData().find(skill => skill.code == code);
-                            if (skill === undefined) continue;
-                            //console.log(skill)
+                            if (skill === undefined) {
+                                let name = obj.name;
+                                //console.log(name);
+                                skill = new 技能("自创", code, name, 6, 0, 0);
+                            }
+                            //console.log(skill);
                             skill.level1 = level;
                             wsmud.getRole().skills.push(skill);
                         } else {
