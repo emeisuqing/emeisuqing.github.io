@@ -373,11 +373,26 @@ var wsmud = function() {
                 var text = $("#autocode").html();
                 wsmud.copyToClipboard(text);
             });
-            // 3.3 回豪选择框的设置
+            // 3.3.1 回豪选择框的设置
             $("#goHouse").prop("checked", wsmud.getRole().needGohouse)
             .click(function() {
                 var bool = $(this).prop("checked");
                 wsmud.getRole().needGohouse = bool;
+                if (wsmud.getRole().needGohouse) {
+                    $("#goParty").prop("checked", false);
+                    wsmud.getRole().needGoparty = false;
+                }
+                wsmud.refreshAutoCode();
+            });
+            // 3.3.2 帮派练功房的设置
+            $("#goParty").prop("checked", wsmud.getRole().needGoparty)
+            .click(function() {
+                var bool = $(this).prop("checked");
+                wsmud.getRole().needGoparty = bool;
+                if (wsmud.getRole().needGoparty) {
+                    $("#goHouse").prop("checked", false);
+                    wsmud.getRole().needGohouse = false;
+                }
                 wsmud.refreshAutoCode();
             });
             // 3.4 挖矿选择框的设置
@@ -1122,7 +1137,10 @@ var wsmud = function() {
         refreshAutoCode: function() {
             var string = "";
             var role = wsmud.getRole();
-            string += role.needGohouse ? "jh fam 0 start,go west,go west,go north,go enter,go west," : "";
+            if (role.needGohouse) string += "jh fam 0 start,go west,go west,go north,go enter,go west,";
+            if (role.needGoparty) string += "jh fam 0 start,go south,go south,go east,go east,go east,go north,";
+            if (!role.needGohouse && !role.needGoparty) string += "";
+            // string += role.needGohouse ? "jh fam 0 start,go west,go west,go north,go enter,go west," : "";
             role.skills.forEach(skill => {
                 if ((skill.needPractice) || (skill.limitPractice)) {
                     if (skill.limitPractice) {
